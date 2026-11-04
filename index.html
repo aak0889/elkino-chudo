@@ -1,13 +1,13 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
 <meta name="yandex-verification" content="a7d48ba4912520bf" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ёлкино чудо — отсчёт дней до Нового года</title>
-<meta name="description" content="Отсчёт дней до Нового года: открытки, ностальгия, уют. Идеи подарков, рецепты к столу, игры для детей и «как было у нас».">
+<meta name="description" content="Отсчёт дней до Нового года: открытки, ностальгия, уют. Идеи подарков, рецепты к столу, игры в снежных шарах, календарь декабря и старый телевизор с новогодними фильмами.">
 <link rel="canonical" href="https://xn----htbkheohc7b0b5g.xn--p1ai/">
-<meta name="theme-color" content="#0b2c23">
+<meta name="theme-color" content="#0b1526">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Ёлкино чудо">
@@ -24,9 +24,9 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Golos+Text:wght@400;500;600&display=swap">
-<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 767px)">
-<link rel="preload" as="image" href="img/hero-d.webp" media="(min-width: 768px)">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
+<link rel="preload" as="image" href="img/globe-rail-m.webp" media="(max-width: 899px)">
+<link rel="preload" as="image" href="img/globe-rail.webp" media="(min-width: 900px)">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -39,66 +39,167 @@
     <span class="brand-name">Ёлкино чудо</span>
   </a>
   <nav class="nav" aria-label="Разделы">
-    <a href="#anonsy">Анонсы</a>
-    <a href="#rubriki">Рубрики</a>
+    <a href="#razdely">Разделы</a>
+    <a href="#shary">Шары-игры</a>
+    <a href="#kalendar">Календарь</a>
+    <a href="#televizor">Телевизор</a>
     <a class="nav-cta" href="#podpiska">Подписаться</a>
   </nav>
 </header>
 
+<button class="music" id="music" type="button" aria-pressed="false" aria-label="Музыка: включить">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5a2.5 2.5 0 1 1-2-2.45V5.2l11-2.2v11.5a2.5 2.5 0 1 1-2-2.45V7.1L9 8.5v9Z"/></svg>
+  <span class="music-t">Музыка</span>
+  <i class="music-eq" aria-hidden="true"><b></b><b></b><b></b></i>
+</button>
+<audio id="music-audio" src="audio/jingle-bells-calm-kevin-macleod.mp3" preload="none" loop></audio>
+
+<canvas class="snow" id="snow" aria-hidden="true"></canvas>
+
 <main id="main">
 
+<!-- ============ HERO: ночная сцена ============ -->
 <section class="hero" id="top">
-  <picture class="hero-bg" aria-hidden="true">
-    <source media="(min-width: 768px)" srcset="img/hero-d.webp">
-    <img src="img/hero-m.webp" alt="" width="900" height="1125" fetchpriority="high">
-  </picture>
-
-  <svg class="garland" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-10 18 Q 150 80 300 30 T 600 34 T 900 30 T 1210 22" fill="none" stroke="#3a2a12" stroke-width="2"/>
-  </svg>
+  <canvas class="sky" id="sky" aria-hidden="true"></canvas>
   <div class="bulbs" aria-hidden="true">
-    <span style="--x:4%;--y:22px;--d:0s"></span><span style="--x:12%;--y:44px;--d:.7s"></span>
-    <span style="--x:20%;--y:50px;--d:1.4s"></span><span style="--x:28%;--y:36px;--d:.3s"></span>
-    <span style="--x:37%;--y:30px;--d:1.1s"></span><span style="--x:46%;--y:42px;--d:.5s"></span>
-    <span style="--x:55%;--y:40px;--d:1.8s"></span><span style="--x:63%;--y:30px;--d:.9s"></span>
-    <span style="--x:71%;--y:38px;--d:.2s"></span><span style="--x:80%;--y:42px;--d:1.5s"></span>
-    <span style="--x:88%;--y:32px;--d:.6s"></span><span style="--x:96%;--y:26px;--d:1.2s"></span>
+    <span style="--x:3%;--y:18px;--d:0s"></span><span style="--x:11%;--y:38px;--d:.7s"></span>
+    <span style="--x:19%;--y:46px;--d:1.4s"></span><span style="--x:27%;--y:34px;--d:.3s"></span>
+    <span style="--x:36%;--y:26px;--d:1.1s"></span><span style="--x:45%;--y:36px;--d:.5s"></span>
+    <span style="--x:54%;--y:36px;--d:1.8s"></span><span style="--x:63%;--y:26px;--d:.9s"></span>
+    <span style="--x:72%;--y:32px;--d:.2s"></span><span style="--x:81%;--y:38px;--d:1.5s"></span>
+    <span style="--x:89%;--y:30px;--d:.6s"></span><span style="--x:97%;--y:20px;--d:1.2s"></span>
+  </div>
+  <svg class="garland" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-10 14 Q 130 62 260 34 T 540 30 T 820 32 T 1210 16" fill="none" stroke="#3b2f1c" stroke-width="2"/>
+  </svg>
+
+  <div class="ornament" aria-hidden="true">
+    <span class="orn-cap"></span>
+    <span class="orn-ball"><span class="orn-skin"></span></span>
   </div>
 
-  <div class="plaque">
-    <div class="plaque-in">
-      <h1 class="title"><span class="yo">Ё<i></i><i></i></span>лкино чудо</h1>
-      <p class="lead">отсчёт дней до Нового года:<br>открытки, ностальгия, уют</p>
+  <div class="hero-in">
+    <div class="hero-text">
+      <h1 class="title"><span class="yo">Ё<i></i><i></i></span>лкино<br>чудо</h1>
+      <p class="lead">Открываем Новый год<br>по кусочкам волшебства</p>
 
       <div class="count" id="count">
         <p class="count-label" id="count-label">до Нового года осталось</p>
-        <div class="count-days">
-          <span class="num" id="c-days">57</span>
-          <span class="unit" id="c-days-unit">дней</span>
-        </div>
-        <div class="count-clock" aria-label="часы, минуты, секунды">
-          <span><b id="c-h">00</b><small>час</small></span>
-          <span class="sep">:</span>
-          <span><b id="c-m">00</b><small>мин</small></span>
-          <span class="sep">:</span>
-          <span><b id="c-s">00</b><small>сек</small></span>
+        <div class="count-row">
+          <span class="cell cell-days"><b class="num" id="c-days">57</b><small id="c-days-unit">дней</small></span>
+          <span class="cell"><b id="c-h">00</b><small>час</small></span>
+          <span class="cell"><b id="c-m">00</b><small>мин</small></span>
+          <span class="cell"><b id="c-s">00</b><small>сек</small></span>
         </div>
       </div>
 
       <div class="hero-actions">
-        <a class="btn btn-gold" href="#podpiska">Считать дни вместе</a>
-        <a class="btn btn-line" href="#anonsy">Ближайшие посты</a>
+        <a class="btn btn-gold" href="#razdely">Начать путешествие <svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg></a>
+        <a class="btn btn-line" href="#shary">Заглянуть в шары</a>
       </div>
+    </div>
+
+    <figure class="hero-globe" id="hero-globe">
+      <picture>
+        <source media="(min-width: 900px)" srcset="img/globe-rail.webp">
+        <img src="img/globe-rail-m.webp" width="720" height="1148" alt="Снежный шар: внутри домик с окнами, ёлка и красный вагончик на рельсах" fetchpriority="high">
+      </picture>
+      <canvas class="globe-snow" id="hero-snow" aria-hidden="true"></canvas>
+      <button class="shake" id="hero-shake" type="button">Встряхнуть шар</button>
+    </figure>
+  </div>
+
+  <svg class="pines" id="pines" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"></svg>
+</section>
+
+<!-- ============ РАЗДЕЛЫ: светлая часть ============ -->
+<section class="realm" id="razdely" aria-labelledby="razdely-h">
+  <div class="wrap">
+    <header class="head head-center">
+      <svg class="star-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg>
+      <h2 id="razdely-h">Волшебные разделы</h2>
+      <p class="sub">Часть уже живёт в наших каналах, часть откроется ближе к празднику. Даты рядом с каждой рубрикой.</p>
+    </header>
+
+    <div class="realm-grid">
+      <article class="room">
+        <img class="room-img" src="img/s-gifts.webp" width="720" height="900" loading="lazy" alt="Подарки в зелёной бумаге с золотыми лентами">
+        <div class="room-body">
+          <h3>Лавка подарков</h3>
+          <p class="room-sub">Подборки для самых близких и для тех, у кого всё есть.</p>
+        </div>
+          <ul class="rubs">
+            <li><span>Идеи подарков по людям и бюджету</span><em class="st st-on">в канале</em></li>
+            <li><span>Подарки коллегам до 1000 ₽</span><em class="st">16 ноября</em></li>
+            <li><span>Подарки до 500 ₽</span><em class="st">3 декабря</em></li>
+            <li><span>Подарки детям</span><em class="st">14 декабря</em></li>
+          </ul>
+      </article>
+
+      <article class="room">
+        <img class="room-img" src="img/s-post.webp" width="720" height="900" loading="lazy" alt="Крафтовый конверт с сургучной печатью и еловой веткой">
+        <div class="room-body">
+          <h3>Почта чудес</h3>
+          <p class="room-sub">Открытки, стихи и письма, которые не стыдно переслать.</p>
+        </div>
+          <ul class="rubs">
+            <li><span>Смешные открытки для семейного чата</span><em class="st st-on">в канале</em></li>
+            <li><span>Открытки с именем</span><em class="st">откроется 25 ноября</em></li>
+            <li><span>Стихи по имени: маме, коллеге, детям</span><em class="st">откроется 25 ноября</em></li>
+            <li><span>Письмо-сказка от Деда Мороза</span><em class="st">откроется 1 декабря</em></li>
+          </ul>
+      </article>
+
+      <article class="room">
+        <img class="room-img" src="img/s-home.webp" width="720" height="900" loading="lazy" alt="Кружки с какао и зефиром на зелёном бархате">
+        <div class="room-body">
+          <h3>Домашнее волшебство</h3>
+          <p class="room-sub">Рецепты, уют, украшение дома и вечера под плед.</p>
+        </div>
+          <ul class="rubs">
+            <li><span>Рецепты к столу</span><em class="st st-on">в канале</em></li>
+            <li><span>Как было у нас: вспоминаем вместе</span><em class="st st-on">в канале</em></li>
+            <li><span>Камин и ёлка: длинные видео с музыкой</span><em class="st">откроется 20 ноября</em></li>
+            <li><span>Калькулятор стола: оливье, шуба, сколько готовить</span><em class="st">откроется 1 декабря</em></li>
+            <li><span>Сказочная полка: сказки на ночь с именем ребёнка</span><em class="st">откроется 1 декабря</em></li>
+          </ul>
+      </article>
+
+      <article class="room">
+        <img class="room-img" src="img/s-events.webp" width="720" height="900" loading="lazy" alt="Деревянные санки на снегу в зимних сумерках">
+        <div class="room-body">
+          <h3>Праздничные события</h3>
+          <p class="room-sub">Куда пойти и во что сыграть, когда собралась вся семья.</p>
+        </div>
+          <ul class="rubs">
+            <li><span>Игры для детей: загадки, кино по эмодзи</span><em class="st st-on">в канале</em></li>
+            <li><span>Шары-игры прямо на сайте</span><a class="st st-on" href="#shary">играть</a></li>
+            <li><span>Игры без реквизита: подбор по компании</span><em class="st">откроется 1 декабря</em></li>
+            <li><span>Куда пойти: ёлки, катки, спектакли</span><em class="st">откроется 1 декабря</em></li>
+          </ul>
+      </article>
+
+      <article class="room room-wide">
+        <img class="room-img" src="img/s-time.webp" width="720" height="900" loading="lazy" alt="Старинные часы без пяти двенадцать среди золотых огней">
+        <div class="room-body">
+          <h3>Время чудес</h3>
+          <p class="room-sub">Календарь декабря: каждый день открывается окошко с маленьким заданием. И старый телевизор с фильмами, под которые режут салаты.</p>
+          <div class="room-links">
+            <a class="btn btn-ink" href="#kalendar">Календарь декабря</a>
+            <a class="btn btn-ink-line" href="#televizor">Включить телевизор</a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- ============ АНОНСЫ ============ -->
 <section class="days" id="anonsy" aria-labelledby="days-h">
   <div class="wrap">
-    <header class="sec-head">
-      <p class="eyebrow">ноябрь · листок за листком</p>
+    <header class="head">
       <h2 id="days-h">Каждый день — маленькая радость</h2>
-      <p class="sec-sub">Ближайшие посты отсчёта. Сказки, игры, чек-листы и вопросы, на которые хочется ответить в комментариях.</p>
+      <p class="sub">Ближайшие посты отсчёта. Сказки, игры, чек-листы и вопросы, на которые хочется ответить в комментариях.</p>
     </header>
 
     <div class="strip-hint" aria-hidden="true">листайте &rarr;</div>
@@ -187,64 +288,109 @@
   </div>
 </section>
 
-<section class="rubrics" id="rubriki" aria-labelledby="rub-h">
+<!-- ============ ШАРЫ-ИГРЫ: тёмная часть ============ -->
+<section class="globes" id="shary" aria-labelledby="shary-h">
   <div class="wrap">
-    <header class="sec-head">
-      <p class="eyebrow">о чём пишем</p>
-      <h2 id="rub-h">Пять рубрик до самого боя курантов</h2>
+    <header class="head head-center head-dark">
+      <svg class="star-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg>
+      <h2 id="shary-h">Шары-игры</h2>
+      <p class="sub">Выберите снежный шар и загляните внутрь. В каждом свой маленький мир и своя игра.</p>
     </header>
 
-    <ul class="rub-list">
-      <li class="rub">
-        <img src="img/r-gifts.webp" alt="Подарочная коробка в зелёном бархате с золотым бантом" width="640" height="800" loading="lazy">
-        <div>
-          <span class="rub-no">01</span>
-          <h3>Идеи подарков</h3>
-          <p>Подборки по людям и по бюджету: коллегам до 1000 ₽, детям и тем, у кого всё есть.</p>
-        </div>
+    <ul class="shelf">
+      <li>
+        <button class="globe" type="button" data-game="rink" aria-label="Каток: открыть игру">
+          <span class="glass"><img src="img/in-rink.webp" width="420" height="420" alt="" loading="lazy"><canvas></canvas></span>
+          <span class="base"></span>
+        </button>
+        <h3>Каток</h3>
+        <p>Скользите по льду и собирайте звёзды</p>
       </li>
-      <li class="rub">
-        <img src="img/r-cards.webp" alt="Золотая звезда на ниточке на зелёном фоне" width="640" height="800" loading="lazy">
-        <div>
-          <span class="rub-no">02</span>
-          <h3>Смешные открытки</h3>
-          <p>Поздравления для семейного чата и открытки с сухим юмором. Такие не стыдно переслать.</p>
-        </div>
+      <li>
+        <button class="globe" type="button" data-game="rail" aria-label="Железная дорога: открыть игру">
+          <span class="glass"><img src="img/in-rail.webp" width="420" height="420" alt="" loading="lazy"><canvas></canvas></span>
+          <span class="base"></span>
+        </button>
+        <h3>Железная дорога</h3>
+        <p>Переводите стрелки, чтобы поезд довёз подарки</p>
       </li>
-      <li class="rub">
-        <img src="img/r-food.webp" alt="Имбирное печенье в форме звёзд с зелёной глазурью" width="640" height="800" loading="lazy">
-        <div>
-          <span class="rub-no">03</span>
-          <h3>Рецепты к столу</h3>
-          <p>Оливье без семейных споров, имбирное печенье и меню на четверых, которое готовится заранее.</p>
-        </div>
+      <li>
+        <button class="globe is-soon" type="button" data-soon="1 декабря" data-title="Почта Деда Мороза" aria-label="Почта Деда Мороза: откроется 1 декабря">
+          <span class="glass"><img src="img/in-post.webp" width="420" height="420" alt="" loading="lazy"><canvas></canvas></span>
+          <span class="base"></span>
+          <span class="ribbon">с 1 декабря</span>
+        </button>
+        <h3>Почта Деда Мороза</h3>
+        <p>Разложить письма по мешкам до полуночи</p>
       </li>
-      <li class="rub">
-        <img src="img/r-kids.webp" alt="Красные вязаные варежки на еловой ветке" width="640" height="800" loading="lazy">
-        <div>
-          <span class="rub-no">04</span>
-          <h3>Игры для детей</h3>
-          <p>Загадки, кино по эмодзи и бумажные снежинки. Чем занять детей вечером, пока взрослые режут салаты.</p>
-        </div>
-      </li>
-      <li class="rub">
-        <img src="img/r-past.webp" alt="Зелёные бархатные шторы и гирлянда в окне" width="640" height="800" loading="lazy">
-        <div>
-          <span class="rub-no">05</span>
-          <h3>Как было у нас</h3>
-          <p>Шпроты в шкафу, мандарины в декабре и ощущение, что раньше ждали сильнее. Вспоминаем вместе.</p>
-        </div>
+      <li>
+        <button class="globe is-soon" type="button" data-soon="15 декабря" data-title="Лес с оленем" aria-label="Лес с оленем: откроется 15 декабря">
+          <span class="glass"><img src="img/in-deer.webp" width="420" height="420" alt="" loading="lazy"><canvas></canvas></span>
+          <span class="base"></span>
+          <span class="ribbon">с 15 декабря</span>
+        </button>
+        <h3>Лес с оленем</h3>
+        <p>Найти дорогу по огонькам в зимнем лесу</p>
       </li>
     </ul>
   </div>
 </section>
 
-<section class="sub" id="podpiska" aria-labelledby="sub-h">
+<!-- ============ КАЛЕНДАРЬ ДЕКАБРЯ ============ -->
+<section class="advent" id="kalendar" aria-labelledby="kal-h">
   <div class="wrap">
-    <div class="card">
-      <p class="eyebrow">подписка</p>
+    <header class="head head-center">
+      <svg class="star-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg>
+      <h2 id="kal-h">Время чудес</h2>
+      <p class="sub">Тридцать одно окошко. Каждый день декабря открывается одно, а в нём маленькое дело на вечер: для себя, для детей, для всех вместе.</p>
+      <p class="seal" id="adv-seal">Первое окошко откроется 1 декабря</p>
+    </header>
+    <ol class="windows" id="windows"></ol>
+    <div class="win-note" id="win-note" role="status" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ СТАРЫЙ ТЕЛЕВИЗОР ============ -->
+<section class="tvroom" id="televizor" aria-labelledby="tv-h">
+  <div class="wrap">
+    <header class="head head-center head-dark">
+      <svg class="star-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg>
+      <h2 id="tv-h">Старый телевизор</h2>
+      <p class="sub">Покрутите ручку каналов. Фильмы открываются на «Смотрим», официальном сайте ВГТРК: смотреть можно бесплатно.</p>
+    </header>
+
+    <div class="tv">
+      <div class="tv-case">
+        <div class="tv-screen-wrap">
+          <div class="tv-screen" id="tv-screen" aria-live="polite">
+            <div class="tv-card" id="tv-card"></div>
+            <canvas class="tv-noise" id="tv-noise" aria-hidden="true"></canvas>
+          </div>
+        </div>
+        <div class="tv-panel">
+          <p class="tv-brand">Ёлка-1</p>
+          <button class="knob" id="tv-knob" type="button" aria-label="Следующий канал"><span class="knob-in"></span></button>
+          <p class="knob-cap">канал</p>
+          <div class="tv-btns">
+            <button type="button" id="tv-prev" aria-label="Предыдущий канал">‹</button>
+            <button type="button" id="tv-next" aria-label="Следующий канал">›</button>
+          </div>
+          <div class="tv-grille" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="tv-legs" aria-hidden="true"><i></i><i></i></div>
+    </div>
+    <p class="tv-note">Мы не храним и не показываем фильмы на сайте: кнопка «Смотреть» ведёт на страницу правообладателя.</p>
+  </div>
+</section>
+
+<!-- ============ ПОДПИСКА ============ -->
+<section class="sub-sec" id="podpiska" aria-labelledby="sub-h">
+  <div class="wrap">
+    <div class="dream">
+      <p class="script" aria-hidden="true">Пусть сбываются мечты</p>
       <h2 id="sub-h">Отсчитывать дни вместе</h2>
-      <p class="sec-sub">Выберите, где вам удобнее читать.</p>
+      <p class="sub">Каждый день новый пост: сказка, игра или вопрос. Выберите, где вам удобнее читать.</p>
       <div class="socials">
         <a class="soc" href="https://t.me/elkinochudo" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.3-.5-1.9-1.4-1.6ZM9 14.6l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2L9 14.6Z"/></svg>
@@ -262,6 +408,10 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.8 12 4.8 12 4.8s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2C1.1 8.9 1.1 12 1.1 12s0 3.1.4 4.8a2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8ZM9.8 15.1V8.9l5.7 3.1-5.7 3.1Z"/></svg>
           <span>YouTube</span>
         </a>
+        <a class="soc" href="https://pin.it/3SLOEjnOj" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3l.1.4-.3 1.1c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2Z"/></svg>
+          <span>Pinterest</span>
+        </a>
       </div>
       <p class="toast" id="toast" role="status" hidden>Ссылка появится совсем скоро</p>
     </div>
@@ -271,10 +421,37 @@
 </main>
 
 <footer class="foot">
-  <span class="mono mono-sm" aria-hidden="true"><i></i><i></i>Е</span>
-  <p>© 2026 Ёлкино чудо</p>
+  <div class="foot-row">
+    <span class="mono mono-sm" aria-hidden="true"><i></i><i></i>Е</span>
+    <p>© 2026 Ёлкино чудо</p>
+  </div>
+  <p class="credits">Музыка: «Jingle Bells Calm», Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>), лицензия <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener">Creative Commons: By Attribution 4.0</a>. Иллюстрации — собственные. Фильмы — на сайте <a href="https://smotrim.ru" target="_blank" rel="noopener">smotrim.ru</a> (ВГТРК).</p>
 </footer>
 
+<!-- окно игры -->
+<div class="portal" id="portal" role="dialog" aria-modal="true" aria-labelledby="portal-title" hidden>
+  <div class="portal-in">
+    <header class="portal-bar">
+      <h2 id="portal-title">Каток</h2>
+      <p class="hud" id="hud"></p>
+      <button class="portal-close" id="portal-close" type="button" aria-label="Закрыть и вернуться к шарам">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+    <div class="stage" id="stage">
+      <canvas id="game"></canvas>
+      <div class="veil" id="veil">
+        <div class="veil-card">
+          <h3 id="veil-h"></h3>
+          <p id="veil-p"></p>
+          <button class="btn btn-gold" id="veil-btn" type="button">Начать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js" defer></script>
+<script src="js/games.js" defer></script>
 </body>
 </html>
