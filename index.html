@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ёлкино чудо — отсчёт дней до Нового года</title>
+<meta name="description" content="Отсчёт дней до Нового года: открытки, ностальгия, уют. Идеи подарков, рецепты к столу, игры для детей и «как было у нас».">
+<link rel="canonical" href="https://xn----htbkheohc7b0b5g.xn--p1ai/">
+<meta name="theme-color" content="#0b2c23">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Ёлкино чудо">
+<meta property="og:title" content="Ёлкино чудо — отсчёт дней до Нового года">
+<meta property="og:description" content="Открытки, ностальгия, уют. Каждый день маленькая радость до самого Нового года.">
+<meta property="og:url" content="https://xn----htbkheohc7b0b5g.xn--p1ai/">
+<meta property="og:image" content="https://xn----htbkheohc7b0b5g.xn--p1ai/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Табличка «Ёлкино чудо» на зелёном бархате с гирляндой и мандаринами">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Golos+Text:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 767px)">
+<link rel="preload" as="image" href="img/hero-d.webp" media="(min-width: 768px)">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="top">
+  <a class="brand" href="#top" aria-label="Ёлкино чудо, наверх">
+    <span class="mono" aria-hidden="true"><i></i><i></i>Е</span>
+    <span class="brand-name">Ёлкино чудо</span>
+  </a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#anonsy">Анонсы</a>
+    <a href="#rubriki">Рубрики</a>
+    <a class="nav-cta" href="#podpiska">Подписаться</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <picture class="hero-bg" aria-hidden="true">
+    <source media="(min-width: 768px)" srcset="img/hero-d.webp">
+    <img src="img/hero-m.webp" alt="" width="900" height="1125" fetchpriority="high">
+  </picture>
+
+  <svg class="garland" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-10 18 Q 150 80 300 30 T 600 34 T 900 30 T 1210 22" fill="none" stroke="#3a2a12" stroke-width="2"/>
+  </svg>
+  <div class="bulbs" aria-hidden="true">
+    <span style="--x:4%;--y:22px;--d:0s"></span><span style="--x:12%;--y:44px;--d:.7s"></span>
+    <span style="--x:20%;--y:50px;--d:1.4s"></span><span style="--x:28%;--y:36px;--d:.3s"></span>
+    <span style="--x:37%;--y:30px;--d:1.1s"></span><span style="--x:46%;--y:42px;--d:.5s"></span>
+    <span style="--x:55%;--y:40px;--d:1.8s"></span><span style="--x:63%;--y:30px;--d:.9s"></span>
+    <span style="--x:71%;--y:38px;--d:.2s"></span><span style="--x:80%;--y:42px;--d:1.5s"></span>
+    <span style="--x:88%;--y:32px;--d:.6s"></span><span style="--x:96%;--y:26px;--d:1.2s"></span>
+  </div>
+
+  <div class="plaque">
+    <div class="plaque-in">
+      <h1 class="title"><span class="yo">Ё<i></i><i></i></span>лкино чудо</h1>
+      <p class="lead">отсчёт дней до Нового года:<br>открытки, ностальгия, уют</p>
+
+      <div class="count" id="count">
+        <p class="count-label" id="count-label">до Нового года осталось</p>
+        <div class="count-days">
+          <span class="num" id="c-days">57</span>
+          <span class="unit" id="c-days-unit">дней</span>
+        </div>
+        <div class="count-clock" aria-label="часы, минуты, секунды">
+          <span><b id="c-h">00</b><small>час</small></span>
+          <span class="sep">:</span>
+          <span><b id="c-m">00</b><small>мин</small></span>
+          <span class="sep">:</span>
+          <span><b id="c-s">00</b><small>сек</small></span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#podpiska">Считать дни вместе</a>
+        <a class="btn btn-line" href="#anonsy">Ближайшие посты</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="days" id="anonsy" aria-labelledby="days-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">ноябрь · листок за листком</p>
+      <h2 id="days-h">Каждый день — маленькая радость</h2>
+      <p class="sec-sub">Ближайшие посты отсчёта. Сказки, игры, чек-листы и вопросы, на которые хочется ответить в комментариях.</p>
+    </header>
+
+    <div class="strip-hint" aria-hidden="true">листайте &rarr;</div>
+    <ol class="strip" id="strip">
+      <li class="leaf" data-date="2026-11-06">
+        <img src="img/p0611.webp" alt="Деревянный ящик с мандаринами и листьями на фоне гирлянды" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">56</span><span class="leaf-d">дней до НГ<br><time datetime="2026-11-06">6 ноября</time></span></p>
+          <h3>Мини-сказка про мандарины</h3>
+          <p>Как Дед Мороз считал мандарины и сбился на втором ящике.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-08">
+        <img src="img/p0811.webp" alt="Полка с банками заготовок и мандарином" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">54</span><span class="leaf-d">дня до НГ<br><time datetime="2026-11-08">8 ноября</time></span></p>
+          <h3>Как готовились раньше</h3>
+          <p>Шпроты в шкафу, мандарины только в декабре. А что из этого живо у вас?</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-10">
+        <img src="img/p1011.webp" alt="Перьевая ручка на листе бумаги рядом с еловой веткой" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">52</span><span class="leaf-d">дня до НГ<br><time datetime="2026-11-10">10 ноября</time></span></p>
+          <h3>5 дел до декабря</h3>
+          <p>Что лучше сделать сейчас, а не тридцатого в девять вечера.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-11">
+        <img src="img/p1111.webp" alt="Корица, бадьян и дольки апельсина на бархате" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">51</span><span class="leaf-d">день до НГ<br><time datetime="2026-11-11">11 ноября</time></span></p>
+          <h3>Угадайте запах</h3>
+          <p>Угадайте по описанию, чем пахнет Новый год. Ответы в комментариях.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-13">
+        <img src="img/p1311.webp" alt="Бархатный свиток с золотой лентой и чистый лист бумаги" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">49</span><span class="leaf-d">дней до НГ<br><time datetime="2026-11-13">13 ноября</time></span></p>
+          <h3>Стихи по именам</h3>
+          <p>Четверостишия для Ани, Маши, Димы и Саши. Ждём ваши имена.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-15">
+        <img src="img/p1511.webp" alt="Гирлянда из сушёных апельсиновых долек на еловых ветках" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">47</span><span class="leaf-d">дней до НГ<br><time datetime="2026-11-15">15 ноября</time></span></p>
+          <h3>Запах Нового года дома</h3>
+          <p>Корица, апельсин, хвоя. Без свечей.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-17">
+        <img src="img/p1711.webp" alt="Спутанная гирлянда на зелёном бархате" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">45</span><span class="leaf-d">дней до НГ<br><time datetime="2026-11-17">17 ноября</time></span></p>
+          <h3>Муж и гирлянда</h3>
+          <p>Сценка, знакомая многим. 45 дней: как раз успеть распутать.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-18">
+        <img src="img/p1811.webp" alt="Маленькая ёлочка в золотом горшке" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">44</span><span class="leaf-d">дня до НГ<br><time datetime="2026-11-18">18 ноября</time></span></p>
+          <h3>Какая у вас ёлка?</h3>
+          <p>Опрос: живая, искусственная или веточка в вазе.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-20">
+        <img src="img/p2011.webp" alt="Старинный компас на бархате и красной варежке" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">42</span><span class="leaf-d">дня до НГ<br><time datetime="2026-11-20">20 ноября</time></span></p>
+          <h3>Дед Мороз и навигатор</h3>
+          <p>Сказка про навигатор, который вёл не туда, и про страх опоздать.</p>
+        </div>
+      </li>
+      <li class="leaf" data-date="2026-11-22">
+        <img src="img/p2211.webp" alt="Конверт из крафтовой бумаги с сургучной печатью" width="560" height="700" loading="lazy">
+        <div class="leaf-body">
+          <p class="leaf-top"><span class="leaf-n">40</span><span class="leaf-d">дней до НГ<br><time datetime="2026-11-22">22 ноября</time></span></p>
+          <h3>Пора писать письмо</h3>
+          <p>Веха «40 дней»: садимся за письмо Деду Морозу.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="rubrics" id="rubriki" aria-labelledby="rub-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">о чём пишем</p>
+      <h2 id="rub-h">Пять рубрик до самого боя курантов</h2>
+    </header>
+
+    <ul class="rub-list">
+      <li class="rub">
+        <img src="img/r-gifts.webp" alt="Подарочная коробка в зелёном бархате с золотым бантом" width="640" height="800" loading="lazy">
+        <div>
+          <span class="rub-no">01</span>
+          <h3>Идеи подарков</h3>
+          <p>Подборки по людям и по бюджету: коллегам до 1000 ₽, детям и тем, у кого всё есть.</p>
+        </div>
+      </li>
+      <li class="rub">
+        <img src="img/r-cards.webp" alt="Золотая звезда на ниточке на зелёном фоне" width="640" height="800" loading="lazy">
+        <div>
+          <span class="rub-no">02</span>
+          <h3>Смешные открытки</h3>
+          <p>Поздравления для семейного чата и открытки с сухим юмором. Такие не стыдно переслать.</p>
+        </div>
+      </li>
+      <li class="rub">
+        <img src="img/r-food.webp" alt="Имбирное печенье в форме звёзд с зелёной глазурью" width="640" height="800" loading="lazy">
+        <div>
+          <span class="rub-no">03</span>
+          <h3>Рецепты к столу</h3>
+          <p>Оливье без семейных споров, имбирное печенье и меню на четверых, которое готовится заранее.</p>
+        </div>
+      </li>
+      <li class="rub">
+        <img src="img/r-kids.webp" alt="Красные вязаные варежки на еловой ветке" width="640" height="800" loading="lazy">
+        <div>
+          <span class="rub-no">04</span>
+          <h3>Игры для детей</h3>
+          <p>Загадки, кино по эмодзи и бумажные снежинки. Чем занять детей вечером, пока взрослые режут салаты.</p>
+        </div>
+      </li>
+      <li class="rub">
+        <img src="img/r-past.webp" alt="Зелёные бархатные шторы и гирлянда в окне" width="640" height="800" loading="lazy">
+        <div>
+          <span class="rub-no">05</span>
+          <h3>Как было у нас</h3>
+          <p>Шпроты в шкафу, мандарины в декабре и ощущение, что раньше ждали сильнее. Вспоминаем вместе.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sub" id="podpiska" aria-labelledby="sub-h">
+  <div class="wrap">
+    <div class="card">
+      <p class="eyebrow">подписка</p>
+      <h2 id="sub-h">Отсчитывать дни вместе</h2>
+      <p class="sec-sub">Выберите, где вам удобнее читать.</p>
+      <div class="socials">
+        <a class="soc" href="https://t.me/elkinochudo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.3-.5-1.9-1.4-1.6ZM9 14.6l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2L9 14.6Z"/></svg>
+          <span>Telegram</span>
+        </a>
+        <a class="soc" href="https://max.ru/id772156961529_biz2" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.3 14.1L2.5 21.5l5-1.2A9.5 9.5 0 1 0 12 2.5Zm0 4.2a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6Z"/></svg>
+          <span>MAX</span>
+        </a>
+        <a class="soc" href="https://vk.ru/club242860616" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.8 18.2C6.3 18.2 2.6 13.7 2.4 6.3h3.3c.1 5.4 2.5 7.7 4.4 8.2V6.3h3.1v4.7c1.9-.2 3.9-2.4 4.5-4.7h3.1c-.5 2.9-2.6 5-4.1 5.9 1.5.7 3.9 2.6 4.8 6h-3.4c-.7-2.3-2.5-4-4.9-4.3v4.3h-.4Z"/></svg>
+          <span>ВКонтакте</span>
+        </a>
+        <a class="soc" href="https://youtube.com/channel/UCT5Tkyt1UtscCo-R3MWA6TQ" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.8 12 4.8 12 4.8s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2C1.1 8.9 1.1 12 1.1 12s0 3.1.4 4.8a2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8ZM9.8 15.1V8.9l5.7 3.1-5.7 3.1Z"/></svg>
+          <span>YouTube</span>
+        </a>
+      </div>
+      <p class="toast" id="toast" role="status" hidden>Ссылка появится совсем скоро</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span class="mono mono-sm" aria-hidden="true"><i></i><i></i>Е</span>
+  <p>© 2026 Ёлкино чудо</p>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
