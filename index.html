@@ -28,6 +28,8 @@
 <link rel="preload" as="image" href="img/globe-rail-m.webp" media="(max-width: 899px)">
 <link rel="preload" as="image" href="img/globe-rail.webp" media="(min-width: 900px)">
 <link rel="stylesheet" href="css/style.css">
+<!-- three.js для 3D-шаров (ES-модули, грузятся только при открытии шара) -->
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body>
 
@@ -299,12 +301,12 @@
 
     <ul class="shelf">
       <li>
-        <button class="globe" type="button" data-game="rink" aria-label="Каток: открыть игру">
+        <button class="globe" type="button" data-game="rink" aria-label="Каток: заглянуть в шар и погулять внутри">
           <span class="glass"><img src="img/in-rink.webp" width="420" height="420" alt="" loading="lazy"><canvas></canvas></span>
           <span class="base"></span>
         </button>
         <h3>Каток</h3>
-        <p>Скользите по льду и собирайте звёзды</p>
+        <p>Нырните в шар: каток, ярмарка и тропинка в лес</p>
       </li>
       <li>
         <button class="globe" type="button" data-game="rail" aria-label="Железная дорога: открыть игру">
