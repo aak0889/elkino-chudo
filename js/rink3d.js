@@ -66,22 +66,26 @@ const awningTex = (a, b) => canvasTex(256, 64, (g, w, h) => { for (let i = 0; i 
 /* ---------------- точки: снег, мерцание ---------------- */
 function pointsMat(frag, vert, uniforms) { return new THREE.ShaderMaterial({ uniforms, vertexShader: vert, fragmentShader: frag, transparent: true, depthWrite: false, fog: false }); }
 const SNOW_V = `
-uniform float uTime, uScale, uSpin, uFloor, uTop, uBox, uMode; uniform vec3 uC;
+uniform float uTime, uScale, uSpin, uFloor, uTop, uBox, uMode, uFall, uLift, uShake; uniform vec3 uC;
 attribute vec4 aSeed; varying float vA;
 void main(){
   vec3 p;
+  // встряхивание: uLift — накопленный подъём, uShake — сила метели (0..1), uFall — «часы» падения (медленнее после встряхивания)
+  float dens = fract(aSeed.x * 7.31 + aSeed.y * 3.17);
+  float show = clamp((.78 + .22 * uShake - dens) * 20.0, 0.0, 1.0);   // по умолчанию 78% снежинок, при встряхивании все
+  float turb = 1.0 + 3.2 * uShake, lift = uLift * (.45 + aSeed.y * 1.1);
   if (uMode < .5) {                       // снаружи: снег во всём шаре
-    float H = uTop - uFloor; float y = uFloor + mod(position.y - uTime * aSeed.z, H);
+    float H = uTop - uFloor; float y = uFloor + mod(position.y - uFall * aSeed.z + lift, H);
     p = vec3(position.x, y, position.z);
     float a = uSpin * (1.25 - length(p.xz) / 12.0) + sin(uTime * .35 + aSeed.x * 6.28) * .18;
     float c = cos(a), s = sin(a); p.xz = mat2(c, -s, s, c) * p.xz;
-    p.x += sin(uTime * .7 + aSeed.y * 12.0) * .22; p.z += cos(uTime * .6 + aSeed.x * 9.0) * .22;
-    vA = smoothstep(9.85, 9.2, length(p)) * smoothstep(uFloor, uFloor + .5, y);
+    p.x += sin(uTime * (.7 + uShake) + aSeed.y * 12.0) * .22 * turb; p.z += cos(uTime * (.6 + uShake) + aSeed.x * 9.0) * .22 * turb;
+    vA = smoothstep(9.85, 9.2, length(p)) * smoothstep(uFloor, uFloor + .5, y) * show;
   } else {                                // внутри: снег вокруг камеры (локальные единицы)
     vec3 q = position * (uBox / 20.0);
-    q.y -= uTime * aSeed.z * 3.0; q.x += sin(uTime * .6 + aSeed.y * 12.0) * 1.2; q.z += cos(uTime * .5 + aSeed.x * 9.0) * 1.2;
+    q.y += lift * uBox * .05 - uFall * aSeed.z * 3.0; q.x += sin(uTime * (.6 + uShake) + aSeed.y * 12.0) * 1.2 * turb; q.z += cos(uTime * (.5 + uShake) + aSeed.x * 9.0) * 1.2 * turb;
     p = uC + mod(q - uC + uBox * .5, uBox) - uBox * .5;
-    vA = 1.0 - smoothstep(uBox * .3, uBox * .5, length(p - uC));
+    vA = (1.0 - smoothstep(uBox * .3, uBox * .5, length(p - uC))) * show;
   }
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
   gl_PointSize = aSeed.w * uScale / -mv.z;
@@ -99,6 +103,36 @@ function pointCloud(pos, seeds, u, F = TW_F, Vs = TW_V) {
   const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('aSeed', new THREE.Float32BufferAttribute(seeds, 4));
   const p = new THREE.Points(g, pointsMat(F, Vs, u)); p.frustumCulled = false; return p;
 }
+
+/* ---------------- встряхивание шара: кнопка, жест телефона ---------------- */
+const SHAKE_U = () => ({ uFall: { value: 0 }, uLift: { value: 0 }, uShake: { value: 0 } });
+function makeShake(reduce) {
+  const s = {
+    lift: 0, liftV: 0, amt: 0, fall: 0,
+    kick(p = 1) { p *= reduce ? .35 : 1; s.liftV += 22 * p; s.amt = Math.min(1, s.amt + .9 * p); },
+    // снег взмывает за полсекунды, потом падает медленнее обычного и постепенно успокаивается
+    step(dt, rate = 1) { s.lift += s.liftV * dt; s.liftV *= Math.pow(.015, dt); s.amt *= Math.pow(.8, dt); s.fall += dt * rate * (1 - .8 * s.amt); },
+    apply(u) { u.uFall.value = s.fall; u.uLift.value = s.lift; u.uShake.value = s.amt; }
+  };
+  return s;
+}
+let motionAsked = false;
+function bindShake(btn, kick) {
+  btn.addEventListener('click', () => {
+    // iOS спрашивает разрешение на датчик движения только по нажатию
+    if (!motionAsked && typeof DeviceMotionEvent !== 'undefined' && DeviceMotionEvent.requestPermission) { motionAsked = true; DeviceMotionEvent.requestPermission().catch(() => 0); }
+    kick(1);
+  });
+  let lastT = 0;
+  const onMotion = e => {
+    const a = e.acceleration; let m;
+    if (a && a.x != null) m = Math.hypot(a.x, a.y, a.z); else { const g = e.accelerationIncludingGravity; if (!g || g.x == null) return; m = Math.abs(Math.hypot(g.x, g.y, g.z) - 9.81); }
+    const now = performance.now(); if (m > 13 && now - lastT > 350) { lastT = now; kick(Math.min(1.4, m / 18)); }
+  };
+  addEventListener('devicemotion', onMotion);
+  return () => removeEventListener('devicemotion', onMotion);
+}
+const SHAKE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10.5" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 19.5h9M9 16.6l-.8 2.9M15 16.6l.8 2.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.6 7.5c-.8 1.9-.8 4.1 0 6M21.4 7.5c.8 1.9.8 4.1 0 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="9" r=".9" fill="currentColor"/><circle cx="13.6" cy="11.4" r=".9" fill="currentColor"/><circle cx="11.6" cy="13.2" r=".7" fill="currentColor"/></svg>';
 
 function upFacing(pos, idx) { let g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals(); if (g.attributes.normal.getY(0) < 0) { const r = []; for (let i = 0; i < idx.length; i += 3) r.push(idx[i], idx[i + 2], idx[i + 1]); g.setIndex(r); g.computeVertexNormals(); } return g; }
 /* ================================================================= */
@@ -120,6 +154,7 @@ async function build(btn) {
   <header class="rk-bar">
     <h2 class="rk-title"><small>Снежный шар</small>Каток</h2>
     <p class="rk-hud" aria-live="polite"><span class="rk-sc"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 14.5 4.6 17.5l1.2-6L1.3 7.3l6.1-.7z"/></svg><b>0</b></span><span class="rk-tm"><b>60</b> с</span><span class="rk-best">рекорд <b>0</b></span></p>
+    <button class="rk-btn rk-shake" type="button" aria-label="Встряхнуть шар">${SHAKE_ICON}<span>Встряхнуть</span></button>
     <button class="rk-btn rk-snd" type="button" aria-pressed="false" aria-label="Звук: включить"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="off" d="M16.5 9.5l5 5M21.5 9.5l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     <button class="rk-btn rk-close" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Выйти из шара</span></button>
   </header>
@@ -192,8 +227,8 @@ async function build(btn) {
   const snowMat = new THREE.MeshStandardMaterial({ color: 0xdfe7f6, roughness: .85 });
   { const side = []; for (let y = -7.8; y <= GROUND_Y + .45; y += .25) side.push(new THREE.Vector2(Math.sqrt(Math.max(0, 9.92 * 9.92 - y * y)), y)); outside.add(new THREE.Mesh(new THREE.LatheGeometry(side, 96), new THREE.MeshStandardMaterial({ color: 0xaab6d0, roughness: .9 }))); }
   // снег в шаре (виден снаружи)
-  const gSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uSpin: { value: 0 }, uFloor: { value: GROUND_Y - .1 }, uTop: { value: 9.8 }, uBox: { value: 1 }, uMode: { value: 0 }, uC: { value: V3() }, uOpacity: { value: 1 } };
-  { const n = LOW ? 600 : 1500, p = [], s = []; for (let i = 0; i < n; i++) { const a = rnd() * 6.283, r = Math.sqrt(rnd()) * 9.4; p.push(Math.cos(a) * r, rnd() * 20, Math.sin(a) * r); s.push(rnd(), rnd(), .22 + rnd() * .45, .05 + rnd() * rnd() * .1); } const sn = pointCloud(p, s, gSnowU, SNOW_F, SNOW_V); sn.renderOrder = 5; outside.add(sn); }
+  const gSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uSpin: { value: 0 }, uFloor: { value: GROUND_Y - .1 }, uTop: { value: 9.8 }, uBox: { value: 1 }, uMode: { value: 0 }, uC: { value: V3() }, uOpacity: { value: 1 }, ...SHAKE_U() };
+  { const n = LOW ? 900 : 2300, p = [], s = []; for (let i = 0; i < n; i++) { const a = rnd() * 6.283, r = Math.sqrt(rnd()) * 9.4; p.push(Math.cos(a) * r, rnd() * 20, Math.sin(a) * r); s.push(rnd(), rnd(), .22 + rnd() * .45, .05 + rnd() * rnd() * .1); } const sn = pointCloud(p, s, gSnowU, SNOW_F, SNOW_V); sn.renderOrder = 5; outside.add(sn); }
   const glassMat = LOW
     ? new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: .03, transparent: true, opacity: .12, envMap, envMapIntensity: 1.4, specularIntensity: 0, depthWrite: false })
     : new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0, transmission: 1, thickness: 1.2, ior: 1.42, envMap, envMapIntensity: .8, specularIntensity: 0, depthWrite: false });
@@ -232,8 +267,8 @@ async function build(btn) {
   { const n = LOW ? 450 : 1100, p = [], s = []; for (let i = 0; i < n; i++) { const u = rnd() * Math.PI * 2, y = .07 + Math.pow(rnd(), .8) * .93, rr = Math.sqrt(1 - y * y); p.push(Math.cos(u) * rr * 180, y * 180, Math.sin(u) * rr * 180); s.push(.6 + rnd() * 2.2, rnd() * 6.3, 1 + rnd() * 3, rnd() < .06 ? 3.6 : 1 + rnd() * 1.6); } const st = pointCloud(p, s, starU); st.renderOrder = -8; inner.add(st); }
   const moonSp = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xdfe8ff, transparent: true, opacity: .9, depthWrite: false, fog: false, blending: THREE.AdditiveBlending })); moonSp.position.set(-70, 110, -110); moonSp.scale.set(40, 40, 1); inner.add(moonSp);
   const moonD = new THREE.Mesh(new THREE.CircleGeometry(4.2, 32), new THREE.MeshBasicMaterial({ color: HDR(2.2, 2.25, 2.4), fog: false })); moonD.position.copy(moonSp.position); moonD.lookAt(0, 0, 0); inner.add(moonD);
-  const lSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uSpin: { value: 0 }, uFloor: { value: 0 }, uTop: { value: 0 }, uBox: { value: 34 }, uMode: { value: 1 }, uC: { value: V3() }, uOpacity: { value: 1 } };
-  { const n = LOW ? 700 : 2200, p = [], s = []; for (let i = 0; i < n; i++) { p.push((rnd() - .5) * 20, (rnd() - .5) * 20, (rnd() - .5) * 20); s.push(rnd(), rnd(), .25 + rnd() * .4, .018 + rnd() * rnd() * .04); } const sn = pointCloud(p, s, lSnowU, SNOW_F, SNOW_V); sn.renderOrder = 5; inner.add(sn); }
+  const lSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uSpin: { value: 0 }, uFloor: { value: 0 }, uTop: { value: 0 }, uBox: { value: 34 }, uMode: { value: 1 }, uC: { value: V3() }, uOpacity: { value: 1 }, ...SHAKE_U() };
+  { const n = LOW ? 1000 : 3000, p = [], s = []; for (let i = 0; i < n; i++) { p.push((rnd() - .5) * 20, (rnd() - .5) * 20, (rnd() - .5) * 20); s.push(rnd(), rnd(), .25 + rnd() * .4, .018 + rnd() * rnd() * .04); } const sn = pointCloud(p, s, lSnowU, SNOW_F, SNOW_V); sn.renderOrder = 5; inner.add(sn); }
 
   // земля (ядро, видно и снаружи)
   function terrainRing(r0, r1, segT, segR, pow) {
@@ -633,6 +668,8 @@ async function build(btn) {
   }
   const kd = e => onKey(e, true), ku = e => onKey(e, false); addEventListener('keydown', kd); addEventListener('keyup', ku);
   $('.rk-close').addEventListener('click', () => exit());
+  const SH = makeShake(REDUCE);
+  const unShake = bindShake($('.rk-shake'), p => { SH.kick(p); if (!REDUCE) spinV += 2.2 * p; chime([2093, 2637, 3136, 2349], .03, 1.6, .07); });
   $('.rk-out').addEventListener('click', () => { hideCard(); cv.focus({ preventScroll: true }); });
   $('.rk-go').addEventListener('click', () => startGame());
   starsBtn.addEventListener('click', () => startGame());
@@ -690,7 +727,7 @@ async function build(btn) {
   }
   function finish() {
     el.classList.remove('on'); setTimeout(() => {
-      cancelAnimationFrame(raf); removeEventListener('resize', resize); removeEventListener('keydown', kd); removeEventListener('keyup', ku);
+      cancelAnimationFrame(raf); removeEventListener('resize', resize); removeEventListener('keydown', kd); removeEventListener('keyup', ku); unShake();
       scene.traverse(o => { o.geometry && o.geometry.dispose(); }); renderer.dispose(); pmrem.dispose(); rt.dispose();
       el.remove(); document.body.style.overflow = ''; AC && AC.close(); if (btn) btn.focus({ preventScroll: true });
     }, 520);
@@ -745,6 +782,7 @@ async function build(btn) {
     if (beyond.userData.vU) beyond.userData.vU.uOpacity.value = .55 + .45 * smooth(0, 1, groups.look.lv);
     // частицы
     spinV *= Math.pow(.6, dt); gSnowU.uSpin.value += spinV * dt + dt * .05;
+    SH.step(dt, REDUCE ? .5 : 1); SH.apply(gSnowU); SH.apply(lSnowU);
     const sc = Hh * DPR / (2 * Math.tan(camera.fov * Math.PI / 360));
     gSnowU.uTime.value = lSnowU.uTime.value = time * (REDUCE ? .5 : 1); starU.uTime.value = glitU.uTime.value = spU.uTime.value = skyU.uTime.value = time;
     gSnowU.uScale.value = sc; lSnowU.uScale.value = glitU.uScale.value = spU.uScale.value = sc * S; starU.uScale.value = sc * S * .5;
@@ -852,7 +890,7 @@ async function build(btn) {
   try { renderer.compile(scene, camera); } catch (e) { }
   $('.rk-load').classList.add('off');
   raf = requestAnimationFrame(frame);
-  const api = { exit };
+  const api = { exit, shake: () => $('.rk-shake').click() };
   if (DEBUG) {
     cancelAnimationFrame(raf);
     Object.assign(api, {
@@ -880,4 +918,4 @@ function makeEnv(pmrem) {
 }
 
 /* общие части для других 3D-шаров (js/rail3d.js) */
-export { canvasTex, glowTex, woodTex, windowTex, makeEnv, pointCloud, SNOW_V, SNOW_F, TW_V, TW_F, V3, HDR, clamp, smooth, ease, wrapA };
+export { canvasTex, glowTex, woodTex, windowTex, makeEnv, pointCloud, SNOW_V, SNOW_F, SHAKE_U, SHAKE_ICON, makeShake, bindShake, TW_V, TW_F, V3, HDR, clamp, smooth, ease, wrapA };

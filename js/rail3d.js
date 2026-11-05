@@ -8,7 +8,7 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { canvasTex, glowTex, woodTex, makeEnv, pointCloud, SNOW_V, SNOW_F, V3, HDR, clamp, smooth, ease, wrapA } from './rink3d.js';
+import { canvasTex, glowTex, woodTex, makeEnv, pointCloud, SNOW_V, SNOW_F, SHAKE_U, SHAKE_ICON, makeShake, bindShake, V3, HDR, clamp, smooth, ease, wrapA } from './rink3d.js';
 
 const Q = new URLSearchParams(location.search);
 const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches || Q.get('rm') === '1';
@@ -79,6 +79,7 @@ async function build(btn) {
   <header class="rk-bar">
     <h2 class="rk-title"><small>Снежный шар</small>Железная дорога</h2>
     <p class="rk-hud" aria-live="polite"><span class="rl-hud"></span></p>
+    <button class="rk-btn rk-shake" type="button" aria-label="Встряхнуть шар">${SHAKE_ICON}<span>Встряхнуть</span></button>
     <button class="rk-btn rk-snd" type="button" aria-pressed="false" aria-label="Звук: включить"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="off" d="M16.5 9.5l5 5M21.5 9.5l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     <button class="rk-btn rk-close" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Выйти из шара</span></button>
   </header>
@@ -148,8 +149,8 @@ async function build(btn) {
   });
   const caustic = new THREE.Mesh(new THREE.PlaneGeometry(34, 22), new THREE.MeshBasicMaterial({ map: T_GLOW, color: HDR(.5, .4, .22), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })); caustic.rotation.x = -Math.PI / 2; caustic.position.set(0, -12.48, 6); globe.add(caustic);
   { const side = []; for (let y = -7.8; y <= GROUND_Y + .45; y += .25) side.push(new THREE.Vector2(Math.sqrt(Math.max(0, 9.92 * 9.92 - y * y)), y)); globe.add(new THREE.Mesh(new THREE.LatheGeometry(side, 96), new THREE.MeshStandardMaterial({ color: 0xaab6d0, roughness: .9 }))); }
-  const gSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uSpin: { value: 0 }, uFloor: { value: GROUND_Y - .1 }, uTop: { value: 9.8 }, uBox: { value: 1 }, uMode: { value: 0 }, uC: { value: V3() }, uOpacity: { value: 1 } };
-  { const n = LOW ? 500 : 1300, p = [], s = []; for (let i = 0; i < n; i++) { const a = rnd() * 6.283, r = Math.sqrt(rnd()) * 9.4; p.push(Math.cos(a) * r, rnd() * 20, Math.sin(a) * r); s.push(rnd(), rnd(), .22 + rnd() * .45, .05 + rnd() * rnd() * .1); } const sn = pointCloud(p, s, gSnowU, SNOW_F, SNOW_V); sn.renderOrder = 5; globe.add(sn); }
+  const gSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uSpin: { value: 0 }, uFloor: { value: GROUND_Y - .1 }, uTop: { value: 9.8 }, uBox: { value: 1 }, uMode: { value: 0 }, uC: { value: V3() }, uOpacity: { value: 1 }, ...SHAKE_U() };
+  { const n = LOW ? 800 : 2100, p = [], s = []; for (let i = 0; i < n; i++) { const a = rnd() * 6.283, r = Math.sqrt(rnd()) * 9.4; p.push(Math.cos(a) * r, rnd() * 20, Math.sin(a) * r); s.push(rnd(), rnd(), .22 + rnd() * .45, .05 + rnd() * rnd() * .1); } const sn = pointCloud(p, s, gSnowU, SNOW_F, SNOW_V); sn.renderOrder = 5; globe.add(sn); }
   const glassMat = LOW
     ? new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: .03, transparent: true, opacity: .12, envMap, envMapIntensity: 1.4, specularIntensity: 0, depthWrite: false })
     : new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0, transmission: 1, thickness: 1.2, ior: 1.42, envMap, envMapIntensity: .8, specularIntensity: 0, depthWrite: false });
@@ -312,12 +313,12 @@ async function build(btn) {
   layer(30, t => { const L = []; for (let x = 0; x < 30; x += .75) L.push([x, TRACK_Y + .02, 0, 1, 0]); for (let x = 0; x < 30; x += .75) L.push([x, TRACK_Y + .02, -4.6, 1, 0]); t.add(new THREE.Mesh(bake(paint(sleeperGeo, '#3d2c22'), L), landMat)); });
   [-.72, .72, -3.88, -5.32].forEach(z => { const r = new THREE.Mesh(new THREE.BoxGeometry(2400, .12, .08), steel); r.position.set(MID_X - 1000, TRACK_Y + .14, z); inside.add(r); });
   // снег за окнами: летит назад и вниз
-  const outSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uV: { value: V_TRAIN }, uOpacity: { value: 1 } };
+  const outSnowU = { uTime: { value: 0 }, uScale: { value: 300 }, uV: { value: V_TRAIN }, uOpacity: { value: 1 }, ...SHAKE_U() };
   {
-    const n = LOW ? 900 : 2200, p = [], s = []; for (let i = 0; i < n; i++) { p.push(rnd() * 120, rnd() * 12, (rnd() < .5 ? -1 : 1) * (1.7 + Math.pow(rnd(), 1.4) * 28)); s.push(rnd(), rnd(), .6 + rnd() * .8, .03 + rnd() * .05); }
+    const n = LOW ? 1800 : 4500, p = [], s = []; for (let i = 0; i < n; i++) { p.push(rnd() * 120, rnd() * 12, (rnd() < .5 ? -1 : 1) * (1.7 + Math.pow(rnd(), 1.4) * 28)); s.push(rnd(), rnd(), .6 + rnd() * .8, .03 + rnd() * .05); }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); g.setAttribute('aSeed', new THREE.Float32BufferAttribute(s, 4));
     const m = new THREE.Points(g, new THREE.ShaderMaterial({ uniforms: outSnowU, transparent: true, depthWrite: false, fog: false,
-      vertexShader: `uniform float uTime, uScale, uV; attribute vec4 aSeed; varying float vA; void main(){ vec3 p = position; p.x = mod(p.x - uTime * uV * (.7 + aSeed.x * .3), 120.) - 87.; p.y = mod(p.y - uTime * aSeed.z * 1.3, 12.) - 1.6; p.z += sin(uTime * .8 + aSeed.y * 9.) * .3; vec4 mv = modelViewMatrix * vec4(p, 1.); vA = smoothstep(0., 1.5, -mv.z) * (1. - smoothstep(18., 30., -mv.z)); gl_PointSize = aSeed.w * uScale / -mv.z; gl_Position = projectionMatrix * mv; }`,
+      vertexShader: `uniform float uTime, uScale, uV, uFall, uLift, uShake; attribute vec4 aSeed; varying float vA; void main(){ vec3 p = position; float dens = fract(aSeed.x * 7.31 + aSeed.y * 3.17), turb = 1. + 3.2 * uShake; p.x = mod(p.x - uTime * uV * (.7 + aSeed.x * .3), 120.) - 87.; p.y = mod(p.y - uFall * aSeed.z * 1.3 + uLift * (.45 + aSeed.y * 1.1) * .8, 12.) - 1.6; p.y = mix(p.y, 1.9 + (p.y - 4.4) * .3, uShake * .7); p.z += sin(uTime * (.8 + uShake) + aSeed.y * 9.) * .3 * turb; p.x += cos(uTime * (.7 + uShake) + aSeed.x * 11.) * .25 * turb * uShake; p.z = sign(p.z) * max(1.7, abs(p.z) * mix(1., .3, uShake)); vec4 mv = modelViewMatrix * vec4(p, 1.); vA = smoothstep(0., 1.5, -mv.z) * (1. - smoothstep(18., 30., -mv.z)) * clamp((.78 + .22 * uShake - dens) * 20., 0., 1.); gl_PointSize = aSeed.w * uScale * (1. + .9 * uShake) / -mv.z; gl_Position = projectionMatrix * mv; }`,
       fragmentShader: `uniform float uOpacity; varying float vA; void main(){ float d = length(gl_PointCoord - .5); float a = smoothstep(.5, .1, d) * vA * uOpacity * .85; if (a < .01) discard; gl_FragColor = vec4(vec3(1., .97, .95) * 1.1, a); }` }));
     m.frustumCulled = false; m.renderOrder = 3; inside.add(m);
   }
@@ -754,7 +755,7 @@ async function build(btn) {
   }
   function finish() {
     el.classList.remove('on'); setTimeout(() => {
-      cancelAnimationFrame(raf); removeEventListener('resize', resize); removeEventListener('keydown', kd); removeEventListener('keyup', ku);
+      cancelAnimationFrame(raf); removeEventListener('resize', resize); removeEventListener('keydown', kd); removeEventListener('keyup', ku); unShake();
       (G.qTs || []).forEach(clearTimeout);
       scene.traverse(o => { o.geometry && o.geometry.dispose(); }); renderer.dispose(); pmrem.dispose(); rt.dispose();
       el.remove(); document.body.style.overflow = ''; AC && AC.close(); if (btn) btn.focus({ preventScroll: true });
@@ -762,8 +763,10 @@ async function build(btn) {
   }
 
   /* ---------- кадр ---------- */
-  let raf = 0, last = performance.now(), time = 0;
+  let raf = 0, last = performance.now(), time = 0, spinV = 0;
   const tmpC = new THREE.Color();
+  const SH = makeShake(REDUCE);
+  const unShake = bindShake($('.rk-shake'), p => { SH.kick(p); if (!REDUCE) spinV += 2.2 * p; chime([2093, 2637, 3136, 2349], .03, 1.6, .07); });
   const Q_ = { n: 0, acc: 0, step: 0 };
   function adapt(ms) { if (G.mode !== 'walk' || Q_.step >= 2) return; Q_.acc += ms; if (++Q_.n < 90) return; const avg = Q_.acc / Q_.n; Q_.n = 0; Q_.acc = 0; if (avg < 21) return; Q_.step++; const pr = Q_.step === 1 ? Math.max(1, DPR * .75) : 1; renderer.setPixelRatio(pr); composer.setPixelRatio(pr); if (Q_.step === 2) bloom.resolution.multiplyScalar(.6); resize(); }
   function frame(now) { raf = requestAnimationFrame(frame); const ms = now - last, dt = Math.min(.05, ms / 1000); last = now; adapt(ms); tick(dt); composer.render(); }
@@ -838,7 +841,8 @@ async function build(btn) {
     for (let i = 0; i < SP; i++) { if (spLife[i] > 0) { spLife[i] -= dt; spVel[i * 3 + 1] -= 1.6 * dt; spPos[i * 3] += spVel[i * 3] * dt; spPos[i * 3 + 1] += spVel[i * 3 + 1] * dt; spPos[i * 3 + 2] += spVel[i * 3 + 2] * dt; spSeed[i * 4 + 3] = Math.max(0, spLife[i]) * .03; } else spSeed[i * 4 + 3] = 0; }
     spGeo.attributes.position.needsUpdate = spGeo.attributes.aSeed.needsUpdate = true;
     const sc = Hh * renderer.getPixelRatio() / (2 * Math.tan(camera.fov * Math.PI / 360));
-    gSnowU.uTime.value = time * (REDUCE ? .5 : 1); gSnowU.uScale.value = sc; gSnowU.uSpin.value += dt * .05;
+    spinV *= Math.pow(.6, dt); gSnowU.uTime.value = time * (REDUCE ? .5 : 1); gSnowU.uScale.value = sc; gSnowU.uSpin.value += spinV * dt + dt * .05;
+    SH.step(dt, REDUCE ? .5 : 1); SH.apply(gSnowU); SH.apply(outSnowU);
     outSnowU.uTime.value = time; outSnowU.uScale.value = sc; starU.uTime.value = villU.uTime.value = treeLU.uTime.value = spU.uTime.value = time;
     starU.uScale.value = sc * 4; villU.uScale.value = sc * .14; treeLU.uScale.value = sc * .04; spU.uScale.value = sc * .6;
     if (G.mode === 'walk') { checkCar(); updateActs(); }
@@ -912,7 +916,7 @@ async function build(btn) {
   try { renderer.compile(scene, camera); } catch (e) { }
   $('.rk-load').classList.add('off');
   raf = requestAnimationFrame(frame);
-  const api = { exit };
+  const api = { exit, shake: () => $('.rk-shake').click() };
   if (DEBUG) {
     cancelAnimationFrame(raf);
     Object.assign(api, {
@@ -938,6 +942,8 @@ function runShot(a, name) {
   const W = (x, z, yaw, pitch, n = 40) => { a.walkAt(x, z, yaw, pitch); a.wakeAll(); a.tick(n); };
   const S = {
     shelf: () => a.tick(30),
+    shake: () => { a.tick(30); a.shake(); a.tick(24); },
+    windowshake: () => { W(-54 + .5, .75, Math.PI / 2 + .15, .06); a.shake(); a.tick(30); },
     fly1: () => { a.flyAt(.42); a.tick(2); },
     fly2: () => { a.flyAt(.8); a.tick(2); },
     car1: () => W(-6.5, .55, .12, -.05),

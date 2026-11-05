@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
 <meta name="yandex-verification" content="a7d48ba4912520bf" />
@@ -36,10 +36,15 @@
 <a class="skip" href="#main">К содержанию</a>
 
 <header class="top">
-  <a class="brand" href="#top" aria-label="Ёлкино чудо, наверх">
-    <span class="mono" aria-hidden="true"><i></i><i></i>Е</span>
-    <span class="brand-name">Ёлкино чудо</span>
-  </a>
+  <div class="top-l">
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню: все разделы сайта">
+      <span class="menu-ic" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-t" aria-hidden="true">Меню</span>
+    </button>
+    <a class="brand" href="#top" aria-label="Ёлкино чудо, наверх">
+      <span class="mono" aria-hidden="true"><i></i><i></i>Е</span>
+      <span class="brand-name">Ёлкино чудо</span>
+    </a>
+  </div>
   <nav class="nav" aria-label="Разделы">
     <a href="#razdely">Разделы</a>
     <a href="#shary">Шары-игры</a>
@@ -57,6 +62,50 @@
 <audio id="music-audio" src="audio/jingle-bells-calm-kevin-macleod.mp3" preload="none" loop></audio>
 
 <canvas class="snow" id="snow" aria-hidden="true"></canvas>
+<canvas class="glints" id="glints" aria-hidden="true"></canvas>
+
+<!-- панель разделов: открывается кнопкой «Меню» слева вверху -->
+<div class="menu" id="menu" hidden>
+  <div class="menu-back" data-close></div>
+  <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menu-h">
+    <div class="menu-head">
+      <span class="mono mono-sm" aria-hidden="true"><i></i><i></i>Е</span>
+      <h2 id="menu-h">Ёлкино чудо</h2>
+      <button class="menu-x" type="button" data-close aria-label="Закрыть меню">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="menu-nav" aria-label="Все разделы">
+      <ol class="menu-list">
+        <li><a href="#top"><b>Главная</b><small>Снежный шар и отсчёт до Нового года</small></a></li>
+        <li><a href="#razdely"><b>Волшебные разделы</b><small>Рубрики и даты открытия</small></a>
+          <ul class="menu-sub">
+            <li><a href="#lavka">Лавка подарков</a></li>
+            <li><a href="#pochta">Почта чудес</a></li>
+            <li><a href="#domashnee">Домашнее волшебство</a></li>
+            <li><a href="#sobytiya">Праздничные события</a></li>
+          </ul>
+        </li>
+        <li><a href="#anonsy"><b>Каждый день</b><small>Маленькая радость на каждый день</small></a></li>
+        <li><a href="#shary"><b>Шары-игры</b><small>Загляните внутрь снежного шара</small></a>
+          <ul class="menu-sub">
+            <li><button type="button" data-open-game="rink">Каток: погулять внутри шара</button></li>
+            <li><button type="button" data-open-game="rail">Железная дорога: прокатиться</button></li>
+          </ul>
+        </li>
+        <li><a href="#kalendar"><b>Время чудес</b><small>Календарь декабря с окошками</small></a></li>
+        <li><a href="#televizor"><b>Старый телевизор</b><small>Фильмы, под которые режут салаты</small></a></li>
+        <li><a href="#podpiska"><b>Отсчитывать дни вместе</b><small>Наши каналы и подписка</small></a></li>
+      </ol>
+    </nav>
+    <div class="menu-foot">
+      <button class="menu-music" id="menu-music" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5a2.5 2.5 0 1 1-2-2.45V5.2l11-2.2v11.5a2.5 2.5 0 1 1-2-2.45V7.1L9 8.5v9Z"/></svg>
+        <span>Включить музыку</span>
+      </button>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
@@ -104,7 +153,7 @@
     <figure class="hero-globe" id="hero-globe">
       <picture>
         <source media="(min-width: 900px)" srcset="img/globe-rail.webp">
-        <img src="img/globe-rail-m.webp" width="720" height="1148" alt="Снежный шар: внутри домик с окнами, ёлка и красный вагончик на рельсах" fetchpriority="high">
+        <img src="img/globe-rail-m.webp" width="720" height="1148" alt="Снежный шар: внутри домик с окнами, ёлка и красный вагончик на рельсах" fetchpriority="high" draggable="false">
       </picture>
       <canvas class="globe-snow" id="hero-snow" aria-hidden="true"></canvas>
       <button class="shake" id="hero-shake" type="button">Встряхнуть шар</button>
@@ -124,7 +173,7 @@
     </header>
 
     <div class="realm-grid">
-      <article class="room">
+      <article class="room" id="lavka">
         <img class="room-img" src="img/s-gifts.webp" width="720" height="900" loading="lazy" alt="Подарки в зелёной бумаге с золотыми лентами">
         <div class="room-body">
           <h3>Лавка подарков</h3>
@@ -138,7 +187,7 @@
           </ul>
       </article>
 
-      <article class="room">
+      <article class="room" id="pochta">
         <img class="room-img" src="img/s-post.webp" width="720" height="900" loading="lazy" alt="Крафтовый конверт с сургучной печатью и еловой веткой">
         <div class="room-body">
           <h3>Почта чудес</h3>
@@ -152,7 +201,7 @@
           </ul>
       </article>
 
-      <article class="room">
+      <article class="room" id="domashnee">
         <img class="room-img" src="img/s-home.webp" width="720" height="900" loading="lazy" alt="Кружки с какао и зефиром на зелёном бархате">
         <div class="room-body">
           <h3>Домашнее волшебство</h3>
@@ -167,7 +216,7 @@
           </ul>
       </article>
 
-      <article class="room">
+      <article class="room" id="sobytiya">
         <img class="room-img" src="img/s-events.webp" width="720" height="900" loading="lazy" alt="Деревянные санки на снегу в зимних сумерках">
         <div class="room-body">
           <h3>Праздничные события</h3>

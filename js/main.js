@@ -158,53 +158,104 @@
   }
 
   /* ---------- снег внутри шара ---------- */
+  // Частицы в нормированных координатах (0..1). Встряхивание: снег взмывает со дна,
+  // кружится и медленно оседает; на время метели добавляются «лишние» снежинки.
   function GlobeSnow(cv, opts) {
     opts = opts || {};
-    var ctx = cv.getContext('2d'), S, flakes = [], energy = opts.energy || 0.6;
+    var ctx = cv.getContext('2d'), S, flakes = [], amt = 0, sc = opts.scale || 1;
     function seed() {
       S = fit(cv); flakes = [];
-      var n = opts.count || 70;
-      for (var k = 0; k < n; k++) flakes.push(newFlake(true));
+      for (var k = 0; k < (opts.count || 90); k++) flakes.push(newFlake(Math.random(), false));
     }
-    function newFlake(any) {
-      return { a: Math.random() * 6.283, rad: Math.random(), y: any ? Math.random() : -0.05, r: (Math.random() * 1.6 + 0.6) * DPR * (opts.scale || 1), sp: 0.4 + Math.random() * 0.8, fall: 0.0006 + Math.random() * 0.001 };
+    function newFlake(y, extra) {
+      var z = Math.random();                       // глубина: дальние мельче и прозрачнее
+      return { x: Math.random(), y: y, vx: 0, vy: 0, z: z, r: (0.6 + z * 1.7) * DPR * sc, ph: Math.random() * 6.283, w: 0.5 + Math.random(), fall: 0.0007 + z * 0.0009 + Math.random() * 0.0004, extra: extra };
     }
     function draw(dt) {
       ctx.clearRect(0, 0, S.w, S.h);
-      var cx = S.w / 2;
-      energy += ((opts.base || 0.25) - energy) * 0.004 * dt;
+      amt *= Math.pow(0.986, dt);
+      var term = 1 - 0.72 * amt, keep = [];
       for (var k = 0; k < flakes.length; k++) {
         var f = flakes[k];
-        f.a += 0.012 * f.sp * energy * dt * 2.2;
-        f.y += (f.fall * (1.2 - energy) - 0.0012 * energy * Math.sin(f.a * 1.7)) * dt;
-        if (f.y > 1.02) { flakes[k] = newFlake(false); continue; }
-        if (f.y < -0.06) f.y = 1;
-        var x = cx + Math.cos(f.a) * f.rad * S.w * 0.46;
-        var y = f.y * S.h + Math.sin(f.a * 2) * 6 * DPR * energy;
-        var depth = 0.55 + 0.45 * Math.sin(f.a);
-        ctx.globalAlpha = 0.45 + 0.5 * depth;
+        f.ph += 0.02 * f.w * (1 + 3 * amt) * dt;
+        f.vy += (f.fall * term - f.vy) * 0.03 * dt;
+        f.vx += (Math.sin(f.ph) * (0.0005 + 0.0025 * amt) - f.vx) * 0.03 * dt;
+        f.x += f.vx * dt; f.y += f.vy * dt;
+        if (f.x < 0) { f.x = 0; f.vx = Math.abs(f.vx) * 0.5; } else if (f.x > 1) { f.x = 1; f.vx = -Math.abs(f.vx) * 0.5; }
+        if (f.y < 0.02) { f.y = 0.02; f.vy = Math.abs(f.vy) * 0.6; }
+        if (f.y > 1.02) { if (f.extra) continue; f.y = -0.03; f.x = Math.random(); f.vy = f.fall; }
+        keep.push(f);
+        ctx.globalAlpha = 0.4 + 0.55 * f.z;
         ctx.fillStyle = '#ffffff';
-        ctx.beginPath(); ctx.arc(x, y, f.r * (0.7 + 0.5 * depth), 0, 6.283); ctx.fill();
+        ctx.beginPath(); ctx.arc(f.x * S.w, f.y * S.h, f.r, 0, 6.283); ctx.fill();
       }
+      flakes = keep;
       ctx.globalAlpha = 1;
+    }
+    function kick(p, dir) {
+      p = Math.max(0.3, Math.min(1.4, p || 1)); dir = dir || 0;
+      amt = Math.min(1, amt + 0.8 * p);
+      var add = Math.round((opts.burst || 80) * p);
+      for (var k = 0; k < add; k++) flakes.push(newFlake(0.82 + Math.random() * 0.2, true));
+      for (k = 0; k < flakes.length; k++) {
+        var f = flakes[k], low = 0.4 + f.y;      // нижние подлетают выше
+        f.vy -= (0.005 + Math.random() * 0.014) * p * low;
+        f.vx += ((Math.random() - 0.5) * 0.018 + dir * 0.008) * p;
+      }
+      if (reduce) { for (k = 0; k < flakes.length; k++) { flakes[k].y = Math.random(); flakes[k].x = Math.random(); } draw(0); }
     }
     seed();
     var l = loop(draw);
-    window.addEventListener('resize', seed);
+    window.addEventListener('resize', function () { var old = flakes; seed(); if (old.length) flakes = old; });
     if (reduce) draw(0); else whenVisible(cv, l.start, l.stop);
-    return { shake: function () { energy = 1.6; for (var k = 0; k < flakes.length; k++) flakes[k].y = 0.55 + Math.random() * 0.45; if (reduce) draw(0); } };
+    return { shake: kick };
   }
+
+  // жест встряхивания: быстрое перетаскивание/свайп по шару и встряхивание телефона
+  function shakeGesture(el, kick, wobble) {
+    var last = null, acc = 0, lastKick = 0;
+    function fire(p, dir) {
+      var now = Date.now(); if (now - lastKick < 260) return; lastKick = now; kick(p, dir);
+      if (wobble && !reduce) { wobble.classList.remove('is-shaken'); void wobble.offsetWidth; wobble.classList.add('is-shaken'); }
+    }
+    el.addEventListener('pointerdown', function (e) { if (e.target.closest('button')) return; last = { x: e.clientX, y: e.clientY, t: e.timeStamp }; acc = 0; });
+    el.addEventListener('pointermove', function (e) {
+      if (!last) return;
+      var dx = e.clientX - last.x, dy = e.clientY - last.y, d = Math.hypot(dx, dy), dt = Math.max(8, e.timeStamp - last.t);
+      acc += d; last = { x: e.clientX, y: e.clientY, t: e.timeStamp };
+      if (acc > 46 && d / dt > 0.5) { fire(Math.min(1.3, d / dt / 1.6 + 0.4), dx > 0 ? 1 : -1); acc = 0; }
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (n) { el.addEventListener(n, function () { last = null; }); });
+    return fire;
+  }
+  var motionAsked = false, motionFns = [];
+  function askMotion() {
+    if (motionAsked || typeof DeviceMotionEvent === 'undefined' || !DeviceMotionEvent.requestPermission) return;
+    motionAsked = true; DeviceMotionEvent.requestPermission().catch(function () { });
+  }
+  window.addEventListener('devicemotion', function (e) {
+    if (!motionFns.length || document.getElementById('rk') || document.getElementById('rl')) return;
+    var a = e.acceleration, m;
+    if (a && a.x != null) m = Math.hypot(a.x, a.y, a.z); else { var g = e.accelerationIncludingGravity; if (!g || g.x == null) return; m = Math.abs(Math.hypot(g.x, g.y, g.z) - 9.81); }
+    if (m > 13) motionFns.forEach(function (fn) { fn(Math.min(1.4, m / 18), 0); });
+  });
+
   var hs = document.getElementById('hero-snow');
   if (hs) {
-    var heroSnow = GlobeSnow(hs, { count: 110, base: 0.35, energy: 0.9 });
-    document.getElementById('hero-shake').addEventListener('click', function () { heroSnow.shake(); });
+    var heroFig = document.getElementById('hero-globe');
+    var heroSnow = GlobeSnow(hs, { count: 170, burst: 170 });
+    var heroFire = shakeGesture(heroFig, heroSnow.shake, heroFig);
+    document.getElementById('hero-shake').addEventListener('click', function () { askMotion(); heroFire(1.2, 0); });
+    var heroOn = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { heroOn = es[0].isIntersecting; }).observe(heroFig);
+    motionFns.push(function (p, d) { if (heroOn) heroFire(p, d); });
   }
   var globes = document.querySelectorAll('.globe');
   window.ElkGlobes = [];
   for (var g = 0; g < globes.length; g++) {
     (function (btn) {
-      var gs = GlobeSnow(btn.querySelector('canvas'), { count: 46, base: 0.3, energy: 0.5, scale: 0.9 });
-      btn.addEventListener('pointerenter', function () { gs.shake(); });
+      var gs = GlobeSnow(btn.querySelector('canvas'), { count: 70, burst: 70, scale: 0.9 });
+      btn.addEventListener('pointerenter', function () { gs.shake(0.7); });
       btn._snow = gs;
     })(globes[g]);
   }
@@ -346,4 +397,111 @@
       if (toast) { toast.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(function () { toast.hidden = true; }, 2600); }
     });
   });
+
+  /* ---------- меню разделов (левый верхний угол) ---------- */
+  var menu = document.getElementById('menu'), menuBtn = document.getElementById('menu-btn');
+  if (menu && menuBtn) {
+    var panel = menu.querySelector('.menu-panel'), menuMusic = document.getElementById('menu-music'), siteMusic = document.getElementById('music'), mT = 0;
+    function syncMusic() {
+      if (!menuMusic || !siteMusic) return;
+      var on = siteMusic.getAttribute('aria-pressed') === 'true';
+      menuMusic.setAttribute('aria-pressed', on ? 'true' : 'false');
+      menuMusic.querySelector('span').textContent = on ? 'Музыка играет — выключить' : 'Включить музыку';
+    }
+    function openMenu() {
+      clearTimeout(mT); syncMusic();
+      menu.hidden = false; menuBtn.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('menu-open');
+      requestAnimationFrame(function () { menu.classList.add('on'); });
+      setTimeout(function () { var f = panel.querySelector('.menu-list a'); if (f) f.focus({ preventScroll: true }); }, reduce ? 0 : 60);
+    }
+    function closeMenu(noFocus) {
+      if (menu.hidden) return;
+      menu.classList.remove('on'); menuBtn.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('menu-open');
+      mT = setTimeout(function () { menu.hidden = true; }, reduce ? 0 : 360);
+      if (!noFocus) menuBtn.focus({ preventScroll: true });
+    }
+    menuBtn.addEventListener('click', function () { menu.hidden ? openMenu() : closeMenu(); });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('[data-close]')) { closeMenu(); return; }
+      var a = e.target.closest('a[href^="#"]');
+      if (a) { closeMenu(true); return; }      // переход по якорю браузер сделает сам
+      var gb = e.target.closest('[data-open-game]');
+      if (gb) {
+        closeMenu(true);
+        var globe = document.querySelector('.globe[data-game="' + gb.getAttribute('data-open-game') + '"]');
+        if (globe) setTimeout(function () { globe.scrollIntoView({ block: 'center' }); globe.click(); }, 40);
+        return;
+      }
+      if (e.target.closest('#menu-music') && siteMusic) { siteMusic.click(); setTimeout(syncMusic, 30); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (menu.hidden) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key === 'Tab') {                    // фокус не уходит из панели
+        var f = panel.querySelectorAll('a[href], button:not([disabled])'), first = f[0], lastF = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastF.focus(); }
+        else if (!e.shiftKey && document.activeElement === lastF) { e.preventDefault(); first.focus(); }
+      }
+    });
+  }
+
+  /* ---------- золотые искры: редкие, тонкие, мерцают и гаснут ---------- */
+  (function () {
+    var cv = document.getElementById('glints');
+    if (!cv || reduce) return;
+    var ctx = cv.getContext('2d'), W = 0, H = 0, R = Math.min(DPR, 1.5), list = [], raf = 0, nextAt = 0, skip = 0;
+    var MAX = window.innerWidth < 700 ? 6 : 10;
+    function size() { W = cv.width = Math.round(innerWidth * R); H = cv.height = Math.round(innerHeight * R); }
+    size(); window.addEventListener('resize', size);
+    var lightSecs = [].filter.call(document.querySelectorAll('main > section, .foot'), function (s) {
+      var m = getComputedStyle(s).backgroundColor.match(/\d+(\.\d+)?/g);
+      return m && (+m[3] !== 0) && (0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2]) > 160;
+    });
+    function onLight(x, y) {
+      for (var k = 0; k < lightSecs.length; k++) { var r = lightSecs[k].getBoundingClientRect(); if (y >= r.top && y <= r.bottom) return true; }
+      return false;
+    }
+    function spawn() {
+      var x, y, g = document.getElementById('hero-globe'), r = g && g.getBoundingClientRect();
+      if (r && r.bottom > 0 && r.top < innerHeight && Math.random() < 0.35) { x = r.left + r.width * (0.2 + Math.random() * 0.6); y = r.top + r.height * (0.12 + Math.random() * 0.5); }
+      else { x = Math.random() * innerWidth; y = 70 + Math.random() * (innerHeight - 90); }
+      var big = Math.random() < 0.22;
+      list.push({ x: x * R, y: y * R, t: 0, life: 1500 + Math.random() * 1400, s: (big ? 10 + Math.random() * 6 : 4 + Math.random() * 5) * R, rot: (Math.random() - 0.5) * 0.5, light: onLight(x, y) });
+    }
+    function glint(p, k) {
+      var s = p.s * (0.6 + 0.4 * k), c = p.light ? '160,112,40' : '246,222,160';
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      var gr = ctx.createRadialGradient(0, 0, 0, 0, 0, s * 1.3);
+      gr.addColorStop(0, 'rgba(' + c + ',' + (0.55 * k) + ')'); gr.addColorStop(1, 'rgba(' + c + ',0)');
+      ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(0, 0, s * 1.3, 0, 6.283); ctx.fill();
+      ctx.fillStyle = 'rgba(' + c + ',' + (0.95 * k) + ')';
+      ctx.beginPath();                                   // четырёхлучевая звёздочка с тонкими лучами
+      ctx.moveTo(0, -s * 1.6); ctx.quadraticCurveTo(0, 0, s * 1.6, 0); ctx.quadraticCurveTo(0, 0, 0, s * 1.6); ctx.quadraticCurveTo(0, 0, -s * 1.6, 0); ctx.quadraticCurveTo(0, 0, 0, -s * 1.6);
+      ctx.fill();
+      if (!p.light) { ctx.fillStyle = 'rgba(255,252,240,' + k + ')'; ctx.beginPath(); ctx.arc(0, 0, Math.max(0.8 * R, s * 0.14), 0, 6.283); ctx.fill(); }
+      ctx.restore();
+    }
+    var lastT = 0;
+    function frame(t) {
+      raf = requestAnimationFrame(frame);
+      if (++skip % 2) return;                             // ~30 кадров в секунду достаточно
+      var dt = Math.min(80, t - (lastT || t)); lastT = t;
+      if (document.getElementById('rk') || document.getElementById('rl') || document.documentElement.classList.contains('menu-open')) { if (list.length) { list = []; ctx.clearRect(0, 0, W, H); } return; }
+      if (t > nextAt && list.length < MAX) { spawn(); nextAt = t + 420 + Math.random() * 900; }
+      ctx.clearRect(0, 0, W, H);
+      for (var k = list.length - 1; k >= 0; k--) {
+        var p = list[k]; p.t += dt;
+        if (p.t >= p.life) { list.splice(k, 1); continue; }
+        var u = p.t / p.life, b = Math.pow(Math.sin(Math.PI * u), 2);
+        b *= 0.75 + 0.25 * Math.sin(p.t * 0.02);         // лёгкое мерцание
+        glint(p, b);
+      }
+    }
+    function start() { if (!raf) { lastT = 0; raf = requestAnimationFrame(frame); } }
+    function stop() { cancelAnimationFrame(raf); raf = 0; }
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+    start();
+  })();
 })();
