@@ -1,4 +1,4 @@
-/* Шары-игры: «Железная дорога» (canvas). «Каток» — 3D в js/rink3d.js, здесь 2D-запасной вариант. */
+/* Шары-игры. «Каток» — 3D в js/rink3d.js, «Железная дорога» — 3D в js/rail3d.js; здесь их 2D-запасные варианты. */
 (function () {
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -56,12 +56,13 @@
     var done = function () { portal.hidden = true; cancelAnimationFrame(raf); game = null; document.body.style.overflow = ''; if (lastBtn) lastBtn.focus({ preventScroll: true }); };
     if (reduce) done(); else setTimeout(done, 650);
   }
-  // «Каток» — 3D-шар (js/rink3d.js, three.js). Если WebGL/модули недоступны — прежняя 2D-игра.
-  var rink3d = null;
-  function load3d() { if (!rink3d) rink3d = import('./rink3d.js'); return rink3d; }
+  // 3D-шары (three.js): «Каток» — js/rink3d.js, «Железная дорога» — js/rail3d.js. Если WebGL/модули недоступны — прежняя 2D-игра.
+  var MOD3D = { rink: './rink3d.js', rail: './rail3d.js' }, mods = {};
+  function load3d(id) { id = id || 'rink'; if (!mods[id]) mods[id] = import(MOD3D[id]).catch(function (e) { mods[id] = null; throw e; }); return mods[id]; }
   function openGlobe(b) {
-    if (b.getAttribute('data-game') === 'rink' && 'noModule' in HTMLScriptElement.prototype) {
-      load3d().then(function (m) { return m.open(b); }).catch(function (e) { if (window.console) console.warn('3D недоступно, открываю 2D', e); var r = document.getElementById('rk'); if (r) r.remove(); document.body.style.overflow = ''; open(b); });
+    var id = b.getAttribute('data-game');
+    if (MOD3D[id] && 'noModule' in HTMLScriptElement.prototype) {
+      load3d(id).then(function (m) { return m.open(b); }).catch(function (e) { if (window.console) console.warn('3D недоступно, открываю 2D', e); ['rk', 'rl'].forEach(function (x) { var r = document.getElementById(x); if (r) r.remove(); }); document.body.style.overflow = ''; open(b); });
       return;
     }
     open(b);
@@ -69,7 +70,7 @@
   document.querySelectorAll('.globe').forEach(function (b) { b.addEventListener('click', function () { if (b._snow) b._snow.shake(); openGlobe(b); }); });
   // заранее подгружаем three.js, когда полка с шарами показалась на экране
   var shelfEl = document.getElementById('shary');
-  if (shelfEl && 'IntersectionObserver' in window) { var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); load3d().catch(function () { rink3d = null; }); } }, { rootMargin: '300px' }); io.observe(shelfEl); }
+  if (shelfEl && 'IntersectionObserver' in window) { var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); load3d('rink').catch(function () { }); } }, { rootMargin: '300px' }); io.observe(shelfEl); }
   document.getElementById('portal-close').addEventListener('click', close);
   document.addEventListener('keydown', function (e) {
     if (portal.hidden) return;
@@ -84,7 +85,7 @@
   var LINKS = { '#igra-katok': 'rink', '#igra-doroga': 'rail' };
   if (LINKS[location.hash]) {
     var gb = document.querySelector('.globe[data-game="' + LINKS[location.hash] + '"]');
-    if (gb) setTimeout(function () { if (LINKS[location.hash] === 'rink') { openGlobe(gb); return; } open(gb); if (/[?&]demo=1/.test(location.search)) { veil.hidden = true; game.start(); } }, 300);
+    if (gb) setTimeout(function () { if (!/[?&]demo=1/.test(location.search)) { openGlobe(gb); return; } open(gb); if (/[?&]demo=1/.test(location.search)) { veil.hidden = true; game.start(); } }, 300);
   }
 
   /* общий падающий снег поверх игры */

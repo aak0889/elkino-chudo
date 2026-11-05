@@ -505,3 +505,36 @@ a.st-on:hover{background:#0f3a2e}
   .rk-stars{bottom:92px}
 }
 @media (prefers-reduced-motion:reduce){.rk-stars{animation:none}}
+/* 3D-поезд (js/rail3d.js): общие стили .rk-*, здесь только своё */
+.rl .rl-cars,.rl .rl-pad{position:absolute;bottom:18px;display:flex;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .4s}
+.rl.walk .rl-cars,.rl.walk .rl-pad{opacity:1;pointer-events:auto}
+.rl.closeup .rl-pad,.rl.closeup .rl-cars{opacity:0;pointer-events:none}
+.rl-cars{left:max(var(--gutter),2.2vw)}
+.rl-car{min-width:104px;min-height:46px;padding:0 6px;border:0;border-radius:999px;background:none;cursor:pointer;text-align:center;font:600 19px/1 var(--serif);color:var(--gold-2);text-shadow:0 2px 10px rgba(0,0,0,.7);font-variant-numeric:lining-nums}
+.rl-cars .rk-btn:disabled{opacity:.35;cursor:default}
+.rl-pad{right:max(var(--gutter),2.2vw);display:grid!important;grid-template-columns:repeat(3,46px);grid-template-rows:46px 46px;gap:6px}
+.rl-pad [data-k=bk]{grid-column:2}
+.rl-pad .rk-btn{touch-action:none;user-select:none;-webkit-user-select:none}
+.rl-acts{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;width:max-content;max-width:calc(100vw - 32px)}
+.rl .rl-acts .rk-stars{position:static;transform:none}
+.rl .rl-acts .rk-out{background:rgba(8,14,26,.55);backdrop-filter:blur(6px)}
+.rl .rl-acts [hidden]{display:none}
+.rl .rk-hint{bottom:160px}
+.rl-quiz{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:min(560px,calc(100vw - 32px));display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:24px;background:linear-gradient(180deg,rgba(18,32,58,.88),rgba(10,18,34,.92));border:1px solid rgba(214,174,102,.45);backdrop-filter:blur(8px)}
+.rl-quiz[hidden]{display:none}
+.rl-quiz p{margin:0 0 4px;text-align:center;font:italic 500 20px/1.2 var(--serif);color:var(--gold-2)}
+.rl-quiz .rk-out{width:100%;min-height:46px;color:var(--text)}
+.rl-quiz .rk-out:hover,.rl-quiz .rk-out:focus-visible{border-color:var(--gold-2);background:rgba(214,174,102,.12)}
+.rl-quiz .rl-again{color:var(--gold-2);border-style:dashed}
+.rl.closeup .rl-acts{bottom:28px}
+.rl.closeup .rk-hint{bottom:96px}
+@media (max-width:720px){
+  .rl .rl-cars,.rl .rl-pad{bottom:12px}
+  .rl-car{min-width:58px;font-size:17px}
+  .rl-pad{grid-template-columns:repeat(3,44px);grid-template-rows:44px 44px;gap:5px}
+  .rl-pad .rk-btn{height:44px;min-width:44px}
+  .rl-acts{bottom:116px}
+  .rl .rk-hint{bottom:178px}
+  .rl.closeup .rk-hint{bottom:90px}
+  .rl-quiz{bottom:16px;padding:12px}
+}

@@ -878,3 +878,6 @@ function makeEnv(pmrem) {
   for (let i = 0; i < 18; i++) { const a = i / 18 * Math.PI * 2; const m = new THREE.Mesh(new THREE.SphereGeometry(1.1, 8, 6), new THREE.MeshBasicMaterial({ color: HDR(5, 3.4, 1.4) })); m.position.set(Math.cos(a) * 40, 6 + Math.sin(i * 1.7) * 6, Math.sin(a) * 40); s.add(m); }
   return pmrem.fromScene(s, .02).texture;
 }
+
+/* общие части для других 3D-шаров (js/rail3d.js) */
+export { canvasTex, glowTex, woodTex, windowTex, makeEnv, pointCloud, SNOW_V, SNOW_F, TW_V, TW_F, V3, HDR, clamp, smooth, ease, wrapA };
