@@ -120,7 +120,7 @@ section{scroll-margin-top:60px}
 .title{font-size:clamp(68px,9.5vw,132px);font-weight:600;line-height:.92;color:transparent;
   background:linear-gradient(180deg,#fbeccc 8%,#e9c886 50%,#c79b52 95%);-webkit-background-clip:text;background-clip:text;
   filter:drop-shadow(0 0 22px rgba(255,200,120,.25));padding-top:.14em}
-.yo{position:relative;display:inline-block;color:transparent}
+.yo{position:relative;display:inline-block;color:transparent;background:linear-gradient(180deg,#fbeccc 8%,#e9c886 50%,#c79b52 95%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .yo i{position:absolute;top:-.02em;width:.13em;height:.13em;border-radius:50%;background:radial-gradient(circle at 45% 40%,#fff6dc,var(--bulb) 55%,#e8a83a);
   box-shadow:0 0 .2em .07em rgba(255,205,110,.8);animation:glow 2.6s ease-in-out infinite}
 .yo i:first-child{left:.14em}.yo i:nth-child(2){left:.38em;animation-delay:1.3s}
