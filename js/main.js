@@ -317,7 +317,7 @@
       var f = FILMS[ch];
       card.innerHTML = '<p class="tv-ch">Канал ' + (ch + 1) + ' из ' + FILMS.length + '</p><h3>' + f.t + '</h3>' +
         '<p class="tv-meta">' + f.y + ', реж. ' + f.d + '</p><p class="tv-desc">' + f.s + '</p><p class="tv-cozy">' + f.c + '</p>' +
-        '<a class="tv-watch" href="' + f.u + '" target="_blank" rel="noopener">Смотреть на «Смотрим»</a>';
+        '<a class="tv-watch" href="' + f.u + '" target="_blank" rel="noopener">Смотреть на «' + (f.src || 'Смотрим') + '»</a>';
       knob.querySelector('.knob-in').style.setProperty('--rot', (ch * 32) + 'deg');
     }
     function staticBurst(done) {
