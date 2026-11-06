@@ -47,7 +47,7 @@ async function build(c) {
   const lantern = (x, z) => { const y = hgt(x, z), g = new THREE.Group(); g.position.set(x, y, z); world.add(g); const post = new THREE.Mesh(new THREE.CylinderGeometry(.05, .07, 1.4, 6), c.ironMat); post.position.y = .7; g.add(post); const b = new THREE.Mesh(new THREE.SphereGeometry(.16, 12, 10), new THREE.MeshBasicMaterial({ color: HDR(3.6, 2.4, 1.1) })); b.position.y = 1.55; g.add(b); const gl = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xffb867, transparent: true, opacity: .6, depthWrite: false, blending: THREE.AdditiveBlending })); gl.scale.set(2, 2, 1); gl.position.y = 1.55; g.add(gl); c.pool(x, z, 4.5, HDR(.45, .28, .1)); };
   lantern(3.2, 7.5); lantern(-2.8, 6.2);
   // олень
-  const glowM = new THREE.MeshStandardMaterial({ color: 0xd8ecff, emissive: 0x8cc4ff, emissiveIntensity: .7, roughness: .5 });
+  const glowM = new THREE.MeshStandardMaterial({ color: 0x8fb0d8, emissive: 0x6aa6ff, emissiveIntensity: .45, roughness: .5 });
   const antM = new THREE.MeshStandardMaterial({ color: 0xffe2a8, emissive: 0xffc070, emissiveIntensity: 1.6, roughness: .4 });
   const deer = new THREE.Group(); deer.position.set(DEER.x, hgt(DEER.x, DEER.z), DEER.z); deer.rotation.y = .9; deer.scale.setScalar(1.25); world.add(deer);
   { const add = (g, m, x, y, z, rx = 0, rz = 0) => { const o = new THREE.Mesh(g, m); o.position.set(x, y, z); o.rotation.set(rx, 0, rz); deer.add(o); return o; };
@@ -61,7 +61,7 @@ async function build(c) {
     void head;
   }
   const deerGl = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0x9cc8ff, transparent: true, opacity: .55, depthWrite: false, blending: THREE.AdditiveBlending })); deerGl.scale.set(6, 5, 1); deerGl.position.set(0, 1.6, 0); deer.add(deerGl);
-  const deerPool = c.pool(DEER.x, DEER.z, 7, HDR(.2, .35, .6));
+  const deerPool = c.pool(DEER.x, DEER.z, 7, HDR(.12, .2, .36));
   const dl = new THREE.PointLight(0x9cc8ff, 2, 10 * S, 1.6); dl.position.copy(c.toScene(V3(DEER.x, hgt(DEER.x, DEER.z) + 2, DEER.z + 1))); c.scene.add(dl);
   const dust = { uTime: { value: 0 }, uScale: { value: 300 }, uOpacity: { value: 1 }, uGain: { value: 3 }, uColor: { value: HDR(.8, .95, 1.2) } };
   { const p = [], s = []; for (let i = 0; i < 60; i++) { p.push(DEER.x + (rnd() - .5) * 3, hgt(DEER.x, DEER.z) + rnd() * 3.5, DEER.z + (rnd() - .5) * 3); s.push(1 + rnd() * 2, rnd() * 6.3, 2, .05 + rnd() * .06); } const pc = c.pointCloud(p, s, dust); world.add(pc); c.deerDust = pc; }
@@ -92,7 +92,7 @@ async function build(c) {
       orbU.uTime.value = dust.uTime.value = t; orbU.uScale.value = dust.uScale.value = st.sc * S;
       const vis = !TG.on || TG.found; deer.visible = vis; deerPool.visible = vis; c.deerDust.visible = vis;
       deer.position.y = hgt(DEER.x, DEER.z) + Math.sin(t * 1.2) * .03; deer.children[2].rotation.z = -1.25 + Math.sin(t * .7) * .08;
-      glowM.emissiveIntensity = .65 + .15 * Math.sin(t * 1.6); deerGl.material.opacity = .3 + .1 * Math.sin(t * 1.6);
+      glowM.emissiveIntensity = .42 + .1 * Math.sin(t * 1.6); deerGl.material.opacity = .18 + .06 * Math.sin(t * 1.6);
       prints.forEach((p, i) => { p.gl.material.opacity = TG.on && TG.i === i ? .55 + .35 * Math.sin(t * 4) : 0; });
     }
   };

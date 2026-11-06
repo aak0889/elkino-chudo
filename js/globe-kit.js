@@ -159,7 +159,7 @@ export function makeTour(root, surface, { onGo, count, label }) {
   nav.querySelector('.gk-next').addEventListener('click', () => T.next());
   // свайп по сцене: влево — дальше, вправо — назад
   let sw = null;
-  surface.addEventListener('pointerdown', e => { sw = { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId }; });
+  surface.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse') { sw = null; return; } sw = { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId }; });
   surface.addEventListener('pointerup', e => { if (!sw || sw.id !== e.pointerId) return; const dx = e.clientX - sw.x, dy = e.clientY - sw.y; if (T.enabled && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.4 && performance.now() - sw.t < 700) { T.swiped = performance.now(); dx < 0 ? T.next() : T.prev(); } sw = null; });
   return T;
 }
@@ -386,7 +386,7 @@ export function buildRoom({ envMap, T_GLOW, rnd, LOW, santa = false }) {
     const envM = new THREE.MeshStandardMaterial({ map: envT, roughness: .8, side: THREE.DoubleSide });
     for (let i = 0; i < 9; i++) { const e = new THREE.Mesh(new THREE.PlaneGeometry(.2, .14), envM); e.position.set(2.7 + (rnd() - .5) * .3, .62 + rnd() * .12, 2.0 + (rnd() - .5) * .3); e.rotation.set(-.6 + rnd() * .4, rnd() * 3, (rnd() - .5) * .8); scene.add(e); }
     // письма на столике — их можно читать
-    for (let i = 0; i < 5; i++) { const e = new THREE.Mesh(new THREE.PlaneGeometry(.2, .14), envM); e.rotation.x = -Math.PI / 2; e.rotation.z = (rnd() - .5) * .9; e.position.set(TX - .25 + (i % 3) * .2, .713 + i * .002, TZ + .05 + Math.floor(i / 3) * .2 - .1); scene.add(e); const gl = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xffd890, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending })); gl.position.copy(e.position).add(V3(0, .03, 0)); gl.scale.set(.32, .32, 1); scene.add(gl); letters.push({ m: e, gl, read: false }); }
+    for (let i = 0; i < 5; i++) { const e = new THREE.Mesh(new THREE.PlaneGeometry(.2, .14), envM); e.rotation.x = -Math.PI / 2; e.rotation.z = (rnd() - .5) * .9; const LP = [[.38, .18], [.12, .42], [-.12, .4], [.45, -.12], [.3, .38]][i]; e.position.set(TX + LP[0], .713 + i * .002, TZ + LP[1]); scene.add(e); const gl = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xffd890, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending })); gl.position.copy(e.position).add(V3(0, .03, 0)); gl.scale.set(.42, .42, 1); scene.add(gl); letters.push({ m: e, gl, read: false }); }
     // очки и колпак Деда Мороза на кресле
     const hat = new THREE.Mesh(new THREE.ConeGeometry(.16, .4, 20), new THREE.MeshStandardMaterial({ color: 0xb02f3c, roughness: .8 })); hat.position.set(.05, .68, .05); hat.rotation.z = 1.1; chair.add(hat);
     const fur = new THREE.Mesh(new THREE.TorusGeometry(.15, .045, 8, 20), new THREE.MeshStandardMaterial({ color: 0xfbf6ee, roughness: 1 })); fur.position.set(-.13, .6, .05); fur.rotation.y = Math.PI / 2; fur.rotation.x = .45; chair.add(fur);

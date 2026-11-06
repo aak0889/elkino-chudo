@@ -518,6 +518,8 @@ a.st-on:hover{background:#0f3a2e}
 .gk-acts .rk-out{background:rgba(8,14,26,.55);backdrop-filter:blur(6px)}
 .gk-acts [hidden]{display:none}
 .rk.gk .rk-hint,.rk.tour .rk-hint{bottom:166px}
+.rl.tour .rk-hint{bottom:190px}
+#veil-btn[hidden]{display:none}
 .gk-choices{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);width:min(620px,calc(100vw - 24px));padding:14px 14px 16px;border-radius:24px;background:linear-gradient(180deg,rgba(18,32,58,.88),rgba(10,18,34,.92));border:1px solid rgba(214,174,102,.45);backdrop-filter:blur(8px);z-index:4;text-align:center}
 .gk-choices[hidden]{display:none}
 .gk-choices p{margin:0 0 10px;font:italic 500 19px/1.2 var(--serif);color:var(--gold-2)}
@@ -530,10 +532,11 @@ a.st-on:hover{background:#0f3a2e}
 .gk-free{position:absolute;right:max(var(--gutter),2.2vw);bottom:26px;z-index:3;padding:8px 12px;border:0;border-radius:999px;background:rgba(8,14,26,.35);color:rgba(240,217,164,.7);font:500 12px/1 var(--sans);cursor:pointer}
 .gk-free:hover{color:var(--gold-2)}
 .rk.free .gk-tour{opacity:0;pointer-events:none}
+.rl:not(.free) .rl-cars,.rl:not(.free) .rl-pad,.rk.tour:not(.free) .rk-joy{display:none!important}
 @media (max-width:599px){
   .gk-tour{bottom:14px;gap:6px}.gk-tour .rk-btn{width:52px;height:52px}
   .gk-name{min-width:0;width:calc(100vw - 150px)}.gk-name b{font-size:19px}
-  .gk-acts{bottom:84px}.rk.gk .rk-hint,.rk.tour .rk-hint{bottom:146px}
+  .gk-acts{bottom:84px}.rk.gk .rk-hint,.rk.tour .rk-hint{bottom:158px}.rl.tour .rk-hint{bottom:200px}
   .gk-choices{bottom:80px}.gk-ch{min-width:0;flex:1 1 40%}
   .gk-free{bottom:auto;top:70px;right:var(--gutter)}
 }
