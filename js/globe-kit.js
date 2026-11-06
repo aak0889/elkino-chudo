@@ -486,9 +486,9 @@ export async function createGlobe(cfg, btn) {
         c += vec3(.34,.2,.1) * pow(max(0., 1. - abs(h - .02) * 5.), 3.) * .3;
         c += vec3(.5,.36,.2) * pow(max(0., dot(d, normalize(vec3(-.3,.85,.4)))), 30.) * .2;
         if (uAur > 0.) { vec2 p = d.xz / (h + .3); float a = 0.;
-          for (int i = 0; i < 3; i++) { float fi = float(i); float y = p.y * 1.1 + sin(p.x * 1.2 + uTime * .12 + fi * 2.1) * .55 + fi * .55 - .9; float cur = .55 + .45 * nn(vec2(p.x * 14. + fi * 7., uTime * .3)); a += exp(-y * y * 7.) * cur * (.6 + .4 * sin(p.x * 3. + uTime * .35 + fi)); }
+          for (int i = 0; i < 3; i++) { float fi = float(i); float y = (p.y + 1.25) * 1.15 + sin(p.x * 1.2 + uTime * .12 + fi * 2.1) * .5 + fi * .5 - .4; float cur = .55 + .45 * nn(vec2(p.x * 14. + fi * 7., uTime * .3)); a += exp(-y * y * 7.) * cur * (.6 + .4 * sin(p.x * 3. + uTime * .35 + fi)); }
           a *= smoothstep(.04, .25, h) * smoothstep(.98, .45, h);
-          c += mix(vec3(.12, 1., .58), vec3(.55, .32, 1.), smoothstep(.25, .75, h)) * a * .32 * uAur; }
+          c += mix(vec3(.12, 1., .58), vec3(.55, .32, 1.), smoothstep(.25, .75, h)) * a * .45 * uAur; }
         gl_FragColor = vec4(c, 1.); }`
   })); sky.renderOrder = -9; inner.add(sky);
   const starU = { uTime: { value: 0 }, uScale: { value: 300 }, uOpacity: { value: 1 }, uGain: { value: 1.5 }, uColor: { value: HDR(1, .95, .85) } };
