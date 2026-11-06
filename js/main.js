@@ -348,29 +348,91 @@
   }
 
   /* ---------- старый телевизор ---------- */
+  var RT = 'https://rutube.ru/play/embed/';
+  function SM(id) { return 'https://player.smotrim.ru/iframe/video/id/' + id + '/start_zoom/true/showZoomBtn/false/sid/smotrim/isPlay/false/mute/false/'; }
+  var MOS = 'Мосфильм, RuTube', GOR = 'Киностудия Горького, RuTube';
   var FILMS = [
-    { t: 'Ирония судьбы, или С лёгким паром!', y: 1975, d: 'Эльдар Рязанов', s: 'Баня тридцать первого, самолёт в Ленинград и квартира, которая выглядит точь-в-точь как своя.', c: 'Под него режут салаты уже пятьдесят лет.', u: 'https://smotrim.ru/brand/5771' },
-    { t: 'Карнавальная ночь', y: 1956, d: 'Эльдар Рязанов', s: 'Дом культуры готовит новогодний бал, а новый директор хочет вместо джаза лекцию.', c: 'Песня про пять минут и Гурченко в двадцать один год.', u: 'https://smotrim.ru/brand/5767' },
-    { t: 'Морозко', y: 1964, d: 'Александр Роу', s: 'Настенька, хвастливый Иван и старик Мороз с посохом, который всё видит.', c: 'Сказка, которую родители смотрят вместе с детьми, а потом цитируют.', u: 'https://smotrim.ru/brand/5750' },
-    { t: 'Двенадцать месяцев', y: 1972, d: 'Анатолий Граник', s: 'Юная королева требует подснежников в январе, а падчерица находит у костра двенадцать месяцев.', c: 'По пьесе Маршака: зимний лес и доброта, которая вознаграждается.', u: 'https://smotrim.ru/brand/8026' },
-    { t: 'Вечера на хуторе близ Диканьки', y: 1961, d: 'Александр Роу', s: 'Кузнец Вакула, черевички царицы и чёрт, который украл месяц с неба.', c: 'Гоголь в сказочных декорациях, с колядками и снегом.', u: 'https://smotrim.ru/brand/8425' },
-    { t: 'Чародеи', y: 1982, d: 'Константин Бромберг', s: 'НИИ волшебства под Новый год: волшебная палочка, заколдованная невеста и стена, сквозь которую можно пройти.', c: 'Песни из него знают наизусть даже те, кто не смотрел.', u: 'https://smotrim.ru/brand/7321' },
-    { t: 'Служебный роман', y: 1977, d: 'Эльдар Рязанов', s: 'Строгая начальница, робкий Новосельцев и целое статистическое учреждение.', c: 'Тёплый фильм про людей, которые долго не решаются.', u: 'https://smotrim.ru/brand/6669' },
-    { t: 'Любовь и голуби', y: 1984, d: 'Владимир Меньшов', s: 'Голуби на крыше, путёвка на юг и деревенская семья, которую невозможно не полюбить.', c: 'Каждую реплику Раисы Захаровны хочется записать.', u: 'https://smotrim.ru/brand/5959' },
-    { t: 'Джентльмены удачи', y: 1971, d: 'Александр Серый', s: 'Заведующий детским садом как две капли воды похож на вора по кличке Доцент.', c: 'Смешно в любом возрасте, проверено поколениями.', u: 'https://smotrim.ru/brand/5768' },
+    { t: 'Ирония судьбы, или С лёгким паром!', y: 1975, d: 'Эльдар Рязанов', s: 'Баня тридцать первого, самолёт в Ленинград и квартира, которая выглядит точь-в-точь как своя.', c: 'Под него режут салаты уже пятьдесят лет.', u: 'https://cinema.mosfilm.ru/films/35162/', src: 'Мосфильм', es: MOS,
+      embed: [{ n: '1 серия', u: RT + '2d0899d6388926b7caa66a09e9073572/' }, { n: '2 серия', u: RT + '83e55d3104776e47517b7bbab318e018/' }] },
+    { t: 'Карнавальная ночь', y: 1956, d: 'Эльдар Рязанов', s: 'Дом культуры готовит новогодний бал, а новый директор хочет вместо джаза лекцию.', c: 'Песня про пять минут и Гурченко в двадцать один год.', u: 'https://cinema.mosfilm.ru/films/34844/', src: 'Мосфильм', es: MOS,
+      embed: RT + '2489d73325e7135837a6663027535d61/?p=ZsQfh_G09CaB2Gv2UGRzvw' },
+    { t: 'Морозко', y: 1964, d: 'Александр Роу', s: 'Настенька, хвастливый Иван и старик Мороз с посохом, который всё видит.', c: 'Сказка, которую родители смотрят вместе с детьми, а потом цитируют.', u: 'https://rutube.ru/video/15c3b499bbd1dec49ab415f491893615/', src: 'RuTube', es: GOR,
+      embed: RT + '15c3b499bbd1dec49ab415f491893615/' },
+    { t: 'Двенадцать месяцев', y: '1972 (премьера на ТВ 1 января 1973)', d: 'Анатолий Граник', s: 'Юная королева требует подснежников в январе, а падчерица находит у костра двенадцать месяцев.', c: 'По пьесе Маршака: зимний лес и доброта, которая вознаграждается.', u: 'https://smotrim.ru/brand/8026' },
+    { t: 'Вечера на хуторе близ Диканьки', y: 1961, d: 'Александр Роу', s: 'Кузнец Вакула, черевички царицы и чёрт, который украл месяц с неба.', c: 'Гоголь в сказочных декорациях, с колядками и снегом.', u: 'https://rutube.ru/video/3203985926beb304a01b6781c77d78fe/', src: 'RuTube', es: GOR,
+      embed: RT + '3203985926beb304a01b6781c77d78fe/' },
+    { t: 'Чародеи', y: 1982, d: 'Константин Бромберг', s: 'НИИ волшебства под Новый год: волшебная палочка, заколдованная невеста и стена, сквозь которую можно пройти.', c: 'Песни из него знают наизусть даже те, кто не смотрел.', u: 'https://smotrim.ru/brand/7321', es: 'Смотрим, ВГТРК',
+      embed: SM(2217810) },
+    { t: 'Служебный роман', y: 1977, d: 'Эльдар Рязанов', s: 'Строгая начальница, робкий Новосельцев и целое статистическое учреждение.', c: 'Тёплый фильм про людей, которые долго не решаются.', u: 'https://cinema.mosfilm.ru/films/34315/', src: 'Мосфильм', es: MOS,
+      embed: [{ n: '1 серия', u: RT + '9b8a20607f7a35bde58aaf51fd9d8348/' }, { n: '2 серия', u: RT + '45fd0c7752add6e3cad61521a8869dac/' }] },
+    { t: 'Любовь и голуби', y: 1984, d: 'Владимир Меньшов', s: 'Голуби на крыше, путёвка на юг и деревенская семья, которую невозможно не полюбить.', c: 'Каждую реплику Раисы Захаровны хочется записать.', u: 'https://cinema.mosfilm.ru/films/34335/', src: 'Мосфильм', es: MOS,
+      embed: RT + '68781d890618ea50933ec020fd5060bf/' },
+    { t: 'Джентльмены удачи', y: 1971, d: 'Александр Серый', s: 'Заведующий детским садом как две капли воды похож на вора по кличке Доцент.', c: 'Смешно в любом возрасте, проверено поколениями.', u: 'https://cinema.mosfilm.ru/films/34360/', src: 'Мосфильм', es: MOS,
+      embed: RT + '8f50ed5a7841ff1418671a3c6b7440d4/' },
     { t: 'Снегурочка', y: 1968, d: 'Павел Кадочников', s: 'Дочь Весны и Мороза приходит к людям и хочет узнать, что такое любовь.', c: 'Красивая и немного грустная сказка по Островскому.', u: 'https://smotrim.ru/brand/5749' },
     { t: 'Старый Новый год', y: 1980, d: 'Наум Ардашников, Олег Ефремов', s: 'Две семьи в новом доме отмечают старый Новый год: каждая по-своему.', c: 'Для тех, кому мало одного праздника.', u: 'https://cinema.mosfilm.ru/films/35401/', src: 'Мосфильм' }
   ];
   var card = document.getElementById('tv-card'), noise = document.getElementById('tv-noise'), knob = document.getElementById('tv-knob');
   if (card) {
-    var ch = 0, nctx = noise.getContext('2d'), nt = 0;
+    var ch = 0, nctx = noise.getContext('2d'), part = 0;
+    var screen = document.getElementById('tv-screen'), bar = document.getElementById('tv-bar'), player = document.getElementById('tv-player');
+    function parts(f) { return !f.embed ? [] : (typeof f.embed === 'string' ? [{ n: '', u: f.embed }] : f.embed); }
     function render() {
-      var f = FILMS[ch];
+      var f = FILMS[ch], ep = parts(f);
       card.innerHTML = '<p class="tv-ch">Канал ' + (ch + 1) + ' из ' + FILMS.length + '</p><h3>' + f.t + '</h3>' +
         '<p class="tv-meta">' + f.y + ', реж. ' + f.d + '</p><p class="tv-desc">' + f.s + '</p><p class="tv-cozy">' + f.c + '</p>' +
-        '<a class="tv-watch" href="' + f.u + '" target="_blank" rel="noopener">Смотреть на «' + (f.src || 'Смотрим') + '»</a>';
+        (ep.length
+          ? '<div class="tv-acts"><button type="button" class="tv-watch tv-play" data-part="0">▶ Включить' + (ep.length > 1 ? ' 1 серию' : ' фильм') + '</button>' +
+            (ep.length > 1 ? '<button type="button" class="tv-watch tv-watch-line tv-play" data-part="1">2 серия</button>' : '') + '</div>' +
+            '<p class="tv-src">Плеер: ' + f.es + '. <a href="' + f.u + '" target="_blank" rel="noopener">Смотреть на сайте правообладателя</a></p>'
+          : '<a class="tv-watch" href="' + f.u + '" target="_blank" rel="noopener">Смотреть на «' + (f.src || 'Смотрим') + '»</a>');
       knob.querySelector('.knob-in').style.setProperty('--rot', (ch * 32) + 'deg');
     }
+    function play(p) {
+      var f = FILMS[ch], ep = parts(f);
+      if (!ep[p]) return;
+      part = p;
+      var fr = document.createElement('iframe');
+      fr.title = f.t + (ep[p].n ? ', ' + ep[p].n : '') + ' (' + f.es + ')';
+      fr.setAttribute('allow', 'autoplay; fullscreen; encrypted-media; picture-in-picture');
+      fr.setAttribute('allowfullscreen', '');
+      fr.setAttribute('loading', 'lazy');
+      fr.src = ep[p].u;
+      player.innerHTML = '';
+      player.appendChild(fr);
+      screen.classList.add('playing');
+      var sw = ep.length > 1 ? ep.map(function (e, i) { return '<button type="button" class="tv-ctl tv-part' + (i === p ? ' on' : '') + '" data-part="' + i + '" aria-pressed="' + (i === p) + '">' + e.n + '</button>'; }).join('') : '';
+      var canFs = !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+      bar.innerHTML = '<p class="tv-bar-src"><b>' + f.t + '</b>' + (ep[p].n ? ', ' + ep[p].n : '') + '. Плеер: ' + f.es +
+        '. <a href="' + f.u + '" target="_blank" rel="noopener">Смотреть на сайте правообладателя</a></p>' +
+        '<div class="tv-bar-btns">' + sw +
+        (canFs ? '<button type="button" class="tv-ctl" id="tv-fs">⛶ На весь экран</button>' : '') +
+        '<button type="button" class="tv-ctl tv-off" id="tv-off">Выключить телевизор</button></div>';
+      bar.hidden = false;
+    }
+    function off() {
+      player.innerHTML = '';
+      screen.classList.remove('playing');
+      bar.hidden = true; bar.innerHTML = '';
+      var fe = document.fullscreenElement || document.webkitFullscreenElement;
+      if (fe) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    }
+    function fullscreen() {
+      var el = player.querySelector('iframe') || player;
+      var rq = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (rq) { try { var r = rq.call(el); if (r && r.catch) r.catch(function () {}); } catch (e) {} }
+    }
+    card.addEventListener('click', function (e) {
+      var b = e.target.closest('.tv-play');
+      if (b) staticBurst(function () { play(+b.dataset.part); });
+    });
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      if (b.id === 'tv-off') staticBurst(off);
+      else if (b.id === 'tv-fs') fullscreen();
+      else if (b.classList.contains('tv-part') && +b.dataset.part !== part) staticBurst(function () { play(+b.dataset.part); });
+    });
     function staticBurst(done) {
       if (reduce) { done(); return; }
       noise.width = 160; noise.height = 120; noise.classList.add('on');
@@ -382,7 +444,7 @@
         if (t - start < 260) requestAnimationFrame(frame); else { done(); noise.classList.remove('on'); }
       })(start);
     }
-    function go(dir) { ch = (ch + dir + FILMS.length) % FILMS.length; staticBurst(render); }
+    function go(dir) { ch = (ch + dir + FILMS.length) % FILMS.length; staticBurst(function () { off(); render(); }); }
     knob.addEventListener('click', function () { go(1); });
     document.getElementById('tv-next').addEventListener('click', function () { go(1); });
     document.getElementById('tv-prev').addEventListener('click', function () { go(-1); });

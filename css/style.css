@@ -366,6 +366,26 @@ a.st-on:hover{background:#0f3a2e}
 .tv-cozy{margin-top:8px;font:italic 500 clamp(16px,1.9vw,20px)/1.35 var(--serif);color:#f0d9a4}
 .tv-watch{align-self:flex-start;margin-top:16px;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;
   color:#2a2112;background:linear-gradient(180deg,#f6e2b2,#d6ae66);text-shadow:none}
+.tv-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.tv-acts .tv-watch{margin-top:0;border:0;cursor:pointer;font-family:inherit}
+.tv-watch-line{background:transparent!important;color:#f6e2b2!important;box-shadow:0 0 0 1px #d6ae66 inset}
+.tv-src{margin-top:10px;font-size:13px;color:#a9d3c9}
+.tv-src a,.tv-bar-src a{color:#f0d9a4}
+.tv-player{position:absolute;inset:0;display:none;background:#000}
+.tv-screen.playing .tv-player{display:block}
+.tv-screen.playing .tv-card{visibility:hidden}
+.tv-screen.playing{border-radius:7% / 9%;aspect-ratio:16/10}
+.tv-screen.playing::after{opacity:.35}
+.tv-player iframe{position:absolute;inset:3% 3.5%;width:93%;height:94%;border:0;border-radius:10px;background:#000}
+.tv-bar{margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px;color:#e4cfae;font-size:14px;line-height:1.4}
+.tv-bar[hidden]{display:none}
+.tv-bar-src{flex:1 1 260px;min-width:0}
+.tv-bar-src b{color:#fff6df;font-weight:600}
+.tv-bar-btns{display:flex;flex-wrap:wrap;gap:8px}
+.tv-ctl{min-height:40px;padding:8px 14px;border-radius:999px;cursor:pointer;font:500 14px/1.1 var(--sans);color:#f0d9a4;
+  background:radial-gradient(circle at 40% 35%,#4b4b4b,#1a1a1a);border:1px solid #c9a55e}
+.tv-ctl.on{background:linear-gradient(180deg,#f6e2b2,#d6ae66);color:#2a2112}
+.tv-ctl:focus-visible,.tv-play:focus-visible{outline:2px solid #f6e2b2;outline-offset:2px}
 .tv-panel{display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 0;position:relative;z-index:1}
 .tv-brand{font:italic 600 22px/1 var(--serif);color:#f0d9a4;letter-spacing:.02em}
 .knob{width:96px;height:96px;border-radius:50%;border:0;cursor:pointer;margin-top:10px;position:relative;
@@ -387,6 +407,10 @@ a.st-on:hover{background:#0f3a2e}
   .tv-screen-wrap{padding:8px;border-radius:22px}
   .tv-screen{aspect-ratio:auto;min-height:440px;border-radius:18% / 9%}
   .tv-card{padding:28px 22px}
+  .tv-screen.playing{min-height:0;aspect-ratio:4/3;border-radius:9% / 8%}
+  .tv-player iframe{inset:3%;width:94%;height:94%}
+  .tv-bar{font-size:13px}
+  .tv-ctl{flex:1 1 auto}
   .tv-panel{flex-direction:row;justify-content:space-between;padding:0 6px 4px;gap:12px}
   .knob{width:62px;height:62px;margin-top:0}
   .knob-cap{display:none}

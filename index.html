@@ -30,6 +30,13 @@
 <link rel="stylesheet" href="css/style.css">
 <!-- three.js для 3D-шаров (ES-модули, грузятся только при открытии шара) -->
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<!-- Yandex.Metrika counter -->
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114100831" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -407,7 +414,7 @@
     <header class="head head-center head-dark">
       <svg class="star-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg>
       <h2 id="tv-h">Старый телевизор</h2>
-      <p class="sub">Покрутите ручку каналов. Фильмы открываются на «Смотрим», официальном сайте ВГТРК: смотреть можно бесплатно.</p>
+      <p class="sub">Покрутите ручку каналов. Большинство фильмов можно включить прямо в телевизоре: это официальные плееры Мосфильма, Киностудии Горького и «Смотрим». Смотреть бесплатно.</p>
     </header>
 
     <div class="tv">
@@ -415,8 +422,10 @@
         <div class="tv-screen-wrap">
           <div class="tv-screen" id="tv-screen" aria-live="polite">
             <div class="tv-card" id="tv-card"></div>
+            <div class="tv-player" id="tv-player"></div>
             <canvas class="tv-noise" id="tv-noise" aria-hidden="true"></canvas>
           </div>
+          <div class="tv-bar" id="tv-bar" hidden></div>
         </div>
         <div class="tv-panel">
           <p class="tv-brand">Ёлка-1</p>
@@ -431,7 +440,7 @@
       </div>
       <div class="tv-legs" aria-hidden="true"><i></i><i></i></div>
     </div>
-    <p class="tv-note">Мы не храним и не показываем фильмы на сайте: кнопка «Смотреть» ведёт на страницу правообладателя.</p>
+    <p class="tv-note">Мы не храним фильмы: в экране работает официальный плеер правообладателя (RuTube, «Смотрим»), реклама и возрастная маркировка показываются самим плеером. Фильмы без такого плеера открываются на сайте правообладателя.</p>
   </div>
 </section>
 
