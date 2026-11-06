@@ -44,8 +44,9 @@
     else if (id === 'rail') game = Rail();
     else {
       game = Idle();
-      title.textContent = btn.getAttribute('data-title'); hud.textContent = '';
-      showVeil('Откроется ' + btn.getAttribute('data-soon'), 'Этот шар ещё запечатан. Загляните сюда ' + btn.getAttribute('data-soon') + ', а пока попробуйте каток или железную дорогу.', '', btn.querySelector('img').src);
+      title.textContent = btn.getAttribute('data-title') || btn.parentNode.querySelector('h3').textContent; hud.textContent = '';
+      if (!btn.getAttribute('data-soon')) showVeil('Шар не открылся', 'Этому миру нужен браузер с поддержкой 3D. Попробуйте открыть сайт в свежем Chrome, Safari или Яндекс Браузере.', '', btn.querySelector('img').src);
+      else showVeil('Откроется ' + btn.getAttribute('data-soon'), 'Этот шар ещё запечатан. Загляните сюда ' + btn.getAttribute('data-soon') + ', а пока погуляйте по катку, прокатитесь в поезде или загляните в дом Деда Мороза.', '', btn.querySelector('img').src);
     }
     game.resize && game.resize();
     lastT = 0; cancelAnimationFrame(raf); raf = requestAnimationFrame(frame);
@@ -57,12 +58,15 @@
     if (reduce) done(); else setTimeout(done, 650);
   }
   // 3D-шары (three.js): «Каток» — js/rink3d.js, «Железная дорога» — js/rail3d.js. Если WebGL/модули недоступны — прежняя 2D-игра.
-  var MOD3D = { rink: './rink3d.js', rail: './rail3d.js' }, mods = {};
+  var MOD3D = { rink: './rink3d.js', rail: './rail3d.js', santa: './santa3d.js', forest: './forest3d.js' }, mods = {};
   function load3d(id) { id = id || 'rink'; if (!mods[id]) mods[id] = import(MOD3D[id]).catch(function (e) { mods[id] = null; throw e; }); return mods[id]; }
   function openGlobe(b) {
     var id = b.getAttribute('data-game');
+    // шар с датой открытия: до неё запечатан (для проверки: ?open=1)
+    var from = b.getAttribute('data-open-from');
+    if (from && Date.now() < Date.parse(from) && !/[?&]open=1/.test(location.search)) { open(b); return; }
     if (MOD3D[id] && 'noModule' in HTMLScriptElement.prototype) {
-      load3d(id).then(function (m) { return m.open(b); }).catch(function (e) { if (window.console) console.warn('3D недоступно, открываю 2D', e); ['rk', 'rl'].forEach(function (x) { var r = document.getElementById(x); if (r) r.remove(); }); document.body.style.overflow = ''; open(b); });
+      load3d(id).then(function (m) { return m.open(b); }).catch(function (e) { if (window.console) console.warn('3D недоступно, открываю 2D', e); ['rk', 'rl', 'sn', 'fr'].forEach(function (x) { var r = document.getElementById(x); if (r) r.remove(); }); document.body.style.overflow = ''; open(b); });
       return;
     }
     open(b);
@@ -82,7 +86,7 @@
   if ('ResizeObserver' in window) new ResizeObserver(function () { if (!portal.hidden) resize(); }).observe(stage);
 
   // прямая ссылка на игру: #igra-katok, #igra-doroga (?demo=1 — сразу старт, для проверки)
-  var LINKS = { '#igra-katok': 'rink', '#igra-doroga': 'rail' };
+  var LINKS = { '#igra-katok': 'rink', '#igra-doroga': 'rail', '#igra-ded-moroz': 'santa', '#igra-les': 'forest' };
   if (LINKS[location.hash]) {
     var gb = document.querySelector('.globe[data-game="' + LINKS[location.hash] + '"]');
     if (gb) setTimeout(function () { if (!/[?&]demo=1/.test(location.search)) { openGlobe(gb); return; } open(gb); if (/[?&]demo=1/.test(location.search)) { veil.hidden = true; game.start(); } }, 300);

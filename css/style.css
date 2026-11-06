@@ -505,6 +505,38 @@ a.st-on:hover{background:#0f3a2e}
   .rk-stars{bottom:92px}
 }
 @media (prefers-reduced-motion:reduce){.rk-stars{animation:none}}
+/* globes v2: экскурсия ‹ место › , кнопки действий, выбор вариантов (js/globe-kit.js) */
+.gk-tour{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;transition:opacity .4s;z-index:3}
+.gk-tour.off{opacity:0;pointer-events:none}
+.gk-tour .rk-btn{width:56px;height:56px}
+.gk-tour .rk-btn svg{width:26px;height:26px}
+.gk-name{min-width:min(260px,52vw);margin:0;text-align:center;line-height:1.1}
+.gk-name b{display:block;font:600 22px/1.1 var(--serif);color:var(--gold-2);text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.gk-name small{display:block;margin-top:4px;font:500 12px/1 var(--sans);letter-spacing:.12em;color:rgba(240,217,164,.75);text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.gk-acts{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;width:max-content;max-width:calc(100vw - 32px);z-index:3}
+.gk-acts .rk-stars{position:static;transform:none}
+.gk-acts .rk-out{background:rgba(8,14,26,.55);backdrop-filter:blur(6px)}
+.gk-acts [hidden]{display:none}
+.rk.gk .rk-hint,.rk.tour .rk-hint{bottom:166px}
+.gk-choices{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);width:min(620px,calc(100vw - 24px));padding:14px 14px 16px;border-radius:24px;background:linear-gradient(180deg,rgba(18,32,58,.88),rgba(10,18,34,.92));border:1px solid rgba(214,174,102,.45);backdrop-filter:blur(8px);z-index:4;text-align:center}
+.gk-choices[hidden]{display:none}
+.gk-choices p{margin:0 0 10px;font:italic 500 19px/1.2 var(--serif);color:var(--gold-2)}
+.gk-choices div{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.gk-ch{min-height:56px;min-width:120px;padding:10px 20px;border-radius:999px;border:1px solid rgba(240,217,164,.6);background:rgba(255,255,255,.06);color:var(--text);font:500 16px/1 var(--sans);cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.gk-ch:hover,.gk-ch:focus-visible{border-color:var(--gold-2);background:rgba(214,174,102,.16)}
+.gk-ch i{width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.rk.choosing .gk-acts,.rk.choosing .gk-tour{opacity:0;pointer-events:none}
+.rk-card p i{display:block;margin-top:10px;color:var(--gold-2)}
+.gk-free{position:absolute;right:max(var(--gutter),2.2vw);bottom:26px;z-index:3;padding:8px 12px;border:0;border-radius:999px;background:rgba(8,14,26,.35);color:rgba(240,217,164,.7);font:500 12px/1 var(--sans);cursor:pointer}
+.gk-free:hover{color:var(--gold-2)}
+.rk.free .gk-tour{opacity:0;pointer-events:none}
+@media (max-width:599px){
+  .gk-tour{bottom:14px;gap:6px}.gk-tour .rk-btn{width:52px;height:52px}
+  .gk-name{min-width:0;width:calc(100vw - 150px)}.gk-name b{font-size:19px}
+  .gk-acts{bottom:84px}.rk.gk .rk-hint,.rk.tour .rk-hint{bottom:146px}
+  .gk-choices{bottom:80px}.gk-ch{min-width:0;flex:1 1 40%}
+  .gk-free{bottom:auto;top:70px;right:var(--gutter)}
+}
 /* 3D-поезд (js/rail3d.js): общие стили .rk-*, здесь только своё */
 .rl .rl-cars,.rl .rl-pad{position:absolute;bottom:18px;display:flex;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .4s}
 .rl.walk .rl-cars,.rl.walk .rl-pad{opacity:1;pointer-events:auto}
