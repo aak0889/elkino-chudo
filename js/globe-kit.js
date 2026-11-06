@@ -275,7 +275,7 @@ export function buildRoom({ envMap, T_GLOW, rnd, LOW, santa = false }) {
   [WIN.x0 - .05, WIN.x1 + .05].forEach(x => { const m = new THREE.Mesh(new THREE.BoxGeometry(.12, fh + .2, .22), darkWood); m.position.set(x, fy, -D / 2 + .02); frame.add(m); });
   const sill = new THREE.Mesh(new THREE.BoxGeometry(fw + .5, .06, .4), darkWood); sill.position.set(fx, WIN.y0 - .08, -D / 2 + .16); scene.add(sill);
   const frost = canvasTex(256, 256, (g, w, h) => { const gr = g.createRadialGradient(w / 2, h / 2, w * .25, w / 2, h / 2, w * .75); gr.addColorStop(0, 'rgba(230,240,255,0)'); gr.addColorStop(1, 'rgba(230,240,255,.75)'); g.fillStyle = gr; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(240,248,255,.35)'; for (let i = 0; i < 70; i++) { const x = rnd() < .5 ? rnd() * w * .25 : w - rnd() * w * .25, y = rnd() * h; g.lineWidth = .6 + rnd(); g.beginPath(); g.moveTo(x, y); for (let k = 0; k < 4; k++) g.lineTo(x + (rnd() - .5) * 40, y + (rnd() - .5) * 40); g.stroke(); } });
-  const pane = new THREE.Mesh(new THREE.PlaneGeometry(fw, fh), new THREE.MeshBasicMaterial({ map: frost, transparent: true, depthWrite: false, opacity: .8 })); pane.position.set(fx, fy, -D / 2 + .03); scene.add(pane);
+  const pane = new THREE.Mesh(new THREE.PlaneGeometry(fw, fh), new THREE.MeshBasicMaterial({ map: frost, transparent: true, depthWrite: false, opacity: .5 })); pane.position.set(fx, fy, -D / 2 + .03); scene.add(pane);
   const outU = { uTime: { value: 0 } };
   const night = new THREE.Mesh(new THREE.PlaneGeometry(14, 8), new THREE.ShaderMaterial({ uniforms: outU, fog: false, vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }', fragmentShader: 'varying vec2 vUv; void main(){ vec3 c = mix(vec3(.12,.16,.32), vec3(.015,.025,.07), smoothstep(.2,.95,vUv.y)); c += vec3(.25,.3,.5) * exp(-pow(length((vUv - vec2(.62,.72)) * vec2(1.6,1.)) * 6., 2.)) * .8; gl_FragColor = vec4(c, 1.); }' }));
   night.position.set(fx, 2, -D / 2 - 4); scene.add(night);
@@ -360,7 +360,7 @@ export function buildRoom({ envMap, T_GLOW, rnd, LOW, santa = false }) {
   const lampL = new THREE.PointLight(0xffc489, 2.2, 7, 1.6); lampL.position.set(TX, 2.1, TZ + .3); scene.add(lampL);
   const treeL = new THREE.PointLight(0xffb867, 2.2, 5, 1.8); treeL.position.set(TREE.x + .9, 1.4, TREE.z + .9); scene.add(treeL);
   // подвесной абажур
-  const shade = new THREE.Mesh(new THREE.ConeGeometry(.32, .26, 24, 1, true), new THREE.MeshStandardMaterial({ color: 0xe8c48a, emissive: 0xffaa55, emissiveIntensity: .8, side: THREE.DoubleSide, roughness: .8 })); shade.position.set(TX, 2.35, TZ + .3); scene.add(shade);
+  const shade = new THREE.Mesh(new THREE.ConeGeometry(.32, .26, 24, 1, true), new THREE.MeshStandardMaterial({ color: 0xe8c48a, emissive: 0xffaa55, emissiveIntensity: .3, side: THREE.DoubleSide, roughness: .8 })); shade.position.set(TX, 2.35, TZ + .3); scene.add(shade);
   const cord = new THREE.Mesh(new THREE.CylinderGeometry(.008, .008, .62, 6), darkWood); cord.position.set(TX, 2.79, TZ + .3); scene.add(cord);
   const lampB = new THREE.Mesh(new THREE.SphereGeometry(.06, 12, 10), new THREE.MeshBasicMaterial({ color: HDR(4, 3, 1.8) })); lampB.position.set(TX, 2.26, TZ + .3); scene.add(lampB);
   // мастерская Деда Мороза: верстак, игрушки, письма

@@ -10,10 +10,11 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { Reflector } from 'three/addons/objects/Reflector.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { quality, furFir, firMat, ridged, fbm, snowMaterial, sparkle, gradePass, sanitizePass, makeBokeh, makeTour, buildRoom } from './globe-kit.js';
 
 const Q = new URLSearchParams(location.search);
 const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches || Q.get('rm') === '1';
-const LOW = Q.get('q') === 'low' || (Q.get('q') !== 'high' && (matchMedia('(pointer: coarse)').matches || Math.min(innerWidth, innerHeight) < 600));
+const QL = quality(), LOW = QL.LOW;
 const TOUCH = matchMedia('(pointer: coarse)').matches;
 const DEBUG = Q.has('rkshot');
 const store = window.ElkStore || (() => null);
@@ -41,12 +42,24 @@ function hgt(x, z) {
   const ds = Math.abs(x - streamX(z)); h -= .55 * (1 - smooth(1.6, 4.5, ds)) * (1 - smooth(44, 50, r));
   h += 2.2 * smooth(42, 53, r);
   if (r > 54) {
-    const hn = Math.sin(x * .045 + 2) * Math.cos(z * .05) * .5 + .5 + Math.sin(x * .021 - z * .017) * .35;
-    h += -1.2 * smooth(54, 64, r) + hn * 9 * smooth(62, 95, r) + 12 * smooth(110, 165, r);
+    h += -1.2 * smooth(54, 64, r) + (fbm(x * .03 + 5, z * .03, 3) * 5 + ridged(x * .011 + 2, z * .011 - 4, 5) * 34) * smooth(60, 110, r) + 10 * smooth(120, 170, r);
   }
   return h;
 }
 const onIce = (x, z) => Math.hypot(x, z) < RINK - .05;
+/* экскурсия: где встаёт героиня (h) и куда смотрит камера (l) */
+const yawTo = (hx, hz, lx, lz) => Math.atan2(-(lx - hx), -(lz - hz));
+const SPOTS = [
+  { id: 'rink', name: 'Каток', h: [0, 10.2], l: [0, -4], pitch: .3, dist: 7.5 },
+  { id: 'tree', name: 'Главная ёлка', h: [1.6, -9.2], l: [0, -16], pitch: .2, dist: 6.5 },
+  { id: 'fair', name: 'Ярмарка', h: [-10.6, -5], l: [-15, -9.5], pitch: .24, dist: 6 },
+  { id: 'house', name: 'Тёплый домик', h: [5.7, -22.8], l: [7, -28], pitch: .2, dist: 6.5, act: 'Зайти в дом' },
+  { id: 'bridge', name: 'Мостик через ручей', h: [12.6, 1.6], l: [18.5, -2], pitch: .25, dist: 6 },
+  { id: 'bench', name: 'Скамейка у фонаря', h: [-6.2, 10.2], l: [-9.6, 13.8], pitch: .22, dist: 5.5 },
+  { id: 'look', name: 'Край леса', h: [-23.5, 28.5], l: [-40, 48], pitch: .14, dist: 5 },
+];
+SPOTS.forEach(s => { s.yaw = yawTo(s.h[0], s.h[1], s.l[0], s.l[1]); const d = s.dist * 1.25; s.c = [s.h[0] + Math.sin(s.yaw) * d, s.h[1] + Math.cos(s.yaw) * d]; });
+const ROOM_SPOTS = [{ id: 'room', name: 'В домике', text: 'Тепло, трещат дрова, пахнет чаем и мандаринами' }, { id: 'tree', name: 'Ёлка в домике', text: 'Корзинка с игрушками ждёт', act: 'Нарядить ёлку' }, { id: 'fire', name: 'У камина', text: 'Носки на полке, свечи, тёплый свет' }, { id: 'table', name: 'Чай', text: 'Чайник ещё горячий' }];
 
 /* ---------------- текстуры ---------------- */
 function canvasTex(w, h, draw, srgb = true) {
@@ -67,7 +80,7 @@ const awningTex = (a, b) => canvasTex(256, 64, (g, w, h) => { for (let i = 0; i 
 function pointsMat(frag, vert, uniforms) { return new THREE.ShaderMaterial({ uniforms, vertexShader: vert, fragmentShader: frag, transparent: true, depthWrite: false, fog: false }); }
 const SNOW_V = `
 uniform float uTime, uScale, uSpin, uFloor, uTop, uBox, uMode, uFall, uLift, uShake; uniform vec3 uC;
-attribute vec4 aSeed; varying float vA;
+attribute vec4 aSeed; varying float vA; varying float vSz;
 void main(){
   vec3 p;
   // встряхивание: uLift — накопленный подъём, uShake — сила метели (0..1), uFall — «часы» падения (медленнее после встряхивания)
@@ -88,11 +101,11 @@ void main(){
     vA = (1.0 - smoothstep(uBox * .3, uBox * .5, length(p - uC))) * show;
   }
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
-  gl_PointSize = aSeed.w * uScale / -mv.z;
+  gl_PointSize = aSeed.w * uScale / -mv.z * (.7 + .6 * fract(aSeed.x * 13.7)); vSz = gl_PointSize;
   gl_Position = projectionMatrix * mv;
 }`;
-const SNOW_F = `uniform float uOpacity; varying float vA;
-void main(){ float d = length(gl_PointCoord - .5); float a = smoothstep(.5, .12, d) * vA * uOpacity; if (a < .01) discard; gl_FragColor = vec4(vec3(1.0, .97, .93) * 1.2, a); }`;
+const SNOW_F = `uniform float uOpacity; varying float vA; varying float vSz;
+void main(){ vec2 q = gl_PointCoord - .5; float d = length(q); float a = exp(-d * d * 16.) * smoothstep(.5, .3, d) * vA * uOpacity * mix(1., .4, smoothstep(7., 34., vSz)); if (a < .01) discard; gl_FragColor = vec4(vec3(1.0, .97, .94) * 1.15, a); }`;
 const TW_V = `uniform float uTime, uScale; attribute vec4 aSeed; varying float vB;
 void main(){ vB = pow(.5 + .5 * sin(uTime * aSeed.x + aSeed.y), aSeed.z); vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_PointSize = aSeed.w * uScale / -mv.z; gl_Position = projectionMatrix * mv; }`;
 const TW_F = `uniform float uOpacity, uGain; uniform vec3 uColor; varying float vB;
@@ -145,7 +158,7 @@ export async function open(btn) {
 async function build(btn) {
   seed = 7;
   /* ---------- DOM ---------- */
-  const el = document.createElement('div'); el.className = 'rk' + (TOUCH ? ' touch' : ''); el.id = 'rk';
+  const el = document.createElement('div'); el.className = 'rk tour' + (TOUCH ? ' touch' : ''); el.id = 'rk';
   el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); el.setAttribute('aria-label', 'Каток: снежный шар, внутри которого можно гулять');
   el.innerHTML = `
   <canvas class="rk-cv" tabindex="0" aria-label="Мир внутри снежного шара"></canvas>
@@ -164,6 +177,8 @@ async function build(btn) {
   <div class="rk-combo" aria-hidden="true"></div>
   <div class="rk-pops" aria-hidden="true"></div>
   <div class="rk-joy" aria-hidden="true"><i></i></div>
+  <div class="gk-acts"><button class="rk-stars gk-act" type="button" hidden></button><button class="rk-out gk-act2" type="button" hidden></button></div>
+  <button class="gk-free" type="button" hidden>Свободная прогулка</button>
   <div class="rk-card" hidden><div class="rk-card-in"><svg class="rk-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg><h3></h3><p></p><div class="rk-acts"><button class="rk-go" type="button"></button><button class="rk-out" type="button">Гулять дальше</button></div></div></div>
   <div class="rk-load"><span>Снимаем шар с полки…</span></div>`;
   document.body.appendChild(el); document.body.style.overflow = 'hidden';
@@ -175,7 +190,7 @@ async function build(btn) {
 
   /* ---------- renderer ---------- */
   const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: false, powerPreference: 'high-performance', preserveDrawingBuffer: DEBUG });
-  const DPR = Math.min(devicePixelRatio || 1, LOW ? 1.5 : 1.75); renderer.setPixelRatio(DPR);
+  const DPR = QL.dpr; renderer.setPixelRatio(DPR);
   renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = .95;
   renderer.shadowMap.enabled = !LOW; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   const scene = new THREE.Scene();
@@ -277,8 +292,9 @@ async function build(btn) {
     for (let j = 0; j < segR; j++) for (let i = 0; i < segT; i++) { const a = j * (segT + 1) + i, b = a + segT + 1; idx.push(a, a + 1, b, b, a + 1, b + 1); }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.setIndex(idx); g.computeVertexNormals(); return g;
   }
-  const ground = new THREE.Mesh(terrainRing(.01, CORE, LOW ? 120 : 200, LOW ? 60 : 96, 1.15), new THREE.MeshStandardMaterial({ color: 0xdfe7f6, roughness: .85, vertexColors: true })); ground.receiveShadow = true; world.add(ground);
-  const far = new THREE.Mesh(terrainRing(CORE - .6, 185, LOW ? 90 : 160, LOW ? 30 : 50, 1.4), new THREE.MeshStandardMaterial({ color: 0xe6ecf8, roughness: .9 })); beyond.add(far);
+  const ground = new THREE.Mesh(terrainRing(.01, CORE, LOW ? 120 : 200, LOW ? 60 : 96, 1.15), snowMaterial({ color: 0xe2eaf8, vertexColors: true })); ground.receiveShadow = true; world.add(ground);
+  const far = new THREE.Mesh(terrainRing(CORE - .6, 185, LOW ? 120 : 220, LOW ? 40 : 70, 1.4), snowMaterial({ color: 0xe6ecf8, vertexColors: true, spark: false })); beyond.add(far);
+  { const P_ = far.geometry.attributes.position, C_ = far.geometry.attributes.color; for (let i = 0; i < P_.count; i++) { const y = P_.getY(i), v = .82 + .18 * smooth(-1, 22, y); C_.setXYZ(i, v * .93, v * .96, v * 1.04); } }
 
   // лёд катка
   let reflector = null;
@@ -345,8 +361,8 @@ async function build(btn) {
     for (let i = 0; i < tiers; i++) { const r = .78 - i * (.64 / tiers), h = .85 - i * .08, yc = .55 + i * (2 / tiers); const c = new THREE.ConeGeometry(r, h, seg, 1); c.rotateY(i * .5); c.translate(0, yc, 0); add(c, i % 2 ? '#1d5a45' : '#174a39'); const sh = h * .5, sr = r * .5 * 1.07; const sn = new THREE.ConeGeometry(sr, sh, seg, 1); sn.rotateY(i * .5); sn.translate(0, yc + h / 2 - sh / 2 + .015, 0); add(sn, '#f4f7ff'); }
     const g = mergeGeometries(parts); g.computeVertexNormals(); return g;
   }
-  const treeGeo = treeGeometry(4, 9), farTreeGeo = treeGeometry(2, 6);
-  const treeMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .75, flatShading: true });
+  const treeGeo = furFir({ seed: 7, snow: .48, tiers: LOW ? 6 : 8, seg: LOW ? 16 : 22 }), farTreeGeo = furFir({ seed: 8, snow: .6, tiers: 4, seg: 10 }), mainTreeGeo = furFir({ seed: 41, snow: .3, tiers: 10, seg: 28 });
+  const treeMat = firMat(); void treeGeometry;
   const placeFree = (x, z, rad) => !colliders.some(c => Math.hypot(c[0] - x, c[1] - z) < c[2] + rad);
 
   /* ---- места ---- */
@@ -361,7 +377,7 @@ async function build(btn) {
   const TREE_P = [0, -16];
   {
     const tg = new THREE.Group(); const y0 = hgt(...TREE_P); tg.position.set(TREE_P[0], y0, TREE_P[1]); world.add(tg);
-    const t = new THREE.Mesh(treeGeo, treeMat); t.scale.set(3.6, 4.0, 3.6); t.castShadow = t.receiveShadow = true; tg.add(t);
+    const t = new THREE.Mesh(mainTreeGeo, treeMat); t.scale.set(3.3, 3.75, 3.3); t.castShadow = t.receiveShadow = true; tg.add(t);
     const H = 4.0 * 2.35;
     for (let i = 0; i < 150; i++) { const k = i / 150, y = .9 + k * (H - 1.6), rr = (1 - (y - .4) / H) * 2.95 + .1, a = k * Math.PI * 2 * 7; bulb(V3(Math.cos(a) * rr, y, Math.sin(a) * rr).add(tg.position), .085, PAL[i % 3 === 0 ? 4 : (i % 5 === 0 ? 2 : 0)], k, 'tree'); }
     const bm = [0xb33a44, 0xd6ae66, 0x2c5f8a, 0xe9843a].map(c => new THREE.MeshPhysicalMaterial({ color: c, metalness: .55, roughness: .18, clearcoat: 1, envMap, envMapIntensity: 1.6 }));
@@ -476,6 +492,7 @@ async function build(btn) {
     const s = 1.4 + rnd() * 1.9 + smooth(25, 50, r) * 1.2;
     if (r < 26 && rnd() < .75) continue; if (z > 0 && rnd() < .6) continue;
     if (distPath(x, z) < 3.2 || Math.abs(x - streamX(z)) < 3.2) continue;
+    if (SPOTS.some(s => Math.hypot(x - s.h[0], z - s.h[1]) < 3.5 || Math.hypot(x - s.c[0], z - s.c[1]) < 3.2 || Math.hypot(x - (s.h[0] + s.c[0]) / 2, z - (s.h[1] + s.c[1]) / 2) < 2.6)) continue;
     if (Math.hypot(x - TREE_P[0], z - TREE_P[1]) < 6 || Math.hypot(x + 14.5, z + 9) < 7 || (Math.hypot(x - 19, z + 2) < 6)) continue;
     if (z > 8 && Math.abs(x) < 9 + (z - 8) * .5 && r < 30) continue;
     if (r > 26 && Math.abs(wrapA(Math.atan2(z, x) - Math.atan2(32, -26))) < .2 + 4 / r) continue;   // просека: вид со смотровой   // открытый вид на каток спереди
@@ -583,9 +600,10 @@ async function build(btn) {
   /* ---------- пост-обработка ---------- */
   const rt = new THREE.WebGLRenderTarget(2, 2, { type: THREE.HalfFloatType, samples: LOW ? 0 : 4 });
   const composer = new EffectComposer(renderer, rt);
-  composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), .6, .42, .85); composer.addPass(bloom);
-  composer.addPass(new OutputPass());
+  const rpass = new RenderPass(scene, camera); composer.addPass(rpass); composer.addPass(sanitizePass());
+  const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), .6, .42, .85); bloom.enabled = QL.bloom; composer.addPass(bloom);
+  composer.addPass(new OutputPass()); const grade = gradePass(); composer.addPass(grade);
+  scene.add(camera); const bokeh = makeBokeh(camera, { n: LOW ? 10 : 18, unit: S * 6 }); bokeh.visible = false;
 
   /* ---------- камера ---------- */
   let W = 1, Hh = 1, aspect = 1;
@@ -648,22 +666,25 @@ async function build(btn) {
   }
   const joyEl = $('.rk-joy'), knob = joyEl.querySelector('i');
   cv.addEventListener('pointerdown', e => {
-    if (!walking()) return; if (AC && sndOn) AC.resume();
-    if (e.pointerType === 'touch' && e.clientX < W * .45 && e.clientY > Hh * .35) { joy = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, dy: 0 }; joyEl.style.left = e.clientX + 'px'; joyEl.style.top = e.clientY + 'px'; joyEl.classList.add('on'); knob.style.transform = ''; }
+    if (AC && sndOn) AC.resume();
+    if (G.mode === 'room') { drag = { id: e.pointerId, x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, moved: false, room: true }; return; }
+    if (!walking()) return;
+    if (G.free && e.pointerType === 'touch' && e.clientX < W * .45 && e.clientY > Hh * .35) { joy = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, dy: 0 }; joyEl.style.left = e.clientX + 'px'; joyEl.style.top = e.clientY + 'px'; joyEl.classList.add('on'); knob.style.transform = ''; }
     else drag = { id: e.pointerId, x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, moved: false };
     cv.setPointerCapture && cv.setPointerCapture(e.pointerId);
   });
   cv.addEventListener('pointermove', e => {
     if (joy && e.pointerId === joy.id) { let dx = e.clientX - joy.x, dy = e.clientY - joy.y; const l = Math.hypot(dx, dy), m = 46; if (l > m) { dx *= m / l; dy *= m / l; } joy.dx = dx / m; joy.dy = dy / m; knob.style.transform = `translate(${dx}px,${dy}px)`; return; }
-    if (drag && e.pointerId === drag.id) { const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.x = e.clientX; drag.y = e.clientY; if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 6) drag.moved = true; camS.yaw -= dx * .006; camS.pitch = clamp(camS.pitch + dy * .004, .12, .9); camS.manual = 1.6; }
+    if (drag && e.pointerId === drag.id) { const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.x = e.clientX; drag.y = e.clientY; if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 6) drag.moved = true; if (drag.room || (!G.free && e.pointerType === 'touch')) return; camS.yaw -= dx * .006; camS.pitch = clamp(camS.pitch + dy * .004, .12, .9); camS.manual = 1.6; }
   });
   const up = e => {
     if (joy && e.pointerId === joy.id) { joy = null; joyEl.classList.remove('on'); return; }
-    if (drag && e.pointerId === drag.id) { if (!drag.moved) { const p = groundPoint(e); if (p) H.goto = p; } drag = null; }
+    if (drag && e.pointerId === drag.id) { if (!drag.moved && !(tour.swiped && performance.now() - tour.swiped < 60)) { if (drag.room) roomTap(e); else if (G.play && tapStar(e)) { } else if (G.free) { const p = groundPoint(e); if (p) H.goto = p; } } drag = null; }
   };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
   function onKey(e, down) {
-    if (down && e.key === 'Escape') { if (!card.hidden) hideCard(); else exit(); return; }
+    if (down && e.key === 'Escape') { if (!card.hidden) hideCard(); else if (G.mode === 'room') exitHouse(); else exit(); return; }
+    if (!G.free) { if (down && (G.mode === 'walk' || G.mode === 'room') && !(e.target && e.target.closest && e.target.closest('button'))) { if (e.key === 'ArrowRight') { e.preventDefault(); tour.next(); } if (e.key === 'ArrowLeft') { e.preventDefault(); tour.prev(); } } return; }
     const k = e.key.toLowerCase(); if (KEYS[k]) { keys[k] = down; e.preventDefault(); H.goto = null; }
   }
   const kd = e => onKey(e, true), ku = e => onKey(e, false); addEventListener('keydown', kd); addEventListener('keyup', ku);
@@ -671,7 +692,7 @@ async function build(btn) {
   const SH = makeShake(REDUCE);
   const unShake = bindShake($('.rk-shake'), p => { SH.kick(p); if (!REDUCE) spinV += 2.2 * p; chime([2093, 2637, 3136, 2349], .03, 1.6, .07); });
   $('.rk-out').addEventListener('click', () => { hideCard(); cv.focus({ preventScroll: true }); });
-  $('.rk-go').addEventListener('click', () => startGame());
+  $('.rk-go').addEventListener('click', () => { if (card._go) { const f = card._go; card._go = null; hideCard(); f(); } else startGame(); });
   starsBtn.addEventListener('click', () => startGame());
   const walking = () => G.mode === 'walk';
 
@@ -688,7 +709,7 @@ async function build(btn) {
     Object.assign(G, { score: 0, left: GAME_TIME, combo: 0, lastPick: -9, spawnT: .2, play: true });
     hudSc.textContent = '0'; hudTm.textContent = GAME_TIME; el.classList.add('playing'); starsBtn.hidden = true; cv.focus({ preventScroll: true });
     if (!onIce(H.x, H.z)) H.goto = { x: 0, z: 2 };
-    setHint('Звёзды падают на лёд. Две подряд — комбо, круг без остановки — пируэт', 3800);
+    setHint(G.free ? 'Звёзды падают на лёд. Две подряд — комбо, круг без остановки — пируэт' : (TOUCH ? 'Касайтесь звёзд на льду, пока они горят' : 'Щёлкайте по звёздам на льду, пока они горят'), 3800);
     for (let i = 0; i < 3; i++) spawn(false);
   }
   function endGame(silent) {
@@ -716,12 +737,14 @@ async function build(btn) {
   function arrive() {
     G.mode = 'walk'; groups.rink.tg = 1.2; groups.house.tg = 1.2;
     chime([1047, 1319, 1568, 2093], .035, 2.2, .14);
-    setTimeout(() => setHint(TOUCH ? 'Левый палец — идти, правый — осмотреться, касание — пойти туда' : 'WASD или стрелки — идти, мышью — осмотреться, клик — пойти туда', 7000), 600);
+    tour.nav.classList.remove('off'); freeBtn.hidden = false; tour.go(0);
+    setTimeout(() => setHint(TOUCH ? 'Стрелки внизу или свайп — следующее место' : 'Стрелки ‹ › внизу или на клавиатуре — следующее место', 6500), 900);
     setTimeout(() => showPlace('Внутри шара', 'Погуляйте: тут каток, ярмарка, мостик и тропинка в лес'), 200);
   }
   let exiting = false;
   function exit() {
-    if (exiting) return; exiting = true; endGame(true); hideCard(); starsBtn.hidden = true; hissG && (hissG.gain.value = 0);
+    if (exiting) return; exiting = true; endGame(true); hideCard(); starsBtn.hidden = true; tour.nav.classList.add('off'); freeBtn.hidden = true; setActB(actA); setActB(actB);
+    if (G.mode === 'room') { G.mode = 'walk'; camLocal = true; rpass.scene = scene; scene.add(camera); Object.assign(cam, thirdPerson()); } hissG && (hissG.gain.value = 0);
     if (REDUCE || G.mode === 'load' || G.mode === 'outside') return finish();
     G.mode = 'flyout'; whoosh(false); camLocal = true; if (fly && !fly.rev) fly.rev = true; else fly = makeFlight(true);
   }
@@ -743,7 +766,7 @@ async function build(btn) {
     if (avg < 21) return; Q_.step++;
     if (Q_.step === 1) { renderer.setPixelRatio(Math.max(1, DPR * .75)); composer.setPixelRatio(Math.max(1, DPR * .75)); resize(); }
     else if (Q_.step === 2) { Q_.noRefl = true; bloom.resolution.multiplyScalar(.6); }
-    else { renderer.shadowMap.enabled = false; moon.castShadow = false; scene.traverse(o => { if (o.material) o.material.needsUpdate = true; }); renderer.setPixelRatio(1); composer.setPixelRatio(1); resize(); }
+    else { bloom.enabled = false; renderer.shadowMap.enabled = false; moon.castShadow = false; scene.traverse(o => { if (o.material) o.material.needsUpdate = true; }); renderer.setPixelRatio(1); composer.setPixelRatio(1); resize(); }
   }
   function frame(now) { raf = requestAnimationFrame(frame); const ms = now - last, dt = Math.min(.05, ms / 1000); last = now; adapt(ms); if (renderer.shadowMap.enabled) { renderer.shadowMap.autoUpdate = false; renderer.shadowMap.needsUpdate = (++Q_.frame % 2 === 0); } tick(dt); composer.render(); }
   function tick(dt) {
@@ -753,10 +776,16 @@ async function build(btn) {
       cam.p.copy(fly.pc.getPoint(e)); cam.l.copy(fly.lc.getPoint(e)); cam.fov = fly.f0 + (fly.f1 - fly.f0) * smooth(.3, 1, e); G.phase = e;
       if (!fly.rev && fly.t >= 1) { fly = null; arrive(); }
       else if (fly && fly.rev && fly.t <= 0) { fly = null; G.mode = 'shelf'; camLocal = false; setTimeout(finish, 700); }
-    } else if (!camLocal) {
+    } else if (!camLocal && G.mode !== 'room') {
       const o = outsidePose(); cam.p.copy(o.p).add(V3(Math.sin(time * .25) * .8, Math.sin(time * .2) * .3, 0)); cam.l.copy(o.l); cam.fov = o.fov;
+    } else if (G.mode === 'room') {
+      if (roomGlide) { roomGlide.t += dt / 1.8; const e = ease(clamp(roomGlide.t, 0, 1)); RC.p.lerpVectors(roomGlide.from.p, roomGlide.to.p, e); RC.l.lerpVectors(roomGlide.from.l, roomGlide.to.l, e); RC.fov = roomGlide.from.fov + (roomGlide.to.fov - roomGlide.from.fov) * e; if (roomGlide.t >= 1) { const i = roomGlide.i; roomGlide = null; roomArrive(i); } }
+      cam.p.copy(RC.p); cam.l.copy(RC.l); cam.fov = RC.fov; if (!REDUCE) { cam.p.x += Math.sin(time * .31) * .03; cam.p.y += Math.sin(time * .23) * .015; }
+      room.setLit(DT.lit ? Math.min(1, (DT.lk = (DT.lk || 0) + dt)) : 0); room.update(dt, time);
+      room.orns.forEach((o, i) => { o.ring.material.opacity = DT.on && !o.done ? .3 + .25 * Math.sin(time * 3 + i) : 0; });
     } else if (G.mode === 'walk') {
-      const tp = thirdPerson(), k = 1 - Math.pow(.004, dt); cam.p.lerp(tp.p, k); cam.l.lerp(tp.l, 1 - Math.pow(.0005, dt)); cam.fov += (tp.fov - cam.fov) * k;
+      if (!G.free && camS.tyaw !== undefined && (camS.manual || 0) <= 0) { const kk = 1 - Math.pow(.25, dt); camS.yaw += wrapA(camS.tyaw + (REDUCE ? 0 : Math.sin(time * .13) * .06) - camS.yaw) * kk; camS.pitch += (camS.tpitch - camS.pitch) * kk; camS.dist += (camS.tdist - camS.dist) * kk; }
+      const tp = G.play && !G.free ? (PORTRAIT() ? { p: V3(0, 12, 17), l: V3(0, 0, 1), fov: 60 } : { p: V3(0, 8, 13.5), l: V3(0, 0, -.6), fov: 48 }) : thirdPerson(), k = 1 - Math.pow(.004, dt); cam.p.lerp(tp.p, k); cam.l.lerp(tp.l, 1 - Math.pow(.0005, dt)); cam.fov += (tp.fov - cam.fov) * k;
     }
     applyCam();
     // снаружи/внутри
@@ -768,7 +797,9 @@ async function build(btn) {
     scene.fog.density = inside ? (.003 + .0075 * low) / S : 0;
     bgU.uIn.value = inside ? 1 : 0;
     key.intensity = inside ? .1 : 1.1; rimL.intensity = inside ? .12 : .7;
-    bloom.strength = inside ? .52 : .75; bloom.threshold = inside ? .86 : .88;
+    const inRoom = G.mode === 'room'; camera.near = inRoom ? .03 : .01; camera.far = inRoom ? 60 : 600;
+    bloom.strength = inRoom ? .55 : (inside ? .55 : .75); bloom.threshold = inRoom ? .82 : (inside ? .84 : .88);
+    bokeh.visible = (inside || inRoom) && !REDUCE; bokeh.level = inRoom ? .55 : 1; bokeh.unit = inRoom ? 1 : S * 6; bokeh.update(dt, time, camera); grade.uniforms.uTime.value = time; grade.uniforms.uVig.value = inside || inRoom ? .6 : .35;
     // тень луны следует за героем
     if (moon.castShadow) { const c = toScene(V3(H.x, 0, H.z)); moon.target.position.copy(c); moon.position.copy(c).add(V3(-5, 14, 7).multiplyScalar(.5)); const e = (inside ? 22 : 60) * S; const sc = moon.shadow.camera; if (sc.right !== e) { sc.left = -e; sc.right = e; sc.top = e; sc.bottom = -e; sc.near = .1; sc.far = 30; sc.updateProjectionMatrix(); } }
     // уровни мест (волна огоньков)
@@ -814,6 +845,17 @@ async function build(btn) {
   }
   function updateHero(dt) {
     if (G.mode !== 'walk') { H.y = hgt(H.x, H.z); hero.position.set(H.x, onIce(H.x, H.z) ? .03 : H.y, H.z); hero.rotation.y = H.head; poseSkater(hero, time, .2, 0, 0, true); return; }
+    if (H.tour) {
+      const T = H.tour; T.t += dt / T.dur; const e = ease(clamp(T.t, 0, 1)), px = H.x, pz = H.z;
+      H.x = T.x0 + (T.x1 - T.x0) * e; H.z = T.z0 + (T.z1 - T.z0) * e; const vx = (H.x - px) / Math.max(dt, 1e-3), vz = (H.z - pz) / Math.max(dt, 1e-3), sp = Math.hypot(vx, vz), ice = onIce(H.x, H.z);
+      if (sp > .2) H.head += wrapA(Math.atan2(vx, vz) - H.head) * (1 - Math.pow(.002, dt)); else H.head += wrapA(T.s.yaw + Math.PI - H.head) * (1 - Math.pow(.05, dt));
+      let y = ice ? .03 : hgt(H.x, H.z); const bp = places.find(p => p.id === 'bridge').bridge, bx = H.x - bp.x0, bz = H.z - bp.z0; if (Math.abs(bz) < 1 && Math.abs(bx) < bp.L / 2) y = Math.max(y, bp.gy + Math.sin((bx / bp.L + .5) * Math.PI) * bp.arcH + .07);
+      H.y += (y - H.y) * (1 - Math.pow(.0001, dt)); H.stride += sp * dt * (ice ? 1.6 : 3.4);
+      hero.position.set(H.x, H.y, H.z); hero.rotation.y = H.head; poseSkater(hero, time, ice ? clamp(sp / 3.2, .15, 1) : clamp(sp / 3.4, 0, 1), 0, H.stride, !ice);
+      if (heroShadow.parent) heroShadow.position.set(H.x, H.y + .05, H.z);
+      if (T.t >= 1) { H.tour = null; H.vx = H.vz = 0; tourArrive(T.s); }
+      return;
+    }
     const [ix, iz] = moveInput(); const ice = onIce(H.x, H.z); H.ice = ice;
     if (ice) { H.vx += ix * 7.5 * dt; H.vz += iz * 7.5 * dt; const fr = Math.pow(.55, dt); H.vx *= fr; H.vz *= fr; const MAX = 5.2, sp = Math.hypot(H.vx, H.vz); if (sp > MAX) { H.vx *= MAX / sp; H.vz *= MAX / sp; } }
     else { const tx = ix * 3.4, tz = iz * 3.4, k = 1 - Math.pow(.0005, dt); H.vx += (tx - H.vx) * k; H.vz += (tz - H.vz) * k; }
@@ -875,14 +917,68 @@ async function build(btn) {
     G.spawnT -= dt; if (G.spawnT <= 0 && pickups.length < 7) { spawn(rnd() < .14); G.spawnT = .9 + rnd() * .9; }
     pickups.slice().forEach(p => {
       if (p.t < .4 || Math.hypot(p.x - H.x, p.z - H.z) > .85 || p.y > 2.2) return;
+      grab(p);
+    });
+    if (G.left <= 0) endGame();
+  }
+  function grab(p) {
+    {
       G.combo = time - G.lastPick < 2.4 ? Math.min(5, G.combo + 1) : 1; G.lastPick = time;
       const pts = (p.bonus ? 3 : 1) * (G.combo >= 3 ? 2 : 1); G.score += pts; hudSc.textContent = G.score;
       burst(p.x, p.y, p.z, p.bonus ? 34 : 22); pop('+' + pts, p.x, p.y + .7, p.z, p.bonus ? 'blue' : '');
       if (G.combo >= 2) { comboEl.textContent = 'Комбо ×' + G.combo; comboEl.classList.remove('on'); void comboEl.offsetWidth; comboEl.classList.add('on'); }
       chime(p.bonus ? [1568, 2093, 2637] : [1319 * Math.pow(1.06, G.combo - 1), 1976 * Math.pow(1.06, G.combo - 1)], .05, 1, .05);
       killPickup(p);
-    });
-    if (G.left <= 0) endGame();
+    }
+  }
+  function tapStar(e) {
+    const rc = cv.getBoundingClientRect(); let best = null, bd = TOUCH ? 90 : 75;
+    pickups.forEach(p => { if (p.t < .3) return; const v = toScene(V3(p.x, p.y, p.z)).project(camera); const d = Math.hypot((v.x + 1) / 2 * rc.width - (e.clientX - rc.left), (1 - v.y) / 2 * rc.height - (e.clientY - rc.top)); if (d < bd) { bd = d; best = p; } });
+    if (!best) return false; H.goto = { x: best.x, z: best.z }; grab(best); return true;
+  }
+
+  /* ---------- экскурсия (по умолчанию), свободная прогулка (по желанию), домик ---------- */
+  const actA = $('.gk-act'), actB = $('.gk-act2'), freeBtn = $('.gk-free');
+  const setActB = (b, label, f) => { if (!label) { b.hidden = true; b._f = null; return; } b.textContent = label; b._f = f; b.hidden = false; };
+  actA.addEventListener('click', () => actA._f && actA._f()); actB.addEventListener('click', () => actB._f && actB._f());
+  const tour = makeTour(el, cv, { count: () => G.mode === 'room' ? ROOM_SPOTS.length : SPOTS.length, label: i => (G.mode === 'room' ? ROOM_SPOTS : SPOTS)[Math.max(0, i)].name, onGo: i => (G.mode === 'room' ? roomGo(i) : tourGo(i)) });
+  tour.nav.classList.add('off');
+  function tourGo(i) {
+    if (G.mode !== 'walk' || G.free) return;
+    if (G.play) endGame(true); hideCard();
+    const s = SPOTS[i]; setActB(actA); setActB(actB);
+    H.tour = { x0: H.x, z0: H.z, x1: s.h[0], z1: s.h[1], t: 0, dur: clamp(Math.hypot(s.h[0] - H.x, s.h[1] - H.z) / 5.5, 1.2, 5.5), s };
+    H.goto = null; camS.tyaw = s.yaw; camS.tpitch = s.pitch; camS.tdist = s.dist; camS.manual = 0;
+  }
+  function tourArrive(s) { if (s.id === 'house') setActB(actA, s.act, enterHouse); }
+  function setFree(on) {
+    G.free = on; el.classList.toggle('free', on); freeBtn.textContent = on ? 'Экскурсия' : 'Свободная прогулка'; H.tour = null; H.goto = null;
+    if (on) { camS.tyaw = undefined; setActB(actA); setHint(TOUCH ? 'Левый палец — идти, правый — осмотреться, касание — пойти туда' : 'WASD или стрелки — идти, мышью — осмотреться, клик — пойти туда', 6000); }
+    else { let bi = 0, bd = 1e9; SPOTS.forEach((s, i) => { const d = Math.hypot(s.h[0] - H.x, s.h[1] - H.z); if (d < bd) { bd = d; bi = i; } }); tour.go(bi); setHint('Стрелки ‹ › — следующее место', 3000); }
+  }
+  freeBtn.addEventListener('click', () => setFree(!G.free));
+  // домик: уютная комната с камином и ёлкой
+  let room = null, roomGlide = null; const RC = { p: V3(), l: V3(), fov: 50 }; const DT = { on: false, n: 0, lit: 0 };
+  const poseR = id => { const q = room.poses[id]; return { p: q.p.clone(), l: q.l.clone(), fov: PORTRAIT() ? q.fovP : q.fov }; };
+  function enterHouse() {
+    if (G.mode !== 'walk') return; hideCard(); setActB(actA); starsBtn.hidden = true; if (G.play) endGame(true);
+    if (!room) room = buildRoom({ envMap, T_GLOW, rnd, LOW });
+    el.classList.add('fade'); chime([988, 1319, 1568], .035, 1.4, .1);
+    setTimeout(() => { G.mode = 'room'; camLocal = false; rpass.scene = room.scene; room.scene.add(camera); Object.assign(RC, poseR('room')); roomGlide = null; tour.i = 0; tour.draw(); el.classList.remove('fade'); roomArrive(0); }, 420);
+  }
+  function exitHouse() {
+    endDecor(); el.classList.add('fade'); setActB(actA); setActB(actB);
+    setTimeout(() => { G.mode = 'walk'; camLocal = true; rpass.scene = scene; scene.add(camera); tour.i = SPOTS.findIndex(s => s.id === 'house'); tour.draw(); Object.assign(cam, thirdPerson()); el.classList.remove('fade'); setActB(actA, 'Зайти в дом', enterHouse); }, 420);
+  }
+  function roomGo(i) { endDecor(); setActB(actA); roomGlide = { from: { p: RC.p.clone(), l: RC.l.clone(), fov: RC.fov }, to: poseR(ROOM_SPOTS[i].id), t: 0, i }; }
+  function roomArrive(i) { const s = ROOM_SPOTS[i]; showPlace(s.name, s.text); setActB(actA, s.act && DT.n < 8 ? s.act : null, startDecor); setActB(actB, 'Выйти на улицу', exitHouse); }
+  function startDecor() { if (DT.n >= 8) return; DT.on = true; setActB(actA); el.classList.add('playing'); hudSc.textContent = DT.n; hudTm.parentNode.style.display = 'none'; setHint(TOUCH ? 'Касайтесь ёлки — каждая игрушка сама найдёт свою ветку' : 'Щёлкайте по ёлке — каждая игрушка сама найдёт свою ветку', 4500); }
+  function endDecor() { DT.on = false; el.classList.remove('playing'); hudTm.parentNode.style.display = ''; }
+  function roomTap(e) {
+    if (!DT.on || !room) return; const rc = cv.getBoundingClientRect(), v = V3(room.TREE.x, 1.4, room.TREE.z).project(camera);
+    if (Math.hypot((v.x + 1) / 2 * rc.width - (e.clientX - rc.left), (1 - v.y) / 2 * rc.height - (e.clientY - rc.top)) > Math.max(160, rc.height * .3)) return;
+    const o = room.orns.find(o => !o.done); if (!o) return; o.done = true; o.fly = .001; DT.n++; hudSc.textContent = DT.n; chime([1047 * Math.pow(1.06, DT.n), 1568 * Math.pow(1.06, DT.n)], .04, 1);
+    if (DT.n >= 8) { endDecor(); setTimeout(() => { DT.lit = 1; chime([784, 988, 1175, 1568, 1976], .05, 2.4, .14); showCard('Ёлка наряжена!', 'Все восемь игрушек на ветках, звезда зажглась. Можно посидеть у камина или вернуться на каток.', 'К камину', 'Остаться'); card._go = () => tour.go(2); }, 1000); }
   }
 
   /* ---------- старт ---------- */
@@ -900,6 +996,9 @@ async function build(btn) {
       flyAt: e => { camLocal = true; G.mode = 'flyin'; fly = makeFlight(false); fly.t = e; fly.dur = 1e9; },
       walkAt: (x, z, yaw, head) => { fly = null; camLocal = true; G.mode = 'walk'; H.x = x; H.z = z; H.y = hgt(x, z); camS.yaw = yaw; H.head = head === undefined ? yaw + Math.PI : head; Object.assign(cam, thirdPerson()); },
       wakeAll: () => { for (const g in groups) { groups[g].tg = 1.25; groups[g].lv = 1.25; } },
+      spot: i => { fly = null; camLocal = true; G.mode = 'walk'; const s = SPOTS[i]; H.tour = null; H.x = s.h[0]; H.z = s.h[1]; H.y = onIce(H.x, H.z) ? .03 : hgt(H.x, H.z); camS.yaw = camS.tyaw = s.yaw; camS.pitch = camS.tpitch = s.pitch; camS.dist = camS.tdist = s.dist; H.head = s.yaw + Math.PI; Object.assign(cam, thirdPerson()); tour.nav.classList.remove('off'); freeBtn.hidden = false; tour.i = i; tour.draw(); tourArrive(s); },
+      roomAt: (id, decor) => { if (!room) room = buildRoom({ envMap, T_GLOW, rnd, LOW }); fly = null; G.mode = 'room'; camLocal = false; rpass.scene = room.scene; room.scene.add(camera); Object.assign(RC, poseR(id)); tour.nav.classList.remove('off'); tour.i = ROOM_SPOTS.findIndex(s => s.id === id); tour.draw(); roomArrive(tour.i); if (decor) { DT.n = 8; room.orns.forEach(o => { o.done = true; o.fly = .999; o.m.position.copy(o.slot); }); DT.lit = 1; DT.lk = 1; } },
+      game: () => { startGame(); }, tour, getRoom: () => room, camera, RC,
     });
     window.__rk = api; return api;
   }
