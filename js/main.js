@@ -436,12 +436,15 @@
     function staticBurst(done) {
       if (reduce) { done(); return; }
       noise.width = 160; noise.height = 120; noise.classList.add('on');
-      var start = performance.now();
+      var start = performance.now(), fin = false;
+      function finish() { if (fin) return; fin = true; done(); noise.classList.remove('on'); }
+      setTimeout(finish, 600); // если вкладка в фоне и кадры не идут
       (function frame(t) {
+        if (fin) return;
         var img = nctx.createImageData(160, 120), dta = img.data;
         for (var q = 0; q < dta.length; q += 4) { var v = Math.random() * 255 | 0; dta[q] = dta[q + 1] = dta[q + 2] = v; dta[q + 3] = 255; }
         nctx.putImageData(img, 0, 0);
-        if (t - start < 260) requestAnimationFrame(frame); else { done(); noise.classList.remove('on'); }
+        if (t - start < 260) requestAnimationFrame(frame); else finish();
       })(start);
     }
     function go(dir) { ch = (ch + dir + FILMS.length) % FILMS.length; staticBurst(function () { off(); render(); }); }
