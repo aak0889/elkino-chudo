@@ -58,7 +58,7 @@
     if (reduce) done(); else setTimeout(done, 650);
   }
   // 3D-шары (three.js): «Каток» — js/rink3d.js, «Железная дорога» — js/rail3d.js. Если WebGL/модули недоступны — прежняя 2D-игра.
-  var MOD3D = { rink: './rink3d.js?v=20261106b', rail: './rail3d.js?v=20261106b', santa: './santa3d.js?v=20261106b', forest: './forest3d.js?v=20261106b' }, mods = {};
+  var MOD3D = { rink: './rink3d.js?v=20261107a', rail: './rail3d.js?v=20261107a', santa: './santa3d.js?v=20261107a', forest: './forest3d.js?v=20261107a' }, mods = {};
   function load3d(id) { id = id || 'rink'; if (!mods[id]) mods[id] = import(MOD3D[id]).catch(function (e) { mods[id] = null; throw e; }); return mods[id]; }
   function openGlobe(b) {
     var id = b.getAttribute('data-game');

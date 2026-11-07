@@ -240,11 +240,272 @@
     if (m > 13) motionFns.forEach(function (fn) { fn(Math.min(1.4, m / 18), 0); });
   });
 
+  /* ---------- большой шар на первом экране ----------
+     Купол — «колпак»: полуэллипс сверху и прямые стенки, дно — снежный холм. Координаты в долях картинки 720×1148.
+     Снежинки живут в жидкости: тянутся за её течением (вихри + «плескание» после встряски), падают с малой
+     предельной скоростью, покачиваются, отскакивают от стекла и ложатся на дно горкой. */
+  var DOME = { cx: 0.4875, rx: 0.344, cy: 0.283, ry: 0.168, floor: 0.676 };
+  function HeroGlobe(fig, cv) {
+    var ctx = cv.getContext('2d'), W = 0, H = 0, R = Math.min(DPR, 1.75);
+    var weak = window.innerWidth < 700 || (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 3;
+    var N = weak ? 150 : 260, NMOTE = weak ? 14 : 24, NDUST = weak ? 26 : 46;
+    var flakes = [], motes = [], dust = [], vort = [], slosh = { x: 0, y: 0, vx: 0, vy: 0 }, energy = 0, heap = [], BINS = 36, time = 0, warm = 0;
+    var G = {};                                   // геометрия купола в css-пикселях
+    var dbg = /[?&]globedebug=1/.test(location.search);
+    function geo() {
+      var r = fig.getBoundingClientRect(); W = r.width; H = r.height;
+      cv.width = Math.max(1, Math.round(W * R)); cv.height = Math.max(1, Math.round(H * R));
+      G = { cx: DOME.cx * W, rx: DOME.rx * W, cy: DOME.cy * H, ry: DOME.ry * H, fl: DOME.floor * H };
+    }
+    function floorY(x) {                          // снежный холм: чуть выше за ёлкой и домом
+      var u = x / W; return G.fl - H * 0.03 * Math.exp(-Math.pow((u - 0.30) / 0.15, 2));
+    }
+    function bin(x) { return Math.max(0, Math.min(BINS - 1, Math.floor((x - (G.cx - G.rx)) / (2 * G.rx) * BINS))); }
+    // спрайты: мягкая снежинка и золотая звёздочка
+    function sprite(sz, fn) { var c = document.createElement('canvas'); c.width = c.height = sz; fn(c.getContext('2d'), sz / 2); return c; }
+    var SNOW = sprite(32, function (g, h) { var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(.45, 'rgba(255,255,255,.85)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h); });
+    var GOLD = sprite(48, function (g, h) {
+      var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,236,180,.9)'); gr.addColorStop(.25, 'rgba(255,200,110,.35)'); gr.addColorStop(1, 'rgba(255,170,60,0)');
+      g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h);
+      g.fillStyle = 'rgba(255,248,225,.95)'; g.beginPath(); var s = h * .95;
+      g.moveTo(h, h - s); g.quadraticCurveTo(h, h, h + s, h); g.quadraticCurveTo(h, h, h, h + s); g.quadraticCurveTo(h, h, h - s, h); g.quadraticCurveTo(h, h, h, h - s); g.fill();
+    });
+    var GLOW = sprite(64, function (g, h) { var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,214,140,.85)'); gr.addColorStop(.35, 'rgba(255,170,80,.35)'); gr.addColorStop(1, 'rgba(255,140,40,0)'); g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h); });
+    // тёплые огни сцены (окна дома, вагон, звезда на ёлке) — в пикселях исходной картинки 720×1148
+    var LIGHTS = [[272, 444, 1], [258, 508, 1.1], [300, 508, 1.1], [386, 372, .8], [374, 432, .9], [346, 506, .9], [300, 646, .8], [334, 670, .9], [372, 673, .9], [410, 676, .9], [466, 672, .8], [492, 672, .8], [517, 670, .8], [150, 560, .6], [134, 640, .6], [255, 600, .7]]
+      .map(function (a) { return { x: a[0] / 720, y: a[1] / 1148, s: a[2], ph: Math.random() * 6.3, sp: .6 + Math.random() * 1.2 }; });
+    var STAR = { x: 443 / 720, y: 268 / 1148 };
+
+    function inside(x, y) {
+      if (y < G.cy) { var qx = (x - G.cx) / G.rx, qy = (y - G.cy) / G.ry; return qx * qx + qy * qy < 1; }
+      return Math.abs(x - G.cx) < G.rx && y < floorY(x);
+    }
+    function randIn() { for (var k = 0; k < 40; k++) { var x = G.cx + (Math.random() * 2 - 1) * G.rx, y = G.cy - G.ry + Math.random() * (G.fl - G.cy + G.ry); if (inside(x, y)) return [x, y]; } return [G.cx, G.cy + G.ry]; }
+    function newFlake() {
+      var z = Math.random(), p = randIn();
+      return { x: p[0], y: p[1], vx: 0, vy: 0, z: z, r: (1.2 + z * 2.3 + (Math.random() < .08 ? 1.8 : 0)) * (W / 470),
+        vt: (9 + z * 9 + Math.random() * 6) * (H / 750), ph: Math.random() * 6.3, wf: .8 + Math.random() * 1.4, rest: false };
+    }
+    function settleAll() {                         // стартовое состояние: снег лежит на дне, часть ещё падает
+      heap = []; for (var b = 0; b < BINS; b++) heap.push(0);
+      flakes.forEach(function (f, i) {
+        if (i % 4 === 0) return;
+        f.x = G.cx + (Math.random() * 2 - 1) * G.rx * .96; rest(f);
+      });
+    }
+    function rest(f) { var b = bin(f.x); f.rest = true; f.vx = f.vy = 0; f.y = floorY(f.x) - heap[b] - f.r * .4; heap[b] = Math.min(H * .012, heap[b] + f.r * .22); }
+    function seed() {
+      geo(); flakes = []; motes = []; dust = [];
+      for (var k = 0; k < N; k++) flakes.push(newFlake());
+      for (k = 0; k < NMOTE; k++) { var p = randIn(); motes.push({ x: p[0], y: p[1], vx: 0, vy: 0, ph: Math.random() * 6.3, s: (2 + Math.random() * 3) * (W / 470) }); }
+      settleAll();
+    }
+    // течение жидкости в точке: вихри + общее плескание + лёгкая турбулентность
+    function flow(x, y, out) {
+      var ux = slosh.vx, uy = slosh.vy;
+      for (var k = 0; k < vort.length; k++) {
+        var v = vort[k], dx = x - v.x, dy = y - v.y, r2 = dx * dx + dy * dy, f = v.g * Math.exp(-r2 / (2 * v.rc * v.rc)) / v.rc;
+        ux += -dy * f; uy += dx * f;
+      }
+      var e = energy * W * 0.05;
+      ux += e * Math.sin(y * 0.031 + time * 1.7) * Math.cos(x * 0.017 - time * 1.1);
+      uy += e * Math.cos(x * 0.029 - time * 1.3) * Math.sin(y * 0.021 + time * .9);
+      out[0] = ux; out[1] = uy;
+    }
+    function collide(p, rad, bounce) {             // удар о стекло: возвращаем внутрь, гасим нормальную скорость
+      var nx = 0, ny = 0, hit = false;
+      if (p.y < G.cy) {
+        var qx = (p.x - G.cx) / (G.rx - rad), qy = (p.y - G.cy) / (G.ry - rad), L = Math.hypot(qx, qy);
+        if (L > 1) { p.x = G.cx + qx / L * (G.rx - rad); p.y = G.cy + qy / L * (G.ry - rad); nx = qx / (G.rx - rad); ny = qy / (G.ry - rad); hit = true; }
+      } else if (Math.abs(p.x - G.cx) > G.rx - rad) { var s = p.x > G.cx ? 1 : -1; p.x = G.cx + s * (G.rx - rad); nx = s; ny = 0; hit = true; }
+      if (hit) {
+        var nl = Math.hypot(nx, ny) || 1; nx /= nl; ny /= nl;
+        var vn = p.vx * nx + p.vy * ny;
+        if (vn > 0) { p.vx -= (1 + bounce) * vn * nx; p.vy -= (1 + bounce) * vn * ny; p.vx *= .8; p.vy *= .8; }
+      }
+    }
+    var U = [0, 0];
+    function step(dt) {                            // dt в секундах
+      time += dt;
+      energy *= Math.exp(-dt / 2.2); warm *= Math.exp(-dt / 1.6);
+      // плескание: жидкость качается на «пружине» и успокаивается
+      slosh.vx += (-slosh.x * 9 - slosh.vx * 2.4) * dt; slosh.vy += (-slosh.y * 9 - slosh.vy * 2.4) * dt;
+      slosh.x += slosh.vx * dt; slosh.y += slosh.vy * dt;
+      for (var k = vort.length - 1; k >= 0; k--) { var v = vort[k]; v.g *= Math.exp(-dt / v.tau); v.x += slosh.vx * dt * .5; v.y += slosh.vy * dt * .5; if (Math.abs(v.g) < 0.5) vort.splice(k, 1); }
+      var calm = energy < 0.05 && !vort.length;
+      for (k = 0; k < flakes.length; k++) {
+        var f = flakes[k];
+        if (f.rest) continue;
+        flow(f.x, f.y, U);
+        f.ph += dt * f.wf * (1.6 + 3 * energy);
+        var sway = Math.sin(f.ph) * (5 + f.r * 2) * (W / 470);           // покачивание при оседании
+        var drag = (2.2 + (1 - f.z) * 1.2) * (1 - .55 * Math.min(1, energy));  // мелкие сильнее слушаются течения; сразу после встряски летят по инерции
+        f.vx += ((U[0] + sway) - f.vx) * Math.min(1, drag * dt);
+        f.vy += ((U[1] + f.vt) - f.vy) * Math.min(1, drag * dt);
+        f.x += f.vx * dt; f.y += f.vy * dt;
+        collide(f, f.r, .25);
+        var fy = floorY(f.x) - heap[bin(f.x)];
+        if (f.y > fy - f.r * .4) {
+          if (f.vy > 0 && (calm || f.vy < 60 * (H / 750))) rest(f);
+          else { f.y = fy - f.r * .4; f.vy = -Math.abs(f.vy) * .3; }
+        }
+      }
+      for (k = 0; k < motes.length; k++) {           // блёстки почти невесомы: висят и кружат всегда
+        var m = motes[k]; flow(m.x, m.y, U); m.ph += dt * .7;
+        m.vx += ((U[0] + Math.sin(m.ph) * 6) - m.vx) * Math.min(1, 1.5 * dt);
+        m.vy += ((U[1] + Math.cos(m.ph * .8) * 4 + 1.5) - m.vy) * Math.min(1, 1.5 * dt);
+        m.x += m.vx * dt; m.y += m.vy * dt; collide(m, m.s, .5);
+        if (m.y > floorY(m.x) - 6) { m.y = floorY(m.x) - 6; m.vy = -Math.abs(m.vy) - 3; }
+      }
+      for (k = dust.length - 1; k >= 0; k--) {
+        var d = dust[k]; d.t += dt; if (d.t > d.life) { dust.splice(k, 1); continue; }
+        flow(d.x, d.y, U); d.vx += (U[0] - d.vx) * Math.min(1, 1.8 * dt); d.vy += (U[1] - 4 - d.vy) * Math.min(1, 1.8 * dt);
+        d.x += d.vx * dt; d.y += d.vy * dt; collide(d, 2, .6);
+      }
+    }
+    function draw() {
+      ctx.setTransform(R, 0, 0, R, 0, 0); ctx.clearRect(0, 0, W, H);
+      // живая сцена: окна и вагон мерцают тёплым, после встряски вспыхивают ярче
+      ctx.globalCompositeOperation = 'lighter';
+      var gl = W * 0.075;
+      for (var k = 0; k < LIGHTS.length; k++) {
+        var L = LIGHTS[k], a = (.16 + .1 * Math.sin(time * L.sp + L.ph) + .05 * Math.sin(time * 7.3 + L.ph * 3)) * (1 + 1.6 * warm) * L.s;
+        ctx.globalAlpha = Math.max(0, Math.min(1, a)); var s = gl * L.s * (1 + .3 * warm);
+        ctx.drawImage(GLOW, L.x * W - s / 2, L.y * H - s / 2, s, s);
+      }
+      var sa = .55 + .25 * Math.sin(time * 2.1) + .2 * warm, ss = W * (.07 + .015 * Math.sin(time * 1.3) + .04 * warm);
+      ctx.save(); ctx.translate(STAR.x * W, STAR.y * H); ctx.rotate(time * .15);
+      ctx.globalAlpha = Math.min(1, sa); ctx.drawImage(GOLD, -ss / 2, -ss / 2, ss, ss); ctx.restore();
+      // блёстки
+      for (k = 0; k < motes.length; k++) {
+        var m = motes[k], tw = .35 + .65 * Math.pow(.5 + .5 * Math.sin(time * 3 + m.ph * 5), 3);
+        ctx.globalAlpha = tw * .8; var ms = m.s * (1.5 + tw); ctx.drawImage(GOLD, m.x - ms, m.y - ms, ms * 2, ms * 2);
+      }
+      // звёздная пыль после встряски
+      for (k = 0; k < dust.length; k++) {
+        var d = dust[k], u = d.t / d.life, b = Math.sin(Math.PI * Math.min(1, u * 1.4)) * (1 - u * .3) * (.6 + .4 * Math.sin(d.t * 18 + d.ph));
+        ctx.globalAlpha = Math.max(0, b); var dsz = d.s * (.7 + .5 * b); ctx.drawImage(GOLD, d.x - dsz, d.y - dsz, dsz * 2, dsz * 2);
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      // снег
+      for (k = 0; k < flakes.length; k++) {
+        var f = flakes[k], r = f.r * 2.2;
+        ctx.globalAlpha = f.rest ? .75 : .45 + .5 * f.z;
+        ctx.drawImage(SNOW, f.x - r, f.y - r, r * 2, r * 2);
+      }
+      ctx.globalAlpha = 1;
+      if (dbg) {
+        ctx.strokeStyle = '#0f0'; ctx.lineWidth = 1; ctx.beginPath();
+        ctx.ellipse(G.cx, G.cy, G.rx, G.ry, 0, Math.PI, 2 * Math.PI); ctx.lineTo(G.cx + G.rx, floorY(G.cx + G.rx));
+        for (var x = G.cx + G.rx; x >= G.cx - G.rx; x -= 4) ctx.lineTo(x, floorY(x));
+        ctx.closePath(); ctx.stroke();
+      }
+    }
+    var acc = 0, frames = 0, cut = false, slow = 0;
+    function frame(dts) {
+      var dt = Math.min(0.05, dts / 60);
+      step(dt); draw();
+      acc += dts * 16.67; frames++;
+      if (frames === 90) {                          // слабое устройство: вдвое меньше снежинок
+        slow = acc / frames > 30 ? slow + 1 : 0;   // два медленных отрезка подряд, чтобы не реагировать на рывок при загрузке
+        if (!cut && slow >= 2) { cut = true; flakes = flakes.filter(function (f, i) { return i % 2 === 0; }); NDUST = Math.round(NDUST / 2); }
+        acc = 0; frames = 0;
+      }
+    }
+    function kick(p, dir) {
+      p = Math.max(0.35, Math.min(1.4, p || 1)); dir = dir || (Math.random() < .5 ? -1 : 1);
+      if (reduce) {                                  // без анимации: просто новый «кадр» с кружащимся снегом
+        flakes.forEach(function (f) { var q = randIn(); f.x = q[0]; f.y = q[1]; f.rest = Math.random() < .35; if (f.rest) rest(f); });
+        warm = .6; draw(); return;
+      }
+      energy = Math.min(1.4, energy + .9 * p); warm = Math.min(1, warm + .8 * p);
+      // инерция: стекло дёрнули в сторону — жидкость отстаёт и плещется обратно
+      slosh.vx += -dir * p * W * 0.55; slosh.vy += -p * H * 0.12;
+      for (var k = 0; k < 2 + Math.round(p * 3); k++) {
+        var q = randIn();
+        vort.push({ x: q[0], y: q[1] * .6 + G.fl * .4, g: (Math.random() < .5 ? -1 : 1) * (60 + Math.random() * 90) * p * (W / 470), rc: W * (.09 + Math.random() * .1), tau: 1.2 + Math.random() * 1.6 });
+      }
+      heap = heap.map(function () { return 0; });
+      flakes.forEach(function (f) {
+        var low = (f.y - (G.cy - G.ry)) / (G.fl - G.cy + G.ry);   // со дна снег взлетает сильнее
+        if (f.rest) { f.rest = false; f.vy = -(240 + Math.random() * 520) * p * (H / 750); f.vx = (Math.random() - .5) * 300 * p * (W / 470) - dir * 60 * p; }
+        else { f.vy -= (40 + Math.random() * 140) * p * low * (H / 750); f.vx += ((Math.random() - .5) * 120 - dir * 50) * p * (W / 470); }
+      });
+      var nd = Math.round(NDUST * Math.min(1, p));
+      for (k = 0; k < nd && dust.length < NDUST * 1.5; k++) {
+        var q2 = randIn();
+        dust.push({ x: q2[0], y: q2[1], vx: (Math.random() - .5) * 80, vy: -Math.random() * 60, t: 0, life: 1.4 + Math.random() * 1.6, s: (2 + Math.random() * 3.4) * (W / 470), ph: Math.random() * 6.3 });
+      }
+      fig.style.setProperty('--warm', '1'); clearTimeout(fig._wt); fig._wt = setTimeout(function () { fig.style.setProperty('--warm', '0'); }, 900);
+    }
+    seed();
+    var lp = loop(frame);
+    window.addEventListener('resize', function () {
+      var oW = W, oH = H; geo(); if (!oW) return;
+      var sx = W / oW, sy = H / oH; flakes.concat(motes).forEach(function (f) { f.x *= sx; f.y *= sy; });
+      if (reduce) draw();
+    });
+    if (reduce) draw();
+    else {
+      whenVisible(cv, lp.start, lp.stop);
+      document.addEventListener('visibilitychange', function () { if (document.hidden) lp.stop(); else if (cv.getBoundingClientRect().bottom > 0) lp.start(); });
+      setTimeout(function () { kick(.55, 1); }, 900);   // при загрузке шар сам чуть «вздыхает», чтобы было видно, что он живой
+    }
+    window.__heroGlobe = { kick: kick, stats: function () { return { flakes: flakes.length, resting: flakes.filter(function (f) { return f.rest; }).length, dust: dust.length, outside: flakes.filter(function (f) { return !f.rest && !inside(f.x, f.y + 0.01); }).length }; } };
+    return { shake: kick };
+  }
+
+  // стекло купола: френель по краю, блики, лёгкая радужная кромка преломления, тёплое свечение при встряске
+  function glassLayer(fig) {
+    var d = DOME, X = function (u) { return (u * 720).toFixed(1); }, Y = function (v) { return (v * 1148).toFixed(1); };
+    var l = d.cx - d.rx, r = d.cx + d.rx, rx = d.rx * 720, ry = d.ry * 1148, fy = d.floor + .045;
+    var dome = 'M' + X(l) + ' ' + Y(fy) + ' L' + X(l) + ' ' + Y(d.cy) + ' A' + rx + ' ' + ry + ' 0 0 1 ' + X(r) + ' ' + Y(d.cy) + ' L' + X(r) + ' ' + Y(fy);
+    var svg = '<svg class="globe-glass" viewBox="0 0 720 1148" preserveAspectRatio="none" aria-hidden="true">' +
+      '<defs>' +
+      '<radialGradient id="gg-fres" cx="50%" cy="46%" r="60%"><stop offset="62%" stop-color="#cfe6ff" stop-opacity="0"/><stop offset="92%" stop-color="#d8ecff" stop-opacity=".16"/><stop offset="100%" stop-color="#fff" stop-opacity=".28"/></radialGradient>' +
+      '<linearGradient id="gg-streak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff" stop-opacity=".75"/><stop offset=".7" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      '<radialGradient id="gg-spot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>' +
+      '<radialGradient id="gg-warm" cx="50%" cy="62%" r="55%"><stop offset="0" stop-color="#ffcf7a" stop-opacity=".26"/><stop offset=".6" stop-color="#ff9c3a" stop-opacity=".08"/><stop offset="1" stop-color="#ff8a20" stop-opacity="0"/></radialGradient>' +
+      '<filter id="gg-b6" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>' +
+      '<filter id="gg-b2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>' +
+      '<clipPath id="gg-clip"><path d="' + dome + ' Z"/></clipPath>' +
+      '</defs>' +
+      '<g clip-path="url(#gg-clip)">' +
+      '<rect class="gg-warm" x="0" y="0" width="720" height="1148" fill="url(#gg-warm)"/>' +
+      '<rect x="0" y="0" width="720" height="1148" fill="url(#gg-fres)"/>' +
+      '<path d="' + dome + '" fill="none" stroke="#e8f4ff" stroke-opacity=".22" stroke-width="30" filter="url(#gg-b6)"/>' +
+      '</g>' +
+      // радужная кромка: стекло чуть разводит свет по краю
+      '<path d="' + dome + '" fill="none" stroke="#9fd8ff" stroke-opacity=".35" stroke-width="2" transform="translate(-1.5 0)"/>' +
+      '<path d="' + dome + '" fill="none" stroke="#ffc9a0" stroke-opacity=".28" stroke-width="2" transform="translate(1.5 1)"/>' +
+      '<path d="' + dome + '" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.2"/>' +
+      // блики
+      '<g class="gg-shine">' +
+      '<path d="M138 640 C 122 520 124 380 166 286 C 186 242 214 210 246 188" fill="none" stroke="url(#gg-streak)" stroke-width="13" stroke-linecap="round" filter="url(#gg-b2)" opacity=".75"/>' +
+      '<path d="M156 600 C 146 500 150 400 180 320" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round" filter="url(#gg-b2)"/>' +
+      '<ellipse cx="262" cy="176" rx="64" ry="20" transform="rotate(-24 262 176)" fill="url(#gg-spot)" opacity=".7"/>' +
+      '<ellipse cx="572" cy="560" rx="9" ry="70" fill="url(#gg-spot)" opacity=".45"/>' +
+      '</g>' +
+      '</svg>';
+    fig.insertAdjacentHTML('beforeend', svg);
+  }
+
   var hs = document.getElementById('hero-snow');
   if (hs) {
     var heroFig = document.getElementById('hero-globe');
-    var heroSnow = GlobeSnow(hs, { count: 170, burst: 170 });
+    glassLayer(heroFig);
+    heroFig.appendChild(document.getElementById('hero-shake'));     // кнопка поверх стекла
+    var heroSnow = HeroGlobe(heroFig, hs);
     var heroFire = shakeGesture(heroFig, heroSnow.shake, heroFig);
+    // тап по шару — тоже встряска (свайп обрабатывает shakeGesture)
+    (function () {
+      var st = null;
+      heroFig.addEventListener('pointerdown', function (e) { if (e.target.closest('button')) return; st = { x: e.clientX, y: e.clientY, t: e.timeStamp }; });
+      heroFig.addEventListener('pointerup', function (e) {
+        if (!st) return; var moved = Math.hypot(e.clientX - st.x, e.clientY - st.y), dur = e.timeStamp - st.t; st = null;
+        if (moved < 12 && dur < 450) { askMotion(); var r = heroFig.getBoundingClientRect(); heroFire(.8, e.clientX < r.left + r.width / 2 ? 1 : -1); }
+      });
+    })();
     document.getElementById('hero-shake').addEventListener('click', function () { askMotion(); heroFire(1.2, 0); });
     var heroOn = true;
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { heroOn = es[0].isIntersecting; }).observe(heroFig);

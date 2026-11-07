@@ -144,9 +144,14 @@ section{scroll-margin-top:60px}
 .btn-line:hover{background:rgba(240,217,164,.1)}
 .spark{width:15px;height:15px;fill:currentColor}
 
-.hero-globe{position:relative;margin:0;justify-self:center;width:min(100%,470px)}
+.hero-globe{position:relative;margin:0;justify-self:center;width:min(100%,470px);isolation:isolate}
 .hero-globe img{width:100%;-webkit-mask-image:radial-gradient(closest-side ellipse at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(closest-side ellipse at 50% 50%,#000 72%,transparent 100%)}
-.globe-snow{position:absolute;left:13.5%;top:11%;width:70.5%;height:61%;border-radius:50% 50% 12% 12% / 40% 40% 6% 6%;pointer-events:none}
+.globe-snow{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.globe-glass{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.globe-glass .gg-warm{opacity:calc(.3 + var(--warm,0) * .7);transition:opacity .9s ease}
+.globe-glass .gg-shine{opacity:calc(.85 + var(--warm,0) * .15);transition:opacity .6s ease}
+.hero-globe::after{content:"";position:absolute;left:8%;right:8%;top:6%;bottom:22%;border-radius:50% 50% 30% 30%;pointer-events:none;z-index:-1;
+  background:radial-gradient(closest-side,rgba(255,196,110,calc(.10 + var(--warm,0) * .22)),rgba(255,170,80,0));transition:background .9s ease;filter:blur(8px)}
 .shake{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(10,20,36,.7);border:1px solid rgba(214,174,102,.55);color:var(--gold-2);
   border-radius:999px;padding:8px 16px;font-size:14px;cursor:pointer;backdrop-filter:blur(4px);white-space:nowrap}
 .shake:hover{background:rgba(10,20,36,.9)}
@@ -656,8 +661,9 @@ html.menu-open,html.menu-open body{overflow:hidden}
 .hero-globe{touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
 .hero-globe:active{cursor:grabbing}
 .hero-globe img{-webkit-user-drag:none}
-.hero-globe.is-shaken picture,.hero-globe.is-shaken .globe-snow{animation:globeshake .7s cubic-bezier(.3,.7,.4,1)}
-.hero-globe .globe-snow{transform-origin:51.8% 63.9%}
+.hero-globe.is-shaken picture,.hero-globe.is-shaken .globe-snow,.hero-globe.is-shaken .globe-glass{animation:globeshake .7s cubic-bezier(.3,.7,.4,1)}
+.hero-globe .globe-snow,.hero-globe .globe-glass{transform-origin:51.8% 63.9%}
+@media (prefers-reduced-motion:reduce){.globe-glass .gg-warm,.globe-glass .gg-shine,.hero-globe::after{transition:none}}
 @keyframes globeshake{0%{transform:none}18%{transform:rotate(-4deg) translateX(-6px)}38%{transform:rotate(3.5deg) translateX(5px)}58%{transform:rotate(-2deg) translateX(-3px)}78%{transform:rotate(1deg)}100%{transform:none}}
 .rk-shake span{white-space:nowrap}
 @media (max-width:599px){.rk-shake span{display:none}.rk-shake{padding:0 11px}}

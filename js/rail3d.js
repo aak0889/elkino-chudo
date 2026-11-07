@@ -751,11 +751,33 @@ async function build(btn) {
 
   /* ---------- пролёт ---------- */
   let fly = null;
+  // Кинематографичный подлёт: плавная дуга вокруг игрушечной деревни. Камера всегда смотрит на ось шара,
+  // горизонт ровный (без крена), наклон взгляда только вниз и плавно выпрямляется к посадке у рельсов.
+  // Дистанция меняется в логарифме — приближение воспринимается равномерным, без «прыжка» в начале.
   function makeFlight(rev) {
     const o = outsidePose(), fz = CZ + RZ, wy = GROUND_Y + .23;
-    const Pp = [o.p, V3(0, 4.4, 15.5), V3(0, .8, 9.3), V3(1.6, -1.1, 7.2), V3(.4, -2.05, 5.0), V3(0, wy, fz + .32)];
-    const Ll = [o.l, V3(0, -2.6, 0), V3(0, -2.3, 3.2), V3(.2, -2.3, 3.8), V3(0, wy - .02, fz), V3(0, wy, fz - .2)];
-    return { pc: new THREE.CatmullRomCurve3(Pp, false, 'centripetal'), lc: new THREE.CatmullRomCurve3(Ll, false, 'centripetal'), f0: o.fov, f1: 48, t: rev ? 1 : 0, dur: 4.6, rev };
+    const c = V3(0, 0, CZ);                                         // ось деревни
+    const r0 = Math.hypot(o.p.x - c.x, o.p.z - c.z), r1 = fz + .32 - CZ, h0 = o.p.y;
+    const p0 = Math.atan2(o.l.y - o.p.y, Math.hypot(o.l.x - o.p.x, o.l.z - o.p.z));
+    const RG = 11.5, HG = 1.2;                                      // где и на какой высоте проходим стекло
+    const ORBIT = -.62;                                            // облёт слева направо, к концу снова фронтально
+    const P = V3(), L = V3();
+    const pose = s => {
+      const r = Math.exp(Math.log(r0) + (Math.log(r1) - Math.log(r0)) * s);
+      const th = ORBIT * Math.sin(Math.PI * s) * (1 - .25 * s);
+      // высота: плавно вниз, над ёлками держимся до коридора у рельсов, потом мягкая «посадка»
+      // высота считается от расстояния, а не от времени: на телефоне (камера дальше) стекло пересекаем на той же высоте
+      let h;
+      if (r > RG) { const v = Math.log(r / RG) / Math.log(Math.max(r0, RG + .01) / RG); h = HG + (h0 - HG) * Math.pow(v, 1.4); }
+      else { const u = Math.log(r / r1) / Math.log(RG / r1), si = 1 - u; h = wy + (HG - wy) * Math.pow(u, 1.8) + smooth(0, .6, si) * (1 - smooth(.68, 1, si)); }
+      const pitch = p0 + (0 - p0) * smooth(.35, 1, s) - .06 * Math.sin(Math.PI * smooth(0, .7, s));
+      const yaw = th + Math.PI;                                     // взгляд на ось
+      P.set(c.x + r * Math.sin(th), h, c.z + r * Math.cos(th));
+      const cp = Math.cos(pitch);
+      L.set(P.x + Math.sin(yaw) * cp, P.y + Math.sin(pitch), P.z + Math.cos(yaw) * cp);
+      return { p: P, l: L };
+    };
+    return { pose, f0: o.fov, f1: 48, t: rev ? 1 : 0, dur: 5.4, rev };
   }
   function setInside(on) {
     if (inside.visible === on) return; inside.visible = on; globe.visible = !on;
@@ -805,8 +827,8 @@ async function build(btn) {
     if (fly && !fly.rev) trainS = CAR0_OFF + .9 * (clamp(fly.t, 0, 1) - 1) * fly.dur; else trainS += .9 * dt;
     if (globe.visible) { toy.updateMatrixWorld(); placeTrain(time); }
     if (fly) {
-      fly.t += (fly.rev ? -dt : dt) / fly.dur; const k = clamp(fly.t, 0, 1), e = ease(k);
-      cam.p.copy(fly.pc.getPoint(e)); cam.l.copy(fly.lc.getPoint(e)); cam.fov = fly.f0 + (fly.f1 - fly.f0) * smooth(.3, 1, e);
+      fly.t += (fly.rev ? -dt : dt) / fly.dur; const k = clamp(fly.t, 0, 1), e = .5 - .5 * Math.cos(Math.PI * k);   // мягкий разгон и торможение
+      const ps = fly.pose(e); cam.p.copy(ps.p); cam.l.copy(ps.l); cam.fov = fly.f0 + (fly.f1 - fly.f0) * smooth(.3, 1, e);
       if (!fly.rev && fly.t >= 1) { fly = null; Object.assign(cam, fpPose()); arrive(); }
       else if (fly && fly.rev && fly.t <= 0) { fly = null; G.mode = 'shelf'; setTimeout(finish, 700); }
     } else if (G.mode === 'outside' || G.mode === 'shelf' || G.mode === 'load') {
