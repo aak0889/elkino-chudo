@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
 <link rel="preload" as="image" href="img/globe-rail-m.webp" media="(max-width: 899px)">
 <link rel="preload" as="image" href="img/globe-rail.webp" media="(min-width: 900px)">
-<link rel="stylesheet" href="css/style.css?v=20261107a">
+<link rel="stylesheet" href="css/style.css?v=20261108a">
 <!-- three.js для 3D-шаров (ES-модули, грузятся только при открытии шара) -->
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <!-- Yandex.Metrika counter -->
@@ -159,11 +159,13 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
     </div>
 
     <figure class="hero-globe" id="hero-globe">
+      <div class="globe-body" id="hero-globe-body">
       <picture>
         <source media="(min-width: 900px)" srcset="img/globe-rail.webp">
         <img src="img/globe-rail-m.webp" width="720" height="1148" alt="Снежный шар: внутри домик с окнами, ёлка и красный вагончик на рельсах" fetchpriority="high" draggable="false">
       </picture>
       <canvas class="globe-snow" id="hero-snow" aria-hidden="true"></canvas>
+      </div>
       <button class="shake" id="hero-shake" type="button">Встряхнуть шар</button>
     </figure>
   </div>
@@ -551,7 +553,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   </div>
 </div>
 
-<script src="js/main.js?v=20261107a" defer></script>
-<script src="js/games.js?v=20261107a" defer></script>
+<script src="js/main.js?v=20261108a" defer></script>
+<script src="js/games.js?v=20261108a" defer></script>
 </body>
 </html>

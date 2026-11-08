@@ -253,7 +253,7 @@
     var G = {};                                   // геометрия купола в css-пикселях
     var dbg = /[?&]globedebug=1/.test(location.search);
     function geo() {
-      var r = fig.getBoundingClientRect(); W = r.width; H = r.height;
+      var box = cv.parentNode; W = box.offsetWidth; H = box.offsetHeight;   // размеры без учёта покачивания (transform)
       cv.width = Math.max(1, Math.round(W * R)); cv.height = Math.max(1, Math.round(H * R));
       G = { cx: DOME.cx * W, rx: DOME.rx * W, cy: DOME.cy * H, ry: DOME.ry * H, fl: DOME.floor * H };
     }
@@ -493,7 +493,7 @@
   var hs = document.getElementById('hero-snow');
   if (hs) {
     var heroFig = document.getElementById('hero-globe');
-    glassLayer(heroFig);
+    glassLayer(document.getElementById('hero-globe-body') || heroFig);   // стекло в одном контейнере с картинкой и снегом
     heroFig.appendChild(document.getElementById('hero-shake'));     // кнопка поверх стекла
     var heroSnow = HeroGlobe(heroFig, hs);
     var heroFire = shakeGesture(heroFig, heroSnow.shake, heroFig);
