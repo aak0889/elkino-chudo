@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
-<link rel="stylesheet" href="css/page.css?v=20261108b">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Golos+Text:wght@400;500;600&family=Marck+Script&family=Bad+Script&display=swap">
+<link rel="stylesheet" href="css/page.css?v=20261108c">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
       <div>
         <h2>Что вы получите</h2>
         <ul class="feats">
-          <li>Письмо в PDF на красивом бланке с печатью Ёлкиной почты.</li>
+          <li>Письмо в PDF на старинной бумаге, от руки, с сургучной печатью Почты Деда Мороза.</li>
           <li>Имя ребёнка, его успехи за год и мечта: всё, что вы расскажете в заявке.</li>
           <li>Текст пишем под возраст: для малышей короче и проще, для школьников с загадкой.</li>
           <li>Распечатайте дома на обычном принтере и положите под ёлку или в почтовый ящик.</li>
@@ -47,13 +47,46 @@
 
       <figure style="margin:0">
         <div class="letter" aria-label="Пример письма">
-          <span class="stamp" aria-hidden="true">Ёлкина<br>почта</span>
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+            <filter id="paper-rough" x="-3%" y="-3%" width="106%" height="106%">
+              <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="7" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </svg>
+          <div class="paper" aria-hidden="true"></div>
+          <svg class="postmark" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="pm-c" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0"/></defs>
+            <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="2.4"/>
+            <circle cx="60" cy="60" r="33" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <text font-size="11.5" fill="currentColor"><textPath href="#pm-c" textLength="262" lengthAdjust="spacing">ПОЧТА ДЕДА МОРОЗА ✦ СЕВЕРНЫЙ ТЕРЕМ ✦</textPath></text>
+            <text x="60" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="currentColor">31</text>
+            <text x="60" y="72" text-anchor="middle" font-size="10.5" letter-spacing="1.5" fill="currentColor">ДЕК · 2026</text>
+          </svg>
+          <p class="place">Северный терем, декабрь</p>
           <p class="salut">Здравствуй, <span class="nm">Миша</span>!</p>
           <p>Пишу тебе из своего терема, где сейчас очень шумно: снеговики репетируют хоровод, а олени спорят, кто повезёт сани.</p>
           <p>Мне рассказали, что этим летом ты <span class="nm">научился кататься на велосипеде без маленьких колёсиков</span>. Я тоже когда-то падал, пока учился править санями, так что знаю: это было непросто. Молодец, что не сдался.</p>
           <p>А ещё я слышал, что ты мечтаешь о <span class="nm">настоящем телескопе</span>. Звёзды я знаю хорошо, мы с ними старые друзья. Посмотрим, что можно сделать.</p>
           <p>Слушайся маму и папу, береги щёки от мороза и не забудь оставить у ёлки мандарин для моих оленей.</p>
-          <p class="sign">Твой Дед Мороз</p>
+          <div class="sign">
+            <span class="sign-pre">Твой</span>
+            <span class="sign-name">Дед Мороз</span>
+            <svg class="flourish" viewBox="0 0 260 60" aria-hidden="true"><path d="M6 30C60 44 150 44 214 24c22-7 30-16 22-18-10-2-16 16-4 24 8 6 20 4 26 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 45c60 8 130 6 180-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".75"/></svg>
+          </div>
+          <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <radialGradient id="wax" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#d4525a"/><stop offset=".55" stop-color="#9c2730"/><stop offset="1" stop-color="#5e1219"/></radialGradient>
+              <path id="seal-c" d="M60 60m-30 0a30 30 0 1 1 60 0a30 30 0 1 1-60 0"/>
+            </defs>
+            <path d="M60 6c9 0 13 6 21 7 9 2 16 1 21 9 4 7 1 13 5 21 4 9 9 13 7 23-2 9-9 11-12 19-4 9-3 16-12 21-8 4-14 0-23 2-8 2-12 8-22 6-9-2-11-9-19-13-8-5-15-5-19-14-3-8 2-14 1-23-1-9-7-14-4-23 3-8 11-9 17-15 7-6 8-13 17-16 7-3 13 0 22-4z" fill="url(#wax)"/>
+            <circle cx="60" cy="60" r="38" fill="none" stroke="#5e1219" stroke-width="3" opacity=".55"/>
+            <circle cx="60" cy="60" r="37" fill="none" stroke="#e57b80" stroke-width="1" opacity=".45"/>
+            <text font-size="8.6" fill="#f3c2b8" opacity=".85"><textPath href="#seal-c" textLength="182" lengthAdjust="spacing">ПОЧТА ДЕДА МОРОЗА ✦</textPath></text>
+            <g stroke="#f3c2b8" stroke-width="2.2" stroke-linecap="round" opacity=".9" transform="translate(60 60)">
+              <path d="M0-16V16M-14-8 14 8M-14 8 14-8"/>
+              <path d="M-4-12 0-8 4-12M-4 12 0 8 4 12M-13-3-9-5-10-10M13 3 9 5 10 10M-13 3-9 5-10 10M13-3 9-5 10-10" stroke-width="1.6"/>
+            </g>
+          </svg>
         </div>
         <figcaption class="letter-cap">Пример. Выделенное мы пишем по вашей заявке.</figcaption>
       </figure>
