@@ -1,0 +1,99 @@
+/* Внутренние страницы «Ёлкино чудо»: о проекте, письмо Деда Мороза, политика, согласие */
+:root{--night:#0a1424;--gold:#d6ae66;--gold-2:#f0d9a4;--gold-3:#a07a3a;--mandarin:#e9843a;--berry:#b33a44;--plum:#6d3f86;--sky:#24467e;
+  --cream:#f6eddc;--card:#fbf6ec;--ink:#23201a;--ink-2:#5b5346;--muted:#c3cad6;
+  --serif:"Cormorant","Cormorant Garamond",Georgia,serif;--sans:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--script:"Marck Script","Cormorant",cursive}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16.5px/1.65 var(--sans)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--berry)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--berry);outline-offset:3px}
+.pg-top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(10,20,36,.96);border-bottom:1px solid rgba(214,174,102,.3)}
+.pg-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--gold-2);font:600 21px/1 var(--serif)}
+.mono{position:relative;display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid var(--gold);font:600 23px/1 var(--serif);color:var(--gold-2);padding-top:5px}
+.mono i{position:absolute;top:4px;width:5px;height:5px;border-radius:50%;background:#ffd98a;box-shadow:0 0 8px 2px rgba(255,205,110,.7)}
+.mono i:first-child{left:10px}.mono i:nth-child(2){right:10px}
+.pg-back{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(214,174,102,.6);color:var(--gold-2);text-decoration:none;font-size:14px;white-space:nowrap}
+.pg-back:hover{background:rgba(214,174,102,.12)}
+.pg-hero{position:relative;overflow:hidden;padding:56px 16px 64px;text-align:center;color:#f3ead8;
+  background:radial-gradient(600px 300px at 80% 0%,rgba(233,132,58,.28),transparent 70%),radial-gradient(500px 300px at 10% 100%,rgba(109,63,134,.35),transparent 70%),linear-gradient(180deg,#0f1f36,#0a1424)}
+.pg-hero .kicker{font:400 26px/1.1 var(--script);color:var(--gold)}
+.pg-hero h1{margin-top:8px;font-size:clamp(40px,7vw,68px);color:var(--gold-2)}
+.pg-hero .lead{max-width:620px;margin:14px auto 0;font-size:17.5px;color:var(--muted)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.pg-main{padding:48px 0 72px}
+.blk{margin-top:36px}
+.blk:first-child{margin-top:0}
+.blk h2{font-size:clamp(30px,4.4vw,40px);color:var(--ink)}
+.blk p+p,.blk p+ul,.blk ul+p{margin-top:12px}
+.blk>p:first-of-type{margin-top:12px}
+.blk ul{margin:12px 0 0;padding-left:22px}
+.blk li+li{margin-top:6px}
+.card{padding:22px 24px;border-radius:24px;background:var(--card);border:1px solid rgba(160,122,58,.28);box-shadow:0 18px 40px -30px rgba(80,55,20,.6)}
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.ct{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:18px;background:var(--card);border:1px solid rgba(160,122,58,.3);text-decoration:none;color:var(--ink)}
+.ct svg{width:26px;height:26px;flex:none}
+.ct b{display:block;font-weight:600}
+.ct small{display:block;font-size:13.5px;color:var(--ink-2)}
+.ct:hover{border-color:var(--berry)}
+.ct-tg svg{fill:#2a8bd0}.ct-max svg{fill:#6b4fe0}.ct-vk svg{fill:#2f6fd6}.ct-mail svg{fill:var(--berry)}
+.todo{display:inline-block;padding:2px 9px;border-radius:999px;background:#fbe3c6;color:#8a4a12;font-size:13px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 28px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;font:600 16.5px/1.2 var(--sans)}
+.btn-red{color:#fff;background:linear-gradient(180deg,#d0545c,#9a2f39);box-shadow:0 10px 26px -10px rgba(179,58,68,.8)}
+.btn-red:hover{filter:brightness(1.06)}
+.btn-line{color:var(--ink);border:1px solid rgba(160,122,58,.6);background:transparent}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.pg-foot{padding:26px 16px 40px;background:#070d18;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(214,174,102,.25)}
+.pg-foot a{color:var(--gold-2)}
+.pg-foot p+p{margin-top:6px}
+
+/* письмо от Деда Мороза */
+.offer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start}
+.price{display:flex;align-items:baseline;gap:10px;margin-top:16px}
+.price b{font:700 48px/1 var(--serif);color:var(--berry);font-variant-numeric:lining-nums}
+.price span{color:var(--ink-2)}
+.feats{list-style:none;padding:0!important;margin-top:16px!important}
+.feats li{position:relative;padding-left:26px}
+.feats li::before{content:"";position:absolute;left:4px;top:.55em;width:10px;height:10px;transform:rotate(45deg);background:var(--mandarin)}
+.letter{position:relative;padding:34px 30px 30px;border-radius:6px;color:#3a2a17;
+  background:radial-gradient(circle at 80% 10%,rgba(255,255,255,.6),transparent 40%),linear-gradient(180deg,#fdf6e6,#f3e2c0);
+  box-shadow:0 1px 0 #e8d4ae,0 24px 50px -28px rgba(80,55,20,.7);font:500 20px/1.5 var(--serif);transform:rotate(-.6deg)}
+.letter::before{content:"";position:absolute;inset:10px;border:1px solid rgba(160,122,58,.45);border-radius:3px;pointer-events:none}
+.letter .salut{font:400 30px/1.2 var(--script);color:var(--berry)}
+.letter p+p{margin-top:12px}
+.letter .nm{background:rgba(233,132,58,.18);border-radius:4px;padding:0 4px}
+.letter .sign{margin-top:18px;text-align:right;font:400 28px/1.1 var(--script);color:#7a2730}
+.letter .stamp{position:absolute;right:22px;top:20px;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;text-align:center;
+  font:600 10px/1.15 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:radial-gradient(circle at 35% 30%,#d0545c,#8f2a33);box-shadow:0 4px 10px -4px rgba(0,0,0,.5);transform:rotate(12deg)}
+.letter-cap{margin-top:12px;font-size:13.5px;color:var(--ink-2);text-align:center}
+.steps{counter-reset:s;list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.steps li{counter-increment:s;margin:0!important;padding:18px;border-radius:18px;background:var(--card);border:1px solid rgba(160,122,58,.28)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;margin-bottom:8px;border-radius:50%;background:var(--sky);color:#fff;font:700 18px/1 var(--serif)}
+.form{display:grid;gap:14px;margin-top:16px}
+.fld label{display:block;font-weight:500;font-size:15px;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:1px solid rgba(160,122,58,.5);background:#fff;font:inherit;color:var(--ink)}
+.fld textarea{min-height:96px;resize:vertical}
+.fld small{display:block;margin-top:4px;font-size:13px;color:var(--ink-2)}
+.agree{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.5}
+.agree input{flex:none;width:22px;height:22px;margin-top:1px;accent-color:var(--berry)}
+.stub{margin-top:16px;padding:18px 20px;border-radius:18px;background:#fbe3c6;border:1px solid rgba(233,132,58,.5)}
+.stub[hidden]{display:none}
+.stub h3{font-size:26px}
+.stub p{margin-top:6px}
+.stub .btn{margin-top:12px}
+
+/* юридические страницы */
+.legal h2{font-size:26px;margin-top:30px}
+.legal h2:first-child{margin-top:0}
+.legal p,.legal ul{margin-top:10px}
+.legal ul{padding-left:22px}
+.legal .req{padding:14px 16px;border-radius:14px;background:#fbe3c6;font-size:15px}
+@media (max-width:719px){
+  .offer{grid-template-columns:minmax(0,1fr)}
+  .letter{padding:28px 20px 22px;font-size:18.5px}
+  .letter .stamp{width:54px;height:54px;font-size:8.5px;right:14px;top:14px}
+  .card{padding:18px}
+  .pg-brand span:last-child{font-size:19px}
+}

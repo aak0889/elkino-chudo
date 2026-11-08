@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ЧЕРНОВИК: страница не связана с меню и закрыта от поисковиков, пока Настя не проверит.
+     После «да»: убрать noindex, добавить ссылку в «Почту чудес» на главной и в sitemap.xml. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Письмо от Деда Мороза с именем ребёнка — Ёлкино чудо</title>
+<meta name="description" content="Именное письмо от Деда Мороза в PDF: с именем ребёнка, его успехами за год и пожеланием. Распечатайте и положите под ёлку. 249 ₽.">
+<meta name="theme-color" content="#0b1526">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
+<link rel="stylesheet" href="css/page.css?v=20261108b">
+</head>
+<body>
+
+<header class="pg-top">
+  <a class="pg-brand" href="./"><span class="mono" aria-hidden="true"><i></i><i></i>Е</span><span>Ёлкино чудо</span></a>
+  <a class="pg-back" href="./#pochta">← Почта чудес</a>
+</header>
+
+<section class="pg-hero">
+  <p class="kicker" aria-hidden="true">Почта чудес</p>
+  <h1>Письмо от Деда Мороза</h1>
+  <p class="lead">Настоящее письмо с именем вашего ребёнка: Дед Мороз помнит, чему он научился за год, и знает, о чём он мечтает.</p>
+</section>
+
+<main class="pg-main">
+  <div class="wrap">
+
+    <section class="blk offer">
+      <div>
+        <h2>Что вы получите</h2>
+        <ul class="feats">
+          <li>Письмо в PDF на красивом бланке с печатью Ёлкиной почты.</li>
+          <li>Имя ребёнка, его успехи за год и мечта: всё, что вы расскажете в заявке.</li>
+          <li>Текст пишем под возраст: для малышей короче и проще, для школьников с загадкой.</li>
+          <li>Распечатайте дома на обычном принтере и положите под ёлку или в почтовый ящик.</li>
+        </ul>
+        <div class="price"><b>249 ₽</b><span>за одно письмо</span></div>
+        <p style="margin-top:18px"><a class="btn btn-red" href="#zakaz">Заказать письмо</a></p>
+      </div>
+
+      <figure style="margin:0">
+        <div class="letter" aria-label="Пример письма">
+          <span class="stamp" aria-hidden="true">Ёлкина<br>почта</span>
+          <p class="salut">Здравствуй, <span class="nm">Миша</span>!</p>
+          <p>Пишу тебе из своего терема, где сейчас очень шумно: снеговики репетируют хоровод, а олени спорят, кто повезёт сани.</p>
+          <p>Мне рассказали, что этим летом ты <span class="nm">научился кататься на велосипеде без маленьких колёсиков</span>. Я тоже когда-то падал, пока учился править санями, так что знаю: это было непросто. Молодец, что не сдался.</p>
+          <p>А ещё я слышал, что ты мечтаешь о <span class="nm">настоящем телескопе</span>. Звёзды я знаю хорошо, мы с ними старые друзья. Посмотрим, что можно сделать.</p>
+          <p>Слушайся маму и папу, береги щёки от мороза и не забудь оставить у ёлки мандарин для моих оленей.</p>
+          <p class="sign">Твой Дед Мороз</p>
+        </div>
+        <figcaption class="letter-cap">Пример. Выделенное мы пишем по вашей заявке.</figcaption>
+      </figure>
+    </section>
+
+    <section class="blk">
+      <h2>Как это работает</h2>
+      <ol class="steps">
+        <li>Вы заполняете короткую заявку: имя, возраст, успехи и мечта ребёнка.</li>
+        <li>Оплачиваете 249 ₽.</li>
+        <li>Мы пишем письмо и присылаем PDF на почту.</li>
+        <li>Вы печатаете его, и в нужный момент письмо «приходит».</li>
+      </ol>
+    </section>
+
+    <section class="blk" id="zakaz">
+      <h2>Заявка на письмо</h2>
+      <div class="card">
+        <!-- ФОРМА-ЗАГОТОВКА. Сейчас данные НИКУДА не отправляются: при нажатии показывается заглушка.
+             Перед запуском: подключить отправку (бот/сервер в РФ), оплату, уведомление РКН об обработке ПДн,
+             вписать реквизиты в politika.html и soglasie.html. -->
+        <form class="form" id="order" novalidate>
+          <div class="fld"><label for="f-name">Имя ребёнка</label><input id="f-name" name="child_name" autocomplete="off" required maxlength="40" placeholder="Например, Миша"></div>
+          <div class="fld"><label for="f-age">Возраст</label><input id="f-age" name="child_age" inputmode="numeric" maxlength="2" placeholder="6"></div>
+          <div class="fld"><label for="f-wins">Чему научился, чем порадовал в этом году</label><textarea id="f-wins" name="wins" maxlength="500" placeholder="Научился читать, пошёл в бассейн, помогал с младшей сестрой"></textarea></div>
+          <div class="fld"><label for="f-dream">О чём мечтает</label><input id="f-dream" name="dream" maxlength="120" placeholder="Телескоп, собака, поехать к морю"></div>
+          <div class="fld"><label for="f-mail">Почта, на которую прислать PDF</label><input id="f-mail" name="email" type="email" autocomplete="email" maxlength="80" placeholder="name@example.ru"><small>Только для отправки письма. Рассылок не будет.</small></div>
+          <label class="agree"><input type="checkbox" id="f-agree" name="consent" required>
+            <span>Я даю <a href="soglasie.html" target="_blank">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="politika.html" target="_blank">политикой обработки персональных данных</a>.</span></label>
+          <p><button class="btn btn-red" type="submit" id="f-send" disabled>Заказать за 249 ₽</button></p>
+        </form>
+        <div class="stub" id="stub" role="status" hidden>
+          <h3>Скоро откроем приём заказов</h3>
+          <p>Мы уже готовим бланки и печать. Пока оставьте заявку в нашем Telegram-канале, и мы напишем вам первыми, как только всё заработает. Данные из формы никуда не отправлены.</p>
+          <a class="btn btn-red" href="https://t.me/elkinochudo" target="_blank" rel="noopener">Оставить заявку в Telegram</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="pg-foot">
+  <p>© 2026 Ёлкино чудо · <a href="about.html">О проекте</a></p>
+  <p><a href="politika.html">Политика обработки персональных данных</a> · <a href="soglasie.html">Согласие на обработку</a></p>
+</footer>
+
+<script>
+(function () {
+  var f = document.getElementById('order'), cb = document.getElementById('f-agree'), btn = document.getElementById('f-send'), stub = document.getElementById('stub');
+  cb.addEventListener('change', function () { btn.disabled = !cb.checked; });
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();               // заглушка: ничего не отправляем
+    if (!cb.checked) return;
+    stub.hidden = false;
+    stub.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+</script>
+</body>
+</html>

@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
 <link rel="preload" as="image" href="img/globe-rail-m.webp" media="(max-width: 899px)">
 <link rel="preload" as="image" href="img/globe-rail.webp" media="(min-width: 900px)">
-<link rel="stylesheet" href="css/style.css?v=20261108a">
+<link rel="stylesheet" href="css/style.css?v=20261108b">
 <!-- three.js для 3D-шаров (ES-модули, грузятся только при открытии шара) -->
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <!-- Yandex.Metrika counter -->
@@ -52,9 +52,12 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
       <span class="brand-name">Ёлкино чудо</span>
     </a>
   </div>
-  <nav class="nav" aria-label="Разделы">
-    <a href="#razdely">Разделы</a>
-    <a href="#shary">Шары-игры</a>
+  <nav class="nav" id="nav" aria-label="Разделы">
+    <a href="#lavka">Подарки</a>
+    <a href="#pochta">Почта</a>
+    <a href="#domashnee">Дом</a>
+    <a href="#sobytiya">События</a>
+    <a href="#shary">Игры</a>
     <a href="#kalendar">Календарь</a>
     <a href="#televizor">Телевизор</a>
     <a class="nav-cta" href="#podpiska">Подписаться</a>
@@ -104,6 +107,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
         <li><a href="#kalendar"><b>Время чудес</b><small>Календарь декабря с окошками</small></a></li>
         <li><a href="#televizor"><b>Старый телевизор</b><small>Фильмы, под которые режут салаты</small></a></li>
         <li><a href="#podpiska"><b>Отсчитывать дни вместе</b><small>Наши каналы и подписка</small></a></li>
+        <li><a href="about.html"><b>О проекте</b><small>Кто делает «Ёлкино чудо» и как с нами связаться</small></a></li>
       </ol>
     </nav>
     <div class="menu-foot">
@@ -152,6 +156,18 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
         </div>
       </div>
 
+      <!-- подписка на «окошко дня»: только ссылки на каналы, данные на сайте не собираем -->
+      <details class="daily">
+        <summary class="daily-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c.6 0 1 .4 1 1v.8a6 6 0 0 1 5 5.9v3.6l1.6 2.6c.3.5 0 1.1-.6 1.1H5c-.6 0-.9-.6-.6-1.1L6 13.8v-3.6a6 6 0 0 1 5-5.9v-.8c0-.6.4-1 1-1ZM9.8 19.5h4.4a2.2 2.2 0 0 1-4.4 0Z"/></svg>Получать окошко каждое утро</summary>
+        <div class="daily-pop">
+          <p>Каждое утро новое окошко календаря и пост отсчёта. Выберите, где удобнее читать:</p>
+          <div class="daily-links">
+            <a class="daily-a daily-tg" href="https://t.me/elkinochudo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.3-.5-1.9-1.4-1.6ZM9 14.6l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2L9 14.6Z"/></svg>Telegram</a>
+            <a class="daily-a daily-max" href="https://max.ru/id772156961529_biz2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.3 14.1L2.5 21.5l5-1.2A9.5 9.5 0 1 0 12 2.5Zm0 4.2a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6Z"/></svg>MAX</a>
+          </div>
+        </div>
+      </details>
+
       <div class="hero-actions">
         <a class="btn btn-gold" href="#razdely">Начать путешествие <svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg></a>
         <a class="btn btn-line" href="#shary">Заглянуть в шары</a>
@@ -195,6 +211,18 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             <li><span>Подарки до 500 ₽</span><em class="st">3 декабря</em></li>
             <li><span>Подарки детям</span><em class="st">14 декабря</em></li>
           </ul>
+          <!-- ПАРТНЁРСКИЕ ССЫЛКИ: сейчас обычные ссылки на поиск без реф-кодов.
+               Когда Настя получит реф-ссылки: заменить href у каждой .shop-a на реф-ссылку (с erid=… от ОРД),
+               добавить rel="sponsored noopener" и раскомментировать пометку «Реклама» с рекламодателем ниже. -->
+          <div class="shop" data-partner-block="lavka">
+            <p class="shop-h">Где искать подарки</p>
+            <div class="shop-links">
+              <a class="shop-a" data-partner="yandex-market" href="https://market.yandex.ru/search?text=%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BA%D0%B8" target="_blank" rel="noopener">Яндекс Маркет</a>
+              <a class="shop-a" data-partner="ozon" href="https://www.ozon.ru/search/?text=%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BA%D0%B8" target="_blank" rel="noopener">Ozon</a>
+              <a class="shop-a" data-partner="wildberries" href="https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BA%D0%B8" target="_blank" rel="noopener">Wildberries</a>
+            </div>
+            <!-- <p class="shop-ad">Реклама. ООО «…», ИНН … · erid: … </p> -->
+          </div>
       </article>
 
       <article class="room" id="pochta">
@@ -238,6 +266,18 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             <li><span>Игры без реквизита: подбор по компании</span><em class="st">откроется 1 декабря</em></li>
             <li><span>Куда пойти: ёлки, катки, спектакли</span><em class="st">откроется 1 декабря</em></li>
           </ul>
+          <!-- ПАРТНЁРСКИЕ ССЫЛКИ (билеты): сейчас обычные ссылки на разделы без реф-кодов.
+               Kassir.ru и Ticketland — реф-ссылки через Pampadu; заменить href, добавить rel="sponsored noopener",
+               раскомментировать пометку «Реклама» с рекламодателем и erid. -->
+          <div class="shop shop-ev" data-partner-block="kuda-poiti">
+            <p class="shop-h">Билеты на ёлки и спектакли</p>
+            <div class="shop-links">
+              <a class="shop-a" data-partner="yandex-afisha" href="https://afisha.yandex.ru/" target="_blank" rel="noopener">Яндекс Афиша</a>
+              <a class="shop-a" data-partner="kassir" href="https://www.kassir.ru/" target="_blank" rel="noopener">Kassir.ru</a>
+              <a class="shop-a" data-partner="ticketland" href="https://www.ticketland.ru/" target="_blank" rel="noopener">Ticketland</a>
+            </div>
+            <!-- <p class="shop-ad">Реклама. ООО «…», ИНН … · erid: … </p> -->
+          </div>
       </article>
 
       <article class="room room-wide">
@@ -445,8 +485,11 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
       <p class="sub">Тридцать одно окошко. Каждый день декабря открывается одно, а в нём маленькое дело на вечер: для себя, для детей, для всех вместе.</p>
       <p class="seal" id="adv-seal">Первое окошко откроется 1 декабря</p>
     </header>
+    <ul class="adv-legend" id="adv-legend" aria-label="Что прячется в окошках"></ul>
+    <div class="tree-rail" aria-hidden="true"></div>
     <ol class="windows" id="windows"></ol>
     <div class="win-note" id="win-note" role="status" aria-live="polite"></div>
+    <p class="adv-plus">У каждого окошка будет и <b>расширенная версия</b>: распечатки, аудиосказки, видео мастер-классов. <span class="soon">скоро</span></p>
   </div>
 </section>
 
@@ -525,7 +568,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
 <footer class="foot">
   <div class="foot-row">
     <span class="mono mono-sm" aria-hidden="true"><i></i><i></i>Е</span>
-    <p>© 2026 Ёлкино чудо</p>
+    <p>© 2026 Ёлкино чудо · <a href="about.html">О проекте и контакты</a></p>
   </div>
   <p class="credits">Музыка: «Jingle Bells Calm», Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>), лицензия <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener">Creative Commons: By Attribution 4.0</a>. Иллюстрации — собственные. Фильмы — на сайте <a href="https://smotrim.ru" target="_blank" rel="noopener">smotrim.ru</a> (ВГТРК).</p>
 </footer>
@@ -553,7 +596,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   </div>
 </div>
 
-<script src="js/main.js?v=20261108a" defer></script>
-<script src="js/games.js?v=20261108a" defer></script>
+<script src="js/main.js?v=20261108b" defer></script>
+<script src="js/games.js?v=20261108b" defer></script>
 </body>
 </html>
