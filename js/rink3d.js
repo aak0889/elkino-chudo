@@ -391,31 +391,121 @@ async function build(btn) {
     pool(TREE_P[0], TREE_P[1] + 1, 11, HDR(.45, .3, .12), 'tree');
     const pl = new THREE.PointLight(0xffc070, 0, 18 * S, 1.6); pl.position.set(TREE_P[0] * S, GROUND_Y + (y0 + 4) * S, (TREE_P[1] + 3.2) * S); scene.add(pl); lights.push({ light: pl, g: 'tree' });
   }
-  // 3) ярмарка
+  // 3) ярмарка: четыре палатки торговцев вокруг фонаря — пончики, леденцы-петушки, глинтвейн, фонарики
   {
-    const stalls = [[-17, -3, '#b33a44', '#f4ead8'], [-15.5, -10, '#2c5f8a', '#f4ead8'], [-10.5, -15.5, '#2f6b52', '#f0d9a4']];
-    stalls.forEach(([x, z, a, b], i) => {
-      const sg = new THREE.Group(), y0 = hgt(x, z); sg.position.set(x, y0, z); world.add(sg); sg.lookAt(0, y0, 0);
-      const back = new THREE.Mesh(new THREE.BoxGeometry(3, 2.3, .15), woodM); back.position.set(0, 1.15, -1); back.castShadow = true; sg.add(back);
-      const cnt = new THREE.Mesh(new THREE.BoxGeometry(3, 1, .7), woodM); cnt.position.set(0, .5, .35); cnt.castShadow = true; sg.add(cnt);
-      const top = new THREE.Mesh(new THREE.BoxGeometry(3.1, .08, .8), wood2); top.position.set(0, 1.02, .35); sg.add(top);
-      [-1.45, 1.45].forEach(px => { const p = new THREE.Mesh(new THREE.BoxGeometry(.12, 2.6, .12), wood2); p.position.set(px, 1.3, .6); sg.add(p); });
-      const aw = new THREE.Mesh(new THREE.PlaneGeometry(3.3, 1.5), new THREE.MeshStandardMaterial({ map: awningTex(a, b), roughness: .7, side: THREE.DoubleSide })); aw.position.set(0, 2.55, -.15); aw.rotation.x = -1.05; aw.castShadow = true; sg.add(aw);
-      const awS = new THREE.Mesh(new THREE.BoxGeometry(3.3, .1, 1.5), roofMat); awS.position.set(0, 2.62, -.2); awS.rotation.x = -1.05 + Math.PI / 2; awS.scale.y = .7; sg.add(awS);
-      const roof = new THREE.Mesh(new THREE.BoxGeometry(3.3, .2, 1.1), roofMat); roof.position.set(0, 2.45, -.9); roof.rotation.x = -.35; sg.add(roof);
-      const gm = [0xb33a44, 0xd6ae66, 0xe9843a, 0x2c5f8a, 0xf4ead8].map(c => new THREE.MeshPhysicalMaterial({ color: c, metalness: .4, roughness: .25, clearcoat: 1, envMap }));
-      for (let k = 0; k < 9; k++) { const m = new THREE.Mesh(new THREE.SphereGeometry(.12 + rnd() * .06, 12, 10), gm[(k + i) % 5]); m.position.set(-1.2 + k * .3, 1.18, .25 + (k % 2) * .2); sg.add(m); }
-      if (i === 1) { const sam = new THREE.Mesh(new THREE.CylinderGeometry(.22, .28, .55, 16), gold); sam.position.set(.9, 1.33, .3); sg.add(sam); }
-      const hs = new THREE.Mesh(new THREE.PlaneGeometry(.9, .7), winMat); hs.position.set(0, 1.7, -.92); sg.add(hs);
-      sg.updateMatrixWorld(true);
-      const L = V3(-1.6, 2.15, .75).applyMatrix4(sg.matrix), Rr = V3(1.6, 2.15, .75).applyMatrix4(sg.matrix);
-      garland(L, Rr, .25, 16, i * .3, i * .3 + .3, 'fair', .065);
-      const c = V3(0, 0, 1.6).applyMatrix4(sg.matrix); pool(c.x, c.z, 5, HDR(.42, .28, .1), 'fair');
-      colliders.push([x, z, 1.7]);
+    const F = [-14.5, -9], FR_ = 6.2;
+    const signTex = (txt, ink) => canvasTex(512, 128, (g, w, h) => {
+      g.fillStyle = '#f6efdf'; g.fillRect(0, 0, w, h);
+      g.strokeStyle = ink; g.lineWidth = 6; g.strokeRect(8, 8, w - 16, h - 16); g.lineWidth = 2; g.strokeRect(18, 18, w - 36, h - 36);
+      g.fillStyle = ink; [[44, h / 2], [w - 44, h / 2]].forEach(([x, y]) => { for (let k = 0; k < 6; k++) { const a = k * Math.PI / 3; g.fillRect(x + Math.cos(a) * 10 - 2, y + Math.sin(a) * 10 - 2, 4, 4); } g.beginPath(); g.arc(x, y, 4, 0, 7); g.fill(); });
+      g.font = '700 82px Cormorant, Georgia, serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(txt, w / 2, h / 2 + 4);
     });
-    lamp(-19, -9.5, 'fair', 3.2, true);
-    const c = V3(-14.5, 0, -9);
-    G_('fair'); places.push({ id: 'fair', name: 'Ярмарка', text: 'Огни ярмарки зажглись — слышите колокольчики?', x: c.x, z: c.z, r: 6.5 });
+    const scallopTex = (a, b) => canvasTex(512, 128, (g, w, h) => {
+      const n = 8, sw = w / n; for (let i = 0; i < n; i++) { g.fillStyle = i % 2 ? b : a; g.fillRect(i * sw, 0, sw + 1, h * .72); }
+      for (let i = 0; i < n; i++) { g.fillStyle = i % 2 ? b : a; g.beginPath(); g.arc(i * sw + sw / 2, h * .72, sw / 2, 0, Math.PI); g.fill(); }
+      g.fillStyle = 'rgba(0,0,0,.12)'; g.fillRect(0, 0, w, 6);
+    });
+    const paintM = c => new THREE.MeshStandardMaterial({ color: c, roughness: .55 });
+    const candy = c => new THREE.MeshPhysicalMaterial({ color: c, roughness: .12, clearcoat: 1, envMap, envMapIntensity: 1.2, emissive: c, emissiveIntensity: .35 });
+    const plankM = new THREE.MeshStandardMaterial({ map: woodTex('#8a5a34', '#5a3519', '#b07a4a'), roughness: .75 }); plankM.map.repeat.set(1, 2);
+    // общие формы
+    const donutG = new THREE.TorusGeometry(.13, .065, 10, 20), icingG = new THREE.TorusGeometry(.13, .068, 8, 20, Math.PI * 2);
+    const rooster = new THREE.Shape(); [[-.5, -.1], [-.58, .22], [-.44, .48], [-.34, .22], [-.27, .52], [-.14, .26], [-.04, .12], [.1, .16], [.14, .4], [.22, .52], [.28, .44], [.35, .52], [.4, .42], [.35, .34], [.48, .27], [.37, .2], [.33, .05], [.25, -.16], [.05, -.32], [-.26, -.3]].forEach(([x, y], k) => k ? rooster.lineTo(x, y) : rooster.moveTo(x, y));
+    const roosterG = new THREE.ExtrudeGeometry(rooster, { depth: .08, bevelEnabled: true, bevelThickness: .03, bevelSize: .03, bevelSegments: 2 }); roosterG.translate(0, 0, -.04);
+    const stickM = new THREE.MeshStandardMaterial({ color: 0xf4efe6, roughness: .5 });
+    const KINDS = [
+      { t: 'Пончики', ink: '#22406f', cnt: '#f3ead8', aw: ['#f6efdf', '#e58aa8'] },
+      { t: 'Глинтвейн', ink: '#8f2a33', cnt: '#24467e', aw: ['#f6efdf', '#8f2a33'] },
+      { t: 'Петушки', ink: '#8f2a33', cnt: '#b33a44', aw: ['#f6efdf', '#c24a52'] },
+      { t: 'Фонарики', ink: '#1f4a3a', cnt: '#2f6b52', aw: ['#f6efdf', '#24467e'] },
+    ];
+    const fy = hgt(F[0], F[1]);
+    // два фонаря в просветах между палатками, чтобы не закрывать вывески
+    const lampTops = [147, 257].map((d, k) => lamp(F[0] + Math.cos(d * Math.PI / 180) * 6.1, F[1] + Math.sin(d * Math.PI / 180) * 6.1, 'fair', 3.6, k === 0));
+    garland(lampTops[0], lampTops[1], .8, 22, .3, .7, 'fair', .06);
+    KINDS.forEach((K, i) => {
+      const ang = (120 + i * 55) * Math.PI / 180, x = F[0] + Math.cos(ang) * FR_, z = F[1] + Math.sin(ang) * FR_;
+      const sg = new THREE.Group(), y0 = hgt(x, z) - .05; sg.position.set(x, y0, z); world.add(sg); world.updateMatrixWorld(true); sg.lookAt(world.localToWorld(V3(F[0], y0, F[1])));
+      const add = (geo, mat, px, py, pz, sh = true) => { const m = new THREE.Mesh(geo, mat); m.position.set(px, py, pz); if (sh) m.castShadow = true; sg.add(m); return m; };
+      // домик-киоск: пол, стены из досок, прилавок, столбы
+      add(new THREE.BoxGeometry(3.3, .16, 2.3), wood2, 0, .08, 0);
+      add(new THREE.BoxGeometry(3.1, 2.4, .12), plankM, 0, 1.28, -1.02);
+      [-1.55, 1.55].forEach(px => add(new THREE.BoxGeometry(.12, 2.4, 2.1), plankM, px, 1.28, -.02));
+      add(new THREE.BoxGeometry(3.0, .95, .5), paintM(K.cnt), 0, .63, .8);
+      add(new THREE.BoxGeometry(3.15, .07, .64), wood2, 0, 1.13, .8);
+      [-1.55, 1.55].forEach(px => add(new THREE.BoxGeometry(.16, 2.4, .16), wood2, px, 1.28, 1.02));
+      add(new THREE.BoxGeometry(3.3, .32, .14), paintM(K.cnt), 0, 2.36, 1.04);
+      // двускатная крыша под снегом
+      const pitch = .62, half = 1.95;
+      [-1, 1].forEach(s => {
+        const r = add(new THREE.BoxGeometry(half, .1, 2.75), wood2, s * .82, 2.48 + Math.sin(pitch) * half / 2 - .05, 0); r.rotation.z = -s * pitch;
+        const sn = add(new THREE.BoxGeometry(half + .04, .16, 2.8), snowMat, s * .82 - s * .05, 2.6 + Math.sin(pitch) * half / 2 - .05, 0); sn.rotation.z = -s * pitch;
+      });
+      // фронтон и вывеска
+      const tri = new THREE.Shape(); tri.moveTo(-1.6, 0); tri.lineTo(0, 1.05); tri.lineTo(1.6, 0); tri.lineTo(-1.6, 0);
+      add(new THREE.ExtrudeGeometry(tri, { depth: .08, bevelEnabled: false }), paintM('#efe6d2'), 0, 2.5, .98, false);
+      const st = signTex(K.t, K.ink);
+      add(new THREE.BoxGeometry(2.3, .66, .06), paintM(K.ink), 0, 2.44, 1.1, false);
+      add(new THREE.PlaneGeometry(2.18, .55), new THREE.MeshStandardMaterial({ map: st, emissiveMap: st, emissive: 0xffffff, emissiveIntensity: .45, roughness: .6 }), 0, 2.44, 1.135, false);
+      // полосатый тент с фестоном
+      const aw = add(new THREE.PlaneGeometry(3.3, .95), new THREE.MeshStandardMaterial({ map: scallopTex(...K.aw), transparent: true, alphaTest: .5, roughness: .7, side: THREE.DoubleSide }), 0, 1.86, 1.38);
+      aw.rotation.x = -.95;
+      // тёплый свет внутри
+      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xffc98a, transparent: true, opacity: .55, depthWrite: false, blending: THREE.AdditiveBlending })); glow.scale.set(3.4, 2.4, 1); glow.position.set(0, 1.7, -.4); sg.add(glow);
+      // товар и знак на крыше
+      if (i === 0) {          // пончики: горки с глазурью и большой пончик на коньке
+        const dough = paintM('#c98a4b'), ic = ['#f19bb5', '#5b3220', '#fff6ee'].map(c => new THREE.MeshStandardMaterial({ color: c, roughness: .35 }));
+        [-1, -.35, .35, 1].forEach((px, k) => { for (let h = 0; h < 3 - (k % 2); h++) { const d = add(donutG, dough, px, 1.22 + h * .13, .8, false); d.rotation.x = Math.PI / 2; const c = add(icingG, ic[(k + h) % 3], px, 1.25 + h * .13, .8, false); c.rotation.x = Math.PI / 2; c.scale.set(1.02, 1.02, .55); } });
+        const big = add(new THREE.TorusGeometry(.42, .2, 14, 32), dough, 0, 4.15, .2); const bi = add(new THREE.TorusGeometry(.42, .21, 12, 32, Math.PI), ic[0], 0, 4.15, .24); bi.scale.z = .7;
+        for (let k = 0; k < 10; k++) { const a = k / 10 * Math.PI; const sp = add(new THREE.BoxGeometry(.09, .025, .03), paintM(['#ffffff', '#6fb6e8', '#f6d36b'][k % 3]), Math.cos(a) * .42, 4.15 + Math.sin(a) * .42, .42, false); sp.rotation.z = a * 3; }
+      } else if (i === 1) {   // глинтвейн: медный котёл, кружки, апельсины, большая кружка на коньке
+        const copper = new THREE.MeshStandardMaterial({ color: 0xb8653a, metalness: .85, roughness: .3, envMap, envMapIntensity: 1.2 });
+        const pot = add(new THREE.LatheGeometry([[0, 0], [.34, 0], [.42, .12], [.44, .42], [.4, .5], [.44, .52], [0, .52]].map(p => new THREE.Vector2(p[0], p[1])), 24), copper, -.6, 1.17, .78);
+        add(new THREE.CylinderGeometry(.39, .39, .02, 24), new THREE.MeshStandardMaterial({ color: 0x5a0f1a, emissive: 0x3a0610, roughness: .2 }), -.6, 1.66, .78, false);
+        const mugM = paintM('#b33a44'), mugW = paintM('#f6efdf');
+        [[.3, .7], [.62, .9], [.94, .7], [.62, .58]].forEach(([px, pz], k) => { add(new THREE.CylinderGeometry(.09, .08, .2, 14), k % 2 ? mugW : mugM, px, 1.27, pz); });
+        const orM = paintM('#e9843a'); [[1.2, .9], [1.3, .7], [1.12, .62], [-1.15, .9]].forEach(([px, pz]) => add(new THREE.SphereGeometry(.09, 12, 10), orM, px, 1.25, pz, false));
+        for (let k = 0; k < 3; k++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xe8eef8, transparent: true, opacity: .22, depthWrite: false })); s.scale.setScalar(.6 + k * .25); s.position.set(-.6 + k * .08, 1.95 + k * .35, .78); sg.add(s); }
+        add(new THREE.CylinderGeometry(.36, .32, .62, 24), mugM, 0, 3.98, .2); add(new THREE.CylinderGeometry(.365, .365, .1, 24), mugW, 0, 3.98, .2, false);
+        const hd = add(new THREE.TorusGeometry(.18, .055, 10, 20), mugM, .4, 3.98, .2); hd.rotation.y = Math.PI / 2;
+        const sm = new THREE.Sprite(new THREE.SpriteMaterial({ map: T_GLOW, color: 0xe8eef8, transparent: true, opacity: .3, depthWrite: false })); sm.scale.set(.9, 1.2, 1); sm.position.set(0, 4.65, .2); sg.add(sm);
+      } else if (i === 2) {   // петушки на палочках веером и большой петушок на коньке
+        const cols = ['#d23a2e', '#e98a1f', '#c21f4a', '#f2b233', '#3f8f4a'].map(candy);
+        add(new THREE.BoxGeometry(1.4, .22, .3), wood2, .1, 1.27, .8);
+        for (let k = 0; k < 7; k++) {
+          const px = -.5 + k * .2, tilt = (k - 3) * .12;
+          const stick = add(new THREE.CylinderGeometry(.012, .012, .5, 6), stickM, px, 1.6, .8, false); stick.rotation.z = -tilt;
+          const r = add(roosterG, cols[k % 5], px - Math.sin(tilt) * .38, 1.88 + Math.cos(tilt) * .02, .8); r.scale.setScalar(.36); r.rotation.z = -tilt;
+        }
+        [-1.15, 1.15].forEach((px, k) => { for (let h = 0; h < 3; h++) { const r = add(roosterG, cols[(h + k * 2) % 5], px, 1.32 + h * .02, .62 + h * .14, false); r.scale.setScalar(.3); r.rotation.x = -Math.PI / 2 + .3; } });
+        add(new THREE.CylinderGeometry(.03, .03, .9, 8), stickM, 0, 3.75, .2, false);
+        const bigR = add(roosterG, cols[0], 0, 4.42, .2); bigR.scale.setScalar(1.05);
+      } else {                // фонарики: бумажные шары под тентом и большой фонарь на коньке
+        const LC = [HDR(3.2, 1.1, .7), HDR(3, 2.6, 2), HDR(1.2, 1.9, 3.2), HDR(3.2, 2.1, .9), HDR(2.4, 1.2, 2.4)];
+        const capM = ironMat;
+        for (let k = 0; k < 6; k++) {
+          const px = -1.25 + k * .5, py = 1.72 - (k % 2) * .22;
+          const p = V3(px, py, 1.25).applyMatrix4((sg.updateMatrixWorld(true), sg.matrix)); bulb(p, .17, LC[k % 5], .2 + k * .1, 'fair');
+          add(new THREE.CylinderGeometry(.06, .08, .07, 10), capM, px, py + .19, 1.25, false);
+          add(new THREE.CylinderGeometry(.006, .006, 1.95 - py - .2, 4), stickM, px, (1.95 + py + .2) / 2, 1.25, false);
+        }
+        [-1, -.5, .5, 1].forEach((px, k) => { const p = V3(px, 1.3, .78).applyMatrix4(sg.matrix); bulb(p, .12, LC[(k + 2) % 5], .5, 'fair'); add(new THREE.CylinderGeometry(.05, .06, .05, 10), capM, px, 1.45, .78, false); });
+        const p = V3(0, 3.95, .2).applyMatrix4(sg.matrix); bulb(p, .38, LC[1], .9, 'fair');
+        add(new THREE.CylinderGeometry(.14, .2, .14, 12), capM, 0, 4.38, .2); add(new THREE.CylinderGeometry(.2, .14, .1, 12), capM, 0, 3.53, .2);
+      }
+      sg.updateMatrixWorld(true);
+      // гирлянда-лампочки по скатам фронтона и вдоль тента
+      const L = V3(-1.75, 2.42, 1.4).applyMatrix4(sg.matrix), T = V3(0, 3.55, 1.4).applyMatrix4(sg.matrix), Rr = V3(1.75, 2.42, 1.4).applyMatrix4(sg.matrix);
+      garland(L, T, .03, 9, i * .2, i * .2 + .1, 'fair', .06); garland(T, Rr, .03, 9, i * .2 + .1, i * .2 + .2, 'fair', .06);
+      const A1 = V3(-1.65, 1.6, 1.78).applyMatrix4(sg.matrix), A2 = V3(1.65, 1.6, 1.78).applyMatrix4(sg.matrix);
+      garland(A1, A2, .12, 14, i * .2, i * .2 + .25, 'fair', .055);
+      // гирлянда от фонаря в центре к коньку палатки
+      garland(lampTops[i < 2 ? 0 : 1].clone(), T.clone(), .45, 10, .1, .5, 'fair', .06);
+      const c = V3(0, 0, 2).applyMatrix4(sg.matrix); pool(c.x, c.z, 5, HDR(.42, .3, .16), 'fair');
+      colliders.push([x, z, 1.85]);
+    });
+    pool(F[0], F[1], 7, HDR(.3, .22, .12), 'fair', fy);
+    G_('fair'); places.push({ id: 'fair', name: 'Ярмарка', text: 'Пончики, петушки на палочке и горячий глинтвейн — ярмарка открылась!', x: F[0], z: F[1], r: 7 });
   }
   // 4) мостик через ручей
   {
@@ -493,7 +583,7 @@ async function build(btn) {
     if (r < 26 && rnd() < .75) continue; if (z > 0 && rnd() < .6) continue;
     if (distPath(x, z) < 3.2 || Math.abs(x - streamX(z)) < 3.2) continue;
     if (SPOTS.some(s => Math.hypot(x - s.h[0], z - s.h[1]) < 3.5 || Math.hypot(x - s.c[0], z - s.c[1]) < 3.2 || Math.hypot(x - (s.h[0] + s.c[0]) / 2, z - (s.h[1] + s.c[1]) / 2) < 2.6)) continue;
-    if (Math.hypot(x - TREE_P[0], z - TREE_P[1]) < 6 || Math.hypot(x + 14.5, z + 9) < 7 || (Math.hypot(x - 19, z + 2) < 6)) continue;
+    if (Math.hypot(x - TREE_P[0], z - TREE_P[1]) < 6 || Math.hypot(x + 14.5, z + 9) < 9.5 || (Math.hypot(x - 19, z + 2) < 6)) continue;
     if (z > 8 && Math.abs(x) < 9 + (z - 8) * .5 && r < 30) continue;
     if (r > 26 && Math.abs(wrapA(Math.atan2(z, x) - Math.atan2(32, -26))) < .2 + 4 / r) continue;   // просека: вид со смотровой   // открытый вид на каток спереди
     const top = hgt(x, z) + 2.6 * s; if ((r * S) ** 2 + (GROUND_Y + top * S) ** 2 > 9.75 * 9.75) continue;

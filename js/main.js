@@ -102,10 +102,10 @@
       for (var k = 0; k < stars.length; k++) {
         var s = stars[k]; s.ph += s.sp * dt;
         var a = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(s.ph));
-        sctx.globalAlpha = a; sctx.fillStyle = '#fff4dc';
+        sctx.globalAlpha = a; sctx.fillStyle = '#f4f7ff';
         sctx.beginPath(); sctx.arc(s.x, s.y, s.r, 0, 6.283); sctx.fill();
         if (s.big) {
-          var L = s.r * 6 * a; sctx.globalAlpha = a * 0.7; sctx.strokeStyle = '#ffe7b0'; sctx.lineWidth = DPR * 0.8;
+          var L = s.r * 6 * a; sctx.globalAlpha = a * 0.7; sctx.strokeStyle = '#dfe8ff'; sctx.lineWidth = DPR * 0.8;
           sctx.beginPath(); sctx.moveTo(s.x - L, s.y); sctx.lineTo(s.x + L, s.y); sctx.moveTo(s.x, s.y - L); sctx.lineTo(s.x, s.y + L); sctx.stroke();
         }
       }
@@ -211,34 +211,43 @@
     return { shake: kick };
   }
 
-  /* ---------- большой круглый шар на первом экране ----------
-     Две фотографии одной сцены: «сумерки» (огни погашены) и «чудо» (огни горят). Кнопка «Включить чудо»
-     плавно проявляет вторую, в шаре начинает идти снег, мерцает гирлянда, крутятся огоньки карусели,
-     дымят труба и паровоз. Всё рисуется в canvas строго внутри круга стекла.
-     Координаты — доли картинки 880×1007 (кадр 1056×1208 из исходника 1328×1328). */
-  var ORB = { cx: 0.5, cy: 0.4371, r: 0.4432, floor: 0.677 };   // r — доля ширины; floor — верх снежного холма
-  // огни сцены [x, y, вес]: найдены по яркости на фото «включено»
-  var ORB_LIGHTS = [[0.619,0.199,2.6],[0.637,0.21,1.52],[0.624,0.218,1.01],[0.636,0.243,0.57],[0.53,0.255,0.52],[0.648,0.257,1.57],[0.596,0.259,1.22],[0.616,0.269,1.15],[0.649,0.286,1.02],[0.67,0.296,1.33],[0.601,0.3,0.9],[0.63,0.305,1.1],[0.594,0.317,0.83],[0.669,0.323,1.21],[0.574,0.337,1.98],[0.619,0.354,0.94],[0.59,0.362,0.79],[0.664,0.362,0.98],[0.698,0.363,1.27],[0.642,0.373,1.1],[0.429,0.373,0.61],[0.671,0.393,0.59],[0.556,0.394,2.0],[0.706,0.4,0.95],[0.604,0.405,1.05],[0.649,0.411,1.02],[0.564,0.419,0.66],[0.688,0.419,0.83],[0.303,0.421,0.79],[0.419,0.423,1.22],[0.409,0.423,1.27],[0.477,0.424,3],[0.7,0.43,1.24],[0.304,0.431,0.9],[0.581,0.433,1.02],[0.419,0.436,1.38],[0.409,0.436,1.33],[0.562,0.451,1.04],[0.64,0.453,1.31],[0.677,0.462,0.54],[0.72,0.466,1.53],[0.535,0.466,1.15],[0.419,0.467,0.65],[0.44,0.468,1.52],[0.696,0.468,0.56],[0.54,0.485,0.59],[0.724,0.485,0.8],[0.527,0.49,0.94],[0.461,0.492,1.41],[0.451,0.493,1.34],[0.283,0.493,0.87],[0.288,0.494,0.93],[0.537,0.494,1.02],[0.311,0.496,0.86],[0.377,0.496,1.45],[0.416,0.496,1.08],[0.316,0.497,1.0],[0.366,0.497,1.29],[0.653,0.497,1.26],[0.52,0.5,1.08],[0.558,0.502,2.05],[0.77,0.502,2.3],[0.534,0.505,0.85],[0.461,0.506,1.48],[0.451,0.506,1.37],[0.283,0.506,0.86],[0.289,0.507,1.02],[0.311,0.51,0.97],[0.378,0.51,1.29],[0.366,0.51,1.19],[0.612,0.51,1.12],[0.316,0.511,0.95],[0.461,0.514,1.03],[0.712,0.515,1.24],[0.591,0.518,0.85],[0.375,0.518,0.87],[0.487,0.522,1.13],[0.463,0.524,0.89],[0.391,0.529,0.79],[0.766,0.536,0.62],[0.728,0.538,0.66],[0.435,0.543,1.19],[0.773,0.544,1.05],[0.442,0.555,2.5],[0.499,0.56,3],[0.242,0.563,0.89],[0.272,0.564,1.64],[0.26,0.564,1.47],[0.454,0.568,1.02],[0.223,0.568,2.3],[0.54,0.572,2.82],[0.562,0.581,0.57],[0.499,0.586,1.14],[0.604,0.587,1.19],[0.588,0.588,1.07],[0.384,0.589,1.44],[0.367,0.59,0.86],[0.662,0.59,0.65],[0.629,0.591,0.71],[0.386,0.604,1.14],[0.408,0.619,0.88],[0.374,0.618,3]];
-  var ORB_STAR = [0.619, 0.199], ORB_CHIMNEY = [0.337, 0.343], ORB_LOCO = [0.52, 0.558], ORB_CAROUSEL = [0.375, 0.566, 0.052, 0.0075];
-
+  /* ---------- большой круглый шар на первом экране: новогодняя ярмарка с каруселью ----------
+     Две фотографии одной сцены: «сумерки» (огни погашены) и «чудо» (огни горят). Карусель — отдельный
+     спрайт-лист (24 кадра поворота на 60°, отрисованы в three.js), он стоит на круглой площадке ярмарки.
+     «Включить чудо»: проявляется вторая фотография, карусель плавно разгоняется, бегут огоньки по фестону,
+     мерцают гирлянды над палатками, в шаре идёт снег. Всё в canvas строго внутри круга стекла.
+     Координаты — доли картинки 880×1006 (кадр 987×1128 из исходника 1328×1328). */
+  var ORB = { cx: 0.5, cy: 0.4377, r: 0.4853, floor: 0.676 };   // r — доля ширины; floor — верх снега на площади
+  // огни сцены [x, y, вес]: найдены по яркости на фото «включено» (кроме тех, что закрывает карусель)
+  var ORB_LIGHTS = [[0.696,0.435,2.75],[0.848,0.381,2.69],[0.599,0.358,2.69],[0.514,0.199,2.66],[0.534,0.237,2.63],[0.261,0.387,2.63],[0.233,0.411,2.62],[0.816,0.384,2.56],[0.676,0.433,2.55],[0.771,0.422,2.54],[0.714,0.434,2.52],[0.641,0.358,2.49],[0.256,0.791,2.48],[0.302,0.539,2.48],[0.329,0.43,2.46],[0.232,0.387,2.45],[0.669,0.474,2.43],[0.508,0.16,2.41],[0.242,0.504,2.4],[0.278,0.383,2.39],[0.66,0.432,2.39],[0.256,0.629,2.38],[0.289,0.613,2.35],[0.335,0.611,2.35],[0.724,0.635,2.35],[0.306,0.442,2.34],[0.323,0.601,2.34],[0.462,0.337,2.32],[0.328,0.459,2.32],[0.707,0.63,2.31],[0.717,0.625,2.3],[0.299,0.629,2.3],[0.666,0.461,2.29],[0.333,0.649,2.29],[0.31,0.454,2.27],[0.471,0.256,2.26],[0.265,0.638,2.26],[0.256,0.611,2.26],[0.661,0.441,2.26],[0.747,0.609,2.26],[0.743,0.637,2.26],[0.435,0.369,2.26],[0.329,0.62,2.26],[0.68,0.651,2.25],[0.69,0.647,2.25],[0.67,0.617,2.25],[0.7,0.64,2.24],[0.289,0.637,2.24],[0.66,0.607,2.23],[0.71,0.458,2.23],[0.716,0.642,2.22],[0.333,0.594,2.22],[0.682,0.596,2.21],[0.653,0.633,2.21],[0.297,0.438,2.21],[0.382,0.637,2.2],[0.704,0.613,2.2],[0.3,0.618,2.2]];
+  var ORB_STAR = [0.502, 0.164];
+  // карусель: рамка спрайта (доли картинки) и эллипс фестона с лампочками
+  var CAR = { x: 0.2938, y: 0.328, w: 0.4174, h: 0.3652, frames: 24, cols: 8, rows: 3 };
+  var CAR_RING = [CAR.x + CAR.w * 0.5, CAR.y + CAR.h * 0.405, CAR.w * 0.4, CAR.h * 0.135];
   function HeroGlobe(fig, cv, btn) {
     var ctx = cv.getContext('2d'), W = 0, H = 0, R = Math.min(DPR, 1.5), C = {};
     var weak = window.innerWidth < 700 || (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 3;
-    var N = weak ? 80 : 140, on = false, k = 0, time = 0, flakes = [], smoke = [], puffT = 0, chimT = 0;
+    var N = weak ? 80 : 140, on = false, k = 0, time = 0, flakes = [], smoke = [], spin = 0, carF = -1;
+    var carEl = fig.querySelector('.gb-carousel');
+    function carFrame() {                                  // поворот карусели → кадр спрайт-листа (период 60°)
+      var P = Math.PI / 3, f = Math.floor(((spin % P) + P) % P / P * CAR.frames) % CAR.frames;
+      if (f === carF || !carEl) return; carF = f;
+      carEl.style.backgroundPosition = (f % CAR.cols) / (CAR.cols - 1) * 100 + '% ' + Math.floor(f / CAR.cols) / (CAR.rows - 1) * 100 + '%';
+    }
     var lp = loop(frame), visible = true, running = false;
     function sprite(sz, fn) { var c = document.createElement('canvas'); c.width = c.height = sz; fn(c.getContext('2d'), sz / 2); return c; }
     var SNOW = sprite(32, function (g, h) { var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(.45, 'rgba(255,255,255,.8)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h); });
-    var GLOW = sprite(64, function (g, h) { var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,226,160,.95)'); gr.addColorStop(.22, 'rgba(255,190,100,.45)'); gr.addColorStop(1, 'rgba(255,150,50,0)'); g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h); });
+    var GLOW = sprite(64, function (g, h) { var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,244,222,.95)'); gr.addColorStop(.22, 'rgba(255,218,170,.42)'); gr.addColorStop(1, 'rgba(255,190,130,0)'); g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h); });
     var STAR = sprite(96, function (g, h) {
-      var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,240,190,.9)'); gr.addColorStop(.2, 'rgba(255,200,110,.35)'); gr.addColorStop(1, 'rgba(255,170,60,0)');
+      var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(255,240,190,.9)'); gr.addColorStop(.2, 'rgba(255,236,208,.35)'); gr.addColorStop(1, 'rgba(255,170,60,0)');
       g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h);
       g.fillStyle = 'rgba(255,250,230,.95)'; g.beginPath(); var s = h * .95;
       g.moveTo(h, h - s); g.quadraticCurveTo(h, h, h + s, h); g.quadraticCurveTo(h, h, h, h + s); g.quadraticCurveTo(h, h, h - s, h); g.quadraticCurveTo(h, h, h, h - s); g.fill();
     });
     var PUFF = sprite(64, function (g, h) { var gr = g.createRadialGradient(h, h, 0, h, h, h); gr.addColorStop(0, 'rgba(236,240,248,.55)'); gr.addColorStop(.6, 'rgba(220,228,240,.18)'); gr.addColorStop(1, 'rgba(220,228,240,0)'); g.fillStyle = gr; g.fillRect(0, 0, 2 * h, 2 * h); });
     var lights = ORB_LIGHTS.map(function (a) {
-      var tree = a[0] > 0.52 && a[0] < 0.75 && a[1] < 0.545, train = a[1] > 0.57 && a[0] > 0.55;
-      return { x: a[0], y: a[1], s: a[2], ph: Math.random() * 6.3, sp: .7 + Math.random() * 1.6, tree: tree, train: train };
+      var tree = a[0] > 0.42 && a[0] < 0.59 && a[1] < 0.53;
+      return { x: a[0], y: a[1], s: a[2], ph: Math.random() * 6.3, sp: .7 + Math.random() * 1.6, tree: tree };
     });
 
     function geo() {
@@ -290,11 +299,7 @@
         if (d > lim) { f.x = C.x + dx / d * lim; f.y = C.y + dy / d * lim; f.vx *= -.4; }
         if (f.y >= floorY(f.x) - f.r * .3) { f.y = floorY(f.x) - f.r * .3; f.rest = 0.0001; }
       }
-      if (on && !reduce) {                                // дым из трубы — ровно, паровоз — «чух-чух»
-        chimT += dt; puffT += dt;
-        if (chimT > .32) { chimT = 0; emitSmoke(ORB_CHIMNEY, false); }
-        if (puffT > .55) { puffT = 0; emitSmoke(ORB_LOCO, true); }
-      }
+      spin += dt * 0.75 * k * k; carFrame();               // карусель разгоняется и тормозит вместе с огнями (оборот ≈ 8 с)
       for (i = smoke.length - 1; i >= 0; i--) {
         var s = smoke[i]; s.t += dt; if (s.t > s.life) { smoke.splice(i, 1); continue; }
         s.x += (s.vx + Math.sin(time * .8 + i) * 3) * dt; s.y += s.vy * dt; s.vy *= Math.pow(.6, dt); s.s += dt * 9 * (W / 470);
@@ -314,7 +319,6 @@
         for (i = 0; i < lights.length; i++) {
           var L = lights[i], a = .6 + .25 * Math.sin(time * L.sp + L.ph) + .1 * Math.sin(time * 6.1 + L.ph * 3);
           if (L.tree) a *= .35 + .75 * Math.pow(.5 + .5 * Math.sin(time * 2.2 - L.y * 46 + L.x * 14), 2);   // бегущие огоньки гирлянды
-          if (L.train) a *= .55 + .45 * Math.sin(time * 7 - L.x * 70);                                     // окна вагонов «на ходу»
           ctx.globalAlpha = Math.max(0, Math.min(1, a * k * .75));
           var sz = gl * (.7 + L.s * .55);
           ctx.drawImage(GLOW, L.x * W - sz / 2, L.y * H - sz / 2, sz, sz);
@@ -322,13 +326,18 @@
         // звезда на ёлке
         var ss = W * (.11 + .015 * Math.sin(time * 1.4)); ctx.save(); ctx.translate(ORB_STAR[0] * W, ORB_STAR[1] * H); ctx.rotate(time * .2);
         ctx.globalAlpha = Math.min(1, (.75 + .25 * Math.sin(time * 2.3)) * k); ctx.drawImage(STAR, -ss / 2, -ss / 2, ss, ss); ctx.restore();
-        // огоньки карусели бегут по кругу — карусель крутится
-        var cx = ORB_CAROUSEL[0] * W, cy = ORB_CAROUSEL[1] * H, rx = ORB_CAROUSEL[2] * W, ry = ORB_CAROUSEL[3] * H * 1.2 + 2;
-        for (i = 0; i < 8; i++) {
-          var ang = time * 1.3 + i * 0.785, front = Math.sin(ang), cs = W * (.016 + .008 * (front + 1) / 2);
-          ctx.globalAlpha = (.35 + .55 * (front + 1) / 2) * k;
+        // лампочки на фестоне карусели едут вместе с ней; по ним бежит волна света
+        var cx = CAR_RING[0] * W, cy = CAR_RING[1] * H, rx = CAR_RING[2] * W, ry = CAR_RING[3] * H;
+        for (i = 0; i < 24; i++) {
+          var ang = spin + i * 0.2618, front = Math.sin(ang), cs = W * (.02 + .012 * (front + 1) / 2);
+          if (front < -0.35) continue;                    // задние закрыты шатром
+          var chase = .55 + .45 * Math.pow(.5 + .5 * Math.sin(time * 3.2 - i * .9), 3);
+          ctx.globalAlpha = Math.min(1, (.3 + .6 * (front + 1) / 2) * chase * k);
           ctx.drawImage(GLOW, cx + Math.cos(ang) * rx - cs / 2, cy + front * ry - cs / 2, cs, cs);
         }
+        // тёплое сияние под шатром
+        var ug = W * .2; ctx.globalAlpha = .32 * k * (.9 + .1 * Math.sin(time * 2));
+        ctx.drawImage(GLOW, cx - ug / 2, cy + ry * .9 - ug * .3, ug, ug * .7);
         ctx.globalCompositeOperation = 'source-over';
       }
       for (i = 0; i < flakes.length; i++) {
@@ -349,7 +358,7 @@
       btn.querySelector('span').textContent = on ? 'Выключить' : 'Включить чудо';
       if (on && !flakes.length) seed(true);
       if (reduce) {                                       // без анимации: один спокойный кадр
-        k = on ? 1 : 0; time = 1.3;
+        k = on ? 1 : 0; time = 1.3; spin = on ? 0.4 : 0; carFrame();
         if (on) { seed(false); flakes.forEach(function (f) { f.a = 1; f.wait = 0; }); } else flakes = [];
         smoke = []; draw(); return;
       }
@@ -487,7 +496,7 @@
       var a = ADVENT[dd - 1], open = dd <= openUntil;
       html += '<li style="--d:' + [0, 3, 1, 4, 2][dd % 5] + '"><button type="button" class="win k-' + KINDS[a.k].c + ' pt' + (dd % 3) + (open ? ' is-open' : '') + (dd === today ? ' is-today' : '') +
         '" data-d="' + dd + '" aria-label="' + dd + ' декабря, ' + KINDS[a.k].n.toLowerCase() + (open ? ', открыто' : ', откроется ' + dd + ' декабря') + '">' +
-        '<span class="cap" aria-hidden="true"></span><span class="ball" aria-hidden="true"><b>' + dd + '</b></span><small class="st-w" aria-hidden="true">' + (open ? 'открыто' : 'с ' + dd + ' дек') + '</small></button></li>';
+        '<span class="cap" aria-hidden="true"><i></i></span><span class="ball" aria-hidden="true"><i class="band"></i><i class="gl"></i><b>' + dd + '</b></span><small class="st-w" aria-hidden="true">' + (open ? 'открыто' : 'с ' + dd + ' дек') + '</small></button></li>';
     }
     win.innerHTML = html;
     function show(n) {
@@ -689,12 +698,14 @@
     });
   }
 
-  /* ---------- золотые искры: редкие, тонкие, мерцают и гаснут ---------- */
+  /* ---------- бриллиантовый блеск: редкие мягкие искорки с переливом (вместо золотых ромбов) ----------
+     Каждая искра — светлое ядро и тонкие лучи-«крест», лучи переливаются от ледяного голубого к сиреневому и розовому,
+     вспыхивают быстро и гаснут мягко. На светлых разделах — серебристо-голубые, чтобы не пропадали на сливочном фоне. */
   (function () {
     var cv = document.getElementById('glints');
     if (!cv || reduce) return;
     var ctx = cv.getContext('2d'), W = 0, H = 0, R = Math.min(DPR, 1.5), list = [], raf = 0, nextAt = 0, skip = 0;
-    var MAX = window.innerWidth < 700 ? 6 : 10;
+    var MAX = window.innerWidth < 700 ? 3 : 5;
     function size() { W = cv.width = Math.round(innerWidth * R); H = cv.height = Math.round(innerHeight * R); }
     size(); window.addEventListener('resize', size);
     var lightSecs = [].filter.call(document.querySelectorAll('main > section, .foot'), function (s) {
@@ -705,40 +716,47 @@
       for (var k = 0; k < lightSecs.length; k++) { var r = lightSecs[k].getBoundingClientRect(); if (y >= r.top && y <= r.bottom) return true; }
       return false;
     }
+    var HUES = [200, 215, 265, 320, 40];                 // лёд, голубой, сирень, розовый, сливочный
     function spawn() {
       var x, y, g = document.getElementById('hero-globe'), r = g && g.getBoundingClientRect();
-      if (r && r.bottom > 0 && r.top < innerHeight && Math.random() < 0.35) { x = r.left + r.width * (0.2 + Math.random() * 0.6); y = r.top + r.height * (0.12 + Math.random() * 0.5); }
+      if (r && r.bottom > 0 && r.top < innerHeight && Math.random() < 0.4) { x = r.left + r.width * (0.18 + Math.random() * 0.64); y = r.top + r.height * (0.08 + Math.random() * 0.55); }
       else { x = Math.random() * innerWidth; y = 70 + Math.random() * (innerHeight - 90); }
-      var big = Math.random() < 0.22;
-      list.push({ x: x * R, y: y * R, t: 0, life: 1500 + Math.random() * 1400, s: (big ? 10 + Math.random() * 6 : 4 + Math.random() * 5) * R, rot: (Math.random() - 0.5) * 0.5, light: onLight(x, y) });
+      var big = Math.random() < 0.2;
+      list.push({ x: x * R, y: y * R, t: 0, life: 1100 + Math.random() * 700, s: (big ? 9 + Math.random() * 4 : 4.5 + Math.random() * 3.5) * R,
+        rot: (Math.random() - 0.5) * 0.35, h: HUES[Math.floor(Math.random() * HUES.length)], light: onLight(x, y) });
     }
-    function glint(p, k) {
-      var s = p.s * (0.6 + 0.4 * k), c = p.light ? '160,112,40' : '246,222,160';
-      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
-      var gr = ctx.createRadialGradient(0, 0, 0, 0, 0, s * 1.3);
-      gr.addColorStop(0, 'rgba(' + c + ',' + (0.55 * k) + ')'); gr.addColorStop(1, 'rgba(' + c + ',0)');
-      ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(0, 0, s * 1.3, 0, 6.283); ctx.fill();
-      ctx.fillStyle = 'rgba(' + c + ',' + (0.95 * k) + ')';
-      ctx.beginPath();                                   // четырёхлучевая звёздочка с тонкими лучами
-      ctx.moveTo(0, -s * 1.6); ctx.quadraticCurveTo(0, 0, s * 1.6, 0); ctx.quadraticCurveTo(0, 0, 0, s * 1.6); ctx.quadraticCurveTo(0, 0, -s * 1.6, 0); ctx.quadraticCurveTo(0, 0, 0, -s * 1.6);
-      ctx.fill();
-      if (!p.light) { ctx.fillStyle = 'rgba(255,252,240,' + k + ')'; ctx.beginPath(); ctx.arc(0, 0, Math.max(0.8 * R, s * 0.14), 0, 6.283); ctx.fill(); }
+    function ray(len, w, col, a) {                       // тонкий луч, сужается к концу
+      var gr = ctx.createLinearGradient(0, 0, len, 0);
+      gr.addColorStop(0, 'hsla(' + col + ',' + a + ')'); gr.addColorStop(1, 'hsla(' + col + ',0)');
+      ctx.fillStyle = gr; ctx.beginPath(); ctx.moveTo(0, -w); ctx.lineTo(len, 0); ctx.lineTo(0, w); ctx.closePath(); ctx.fill();
+    }
+    function glint(p, k, u) {
+      var s = p.s * (0.7 + 0.3 * k), hue = (p.h + u * 90) % 360, w = Math.max(0.55, 0.38 * R);
+      var col = p.light ? (hue + ',38%,58%') : (hue + ',85%,90%');
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot + u * 0.5);
+      if (!p.light) ctx.globalCompositeOperation = 'lighter';
+      var gr = ctx.createRadialGradient(0, 0, 0, 0, 0, s * 1.1);
+      gr.addColorStop(0, 'hsla(' + col + ',' + (0.42 * k) + ')'); gr.addColorStop(1, 'hsla(' + col + ',0)');
+      ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(0, 0, s * 1.1, 0, 6.283); ctx.fill();
+      for (var i = 0; i < 4; i++) { ctx.rotate(Math.PI / 2); ray(s * 2.4, w, col, 0.85 * k); }                       // длинный крест
+      ctx.rotate(Math.PI / 4); for (i = 0; i < 4; i++) { ctx.rotate(Math.PI / 2); ray(s * 0.95, w * 0.8, col, 0.45 * k); }  // короткие косые
+      ctx.fillStyle = p.light ? 'hsla(' + hue + ',30%,45%,' + (0.7 * k) + ')' : 'rgba(255,255,255,' + k + ')';
+      ctx.beginPath(); ctx.arc(0, 0, Math.max(0.7 * R, s * 0.12), 0, 6.283); ctx.fill();
       ctx.restore();
-    }
-    var lastT = 0;
+    }    var lastT = 0;
     function frame(t) {
       raf = requestAnimationFrame(frame);
       if (++skip % 2) return;                             // ~30 кадров в секунду достаточно
       var dt = Math.min(80, t - (lastT || t)); lastT = t;
       if (document.getElementById('rk') || document.getElementById('rl') || document.documentElement.classList.contains('menu-open')) { if (list.length) { list = []; ctx.clearRect(0, 0, W, H); } return; }
-      if (t > nextAt && list.length < MAX) { spawn(); nextAt = t + 420 + Math.random() * 900; }
+      if (t > nextAt && list.length < MAX) { spawn(); nextAt = t + 900 + Math.random() * 1600; }
       ctx.clearRect(0, 0, W, H);
       for (var k = list.length - 1; k >= 0; k--) {
         var p = list[k]; p.t += dt;
         if (p.t >= p.life) { list.splice(k, 1); continue; }
-        var u = p.t / p.life, b = Math.pow(Math.sin(Math.PI * u), 2);
-        b *= 0.75 + 0.25 * Math.sin(p.t * 0.02);         // лёгкое мерцание
-        glint(p, b);
+        var u = p.t / p.life, b = Math.pow(Math.sin(Math.PI * Math.pow(u, 0.6)), 3);   // быстрая вспышка, мягкое угасание
+        b *= 0.85 + 0.15 * Math.sin(p.t * 0.03);         // лёгкое мерцание
+        glint(p, b, u);
       }
     }
     function start() { if (!raf) { lastT = 0; raf = requestAnimationFrame(frame); } }

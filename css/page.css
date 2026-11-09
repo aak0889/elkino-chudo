@@ -1,5 +1,5 @@
 /* Внутренние страницы «Ёлкино чудо»: о проекте, письмо Деда Мороза, политика, согласие */
-:root{--night:#0a1424;--gold:#d6ae66;--gold-2:#f0d9a4;--gold-3:#a07a3a;--mandarin:#e9843a;--berry:#b33a44;--plum:#6d3f86;--sky:#24467e;
+:root{--night:#0a1424;--gold:#e9dfc8;--gold-2:#f5ecd8;--gold-3:#2f4f80;--mandarin:#e9843a;--berry:#b33a44;--plum:#6d3f86;--sky:#24467e;
   --cream:#f6eddc;--card:#fbf6ec;--ink:#23201a;--ink-2:#5b5346;--muted:#c3cad6;
   --serif:"Cormorant","Cormorant Garamond",Georgia,serif;--sans:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--script:"Marck Script","Cormorant",cursive}
 *{box-sizing:border-box}
@@ -10,13 +10,13 @@ a{color:var(--berry)}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0}
 p{margin:0}
 :focus-visible{outline:2px solid var(--berry);outline-offset:3px}
-.pg-top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(10,20,36,.96);border-bottom:1px solid rgba(214,174,102,.3)}
+.pg-top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(10,20,36,.96);border-bottom:1px solid rgba(233,223,200,.3)}
 .pg-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--gold-2);font:600 21px/1 var(--serif)}
 .mono{position:relative;display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid var(--gold);font:600 23px/1 var(--serif);color:var(--gold-2);padding-top:5px}
-.mono i{position:absolute;top:4px;width:5px;height:5px;border-radius:50%;background:#ffd98a;box-shadow:0 0 8px 2px rgba(255,205,110,.7)}
+.mono i{position:absolute;top:4px;width:5px;height:5px;border-radius:50%;background:#fff0d2;box-shadow:0 0 8px 2px rgba(255,236,208,.7)}
 .mono i:first-child{left:10px}.mono i:nth-child(2){right:10px}
-.pg-back{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(214,174,102,.6);color:var(--gold-2);text-decoration:none;font-size:14px;white-space:nowrap}
-.pg-back:hover{background:rgba(214,174,102,.12)}
+.pg-back{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(233,223,200,.6);color:var(--gold-2);text-decoration:none;font-size:14px;white-space:nowrap}
+.pg-back:hover{background:rgba(233,223,200,.12)}
 .pg-hero{position:relative;overflow:hidden;padding:56px 16px 64px;text-align:center;color:#f3ead8;
   background:radial-gradient(600px 300px at 80% 0%,rgba(233,132,58,.28),transparent 70%),radial-gradient(500px 300px at 10% 100%,rgba(109,63,134,.35),transparent 70%),linear-gradient(180deg,#0f1f36,#0a1424)}
 .pg-hero .kicker{font:400 26px/1.1 var(--script);color:var(--gold)}
@@ -31,9 +31,9 @@ p{margin:0}
 .blk>p:first-of-type{margin-top:12px}
 .blk ul{margin:12px 0 0;padding-left:22px}
 .blk li+li{margin-top:6px}
-.card{padding:22px 24px;border-radius:24px;background:var(--card);border:1px solid rgba(160,122,58,.28);box-shadow:0 18px 40px -30px rgba(80,55,20,.6)}
+.card{padding:22px 24px;border-radius:24px;background:var(--card);border:1px solid rgba(47,79,128,.28);box-shadow:0 18px 40px -30px rgba(20,35,65,.6)}
 .contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
-.ct{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:18px;background:var(--card);border:1px solid rgba(160,122,58,.3);text-decoration:none;color:var(--ink)}
+.ct{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:18px;background:var(--card);border:1px solid rgba(47,79,128,.3);text-decoration:none;color:var(--ink)}
 .ct svg{width:26px;height:26px;flex:none}
 .ct b{display:block;font-weight:600}
 .ct small{display:block;font-size:13.5px;color:var(--ink-2)}
@@ -43,9 +43,9 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 28px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;font:600 16.5px/1.2 var(--sans)}
 .btn-red{color:#fff;background:linear-gradient(180deg,#d0545c,#9a2f39);box-shadow:0 10px 26px -10px rgba(179,58,68,.8)}
 .btn-red:hover{filter:brightness(1.06)}
-.btn-line{color:var(--ink);border:1px solid rgba(160,122,58,.6);background:transparent}
+.btn-line{color:var(--ink);border:1px solid rgba(47,79,128,.6);background:transparent}
 .btn[disabled]{opacity:.5;cursor:not-allowed}
-.pg-foot{padding:26px 16px 40px;background:#070d18;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(214,174,102,.25)}
+.pg-foot{padding:26px 16px 40px;background:#070d18;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(233,223,200,.25)}
 .pg-foot a{color:var(--gold-2)}
 .pg-foot p+p{margin-top:6px}
 
@@ -87,11 +87,11 @@ p{margin:0}
 .letter .seal{position:absolute;left:24px;bottom:22px;width:96px;height:96px;transform:rotate(-10deg);font-family:var(--serif);filter:drop-shadow(0 3px 3px rgba(60,10,10,.45))}
 .letter-cap{margin-top:12px;font-size:13.5px;color:var(--ink-2);text-align:center}
 .steps{counter-reset:s;list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.steps li{counter-increment:s;margin:0!important;padding:18px;border-radius:18px;background:var(--card);border:1px solid rgba(160,122,58,.28)}
+.steps li{counter-increment:s;margin:0!important;padding:18px;border-radius:18px;background:var(--card);border:1px solid rgba(47,79,128,.28)}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;margin-bottom:8px;border-radius:50%;background:var(--sky);color:#fff;font:700 18px/1 var(--serif)}
 .form{display:grid;gap:14px;margin-top:16px}
 .fld label{display:block;font-weight:500;font-size:15px;margin-bottom:6px}
-.fld input,.fld textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:1px solid rgba(160,122,58,.5);background:#fff;font:inherit;color:var(--ink)}
+.fld input,.fld textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:1px solid rgba(47,79,128,.5);background:#fff;font:inherit;color:var(--ink)}
 .fld textarea{min-height:96px;resize:vertical}
 .fld small{display:block;margin-top:4px;font-size:13px;color:var(--ink-2)}
 .agree{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.5}

@@ -58,7 +58,7 @@
     if (reduce) done(); else setTimeout(done, 650);
   }
   // 3D-шары (three.js): «Каток» — js/rink3d.js, «Железная дорога» — js/rail3d.js. Если WebGL/модули недоступны — прежняя 2D-игра.
-  var MOD3D = { rink: './rink3d.js?v=20261107a', rail: './rail3d.js?v=20261107a', santa: './santa3d.js?v=20261107a', forest: './forest3d.js?v=20261107a' }, mods = {};
+  var MOD3D = { rink: './rink3d.js?v=20261109a', rail: './rail3d.js?v=20261107a', santa: './santa3d.js?v=20261107a', forest: './forest3d.js?v=20261107a' }, mods = {};
   function load3d(id) { id = id || 'rink'; if (!mods[id]) mods[id] = import(MOD3D[id]).catch(function (e) { mods[id] = null; throw e; }); return mods[id]; }
   function openGlobe(b) {
     var id = b.getAttribute('data-game');
@@ -359,7 +359,7 @@
       });
       // вокзал
       var st = P('S'); b.fillStyle = '#7a4a26'; b.fillRect(st.x - 22, st.y - 46, 44, 30); b.fillStyle = '#f4f7fb'; b.beginPath(); b.moveTo(st.x - 28, st.y - 44); b.lineTo(st.x, st.y - 64); b.lineTo(st.x + 28, st.y - 44); b.closePath(); b.fill();
-      b.fillStyle = '#ffd98a'; b.fillRect(st.x - 14, st.y - 38, 9, 10); b.fillRect(st.x + 5, st.y - 38, 9, 10);
+      b.fillStyle = '#fff0d2'; b.fillRect(st.x - 14, st.y - 38, 9, 10); b.fillRect(st.x + 5, st.y - 38, 9, 10);
     }
     function rails() {
       for (var k in segs) {
@@ -388,9 +388,9 @@
     function sw(k) {
       var q = P(k), up = state[k] === 0;
       ctx.fillStyle = 'rgba(10,20,36,.82)'; ctx.beginPath(); ctx.arc(q.x, q.y, 20, 0, 6.283); ctx.fill();
-      ctx.strokeStyle = '#d6ae66'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.strokeStyle = '#e9dfc8'; ctx.lineWidth = 2; ctx.stroke();
       ctx.save(); ctx.translate(q.x, q.y); ctx.rotate(up ? -.6 : .6);
-      ctx.strokeStyle = '#f0d9a4'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-8, 0); ctx.lineTo(9, 0); ctx.moveTo(4, -5); ctx.lineTo(9, 0); ctx.lineTo(4, 5); ctx.stroke();
+      ctx.strokeStyle = '#f5ecd8'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-8, 0); ctx.lineTo(9, 0); ctx.moveTo(4, -5); ctx.lineTo(9, 0); ctx.lineTo(4, 5); ctx.stroke();
       ctx.restore();
       ctx.fillStyle = '#5b5346'; ctx.font = '600 12px Golos Text, sans-serif'; ctx.textAlign = 'center';
       ctx.fillText({ A: '1', B: '2', C: '3' }[k], q.x, q.y + 36);
@@ -406,7 +406,7 @@
         if (c.loco) {
           ctx.fillStyle = '#9e2a35'; roundRect(-14, -9, 28, 18, 4); ctx.fill();
           ctx.fillStyle = '#2b2f38'; roundRect(-14, -9, 11, 18, 3); ctx.fill();
-          ctx.fillStyle = '#d6ae66'; ctx.fillRect(-2, -9, 2, 18);
+          ctx.fillStyle = '#e9dfc8'; ctx.fillRect(-2, -9, 2, 18);
           ctx.fillStyle = '#2b2f38'; ctx.beginPath(); ctx.arc(7, 0, 4, 0, 6.283); ctx.fill();
           var lg = ctx.createRadialGradient(18, 0, 0, 18, 0, 40); lg.addColorStop(0, 'rgba(255,230,160,.7)'); lg.addColorStop(1, 'rgba(255,230,160,0)');
           ctx.fillStyle = lg; ctx.beginPath(); ctx.moveTo(14, 0); ctx.lineTo(54, -16); ctx.lineTo(54, 16); ctx.closePath(); ctx.fill();
