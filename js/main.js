@@ -216,13 +216,13 @@
      спрайт-лист (24 кадра поворота на 60°, отрисованы в three.js), он стоит на круглой площадке ярмарки.
      «Включить чудо»: проявляется вторая фотография, карусель плавно разгоняется, бегут огоньки по фестону,
      мерцают гирлянды над палатками, в шаре идёт снег. Всё в canvas строго внутри круга стекла.
-     Координаты — доли картинки 880×1006 (кадр 987×1128 из исходника 1328×1328). */
-  var ORB = { cx: 0.5, cy: 0.4377, r: 0.4853, floor: 0.676 };   // r — доля ширины; floor — верх снега на площади
+     Координаты — доли картинки 880×939 (кадр 805×859 из исходника 1024×1024, форма шара — вариант 3: большая сфера, золотое кольцо, точёная подставка). */
+  var ORB = { cx: 0.5001, cy: 0.4691, r: 0.4824, floor: 0.64 };   // r — доля ширины; floor — верх снега на площади
   // огни сцены [x, y, вес]: найдены по яркости на фото «включено» (кроме тех, что закрывает карусель)
-  var ORB_LIGHTS = [[0.696,0.435,2.75],[0.848,0.381,2.69],[0.599,0.358,2.69],[0.514,0.199,2.66],[0.534,0.237,2.63],[0.261,0.387,2.63],[0.233,0.411,2.62],[0.816,0.384,2.56],[0.676,0.433,2.55],[0.771,0.422,2.54],[0.714,0.434,2.52],[0.641,0.358,2.49],[0.256,0.791,2.48],[0.302,0.539,2.48],[0.329,0.43,2.46],[0.232,0.387,2.45],[0.669,0.474,2.43],[0.508,0.16,2.41],[0.242,0.504,2.4],[0.278,0.383,2.39],[0.66,0.432,2.39],[0.256,0.629,2.38],[0.289,0.613,2.35],[0.335,0.611,2.35],[0.724,0.635,2.35],[0.306,0.442,2.34],[0.323,0.601,2.34],[0.462,0.337,2.32],[0.328,0.459,2.32],[0.707,0.63,2.31],[0.717,0.625,2.3],[0.299,0.629,2.3],[0.666,0.461,2.29],[0.333,0.649,2.29],[0.31,0.454,2.27],[0.471,0.256,2.26],[0.265,0.638,2.26],[0.256,0.611,2.26],[0.661,0.441,2.26],[0.747,0.609,2.26],[0.743,0.637,2.26],[0.435,0.369,2.26],[0.329,0.62,2.26],[0.68,0.651,2.25],[0.69,0.647,2.25],[0.67,0.617,2.25],[0.7,0.64,2.24],[0.289,0.637,2.24],[0.66,0.607,2.23],[0.71,0.458,2.23],[0.716,0.642,2.22],[0.333,0.594,2.22],[0.682,0.596,2.21],[0.653,0.633,2.21],[0.297,0.438,2.21],[0.382,0.637,2.2],[0.704,0.613,2.2],[0.3,0.618,2.2]];
-  var ORB_STAR = [0.502, 0.164];
+  var ORB_LIGHTS = [[0.212,0.442,2.75],[0.498,0.212,2.75],[0.142,0.468,2.75],[0.486,0.213,2.74],[0.165,0.446,2.74],[0.887,0.496,2.71],[0.22,0.54,2.71],[0.773,0.432,2.7],[0.795,0.446,2.68],[0.286,0.423,2.67],[0.15,0.446,2.67],[0.494,0.222,2.66],[0.866,0.468,2.66],[0.185,0.797,2.65],[0.764,0.424,2.64],[0.749,0.412,2.63],[0.272,0.419,2.62],[0.858,0.446,2.6],[0.325,0.423,2.6],[0.251,0.412,2.6],[0.511,0.229,2.59],[0.837,0.449,2.56],[0.314,0.425,2.52],[0.185,0.449,2.51],[0.275,0.671,2.49],[0.226,0.432,2.49],[0.483,0.064,2.49],[0.815,0.452,2.48],[0.21,0.801,2.48],[0.132,0.488,2.47],[0.493,0.247,2.45],[0.799,0.637,2.45],[0.711,0.424,2.42],[0.338,0.42,2.41],[0.737,0.619,2.39],[0.875,0.449,2.38],[0.511,0.246,2.37],[0.607,0.815,2.35],[0.425,0.816,2.34],[0.758,0.632,2.33],[0.235,0.425,2.32],[0.077,0.364,2.32],[0.68,0.263,2.32],[0.635,0.814,2.31],[0.506,0.292,2.31],[0.743,0.541,2.29],[0.073,0.378,2.28],[0.083,0.348,2.25],[0.538,0.327,2.24],[0.07,0.395,2.24],[0.067,0.405,2.24],[0.64,0.215,2.22],[0.799,0.658,2.22],[0.23,0.661,2.21],[0.709,0.509,2.21],[0.154,0.435,2.21],[0.929,0.383,2.2],[0.738,0.661,2.19],[0.194,0.563,2.18],[0.171,0.651,2.18]];
+  var ORB_STAR = [0.502, 0.22];
   // карусель: рамка спрайта (доли картинки) и эллипс фестона с лампочками
-  var CAR = { x: 0.2938, y: 0.328, w: 0.4174, h: 0.3652, frames: 24, cols: 8, rows: 3 };
+  var CAR = { x: 0.2943, y: 0.317, w: 0.4375, h: 0.41, frames: 24, cols: 8, rows: 3 };
   var CAR_RING = [CAR.x + CAR.w * 0.5, CAR.y + CAR.h * 0.405, CAR.w * 0.4, CAR.h * 0.135];
   function HeroGlobe(fig, cv, btn) {
     var ctx = cv.getContext('2d'), W = 0, H = 0, R = Math.min(DPR, 1.5), C = {};
@@ -475,46 +475,98 @@
     { k: 'craft', h: 'Фотозона из того, что есть дома', f: 'Плед, гирлянда, коробки и бумажные звёзды: собираем фон для праздничных фото за полчаса.', p: 'Видео и шаблоны надписей для печати.' },
     { k: 'card',  h: 'Желание под бой курантов', f: 'Маленькая открытка для желания и семейная традиция: что с ней делать, когда бьют часы.', p: 'Открытки-желания с именем для каждого гостя.' }
   ];
+  /* Механика: декабрь по локальной дате посетителя. Будущие шары заперты, сегодняшний светится,
+     прошедшие доступны, открытые «распакованы» (хранится в localStorage). ?day=N — имитация N декабря
+     для проверки (0 — режим «скоро»), со своим отдельным хранилищем, обычных посетителей не касается. */
   var win = document.getElementById('windows'), note = document.getElementById('win-note'), seal = document.getElementById('adv-seal'), legend = document.getElementById('adv-legend');
   if (win) {
-    var now = new Date();
-    var openUntil = 0;
-    if (now.getMonth() === 11) openUntil = now.getDate();
-    else if (now.getMonth() === 0) openUntil = 31;
-    if (/[?&]advent=(\d+)/.test(location.search)) openUntil = Math.min(31, +RegExp.$1);
-    var today = now.getMonth() === 11 || /[?&]advent=/.test(location.search) ? openUntil : 0;
-    if (openUntil > 0 && seal) seal.hidden = true;
+    var advNow = new Date(), qs = location.search;
+    var mDay = /[?&](?:day|advent)=(\d+)/.exec(qs);
+    var advDay; // 0 — до декабря, 1..31 — день декабря, 32 — январские каникулы: открыто всё
+    if (mDay) advDay = Math.min(31, +mDay[1]);
+    else if (advNow.getMonth() === 11) advDay = advNow.getDate();
+    else if (advNow.getMonth() === 0 && advNow.getDate() <= 14) advDay = 32;
+    else advDay = 0;
+    var KEY = mDay ? 'elk-adv-test' : 'elk-adv-opened';
+    var opened = {};
+    try { (JSON.parse(store(KEY) || '[]') || []).forEach(function (n) { opened[n] = 1; }); } catch (e) { opened = {}; }
+    function save() { store(KEY, JSON.stringify(Object.keys(opened).map(Number))); }
+    function img(n, big) { return 'img/adv/d' + pad(n) + (big ? '-l' : '') + '.webp'; }
+    function state(n) { return n > advDay ? 'future' : opened[n] ? 'opened' : n === advDay ? 'today' : 'ready'; }
+
+    if (seal) seal.textContent = advDay === 0 ? 'Первое окошко откроется 1 декабря' : advDay <= 31 ? 'Сегодня ' + advDay + ' декабря: ваш шар светится' : 'Все тридцать одно окошко открыты';
     if (legend) {
       var cnt = {};
       ADVENT.forEach(function (a) { cnt[a.k] = (cnt[a.k] || 0) + 1; });
-      legend.innerHTML = Object.keys(KINDS).map(function (k) {
-        return '<li class="lg lg-' + KINDS[k].c + '"><i aria-hidden="true"></i>' + KINDS[k].n + '<small>' + cnt[k] + '</small></li>';
-      }).join('');
+      legend.innerHTML = Object.keys(KINDS).map(function (k) { return '<li class="lg">' + KINDS[k].n + '<small>' + cnt[k] + '</small></li>'; }).join('');
+    }
+    var LBL = { future: '', ready: 'открыть', today: 'Сегодня', opened: 'открыто' };
+    function paint(b) {
+      var n = +b.getAttribute('data-d'), s = state(n), next = advDay === 0 && n === 1;
+      b.className = 'orn is-' + s + (next ? ' is-next' : '') + (n === advDay ? ' is-day' : '');
+      b.setAttribute('aria-label', n + ' декабря, ' + (s === 'future' ? 'откроется ' + n + ' декабря' : s === 'opened' ? 'открыто, посмотреть ещё раз' : s === 'today' ? 'сегодняшнее окошко, открыть' : 'можно открыть'));
+      b.querySelector('.st-w').textContent = next ? '1 декабря' : s === 'future' ? 'с ' + n + ' дек' : (n === advDay && s === 'opened' ? 'сегодня ✓' : LBL[s]);
     }
     var html = '';
     for (var dd = 1; dd <= 31; dd++) {
-      var a = ADVENT[dd - 1], open = dd <= openUntil;
-      html += '<li style="--d:' + [0, 3, 1, 4, 2][dd % 5] + '"><button type="button" class="win k-' + KINDS[a.k].c + ' pt' + (dd % 3) + (open ? ' is-open' : '') + (dd === today ? ' is-today' : '') +
-        '" data-d="' + dd + '" aria-label="' + dd + ' декабря, ' + KINDS[a.k].n.toLowerCase() + (open ? ', открыто' : ', откроется ' + dd + ' декабря') + '">' +
-        '<span class="cap" aria-hidden="true"><i></i></span><span class="ball" aria-hidden="true"><i class="band"></i><i class="gl"></i><b>' + dd + '</b></span><small class="st-w" aria-hidden="true">' + (open ? 'открыто' : 'с ' + dd + ' дек') + '</small></button></li>';
+      html += '<li style="--d:' + [0, 3, 1, 4, 2][dd % 5] + '"><button type="button" class="orn" data-d="' + dd + '">' +
+        '<span class="rib" aria-hidden="true"></span><span class="cap" aria-hidden="true"></span>' +
+        '<span class="ball" aria-hidden="true"><span class="in"><img src="' + img(dd) + '" alt="" width="280" height="280" loading="lazy" decoding="async"><i class="frost"></i><i class="gl"></i><b>' + dd + '</b></span><i class="mk"></i></span>' +
+        '<small class="st-w" aria-hidden="true"></small><span class="tap" aria-hidden="true">нажмите</span></button></li>';
     }
     win.innerHTML = html;
-    function show(n) {
-      var a = ADVENT[n - 1], kd = KINDS[a.k], open = n <= openUntil;
-      note.className = 'win-note is-card k-' + kd.c;
-      note.innerHTML = '<p class="wn-top"><span class="wn-kind">' + kd.n + '</span><span class="wn-date">' + n + ' декабря' + (open ? '' : ' · откроется в этот день') + '</span></p>' +
-        '<h3>' + a.h + '</h3>' +
-        (open ? '<p class="wn-free">' + a.f + '</p>' : '<p class="wn-free wn-lock">Окошко ещё закрыто. Загляните ' + n + ' декабря или подпишитесь, и мы пришлём его утром.</p>') +
-        '<p class="wn-plus"><span class="soon">скоро</span> Расширенное окошко. ' + a.p + '</p>';
-      [].forEach.call(win.querySelectorAll('.win.is-sel'), function (b) { b.classList.remove('is-sel'); });
-      var cur = win.querySelector('.win[data-d="' + n + '"]'); if (cur) cur.classList.add('is-sel');
+    var btns = [].slice.call(win.querySelectorAll('.orn'));
+    function summary() {
+      btns.forEach(paint);
+      if (!note) return;
+      var avail = Math.min(advDay, 31), done = Object.keys(opened).filter(function (n) { return +n <= avail; }).length;
+      note.innerHTML = advDay === 0
+        ? '<p class="wn-hint">Шары пока заперты. Первый засветится 1 декабря, а нажать на любой можно уже сейчас: подскажем, когда он откроется.</p>'
+        : '<p class="wn-hint">Открыто <b>' + done + '</b> из ' + avail + '. ' +
+          (advDay <= 31 ? (opened[advDay] ? 'Сегодняшнее окошко уже ваше, следующее откроется завтра.' : 'Светящийся шар ждёт вас сегодня.') : '') + '</p>';
     }
-    win.addEventListener('click', function (e) {
-      var b = e.target.closest('.win'); if (!b) return;
-      show(+b.getAttribute('data-d'));
+    summary();
+
+    /* подсказка для запертых шаров */
+    var advToast = document.createElement('div');
+    advToast.className = 'adv-toast'; advToast.setAttribute('role', 'status'); advToast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(advToast);
+    var tT;
+    function say(t) { advToast.textContent = t; advToast.classList.add('on'); clearTimeout(tT); tT = setTimeout(function () { advToast.classList.remove('on'); }, 2600); }
+
+    /* модалка окошка */
+    var dlg = document.createElement('dialog');
+    dlg.className = 'adv-dlg'; dlg.setAttribute('aria-labelledby', 'adv-dlg-h');
+    document.body.appendChild(dlg);
+    var lastBtn = null;
+    function closeDlg() { if (dlg.close) dlg.close(); else { dlg.removeAttribute('open'); if (lastBtn) lastBtn.focus(); } }
+    function openDay(n, b) {
+      var a = ADVENT[n - 1], kd = KINDS[a.k], first = !opened[n];
+      opened[n] = 1; save(); summary();
+      lastBtn = b;
+      dlg.innerHTML = '<button type="button" class="dlg-x" aria-label="Закрыть">×</button>' +
+        '<div class="dlg-orn' + (first && !reduce ? ' pop' : '') + '"><span class="ball"><span class="in"><img src="' + img(n, 1) + '" alt="" width="520" height="520"><i class="gl"></i><b>' + n + '</b></span></span></div>' +
+        '<p class="wn-top"><span class="wn-kind">' + kd.n + '</span><span class="wn-date">' + n + ' декабря</span></p>' +
+        '<h3 id="adv-dlg-h">' + a.h + '</h3><p class="wn-free">' + a.f + '</p>' +
+        '<p class="wn-plus"><span class="soon">скоро</span> Расширенное окошко. ' + a.p + '</p>' +
+        '<button type="button" class="dlg-ok">Хорошо, закрыть</button>';
+      if (dlg.showModal) { try { dlg.showModal(); } catch (e) { dlg.setAttribute('open', ''); } } else dlg.setAttribute('open', '');
+      var ok = dlg.querySelector('.dlg-ok'); if (ok) ok.focus({ preventScroll: true });
+    }
+    dlg.addEventListener('click', function (e) {
+      if (e.target === dlg || e.target.closest('.dlg-x') || e.target.closest('.dlg-ok')) closeDlg();
     });
-    if (openUntil > 0) show(openUntil);
-    else note.innerHTML = '<p class="wn-hint">Нажмите на любой шар: покажем, что спрятано в окошке. Цвет шара подсказывает, что внутри.</p>';
+    dlg.addEventListener('close', function () { if (lastBtn) lastBtn.focus({ preventScroll: true }); });
+    win.addEventListener('click', function (e) {
+      var b = e.target.closest('.orn'); if (!b) return;
+      var n = +b.getAttribute('data-d');
+      if (n > advDay) {
+        say(advDay === 0 && n === 1 ? 'Первый шар откроется 1 декабря' : 'Этот шар откроется ' + n + ' декабря');
+        b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake');
+        return;
+      }
+      openDay(n, b);
+    });
   }
 
   /* ---------- старый телевизор ---------- */

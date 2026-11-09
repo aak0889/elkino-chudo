@@ -25,9 +25,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
-<link rel="preload" as="image" href="img/globe-fair-off-m.webp" media="(max-width: 899px)">
-<link rel="preload" as="image" href="img/globe-fair-off.webp" media="(min-width: 900px)">
-<link rel="stylesheet" href="css/style.css?v=20261109a">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&text=0123456789&display=swap">
+<link rel="preload" as="image" href="img/globe-fair-off-m.webp?v=2" media="(max-width: 899px)">
+<link rel="preload" as="image" href="img/globe-fair-off.webp?v=2" media="(min-width: 900px)">
+<link rel="stylesheet" href="css/style.css?v=20261109c">
 <!-- three.js для 3D-шаров (ES-модули, грузятся только при открытии шара) -->
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <!-- Yandex.Metrika counter -->
@@ -177,12 +178,12 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
     <figure class="hero-globe" id="hero-globe">
       <div class="globe-body">
         <picture class="gb-off">
-          <source media="(min-width: 900px)" srcset="img/globe-fair-off.webp">
-          <img src="img/globe-fair-off-m.webp" width="880" height="1006" alt="Круглый снежный шар на деревянной подставке: внутри новогодняя ярмарка с полосатыми палатками, большая ёлка и карусель с лошадками" fetchpriority="high" draggable="false">
+          <source media="(min-width: 900px)" srcset="img/globe-fair-off.webp?v=2">
+          <img src="img/globe-fair-off-m.webp?v=2" width="880" height="939" alt="Круглый снежный шар на деревянной подставке: внутри новогодняя ярмарка с красно-белыми полосатыми палатками, большая ёлка и карусель с лошадками" fetchpriority="high" draggable="false">
         </picture>
         <picture class="gb-on" aria-hidden="true">
-          <source media="(min-width: 900px)" srcset="img/globe-fair-on.webp">
-          <img src="img/globe-fair-on-m.webp" width="880" height="1006" alt="" draggable="false">
+          <source media="(min-width: 900px)" srcset="img/globe-fair-on.webp?v=2">
+          <img src="img/globe-fair-on-m.webp?v=2" width="880" height="939" alt="" draggable="false">
         </picture>
         <div class="gb-carousel" aria-hidden="true"></div>
         <canvas class="globe-fx" id="hero-snow" aria-hidden="true"></canvas>
@@ -601,7 +602,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   </div>
 </div>
 
-<script src="js/main.js?v=20261109a" defer></script>
+<script src="js/main.js?v=20261109c" defer></script>
 <script src="js/games.js?v=20261109a" defer></script>
 </body>
 </html>

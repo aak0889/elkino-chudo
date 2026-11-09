@@ -160,10 +160,10 @@ section{scroll-margin-top:60px}
 .hero-globe.is-on .gb-on{opacity:1}
 .globe-fx{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 /* карусель на площади ярмарки: спрайт-лист 8×3 кадра, кадр выбирает main.js */
-.gb-carousel{position:absolute;left:29.38%;top:32.8%;width:41.74%;aspect-ratio:1;pointer-events:none;
-  background:url(../img/carousel.webp) 0 0/800% 300% no-repeat;filter:brightness(.6) saturate(.75) sepia(.18);transition:filter 1s ease}
+.gb-carousel{position:absolute;left:29.43%;top:31.70%;width:43.75%;aspect-ratio:1;pointer-events:none;
+  background:url(../img/carousel.webp?v=2) 0 0/800% 300% no-repeat;filter:brightness(.6) saturate(.75) sepia(.18);transition:filter 1s ease}
 .hero-globe.is-on .gb-carousel{filter:brightness(.94) saturate(.95) sepia(.14)}
-@media (max-width:899px){.gb-carousel{background-image:url(../img/carousel-m.webp)}}
+@media (max-width:899px){.gb-carousel{background-image:url(../img/carousel-m.webp?v=2)}}
 .globe-snow{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 .hero-globe::after{content:"";position:absolute;left:12%;right:12%;top:4%;bottom:26%;border-radius:50%;pointer-events:none;z-index:-1;
   background:radial-gradient(closest-side,rgba(255,236,208,.30),rgba(255,236,208,0));opacity:.25;transition:opacity 1.1s ease;filter:blur(10px)}
@@ -360,85 +360,152 @@ a.st-on:hover{background:#0f3a2e}
   --k-print:#24467e;--k-print-2:#6f95cf;--k-quest:#1f6f73;--k-quest-2:#6cb8b4;--k-craft:#6c7f9c;--k-craft-2:#dfe7f2;--k-card:#b8577a;--k-card-2:#f0a3bd}
 .k-tale{--a:var(--k-tale);--b:var(--k-tale-2)}.k-game{--a:var(--k-game);--b:var(--k-game-2)}.k-food{--a:var(--k-food);--b:var(--k-food-2)}
 .k-print{--a:var(--k-print);--b:var(--k-print-2)}.k-quest{--a:var(--k-quest);--b:var(--k-quest-2)}.k-craft{--a:var(--k-craft);--b:var(--k-craft-2)}.k-card{--a:var(--k-card);--b:var(--k-card-2)}
-.adv-legend{list-style:none;margin:-8px auto 26px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;max-width:860px}
-.lg{display:inline-flex;align-items:center;gap:7px;padding:6px 12px 6px 8px;border-radius:999px;background:#fffdf8;border:1px solid rgba(47,79,128,.22);font-size:13.5px;line-height:1;color:var(--ink);
+/* «Время чудес» — 31 прозрачный стеклянный шар на сливочных лентах. Внутри у каждого своя сценка на снегу и объёмная сливочная цифра.
+   Состояния: is-future (заперт: иней, замочек), is-ready (можно открыть), is-today (светится), is-opened (иней сошёл, звёздочка), is-next (до декабря — первый шар) */
+.advent{--blu:#2f4f80;--blu-2:#8fb0dc;--ice:#eaf1fa}
+/* мягкое боке за шарами: тёплые и голубоватые огоньки */
+#kalendar .windows::before{content:"";position:absolute;inset:-40px -60px;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 8% 18%,rgba(255,255,255,.9) 0 10px,transparent 34px),radial-gradient(circle at 94% 30%,rgba(214,228,247,.8) 0 12px,transparent 40px),radial-gradient(circle at 3% 62%,rgba(214,228,247,.7) 0 8px,transparent 30px),radial-gradient(circle at 97% 72%,rgba(255,255,255,.85) 0 9px,transparent 32px),radial-gradient(circle at 50% 40%,rgba(255,255,255,.55),transparent 65%);filter:blur(2px)}
+#kalendar .windows{isolation:isolate}
+.adv-legend{list-style:none;margin:-6px auto 30px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px}
+.lg{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;background:rgba(255,253,248,.9);border:1px solid rgba(47,79,128,.2);font-size:13.5px;line-height:1;color:var(--ink);
   box-shadow:0 1px 0 #fff inset,0 3px 8px -5px rgba(20,35,65,.35)}
-.lg i{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#fff 0 8%,var(--b) 26%,var(--a) 72%);box-shadow:inset -1.5px -2px 3px rgba(0,0,0,.25)}
-.lg small{font-size:12px;color:var(--ink-2)}
-.lg-tale{--a:var(--k-tale);--b:var(--k-tale-2)}.lg-game{--a:var(--k-game);--b:var(--k-game-2)}.lg-food{--a:var(--k-food);--b:var(--k-food-2)}
-.lg-print{--a:var(--k-print);--b:var(--k-print-2)}.lg-quest{--a:var(--k-quest);--b:var(--k-quest-2)}.lg-craft{--a:var(--k-craft);--b:var(--k-craft-2)}.lg-card{--a:var(--k-card);--b:var(--k-card-2)}
-/* перекладина: вязаный шарф со сливочной полосой */
-.tree-rail{max-width:880px;height:16px;margin:0 auto -6px;border-radius:9px;
+.lg small{font-size:12px;color:var(--blu);font-weight:600}
+/* перекладина: вязаный шарф */
+.tree-rail{max-width:1180px;height:16px;margin:0 auto -6px;border-radius:9px;
   background:var(--knit) 0 0/10px 8px,linear-gradient(180deg,#2c4f86,#22406f 40%,#1a3156);box-shadow:0 4px 8px -4px rgba(20,35,65,.6),inset 0 -2px 0 rgba(0,0,0,.15)}
-.windows{list-style:none;margin:0 auto;padding:0;max-width:860px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px 12px}
+.windows{position:relative;list-style:none;margin:0 auto;padding:0;max-width:1160px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px 18px}
 .windows li{display:flex;justify-content:center}
-.win{--drop:calc(10px + var(--d) * 7px);position:relative;display:flex;flex-direction:column;align-items:center;width:100%;max-width:104px;padding:var(--drop) 0 8px;border:0;background:none;cursor:pointer;
-  transform-origin:50% 0;transition:transform .35s cubic-bezier(.3,.7,.4,1)}
-/* нитка: тонкая, сливочно-серебристая с тенью */
-.win::before{content:"";position:absolute;top:0;left:50%;width:1.5px;margin-left:-.75px;height:var(--drop);background:linear-gradient(90deg,#9aa5b8,#f6f1e6 50%,#9aa5b8);box-shadow:1px 0 1px rgba(20,35,65,.12)}
-/* колпачок: рифлёный металл и петелька */
-.win .cap{position:relative;z-index:2;width:24%;height:10px;margin-top:4px;border-radius:3px 3px 1px 1px;
+.orn{--drop:calc(14px + var(--d) * 9px);position:relative;display:flex;flex-direction:column;align-items:center;width:100%;max-width:156px;padding:var(--drop) 0 26px;border:0;background:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;transform-origin:50% 0;transition:transform .45s cubic-bezier(.3,.7,.4,1)}
+/* лента: сливочный атлас, бант над колпачком */
+.orn .rib{position:absolute;top:0;left:50%;width:3px;margin-left:-1.5px;height:calc(var(--drop) + 2px);
+  background:linear-gradient(90deg,#d8ccb2,#fffaf0 45%,#e6dbc3);box-shadow:1px 0 1px rgba(20,35,65,.12)}
+.orn .rib::after{content:"";position:absolute;left:50%;bottom:-3px;width:28px;height:15px;margin-left:-14px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 15'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fffdf7'/%3E%3Cstop offset='1' stop-color='%23e3d6bb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 7.5C10 2 3.5.5 2.2 3.4 1 6.3 6.5 10 14 7.5ZM14 7.5C18 2 24.5.5 25.8 3.4 27 6.3 21.5 10 14 7.5Z' fill='url(%23a)' stroke='%23c9bb9c' stroke-width='.7'/%3E%3Cpath d='M13 8.2 9.5 14.4M15 8.2l3.5 6.2' stroke='%23e8dcc2' stroke-width='2.2' stroke-linecap='round'/%3E%3Cellipse cx='14' cy='7.6' rx='2.4' ry='2' fill='%23f4ecda' stroke='%23c9bb9c' stroke-width='.6'/%3E%3C/svg%3E") 50% 50%/contain no-repeat;
+  filter:drop-shadow(0 1px 1px rgba(20,35,65,.18))}
+/* колпачок: рифлёное серебро */
+.orn .cap{position:relative;z-index:3;width:21%;height:10px;margin-top:6px;border-radius:3px 3px 1px 1px;
   background:repeating-linear-gradient(90deg,#8d97a8 0 1.4px,#f4f6fa 1.4px 2.8px,#b7c0ce 2.8px 4.2px);
-  box-shadow:inset 0 2px 0 rgba(255,255,255,.65),inset 0 -2px 2px rgba(0,0,0,.25),0 1px 1px rgba(20,35,65,.3)}
-.win .cap i{position:absolute;left:50%;top:-7px;width:8px;height:8px;margin-left:-4px;border:1.6px solid #aab3c2;border-radius:50%;border-bottom-color:transparent}
-.win .cap::after{content:"";position:absolute;left:-6%;right:-6%;bottom:-2px;height:3px;border-radius:0 0 50% 50%;background:#7d889a}
-.win .ball{position:relative;width:100%;aspect-ratio:1;margin-top:-3px;border-radius:50%;display:grid;place-items:center;overflow:hidden;isolation:isolate;
-  background:radial-gradient(circle at 36% 30%,var(--b) 0%,var(--a) 50%,#141a2a 135%);
-  box-shadow:inset -10px -14px 22px rgba(0,0,0,.34),inset 5px 6px 12px rgba(255,255,255,.14),0 16px 22px -14px rgba(20,35,65,.6),0 3px 4px -1px rgba(20,35,65,.18)}
-/* поясок: дугой по «экватору», как на настоящей игрушке */
-.win .band{position:absolute;inset:0;z-index:0;
-  -webkit-mask:radial-gradient(ellipse 110% 70% at 50% 0%,transparent 80%,#000 81% 97%,transparent 98%);mask:radial-gradient(ellipse 110% 70% at 50% 0%,transparent 80%,#000 81% 97%,transparent 98%)}
-.win.pt0 .band{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cpath d='M3 3l4 4M7 3l-4 4' stroke='%23fff8ea' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") 0 50%/10px 10px,rgba(255,250,238,.16)}
-.win.pt1 .band{background:radial-gradient(circle,rgba(255,255,255,.95) 0 .9px,transparent 1.3px) 0 0/7px 6px,radial-gradient(circle,rgba(255,255,255,.6) 0 .7px,transparent 1.1px) 3.5px 3px/7px 6px,rgba(255,255,255,.1)}
-.win.pt2 .band{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14'%3E%3Cg stroke='%23fff8ea' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M8 3v8M4.5 5l7 4M4.5 9l7-4'/%3E%3C/g%3E%3Ccircle cx='8' cy='7' r='1.1' fill='%23fff8ea'/%3E%3C/svg%3E") 0 50%/12px 10.5px,linear-gradient(rgba(255,250,238,.55),rgba(255,250,238,.55)) 0 0/100% 1.5px no-repeat,rgba(255,255,255,.08)}
-/* стекло: окошко-блик, мягкий отсвет, отражённый свет снизу, тонкий край */
-.win .gl{position:absolute;inset:0;z-index:1;border-radius:50%;pointer-events:none;
-  background:radial-gradient(ellipse 14% 8% at 31% 22%,rgba(255,255,255,.95),rgba(255,255,255,0) 100%),
-    radial-gradient(ellipse 5% 3.6% at 44% 17%,rgba(255,255,255,.9),rgba(255,255,255,0) 100%),
-    radial-gradient(ellipse 40% 28% at 34% 28%,rgba(255,255,255,.3),transparent 72%),
-    radial-gradient(ellipse 46% 20% at 60% 93%,rgba(255,243,226,.42),transparent 72%),
-    radial-gradient(circle at 50% 50%,transparent 64%,rgba(255,255,255,.16) 69%,transparent 71%)}
-.win .ball b{position:relative;z-index:2;margin-top:-14%;font:700 clamp(30px,3.8vw,44px)/1 var(--serif);font-variant-numeric:lining-nums;color:#fffaf0;
-  text-shadow:0 1px 0 rgba(0,0,0,.3),0 -1px 0 rgba(255,255,255,.25),0 0 14px rgba(255,250,238,.35);letter-spacing:-.02em}
-.win .st-w{margin-top:6px;font:600 10.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
-.win.is-open .st-w{color:var(--a)}
-/* закрыто: шар в вязаном чехле — матовая шерсть, пушистый край, сливочная полоска-резинка */
-.win:not(.is-open) .ball{background:var(--knit) 0 0/10px 8px,radial-gradient(circle at 38% 32%,var(--b) 0%,var(--a) 62%,#1b2233 140%);
-  box-shadow:inset -9px -12px 20px rgba(0,0,0,.3),inset 4px 5px 10px rgba(255,255,255,.12),0 0 1.5px 1.5px var(--a),0 14px 20px -14px rgba(20,35,65,.55)}
-.win:not(.is-open) .band{background:var(--knit-cream) 0 0/8px 6.4px}
-.win:not(.is-open) .gl{background:radial-gradient(ellipse 46% 40% at 36% 30%,rgba(255,255,255,.2),transparent 70%)}
-.win:not(.is-open) .ball b{color:#fffdf8;text-shadow:0 1px 2px rgba(0,0,0,.35)}
-.win.is-open .ball b{color:#fffaf0;text-shadow:0 1px 0 rgba(0,0,0,.35),0 0 18px rgba(255,250,238,.6)}
-.win.is-today .ball{box-shadow:0 0 0 3px #fffdf8,0 0 0 6px var(--mandarin),0 0 28px 6px rgba(233,132,58,.5),inset -10px -14px 22px rgba(0,0,0,.3);animation:todayglow 2.4s ease-in-out infinite}
-@keyframes todayglow{50%{box-shadow:0 0 0 3px #fffdf8,0 0 0 6px var(--mandarin),0 0 40px 12px rgba(233,132,58,.38),inset -10px -14px 22px rgba(0,0,0,.3)}}
-@media (max-width:599px){.advent{padding:96px 0 100px}.advent::before,.advent::after{height:45px;background-size:52.5px 45px}.win .cap i{top:-6px;width:6px;height:6px;margin-left:-3px}}
-.win:hover,.win:focus-visible{transform:rotate(-4deg)}
-.win.is-sel .ball{outline:2px solid var(--ink);outline-offset:3px}
-.win-note{max-width:640px;margin:30px auto 0;text-align:center;min-height:56px;color:var(--ink)}
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -2px 2px rgba(0,0,0,.22),0 1px 1px rgba(20,35,65,.3)}
+/* шар */
+.orn .ball,.dlg-orn .ball{position:relative;display:block;width:100%;aspect-ratio:1;margin-top:-3px;border-radius:50%;
+  box-shadow:0 22px 26px -18px rgba(20,35,65,.55),0 4px 8px -4px rgba(20,35,65,.22)}
+.ball .in{position:absolute;inset:0;border-radius:50%;overflow:hidden;isolation:isolate;container-type:inline-size;background:#f5f0e7}
+.ball img{position:absolute;left:-9%;top:-6%;width:118%;height:118%;max-width:none;object-fit:cover;transition:filter .5s ease,transform .6s ease}
+.ball .frost{position:absolute;inset:0;z-index:1;border-radius:50%;opacity:0;transition:opacity .5s ease;
+  background:radial-gradient(circle,rgba(255,255,255,.75) 0 .6px,transparent 1.1px) 0 0/7px 7px,
+    radial-gradient(circle,rgba(255,255,255,.5) 0 .5px,transparent 1px) 3px 4px/9px 8px,
+    radial-gradient(circle at 50% 42%,rgba(246,249,253,.38),rgba(236,242,250,.7) 70%,rgba(226,235,247,.82))}
+/* стекло: окно-блик, искорка, полумесяц-отсвет слева, отражение снизу, тонкий край с голубизной */
+.ball .gl{position:absolute;inset:0;z-index:2;border-radius:50%;pointer-events:none;
+  background:radial-gradient(ellipse 20% 12% at 31% 20%,rgba(255,255,255,.95),rgba(255,255,255,0) 72%),
+    radial-gradient(ellipse 5% 3.4% at 45% 13%,#fff,rgba(255,255,255,0) 80%),
+    radial-gradient(ellipse 32% 7% at 60% 90%,rgba(255,255,255,.6),transparent 72%),
+    radial-gradient(circle at 50% 50%,transparent 62%,rgba(225,234,246,.28) 80%,rgba(160,184,218,.5) 96%,rgba(255,255,255,.95) 99.5%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.85),inset -5px -9px 16px rgba(47,79,128,.2),inset 5px 7px 12px rgba(255,255,255,.45)}
+.ball .gl::before{content:"";position:absolute;inset:7%;border-radius:50%;border-left:3.2cqw solid rgba(255,255,255,.6);border-top:1.2cqw solid rgba(255,255,255,.3);
+  border-right:0;border-bottom:0;transform:rotate(14deg);filter:blur(.6px)}
+.ball .gl::after{content:"";position:absolute;right:22%;top:20%;width:13cqw;height:13cqw;opacity:.9;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z' fill='%23fff'/%3E%3C/svg%3E") 50%/contain no-repeat;
+  filter:drop-shadow(0 0 2px rgba(190,215,250,.95));animation:twinkle 3.4s ease-in-out infinite;animation-delay:calc(var(--d) * -.7s)}
+@keyframes twinkle{0%,100%{transform:scale(.45) rotate(0);opacity:.35}50%{transform:scale(1) rotate(45deg);opacity:1}}
+/* цифра: объёмная сливочная, с серебристо-кремовым торцом */
+.ball b{position:absolute;z-index:3;left:0;right:0;top:7%;text-align:center;font:900 40cqw/1 "Nunito",var(--sans);font-variant-numeric:lining-nums;letter-spacing:-.04em;
+  color:#fffaf0;background:linear-gradient(180deg,#ffffff 10%,#fdf8ee 45%,#f1e6d0 85%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-text-stroke:.5px rgba(160,140,108,.55);
+  filter:drop-shadow(0 1px 0 #e3d6bd) drop-shadow(0 1px 0 #d2c2a4) drop-shadow(0 1px 0 #bfad8c) drop-shadow(0 1px 0 #ad9a78) drop-shadow(0 3px 3px rgba(28,40,70,.5)) drop-shadow(0 0 5px rgba(255,255,255,.5))}
+.orn .st-w{margin-top:9px;padding:4px 9px;border-radius:999px;font:600 10.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.orn .mk{position:absolute;z-index:4;right:-3%;bottom:-1%;width:30%;aspect-ratio:1;border-radius:50%;opacity:0;transform:scale(.4);transition:opacity .35s ease,transform .45s cubic-bezier(.3,1.6,.5,1)}
+.orn .tap{position:absolute;left:50%;bottom:0;z-index:5;transform:translateX(-50%);display:none;padding:5px 10px 5px;border-radius:999px;font:600 11.5px/1 var(--sans);color:#fff;background:var(--blu);white-space:nowrap;
+  box-shadow:0 6px 14px -6px rgba(20,35,65,.6)}
+.orn .tap::before{content:"";position:absolute;left:50%;top:-5px;margin-left:-5px;border:5px solid transparent;border-top:0;border-bottom:5px solid var(--blu)}
+/* заперт: иней, без цвета, замочек-снежинка */
+.is-future .ball img{filter:blur(2.4px) saturate(.35) brightness(1.08)}
+.is-future .frost{opacity:1}
+.is-future .ball b{opacity:.9;-webkit-text-stroke:.5px rgba(120,140,170,.5);filter:drop-shadow(0 1px 0 #d6dde8) drop-shadow(0 1px 0 #c2ccdb) drop-shadow(0 1px 0 #aebbd0) drop-shadow(0 3px 3px rgba(28,40,70,.35))}
+.is-future .gl::after{display:none}
+.is-future .mk{opacity:1;transform:none;width:26%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f4f80' stroke-width='2' stroke-linecap='round'%3E%3Crect x='5.5' y='10.5' width='13' height='9.5' rx='2' fill='%23eaf1fa'/%3E%3Cpath d='M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5'/%3E%3Cpath d='M12 13.8v2.6'/%3E%3C/svg%3E") 50%/64% no-repeat;
+  box-shadow:0 0 0 1.5px rgba(143,176,220,.8),0 3px 6px -2px rgba(20,35,65,.4)}
+.is-future .st-w{color:#7a8496}
+/* можно открыть: лёгкий иней, сценка просвечивает */
+.is-ready .ball img,.is-today .ball img,.is-next .ball img{filter:blur(1px) saturate(.85)}
+.is-ready .frost,.is-today .frost{opacity:.5}
+.is-ready .st-w{color:var(--blu)}
+/* открыто: иней сошёл, серебряная звёздочка-галочка */
+.is-opened .ball img{filter:none;transform:scale(1.03)}
+.is-opened .mk{opacity:1;transform:none;width:32%;background:radial-gradient(circle at 38% 30%,#b9cff0,#5f86c0 45%,#2f4f80 80%);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 .5l2.6 5.6 6.1.7-4.5 4.2 1.2 6.1L10 14l-5.4 3.1 1.2-6.1L1.3 6.8l6.1-.7Z'/%3E%3C/svg%3E") 50%/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 .5l2.6 5.6 6.1.7-4.5 4.2 1.2 6.1L10 14l-5.4 3.1 1.2-6.1L1.3 6.8l6.1-.7Z'/%3E%3C/svg%3E") 50%/contain no-repeat;
+  filter:drop-shadow(0 0 0 #fff)}
+.is-opened .mk::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6.6 10.2l2.3 2.3 4.6-4.8' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50%/contain no-repeat}
+.is-opened .st-w{color:var(--blu)}
+.is-opened .ball{box-shadow:0 22px 26px -18px rgba(20,35,65,.55),0 0 0 2px rgba(255,255,255,.9),0 0 16px 2px rgba(190,212,242,.55)}
+/* сегодня и «первый до декабря»: мягкое дыхание свечения, подпись-пилюля, «нажмите» */
+.is-today .ball,.is-next .ball{box-shadow:0 0 0 3px #fff,0 0 0 5.5px var(--blu-2),0 0 34px 10px rgba(170,202,245,.75),0 22px 26px -18px rgba(20,35,65,.5);animation:dayglow 2.6s ease-in-out infinite}
+@keyframes dayglow{50%{box-shadow:0 0 0 3px #fff,0 0 0 5.5px #b9d0ee,0 0 52px 20px rgba(170,202,245,.55),0 22px 26px -18px rgba(20,35,65,.5)}}
+.is-today .st-w,.is-next .st-w{color:#fff;background:var(--blu);letter-spacing:.07em;box-shadow:0 4px 10px -5px rgba(20,35,65,.6)}
+.is-today .tap{display:block;animation:tapbob 1.5s ease-in-out infinite}
+@keyframes tapbob{50%{transform:translate(-50%,4px)}}
+.is-day.is-opened .ball{animation:none}
+.is-next .ball img{filter:blur(1.6px) saturate(.6) brightness(1.05)}
+.is-next .frost{opacity:.85}
+.is-next .mk{display:none}
+.orn:hover,.orn:focus-visible{transform:rotate(-4deg)}
+.orn:focus-visible{outline:none}
+.orn:focus-visible .ball{outline:2px solid var(--blu);outline-offset:4px}
+.is-ready:hover .frost,.is-today:hover .frost{opacity:.2}
+.is-ready:hover .ball img,.is-today:hover .ball img{filter:none}
+.orn.shake{animation:shake .5s ease}
+@keyframes shake{20%{transform:rotate(5deg)}45%{transform:rotate(-4deg)}70%{transform:rotate(2deg)}}
+.win-note{max-width:640px;margin:26px auto 0;text-align:center;min-height:30px;color:var(--ink)}
 .wn-hint{font:500 21px/1.35 var(--serif);color:var(--ink-2)}
-.win-note.is-card{text-align:left;padding:22px 24px 20px;border-radius:24px;background:#fffaf0;border:1px solid rgba(47,79,128,.3);
-  box-shadow:0 18px 40px -26px rgba(20,35,65,.55);border-top:6px solid var(--a)}
-.wn-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:13.5px;color:var(--ink-2)}
-.wn-kind{padding:5px 11px;border-radius:999px;background:var(--a);color:#fff;font-weight:600;font-size:12.5px;letter-spacing:.02em}
-.win-note h3{margin-top:12px;font-size:clamp(28px,3.4vw,36px);color:var(--ink)}
-.wn-free{margin-top:10px;font-size:16.5px;line-height:1.55}
-.wn-lock{color:var(--ink-2)}
-.wn-plus{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(47,79,128,.4);font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.wn-hint b{color:var(--blu);font-weight:700}
+/* подсказка для запертых */
+.adv-toast{position:fixed;left:50%;bottom:22px;z-index:120;max-width:calc(100% - 32px);padding:12px 20px;border-radius:999px;background:#1f3558;color:#fff;font:500 15px/1.3 var(--sans);text-align:center;
+  box-shadow:0 14px 30px -12px rgba(10,20,36,.7);opacity:0;transform:translate(-50%,14px);pointer-events:none;transition:opacity .25s ease,transform .3s ease}
+.adv-toast.on{opacity:1;transform:translate(-50%,0)}
+/* окошко дня */
+.adv-dlg{color-scheme:light;width:min(460px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:30px 26px 24px;border:0;border-radius:28px;color:var(--ink);text-align:center;
+  background:radial-gradient(420px 220px at 50% 0,rgba(214,228,247,.75),transparent 70%),var(--knit-soft) 0 0/16px 12.8px,#fbf6ec;box-shadow:0 30px 70px -20px rgba(10,20,36,.65)}
+.adv-dlg::backdrop{background:rgba(10,20,36,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.adv-dlg[open]{animation:dlgin .35s cubic-bezier(.3,1.2,.5,1)}
+@keyframes dlgin{from{opacity:0;transform:translateY(16px) scale(.97)}}
+.dlg-x{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(47,79,128,.08);color:var(--blu);font:400 28px/1 var(--sans);cursor:pointer}
+.dlg-x:hover{background:rgba(47,79,128,.16)}
+.dlg-orn{width:190px;margin:0 auto 18px}
+.dlg-orn .ball{margin:0;box-shadow:0 26px 30px -20px rgba(20,35,65,.6),0 0 0 2px rgba(255,255,255,.9),0 0 26px 6px rgba(190,212,242,.6)}
+.dlg-orn .ball img{transform:none}
+.dlg-orn.pop{animation:pop .9s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{0%{transform:scale(.55) rotate(-10deg);opacity:0}60%{transform:scale(1.05) rotate(3deg);opacity:1}}
+.adv-dlg .wn-top{justify-content:center}
+.adv-dlg .wn-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:13.5px;color:var(--ink-2)}
+.adv-dlg .wn-kind{padding:5px 11px;border-radius:999px;background:var(--blu,#2f4f80);color:#fff;font-weight:600;font-size:12.5px;letter-spacing:.02em}
+.adv-dlg h3{margin-top:12px;font-size:clamp(28px,7vw,34px);color:var(--ink)}
+.adv-dlg .wn-free{margin-top:10px;font-size:16.5px;line-height:1.55}
+.adv-dlg .wn-plus{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(47,79,128,.4);font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.dlg-ok{margin-top:18px;width:100%;padding:13px 18px;border:0;border-radius:999px;background:linear-gradient(180deg,#3a5e96,#2f4f80);color:#fff;font:600 15.5px/1.2 var(--sans);cursor:pointer;box-shadow:0 10px 20px -10px rgba(20,35,65,.7)}
+.dlg-ok:hover{filter:brightness(1.08)}
+.adv-dlg{--blu:#2f4f80}
 .soon{display:inline-block;margin-right:6px;padding:3px 9px;border-radius:999px;font:600 11px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#c24a52,#8f2a33);vertical-align:1px}
 .adv-plus{max-width:640px;margin:22px auto 0;text-align:center;font-size:15px;color:var(--ink-2)}
 .adv-plus .soon{margin:0 0 0 6px}
+@media (max-width:899px){.windows{gap:2px 12px}}
+@media (max-width:599px){.advent{padding:96px 0 100px}.advent::before,.advent::after{height:45px;background-size:52.5px 45px}}
 @media (max-width:639px){
   .advent{padding:64px 0}
   .tree-rail{margin:0 calc(var(--gutter) * -.5) -4px}
-  .windows{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px 8px}
-  .win{--drop:calc(8px + var(--d) * 5px)}
-  .win .ball b{font-size:27px}
-  .win .st-w{font-size:9px;letter-spacing:.04em}
-  .win .cap{height:7px}
-  .lg{font-size:12.5px;padding:5px 10px 5px 7px}
-  .win-note.is-card{padding:18px 18px 16px}
+  .windows{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 12px}
+  .orn{--drop:calc(10px + var(--d) * 5px);padding-bottom:24px}
+  .orn .st-w{font-size:9.5px;letter-spacing:.05em;padding:3px 7px}
+  .orn .cap{height:8px}
+  .orn .rib::after{width:22px;height:12px;margin-left:-11px}
+  .orn .tap{font-size:10.5px;padding:4px 8px}
+  .lg{font-size:12.5px;padding:5px 10px}
+  .wn-hint{font-size:19px}
+  .adv-dlg{padding:26px 20px 20px}
+  .dlg-orn{width:160px}
 }
-@media (prefers-reduced-motion:reduce){.win.is-today .ball{animation:none}.win{transition:none}}
+@media (prefers-reduced-motion:reduce){.is-today .ball,.is-next .ball,.is-today .tap,.ball .gl::after,.orn.shake,.dlg-orn.pop,.adv-dlg[open]{animation:none}.orn{transition:none}}
 
 /* ---------- окошко каждое утро (под таймером) ---------- */
 .daily{position:relative;margin:22px auto 0;width:max-content;max-width:100%}
