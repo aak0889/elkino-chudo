@@ -1,0 +1,355 @@
+/* =====================================================================
+   «Ёлкино чудо» — ночная тема v5 (09.11.2026)
+   Первый экран по референсу Насти: тёмно-синяя ночь, заснеженные ветки,
+   гирлянда, золотой заголовок со шлейфом, стеклянные плашки таймера со снегом.
+   Остальные разделы подтянуты к той же атмосфере: ночь, стекло, снежные шапки, золото.
+   ===================================================================== */
+:root{
+  --n0:#050b18;--n1:#081429;--n2:#0d1d3b;--n3:#14295080;
+  --au1:#fff4d2;--au2:#f6d892;--au3:#dcae58;--au4:#a8742b;
+  --au-text:linear-gradient(180deg,#fff7dc 0%,#f8df9c 28%,#e4b660 50%,#fbe7ab 63%,#d29f4a 82%,#a87531 100%);
+  --glass:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.035) 55%,rgba(255,255,255,.07));
+  --glass-line:rgba(255,226,170,.42);
+  --snowcap:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='.5' stop-color='%23f4f8ff'/%3E%3Cstop offset='.85' stop-color='%23d3e0f3'/%3E%3Cstop offset='1' stop-color='%23b4c6e2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 26.0L4 25.2L8 24.3L12 23.2L16 22.2L20 21.3L24 20.6L28 20.0L32 19.4L36 18.9L40 18.4L44 17.8L48 17.1L52 16.5L56 16.0L60 15.8L64 16.0L68 16.5L72 17.3L76 18.3L80 19.2L84 19.7L88 19.9L92 19.6L96 19.0L100 18.1L104 17.2L108 16.5L112 16.1L116 16.2L120 16.6L124 17.2L128 17.9L132 18.5L136 18.9L140 18.9L144 18.7L148 18.5L152 18.3L156 18.4L160 18.8L164 19.7L168 20.9L172 22.2L176 23.4L180 24.2L184 24.6L188 24.4L192 23.6L196 22.4L200 20.9L204 19.5L208 18.2L212 17.2L216 16.5L220 16.1L224 15.7L228 15.4L232 14.8L236 13.9L240 12.8L244 11.6L248 10.4L252 9.5L256 9.0L260 9.1L264 9.6L268 10.6L272 11.9L276 13.1L280 14.1L284 14.7L288 14.8L292 14.5L296 13.9L300 13.2L304 12.6L308 12.3L312 12.2L316 12.7L320 13.6L324 14.5L328 15.3L332 15.7L336 16.0L340 16.1L344 16.2L348 16.4L352 16.9L356 17.7L360 18.8L364 20.0L368 21.3L372 22.6L376 23.6L380 24.4L384 24.9L388 25.3L392 25.5L396 25.8L400 26.0L400 26.8L395 27.3L390 27.7L385 28.0L380 28.2L375 28.1L370 27.9L365 30.2L360 33.2L355 30.3L350 28.3L345 29.1L340 30.0L335 31.0L330 31.8L325 32.3L320 32.4L315 32.1L310 31.4L305 30.6L300 29.7L295 28.9L290 30.2L285 33.0L280 31.2L275 28.3L270 28.4L265 28.4L260 28.3L255 27.9L250 27.4L245 26.8L240 26.3L235 26.1L230 26.3L225 26.8L220 27.7L215 28.7L210 29.8L205 30.8L200 31.4L195 33.7L190 38.6L185 37.2L180 31.7L175 30.2L170 29.9L165 29.8L160 29.8L155 30.0L150 30.2L145 30.2L140 30.0L135 29.5L130 28.7L125 27.8L120 26.9L115 26.1L110 25.7L105 25.6L100 26.0L95 26.7L90 27.6L85 28.5L80 29.9L75 33.5L70 34.3L65 31.2L60 29.9L55 29.7L50 29.7L45 29.8L40 30.2L35 30.7L30 31.2L25 31.6L20 31.8L15 31.6L10 31.0L5 30.1L0 29.0Z' fill='url(%23s)'/%3E%3Cpath d='M20 23.5L24 22.8L28 22.2L32 21.6L36 21.1L40 20.6L44 20.0L48 19.3L52 18.7L56 18.2L60 18.0L64 18.2L68 18.7L72 19.5L76 20.5L80 21.4L84 21.9L88 22.1L92 21.8L96 21.2L100 20.3L104 19.4L108 18.7L112 18.3L116 18.4L120 18.8L124 19.4L128 20.1L132 20.7L136 21.1L140 21.1L144 20.9L148 20.7L152 20.5L156 20.6L160 21.0L164 21.9L168 23.1L172 24.4L176 25.6L180 26.4L184 26.8L188 26.6L192 25.8L196 24.6L200 23.1L204 21.7L208 20.4L212 19.4L216 18.7L220 18.3L224 17.9L228 17.6L232 17.0L236 16.1L240 15.0L244 13.8L248 12.6L252 11.7L256 11.2L260 11.3L264 11.8L268 12.8L272 14.1L276 15.3L280 16.3L284 16.9L288 17.0L292 16.7L296 16.1L300 15.4L304 14.8L308 14.5L312 14.4L316 14.9L320 15.8L324 16.7L328 17.5L332 17.9L336 18.2L340 18.3L344 18.4L348 18.6L352 19.1L356 19.9L360 21.0L364 22.2L368 23.5L372 24.8L376 25.8L380 26.6' fill='none' stroke='%23ffffff' stroke-width='1.6' opacity='.9'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='60' cy='14' r='.9'/%3E%3Ccircle cx='132' cy='11' r='.7'/%3E%3Ccircle cx='210' cy='9' r='1'/%3E%3Ccircle cx='292' cy='12' r='.8'/%3E%3Ccircle cx='350' cy='15' r='.7'/%3E%3C/g%3E%3C/svg%3E");
+}
+body{background:var(--n1)}
+
+/* ---------- шапка: на телефоне всё влезает в одну строку ---------- */
+.top{background:linear-gradient(rgba(5,11,24,.72),rgba(5,11,24,0))}
+.top.is-solid{background:rgba(6,13,28,.9)}
+.mono{border-color:rgba(242,207,126,.75);color:var(--au1);background:rgba(8,20,41,.55);box-shadow:0 0 18px rgba(246,216,146,.18)}
+.brand-name{color:var(--au1)}
+.menu-btn{border-color:rgba(242,207,126,.6)!important}
+.nav-cta{border-color:rgba(242,207,126,.75)!important;color:var(--au1)!important;background:rgba(8,20,41,.35);box-shadow:0 0 16px rgba(246,216,146,.15)}
+@media (max-width:599px){
+  .top{padding:10px 12px}
+  .top-l{gap:8px!important}
+  .menu-btn{width:42px;height:42px}
+  .mono{width:34px;height:34px;font-size:23px}
+  .mono i{top:3px;width:5px;height:5px}.mono i:first-child{left:10px}.mono i:nth-child(2){right:10px}
+  .brand-name{font-size:18px!important;white-space:nowrap}
+  .nav-cta{margin-left:4px;padding:7px 12px!important;font-size:13.5px!important;white-space:nowrap}
+}
+@media (max-width:359px){.top-l .mono{display:none}}
+
+/* ================= ПЕРВЫЙ ЭКРАН ================= */
+.hn{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:#071430;
+  --g-top:58px;--g-h:clamp(64px,8vw,104px)}
+.hn-scene{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hn-l{position:absolute;display:block;will-change:transform;user-select:none}
+.hn-sky{inset:-3% -2% -1%}
+.hn-sky img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.hn .sky{position:absolute;inset:0;z-index:0;width:100%;height:100%;opacity:.7}
+/* тёплое свечение за заголовком и холодный туман снизу */
+.hn-scene::before{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(60% 34% at 50% 26%,rgba(255,210,140,.16),transparent 70%),
+             radial-gradient(70% 30% at 50% 100%,rgba(140,170,230,.18),transparent 70%),
+             linear-gradient(180deg,rgba(4,10,24,.55),rgba(4,10,24,0) 22%,rgba(4,10,24,0) 70%,rgba(4,10,24,.25))}
+.hn-houses{z-index:2;right:-14%;bottom:7%;width:min(62vw,620px);filter:brightness(.62) saturate(.9) sepia(.12) hue-rotate(-8deg) drop-shadow(0 0 30px rgba(255,190,110,.25))}
+.hn-lantern{z-index:4;left:-3%;bottom:-1%;width:min(36vw,300px);filter:brightness(.82) saturate(1.05) drop-shadow(0 0 34px rgba(255,170,80,.45))}
+.hn-drift{z-index:3;left:-4%;bottom:-4%;width:108%;max-width:none;height:auto;filter:brightness(.72) saturate(.9)}
+.hn-br{z-index:5;width:min(64vw,560px);filter:brightness(.78) saturate(.85) drop-shadow(0 18px 24px rgba(0,0,0,.5))}
+.hn-br-tl{left:-20%;top:-9%}
+.hn-br-tr{right:-20%;top:-9%;scale:-1 1}
+.hn-br-ml{left:-30%;top:40%;width:min(46vw,380px);rotate:18deg;filter:blur(1.4px) brightness(.55) saturate(.8) drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+.hn-br-mr{right:-30%;top:52%;width:min(46vw,380px);scale:-1 1;rotate:-14deg;filter:blur(1.4px) brightness(.55) saturate(.8) drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+.hn-snow{position:absolute;inset:0;width:100%;height:100%;z-index:6}
+.hn-garland{position:absolute;left:0;top:var(--g-top);width:100%;height:var(--g-h);z-index:7;overflow:visible}
+.hn-bulb{position:absolute;z-index:8;width:14px;height:20px;margin:-2px 0 0 -7px;transform:rotate(var(--r));transform-origin:50% 0}
+.hn-bulb::before{content:"";position:absolute;left:4px;top:0;width:6px;height:6px;border-radius:1px;background:linear-gradient(90deg,#5b4523,#c9a560,#5b4523)}
+.hn-bulb::after{content:"";position:absolute;left:1px;top:5px;width:12px;height:15px;border-radius:50% 50% 46% 46% / 42% 42% 58% 58%;
+  background:radial-gradient(circle at 46% 38%,#fffdf2 0 18%,#ffe9b0 40%,#ffc766 78%,#e89a3a);
+  box-shadow:0 0 10px 3px rgba(255,214,140,.75),0 0 34px 10px rgba(255,190,100,.32);
+  animation:bulb var(--t,3.4s) ease-in-out infinite;animation-delay:var(--d,0s)}
+.hn-bulb.amber::after{background:radial-gradient(circle at 46% 38%,#fff6e6 0 16%,#ffd08a 42%,#f59a42 80%,#c96a22);box-shadow:0 0 10px 3px rgba(255,170,90,.7),0 0 30px 10px rgba(240,140,60,.3)}
+@keyframes bulb{0%,100%{opacity:1;filter:brightness(1)}45%{opacity:1}55%{opacity:.55;filter:brightness(.8)}62%{opacity:1;filter:brightness(1.15)}}
+
+.hn-in{position:relative;z-index:9;max-width:760px;margin:0 auto;min-height:100svh;display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:calc(var(--g-top) + var(--g-h) + 4px) 20px clamp(190px,26vw,250px)}
+.hn-title-wrap{position:relative;display:inline-block}
+.hn-title{position:relative;z-index:2;font-size:clamp(82px,min(22vw,11vw + 40px),164px);font-weight:600;line-height:.86;letter-spacing:-.01em;padding-top:.12em;
+  color:transparent;background:var(--au-text);-webkit-background-clip:text;background-clip:text;
+  filter:drop-shadow(0 2px 0 rgba(96,58,12,.6)) drop-shadow(0 0 24px rgba(255,206,120,.32))}
+.hn-title .yo{background:var(--au-text);background-size:100% 120%;background-position:0 0;-webkit-background-clip:text;background-clip:text}
+.hn-title .yo i{background:radial-gradient(circle at 45% 40%,#fffbe8,#ffe2a0 55%,#e0a850);box-shadow:0 0 .18em .06em rgba(255,214,140,.85)}
+.hn-title .t2{display:inline-block;margin-left:.42em}
+/* искристый шлейф */
+.hn-trail{position:absolute;left:-16%;top:0;width:132%;height:132%;z-index:1;overflow:visible;pointer-events:none}
+.tr-glow{opacity:.55}
+.tr-line{opacity:.8}
+.tr-dust{stroke-dasharray:.1 11;animation:dust 3.5s linear infinite;opacity:.95}
+@keyframes dust{to{stroke-dashoffset:-111}}
+.tr-head{filter:drop-shadow(0 0 6px #ffe7a8)}
+/* шар с ёлкой на нитке */
+.hn-orn{position:absolute;z-index:3;right:-30%;top:-4%;width:clamp(96px,12vw,176px);display:flex;flex-direction:column;align-items:center;transform-origin:50% -200px;animation:hn-swing 7s ease-in-out infinite}
+.hn-orn i{display:block;width:1px;height:200px;margin-top:-200px;background:linear-gradient(rgba(242,207,126,0),rgba(242,207,126,.8))}
+.hn-orn img{width:100%;height:auto;margin-top:-2px;filter:drop-shadow(0 0 26px rgba(255,214,150,.4)) drop-shadow(0 16px 20px rgba(0,0,0,.4))}
+@keyframes hn-swing{0%,100%{transform:rotate(2.2deg)}50%{transform:rotate(-2.2deg)}}
+
+.hn-lead{margin-top:clamp(14px,2vw,22px);font:500 clamp(23px,2.5vw,32px)/1.25 var(--serif);color:#f7efdf;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.hn-rule{display:flex;align-items:center;gap:12px;width:min(100%,460px);margin:18px auto 0;color:var(--au2)}
+.hn-rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(242,207,126,.85))}
+.hn-rule i:last-child{background:linear-gradient(90deg,rgba(242,207,126,.85),transparent)}
+.hn-rule svg{width:22px;height:22px;fill:var(--au1);filter:drop-shadow(0 0 6px rgba(255,220,150,.9));animation:twinkle 3.4s ease-in-out infinite}
+
+/* таймер: стеклянные плашки со снежной шапкой */
+.hn-count{margin-top:16px}
+.hn .count-label{font:italic 600 clamp(21px,2.1vw,26px)/1.2 var(--serif);color:var(--au2);text-shadow:0 0 14px rgba(255,200,110,.35)}
+.hn .count-row{gap:clamp(10px,1.4vw,16px);margin-top:14px}
+.hn .cell{position:relative;min-width:0;width:clamp(70px,8.6vw,96px);padding:16px 0 12px;border:0!important;border-radius:16px;
+  background:var(--glass),rgba(12,26,56,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:inset 0 0 0 1px var(--glass-line),inset 0 1px 0 rgba(255,255,255,.35),inset 0 -10px 18px rgba(170,200,255,.07),0 0 22px rgba(255,205,120,.16),0 14px 26px -12px rgba(0,0,0,.7)}
+.hn .cell::before{content:"";position:absolute;left:-4px;right:-4px;top:-14px;height:26px;background:var(--snowcap) 0 0/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(10,20,50,.35))}
+.hn .cell::after{content:"";position:absolute;left:12%;right:12%;bottom:5px;height:5px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.55),transparent);opacity:.7}
+.hn .cell + .cell{border-left:0}
+.hn .cell b{font:600 clamp(40px,4.4vw,54px)/1 var(--serif);font-variant-numeric:lining-nums tabular-nums;color:transparent;background:var(--au-text);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 0 rgba(90,55,10,.5))}
+.hn .cell small{font-size:14px;color:#e9eef8;margin-top:4px;letter-spacing:.02em}
+
+/* красная глянцевая кнопка со снегом */
+.hn-daily{margin:30px auto 0;width:min(100%,430px)}
+.hn .daily-btn{position:relative;display:flex;justify-content:center;width:100%;min-height:62px;padding:14px 24px;border-radius:999px;font-size:17px;font-weight:600;letter-spacing:.005em;color:#fff8ec;
+  background:radial-gradient(120% 90% at 50% 0%,#f0646a 0%,rgba(240,100,106,0) 55%),linear-gradient(180deg,#d8303a 0%,#b0141f 52%,#7c0a14 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,190,170,.45),inset 0 -6px 12px rgba(60,0,8,.45),0 0 0 1px rgba(242,207,126,.55),0 0 26px rgba(255,120,90,.38),0 16px 30px -12px rgba(120,0,10,.8)}
+.hn .daily-btn::before{content:"";position:absolute;left:3%;right:28%;top:-15px;height:30px;background:var(--snowcap) 0 0/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(60,0,10,.35));pointer-events:none}
+.hn .daily-btn::after{content:"";position:absolute;left:10%;right:10%;top:3px;height:38%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0));pointer-events:none}
+.hn .daily-btn svg{width:24px;height:24px;fill:#ffd98a;filter:drop-shadow(0 0 6px rgba(255,210,120,.8))}
+.hn .daily-btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.hn .daily-pop{margin:12px auto 0;background:rgba(8,18,40,.9);border-color:var(--glass-line);backdrop-filter:blur(8px)}
+
+/* золотая кнопка */
+.hn-go{position:relative;width:min(100%,430px);min-height:60px;margin-top:20px;font-size:17px;font-weight:600;color:#1b2440!important;
+  background:linear-gradient(180deg,#fff8de 0%,#f8e2a4 40%,#e5bd6c 100%)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,250,230,.8),inset 0 -5px 10px rgba(150,100,30,.25),0 0 0 1px rgba(200,150,70,.6),0 0 28px rgba(255,214,140,.35),0 14px 26px -12px rgba(0,0,0,.6)!important}
+.hn-go::before{content:"";position:absolute;right:5%;width:32%;top:-12px;height:24px;background:var(--snowcap) 0 0/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(80,60,20,.3))}
+.hn-go .spark{width:17px;height:17px}
+.hn-peek{display:inline-flex;align-items:center;gap:14px;margin-top:18px;min-height:44px;padding:6px 10px;color:var(--au2);text-decoration:none;font:500 18px/1.2 var(--sans);letter-spacing:.01em}
+.hn-peek svg{width:13px;height:13px;fill:var(--au2);filter:drop-shadow(0 0 4px rgba(255,214,140,.9))}
+.hn-peek span{border-bottom:1px solid rgba(242,207,126,.35);padding-bottom:2px}
+.hn-peek::before,.hn-peek::after{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,rgba(242,207,126,.7))}
+.hn-peek::after{background:linear-gradient(90deg,rgba(242,207,126,.7),transparent)}
+.hn-peek:hover span{border-bottom-color:var(--au2)}
+
+@media (min-width:900px){
+  .hn-in{padding-top:calc(var(--g-top) + var(--g-h) - 10px)}
+  .hn-br{width:min(40vw,600px)}
+  .hn-br-tl{left:-10%;top:-12%}
+  .hn-br-tr{right:-10%;top:-12%}
+  .hn-br-ml{left:-12%;top:38%;width:min(26vw,380px)}
+  .hn-br-mr{right:-12%;top:30%;width:min(26vw,380px)}
+  .hn-houses{right:1%;bottom:2%;width:min(31vw,520px)}
+  .hn-lantern{left:4%;width:min(15vw,240px)}
+  .hn-orn{right:-34%;top:-6%}
+}
+@media (max-width:899px){
+  .hn{--g-top:56px}
+  .hn-orn{right:-12%;top:-14%;width:clamp(84px,24vw,120px)}
+  .hn-houses{bottom:8%}
+}
+@media (max-width:479px){
+  .hn-in{padding-left:16px;padding-right:16px}
+  .hn .count-row{gap:9px}
+  .hn .cell{width:76px;padding:15px 0 11px}
+  .hn .cell b{font-size:42px}
+  .hn-peek::before,.hn-peek::after{width:30px}
+}
+@media (prefers-reduced-motion:reduce){.hn-orn,.hn-bulb::after,.tr-dust,.hn-rule svg{animation:none}.tr-head{display:none}}
+
+/* ================= ВТОРОЙ ЭКРАН: главный шар-ярмарка ================= */
+.fair{position:relative;overflow:hidden;isolation:isolate;padding:96px 0 120px;
+  background:radial-gradient(48% 42% at 50% 55%,rgba(255,196,120,.2),transparent 70%),
+             radial-gradient(80% 50% at 50% 0%,#0f2348,transparent 75%),
+             linear-gradient(180deg,#071430 0%,#0a1a3a 60%,#0b1c3c 100%)}
+.fair::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:120px;z-index:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef3fb'/%3E%3Cstop offset='1' stop-color='%23b7c8e2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 70C160 40 300 66 460 56S760 30 920 50 1240 70 1440 44V120H0Z' fill='url(%23g)' opacity='.16'/%3E%3Cpath d='M0 96C200 74 380 98 560 88S900 70 1100 86 1340 96 1440 80V120H0Z' fill='url(%23g)' opacity='.3'/%3E%3C/svg%3E") 0 100%/100% 100% no-repeat}
+.fair-in{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-direction:column;align-items:center}
+.fair-head{margin-bottom:22px}
+.fair .hero-globe{width:min(100%,560px)}
+.fair-next{margin-top:30px}
+@media (max-width:639px){.fair{padding:64px 0 96px}.fair .hero-globe{width:min(100%,380px)}}
+
+/* ================= ОБЩИЙ НОЧНОЙ СТИЛЬ РАЗДЕЛОВ ================= */
+.head h2{color:transparent;background:var(--au-text);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 18px rgba(255,206,120,.18))}
+.head .sub{color:#c9d3e6}
+.head-center h2::after{--orn:#e9c47a;opacity:.7}
+.star-mark{fill:var(--au2)!important;filter:drop-shadow(0 0 6px rgba(255,214,140,.8))}
+
+/* фон: ночь с объёмом — туманные пятна света, редкие звёзды */
+.realm,.days,.advent{background-color:var(--n1)}
+.realm{color:#eef2fa;background:
+  radial-gradient(40% 30% at 12% 6%,rgba(255,200,130,.12),transparent 70%),
+  radial-gradient(50% 30% at 92% 46%,rgba(120,150,220,.14),transparent 70%),
+  radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 70% 12%,rgba(255,255,255,.6),transparent),
+  radial-gradient(1.5px 1.5px at 84% 70%,rgba(255,240,210,.7),transparent),radial-gradient(1px 1px at 40% 88%,rgba(255,255,255,.5),transparent),
+  linear-gradient(180deg,#0b1c3c 0%,#0a1834 100%);padding-top:80px}
+/* карточки разделов: стекло, золотая кайма, снежная шапка */
+.room{background:var(--glass),rgba(14,30,62,.62);border:0;color:#eef2fa;
+  box-shadow:inset 0 0 0 1px var(--glass-line),inset 0 1px 0 rgba(255,255,255,.25),0 0 40px rgba(255,200,120,.06),0 30px 50px -28px rgba(0,0,0,.8);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.room::before{content:"";position:absolute;left:18px;right:18px;top:-11px;height:24px;z-index:2;pointer-events:none;background:var(--snowcap) 0 0/100% 100% no-repeat;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}
+.room::after{border-color:rgba(255,226,170,.12)}
+.room-img{box-shadow:0 0 0 1px rgba(255,226,170,.35),0 14px 30px -12px rgba(0,0,0,.7)}
+.room h3{color:transparent;background:var(--au-text);-webkit-background-clip:text;background-clip:text}
+.room h3::before{background:var(--au2)}
+.room-sub{color:#c9d3e6}
+.rubs li{border-top:1px dashed rgba(255,226,170,.25)}
+.rubs span{color:#eef2fa}
+.st{color:var(--au1);background:rgba(255,226,170,.06);border-color:rgba(242,207,126,.5)}
+.st-on{color:#fff8ec;background:linear-gradient(180deg,#d33a43,#951520);border-color:rgba(255,190,170,.5);box-shadow:0 0 12px rgba(220,60,60,.3)}
+a.st-on:hover{background:#b0141f}
+.shop{background:rgba(255,255,255,.04);border:1px solid rgba(255,226,170,.22)}
+.shop-ev{background:rgba(160,120,220,.07);border-color:rgba(200,170,255,.22)}
+.shop-h{color:var(--au1)}
+.shop-a{background:rgba(255,255,255,.06);border-color:rgba(242,207,126,.4);color:#eef2fa}
+.shop-a::after{color:var(--au2)}
+.shop-a:hover{border-color:#ff8a8a;color:#fff}
+.room-wide{background:radial-gradient(60% 80% at 20% 50%,rgba(255,190,110,.12),transparent 70%),var(--glass),rgba(10,22,48,.75)}
+.btn-ink{background:linear-gradient(180deg,#fff8de,#f8e2a4 40%,#e5bd6c)!important;color:#1b2440}
+
+/* анонсы: стеклянные листочки со снегом */
+.days{color:#eef2fa;background:
+  radial-gradient(50% 40% at 85% 0%,rgba(255,200,130,.1),transparent 70%),
+  radial-gradient(1px 1px at 12% 20%,rgba(255,255,255,.6),transparent),radial-gradient(1px 1px at 60% 80%,rgba(255,255,255,.5),transparent),
+  linear-gradient(180deg,#0a1834,#0c1d3e)}
+.days .head h2{display:inline-block}
+.strip{padding-top:12px}
+.leaf{overflow:visible;background:var(--glass),rgba(14,30,62,.7);border:0;color:#eef2fa;
+  box-shadow:inset 0 0 0 1px var(--glass-line),0 24px 40px -22px rgba(0,0,0,.85)}
+.leaf::before{content:"";position:absolute;left:10px;right:10px;top:-9px;height:19px;z-index:3;pointer-events:none;background:var(--snowcap) 0 0/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}
+.leaf img{border-radius:18px 18px 0 0}
+.leaf-top{border-bottom:1px dashed rgba(255,226,170,.25)}
+.leaf-n{color:transparent;background:var(--au-text);-webkit-background-clip:text;background-clip:text}
+.leaf-d{color:#aeb9cf}
+.leaf h3{color:#fff6e2}
+.leaf p:not(.leaf-top){color:#c3cde0}
+.leaf.is-next{box-shadow:inset 0 0 0 1px var(--glass-line),0 0 0 2px #e5bd6c,0 0 30px rgba(255,200,120,.35),0 24px 40px -18px rgba(0,0,0,.8)}
+.leaf.is-next::after{background:linear-gradient(180deg,#fff2c8,#e5bd6c);color:#2a1a05;z-index:4}
+.leaf.is-past{opacity:.55}
+.strip-hint{color:var(--au2)!important}
+
+/* шары-игры: полка со снегом */
+.globes{background:radial-gradient(60% 50% at 50% 100%,rgba(255,196,120,.14),transparent 70%),linear-gradient(180deg,#0c1d3e,#081530)}
+.shelf::before{content:"";position:absolute;left:1%;right:1%;top:calc(var(--gs) * 1.07 - 12px);height:22px;z-index:1;background:var(--snowcap) 0 0/100% 100% no-repeat;pointer-events:none}
+@media (max-width:899px){.shelf::before{display:none}}
+
+/* календарь: стеклянные шары в ночи; вязаная полоса оставлена деталью по краям */
+.advent{color:#eef2fa;background:
+  radial-gradient(40% 26% at 50% 30%,rgba(255,206,130,.12),transparent 70%),
+  radial-gradient(30% 20% at 8% 70%,rgba(120,160,240,.14),transparent 70%),
+  radial-gradient(30% 20% at 94% 60%,rgba(255,190,120,.1),transparent 70%),
+  radial-gradient(1px 1px at 22% 14%,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 77% 22%,rgba(255,255,255,.6),transparent),
+  radial-gradient(1.5px 1.5px at 60% 92%,rgba(255,240,210,.6),transparent),radial-gradient(1px 1px at 8% 48%,rgba(255,255,255,.5),transparent),
+  linear-gradient(180deg,#081530,#0b1c3c 50%,#091733)}
+.advent::before,.advent::after{opacity:.9;box-shadow:0 2px 0 rgba(0,0,0,.25),0 -2px 0 rgba(0,0,0,.25)}
+#kalendar .windows::before{background:radial-gradient(circle at 8% 18%,rgba(255,214,140,.35) 0 6px,transparent 30px),radial-gradient(circle at 94% 30%,rgba(255,200,120,.3) 0 8px,transparent 36px),
+  radial-gradient(circle at 3% 62%,rgba(150,180,240,.3) 0 6px,transparent 30px),radial-gradient(circle at 97% 72%,rgba(255,220,160,.3) 0 7px,transparent 30px),
+  radial-gradient(circle at 50% 40%,rgba(255,214,150,.08),transparent 65%);filter:blur(3px)}
+.seal{background:radial-gradient(120% 90% at 50% 0%,#f0646a 0%,rgba(240,100,106,0) 55%),linear-gradient(180deg,#d8303a,#8c0d18);box-shadow:inset 0 0 0 1px rgba(255,190,170,.4),0 0 0 1px rgba(242,207,126,.5),0 0 24px rgba(255,110,90,.3)}
+.lg{background:rgba(255,255,255,.06);border-color:rgba(255,226,170,.28);color:#eef2fa;box-shadow:none}
+.lg small{color:var(--au2)}
+.tree-rail{background:linear-gradient(180deg,#e9c47a,#b98a3e 60%,#7d5a22);height:6px;border-radius:3px;box-shadow:0 0 14px rgba(255,200,120,.35),0 3px 6px rgba(0,0,0,.5);margin-bottom:-2px;position:relative}
+.tree-rail::before{content:"";position:absolute;left:-4px;right:-4px;top:-10px;height:16px;background:var(--snowcap) 0 0/100% 100% no-repeat;opacity:.95}
+.orn .rib{background:linear-gradient(90deg,#b98a3e,#ffe8b0 45%,#c99a4e)}
+.orn .ball{box-shadow:0 22px 30px -16px rgba(0,0,0,.8),0 0 26px rgba(170,200,255,.12)}
+.ball .in{background:#0f2246}
+.orn .st-w{color:#b9c4da}
+.is-future .st-w{color:#8794ae}
+.is-ready .st-w,.is-opened .st-w{color:var(--au2)}
+.is-today .st-w,.is-next .st-w{color:#2a1a05;background:linear-gradient(180deg,#fff2c8,#e5bd6c)}
+.is-today .ball,.is-next .ball{box-shadow:0 0 0 2px rgba(255,240,200,.9),0 0 0 4.5px rgba(229,189,108,.85),0 0 40px 12px rgba(255,200,120,.45),0 22px 26px -18px rgba(0,0,0,.6)}
+@keyframes dayglow{50%{box-shadow:0 0 0 2px rgba(255,240,200,.9),0 0 0 4.5px #f2cf7e,0 0 60px 20px rgba(255,200,120,.35),0 22px 26px -18px rgba(0,0,0,.6)}}
+.orn .tap{background:linear-gradient(180deg,#d8303a,#951520)}
+.orn .tap::before{border-bottom-color:#d8303a}
+.win-note,.wn-hint{color:#dfe6f3}
+.wn-hint b{color:var(--au2)}
+.adv-plus{color:#c3cde0}
+.orn:focus-visible .ball{outline-color:var(--au2)}
+
+/* старый телевизор: тёплая комната в той же ночи — синий сверху, свет лампы снизу */
+.tvroom{background:
+  radial-gradient(40% 36% at 50% 62%,rgba(255,170,90,.22),transparent 70%),
+  radial-gradient(1px 1px at 18% 12%,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 82% 20%,rgba(255,255,255,.4),transparent),
+  linear-gradient(180deg,#091733 0%,#16182b 34%,#21170f 70%,#0c142a 100%)}
+.tv-case::after{content:"";position:absolute;left:24px;right:24px;top:-12px;height:24px;background:var(--snowcap) 0 0/100% 100% no-repeat;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4));pointer-events:none}
+
+/* подписка */
+.sub-sec{background:radial-gradient(50% 50% at 50% 100%,rgba(255,200,130,.16),transparent 70%),linear-gradient(180deg,#0c142a,#081530 40%,#060f22)}
+.script{color:var(--au2);text-shadow:0 0 24px rgba(255,214,140,.35)}
+.soc{background:var(--glass),rgba(14,30,62,.5);border-color:rgba(242,207,126,.45)}
+.soc svg{fill:var(--au2)}
+.foot{background:#040a17}
+
+/* общие кнопки — то же золото */
+.btn-gold{background:linear-gradient(180deg,#fff8de 0%,#f8e2a4 40%,#e5bd6c 100%);color:#1b2440;box-shadow:inset 0 0 0 1px rgba(255,250,230,.8),0 0 0 1px rgba(200,150,70,.5),0 10px 28px rgba(255,210,140,.28)}
+.globe-switch{border-color:rgba(242,207,126,.7);color:var(--au1)}
+.music{border-color:rgba(242,207,126,.7);color:var(--au1)}
+@media (max-width:599px){.music{width:48px;height:48px;padding:0;justify-content:center;border-radius:50%}}
+
+/* боке за шарами календаря вылезало за край и давало горизонтальную прокрутку на телефоне */
+.advent{overflow-x:clip}
+
+/* стекло шаров календаря на ночном фоне: иней прозрачнее и холоднее, сценка темнее, чтобы шары не были белыми пятнами */
+.ball .frost{background:radial-gradient(circle,rgba(255,255,255,.38) 0 .6px,transparent 1.1px) 0 0/7px 7px,
+  radial-gradient(circle,rgba(255,255,255,.28) 0 .5px,transparent 1px) 3px 4px/9px 8px,
+  radial-gradient(circle at 50% 42%,rgba(190,214,250,.06),rgba(170,198,240,.28) 68%,rgba(200,222,255,.55))}
+.is-future .ball img{filter:blur(2px) saturate(.55) brightness(.72)}
+.is-ready .ball img,.is-today .ball img,.is-next .ball img{filter:blur(.8px) saturate(.9) brightness(.9)}
+.ball .gl{box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),inset -5px -9px 16px rgba(0,10,40,.35),inset 5px 7px 12px rgba(255,255,255,.25)}
+.is-future .mk{background-color:#0f2246;box-shadow:0 0 0 1.5px rgba(242,207,126,.7),0 3px 6px -2px rgba(0,0,0,.6);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23f2cf7e%27 stroke-width=%272%27 stroke-linecap=%27round%27%3E%3Crect x=%275.5%27 y=%2710.5%27 width=%2713%27 height=%279.5%27 rx=%272%27 fill=%27%23142a52%27/%3E%3Cpath d=%27M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5%27/%3E%3Cpath d=%27M12 13.8v2.6%27/%3E%3C/svg%3E")}
+
+/* десктоп: первый экран целиком в окне 1440×900 */
+@media (min-width:900px){
+  .hn{--g-top:54px;--g-h:78px}
+  .hn-title{font-size:clamp(96px,8.6vw,138px)}
+  .hn-lead{margin-top:30px;font-size:clamp(23px,2vw,29px)}
+  .hn-rule{margin-top:12px}
+  .hn-count{margin-top:8px}
+  .hn .count-row{margin-top:16px}
+  .hn .cell{width:88px;padding:13px 0 10px}
+  .hn .cell b{font-size:46px}
+  .hn-daily{margin-top:26px}
+  .hn .daily-btn,.hn-go{min-height:56px}
+  .hn-go{margin-top:16px}
+  .hn-peek{margin-top:10px}
+  .hn-in{padding-bottom:150px}
+}
+@media (min-width:900px) and (max-height:820px){.hn-title{font-size:112px}.hn-lead{margin-top:22px}}
+
+/* телефон: как в референсе — весь первый экран в одном окне, фонарь и домики по краям внизу */
+@media (max-width:599px){
+  .hn{--g-top:54px;--g-h:60px}
+  .hn-in{padding-top:calc(var(--g-top) + var(--g-h) + 2px);padding-bottom:84px}
+  .hn-title{font-size:min(21vw,84px)}
+  .hn-lead{margin-top:10px;font-size:22px}
+  .hn-rule{margin-top:10px}
+  .hn-count{margin-top:6px}
+  .hn .count-label{font-size:20px}
+  .hn .count-row{margin-top:16px}
+  .hn .cell{padding:11px 0 8px}
+  .hn .cell b{font-size:38px}
+  .hn .cell small{font-size:13px}
+  .hn-daily{margin-top:22px}
+  .hn .daily-btn{min-height:56px;font-size:16px}
+  .hn-go{min-height:54px;margin-top:16px;font-size:16px}
+  .hn-peek{margin-top:6px}
+  .hn-lantern{width:30vw;left:-5%;bottom:-2%}
+  .hn-houses{width:64vw;right:-20%;bottom:2%}
+}
+/* шар с ёлкой не закрывает буквы */
+.hn-orn{right:-50%;top:-12%;width:clamp(120px,10.5vw,156px)}
+@media (max-width:599px){.hn-orn{right:-31%;top:-8%;width:94px}}
+@media (min-width:900px){
+  .hn-drift{bottom:-200px;filter:brightness(.62) saturate(.9)}
+  .hn-houses{z-index:3;bottom:1%}
+  .hn-lantern{bottom:-3%}
+}
+/* мягкий переход первого экрана в ярмарку */
+.hn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;z-index:8;pointer-events:none;background:linear-gradient(180deg,rgba(7,20,48,0),#071430)}
+/* снежинки-искры и блёстки шлейфа */
+.hn-flake{position:absolute;z-index:6;height:auto;aspect-ratio:1;opacity:.55;filter:drop-shadow(0 0 4px rgba(220,235,255,.9));animation:fl-tw 5s ease-in-out infinite;animation-delay:var(--fd)}
+@keyframes fl-tw{0%,100%{opacity:.25;transform:rotate(0) scale(.9)}50%{opacity:.8;transform:rotate(30deg) scale(1.05)}}
+.tr-glow{opacity:.8}
+.tr-glit{stroke-dasharray:.1 23 .1 37;animation:dust 6s linear infinite reverse,glit 1.6s ease-in-out infinite;filter:drop-shadow(0 0 3px #fff2c0)}
+@keyframes glit{50%{opacity:.35}}
+@media (max-width:599px){.hn-lantern{left:9%}}
+@media (prefers-reduced-motion:reduce){.hn-flake,.tr-glit{animation:none}}
