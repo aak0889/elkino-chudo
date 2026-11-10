@@ -1,0 +1,50 @@
+/* «Ёлкино чудо»: общий ночной фон, гирлянда и снег для всех внутренних страниц (10.11.2026).
+   Подключается после css/page.css; скрипт — js/night-pages.js. Главная живёт на css/night.css. */
+html{background:#071430}
+body.pn{position:relative;background:transparent;min-height:100vh;overflow-x:hidden}
+/* фон: ночное небо из первого экрана главной + затемнение, закреплено при прокрутке */
+body.pn::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(180deg,rgba(5,11,24,.55),rgba(5,11,24,.2) 40%,rgba(5,11,24,.5)),url("../img/night/sky-m.webp") 50% 70%/cover no-repeat,#071430}
+body.pn::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60% 34% at 50% 14%,rgba(255,210,140,.14),transparent 70%),radial-gradient(70% 30% at 50% 100%,rgba(140,170,230,.16),transparent 70%)}
+@media (min-width:900px){body.pn::before{background-image:linear-gradient(180deg,rgba(5,11,24,.55),rgba(5,11,24,.2) 40%,rgba(5,11,24,.5)),url("../img/night/sky-d.webp")}}
+
+/* шапка и подвал — стекло */
+.pn .pg-top{background:rgba(6,13,28,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pn .pg-foot{background:rgba(5,10,22,.82);border-top-color:rgba(242,207,126,.3)}
+
+/* заголовок страницы: прозрачный, чтобы виделось небо; место под гирлянду */
+.pn .pg-hero{background:radial-gradient(600px 300px at 80% 0%,rgba(233,132,58,.18),transparent 70%),transparent;padding-top:92px}
+.pn .pg-hero h1{color:#fff4d2;text-shadow:0 2px 18px rgba(0,0,0,.55),0 0 28px rgba(255,206,120,.25)}
+.pn .pg-hero .kicker{text-shadow:0 0 14px rgba(255,200,110,.4)}
+.pn .pg-hero .lead{color:#dfe6f2;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* содержимое — тёплая бумажная панель на ночном фоне: текст остаётся читаемым */
+.pn .pg-main{padding:36px 0 64px}
+.pn .pg-main .wrap{position:relative;max-width:860px;width:calc(100% - 24px);padding:34px 22px 38px;border-radius:26px;
+  background:rgba(247,239,222,.965);border:1px solid rgba(242,207,126,.6);
+  box-shadow:0 0 0 1px rgba(8,16,34,.4),0 0 34px rgba(255,205,120,.16),0 26px 60px -24px rgba(0,0,0,.75)}
+.pn .pg-main .wrap.legal{margin-top:0}
+.pn .pg-main:first-child{padding-top:104px} /* страницы без блока-заголовка: освободить место под гирлянду */
+@media (min-width:720px){.pn .pg-main .wrap{padding:44px 44px 48px}}
+
+/* ---------- гирлянда ---------- */
+.pn-garland{position:absolute;left:0;top:60px;width:100%;height:70px;z-index:6;pointer-events:none;overflow:visible}
+.pn-garland svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pn-bulb{position:absolute;width:14px;height:20px;margin:-2px 0 0 -7px;transform:rotate(var(--r,0deg));transform-origin:50% 0}
+.pn-bulb::before{content:"";position:absolute;left:4px;top:0;width:6px;height:6px;border-radius:1px;background:linear-gradient(90deg,#5b4523,#c9a560,#5b4523)}
+.pn-bulb::after{content:"";position:absolute;left:1px;top:5px;width:12px;height:15px;border-radius:50% 50% 46% 46% / 42% 42% 58% 58%;
+  background:radial-gradient(circle at 46% 38%,#fffdf2 0 18%,#ffe9b0 40%,#ffc766 78%,#e89a3a);
+  box-shadow:0 0 10px 3px rgba(255,214,140,.75),0 0 34px 10px rgba(255,190,100,.32);
+  animation:pn-bulb var(--t,3.4s) ease-in-out infinite;animation-delay:var(--d,0s)}
+.pn-bulb.amber::after{background:radial-gradient(circle at 46% 38%,#fff6e6 0 16%,#ffd08a 42%,#f59a42 80%,#c96a22);box-shadow:0 0 10px 3px rgba(255,170,90,.7),0 0 30px 10px rgba(240,140,60,.3)}
+@keyframes pn-bulb{0%,100%{opacity:1;filter:brightness(1)}45%{opacity:1}55%{opacity:.55;filter:brightness(.8)}62%{opacity:1;filter:brightness(1.15)}}
+
+/* ---------- снег ---------- */
+.pn-snow{position:fixed;inset:0;width:100%;height:100%;z-index:15;pointer-events:none}
+
+@media (max-width:599px){
+  .pn .pg-hero{padding-top:84px;padding-bottom:48px}
+  .pn-garland{height:56px}
+}
+@media (prefers-reduced-motion:reduce){.pn-bulb::after{animation:none}}
