@@ -48,3 +48,27 @@ body.pn::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   .pn-garland{height:56px}
 }
 @media (prefers-reduced-motion:reduce){.pn-bulb::after{animation:none}}
+
+/* ---------- светлые акценты (10.11.2026): снежно-белая панель, голубые карточки, красная лента подписки ---------- */
+.pn .pg-main .wrap{background:#fdfcf8;border-color:rgba(255,255,255,.75);
+  box-shadow:0 0 0 1px rgba(8,16,34,.35),0 0 40px rgba(200,222,250,.22),0 26px 60px -24px rgba(0,0,0,.75)}
+/* красно-золотая ленточка по верху панели */
+.pn .pg-main .wrap::before{content:"";position:absolute;left:28px;right:28px;top:0;height:5px;border-radius:0 0 6px 6px;
+  background:linear-gradient(90deg,#b31f2e,#d8434f 50%,#b31f2e);box-shadow:0 1px 0 #e5bd6c}
+.pn .blk h2{color:#13274a}
+.pn .card,.pn .ct{background:linear-gradient(180deg,#eef5fc,#e1ecf8);border-color:rgba(47,79,128,.25)}
+.pn .ct:hover{border-color:#b31f2e}
+
+.pn-band{position:relative;padding:44px 16px 48px;text-align:center;color:#fff3dc;
+  background:radial-gradient(60% 80% at 50% 0%,rgba(255,210,150,.22),transparent 70%),
+    repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 14px,transparent 14px 28px),
+    linear-gradient(180deg,#a51a29,#7e111e)}
+.pn-band::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:#e5bd6c}
+.pn-band p{margin:0 auto;max-width:560px}
+.pn-band .pn-band-k{font:400 30px/1.1 var(--script);color:#ffe2a6}
+.pn-band h2{margin-top:6px;font-size:clamp(28px,4vw,38px);color:#fff}
+.pn-band .pn-band-s{margin-top:8px;color:#ffe6cf;font-size:16px}
+.pn-band nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}
+.pn-band a{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;background:#fff8ee;color:#7e111e;font-weight:600;text-decoration:none;box-shadow:0 10px 22px -12px rgba(40,0,6,.7)}
+.pn-band a:hover{background:#fff}
+.pn .pg-foot{border-top:0}

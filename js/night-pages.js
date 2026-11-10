@@ -85,3 +85,17 @@
   window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { seed(); if (reduce) draw(0); }, 150); });
   if (reduce) draw(0); else { document.addEventListener('visibilitychange', kick); kick(); }
 })();
+
+/* красная лента «Отсчитывать дни вместе» перед подвалом всех внутренних страниц (10.11.2026) */
+(function () {
+  var foot = document.querySelector('.pg-foot');
+  if (!foot || document.querySelector('.pn-band') || !document.body.classList.contains('pn')) return;
+  var s = document.createElement('section'); s.className = 'pn-band'; s.setAttribute('aria-label', 'Подписка на отсчёт');
+  s.innerHTML = '<p class="pn-band-k" aria-hidden="true">Пусть сбываются мечты</p>' +
+    '<h2>Отсчитывать дни вместе</h2>' +
+    '<p class="pn-band-s">Каждый день новый пост: сказка, игра или вопрос.</p>' +
+    '<nav><a href="https://t.me/elkinochudo" target="_blank" rel="noopener">Telegram</a>' +
+    '<a href="https://max.ru/id772156961529_biz2" target="_blank" rel="noopener">MAX</a>' +
+    '<a href="https://vk.ru/club242860616" target="_blank" rel="noopener">ВКонтакте</a></nav>';
+  foot.parentNode.insertBefore(s, foot);
+})();

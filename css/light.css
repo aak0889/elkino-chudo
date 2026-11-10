@@ -1,0 +1,72 @@
+/* «Ёлкино чудо» — светлые разделы главной (10.11.2026, просьба Насти «разбавить: белый, синий, красный»).
+   Подключается после css/night.css. Ночь остаётся в первом экране, ярмарке, разделах, календаре и телевизоре.
+   «Каждый день» — снежно-белый, «Шары-игры» — зимнее голубое небо, «Отсчитывать дни вместе» — рождественский красный. */
+:root{
+  --sn0:#fdfcf8;--sn1:#f4f7fb;--ice1:#e6f0fa;--ice2:#c8dcf1;--ice3:#a6c3e4;
+  --navy:#13274a;--navy-2:#43567a;--xred:#b31f2e;--xred-d:#7e111e;--cream-t:#fff3dc;
+  --drift:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V46C120 22 220 18 330 34s210 34 330 14 240-44 380-36 250 40 400 22V80Z' fill='%23fdfcf8'/%3E%3C/svg%3E");
+}
+
+/* ---------- 1. «Каждый день — маленькая радость»: снежно-белый ---------- */
+.days{position:relative;color:var(--navy);
+  background:
+    linear-gradient(165deg,var(--sn0) 0%,var(--sn0) 35%,var(--sn1) 70%,var(--ice1) 100%)}
+/* сугроб, который «наметает» на тёмный раздел выше */
+.days::before{content:"";position:absolute;left:0;right:0;top:-58px;height:60px;background:var(--drift) 0 0/100% 100% no-repeat;pointer-events:none;
+  filter:drop-shadow(0 -6px 10px rgba(200,222,250,.18))}
+.days .head h2{background:none;color:var(--navy);filter:none;-webkit-text-fill-color:currentColor}
+.days .head h2::first-letter{color:var(--xred)}
+.days .head .sub{color:var(--navy-2)}
+.days .strip-hint{color:var(--xred)!important}
+.days .leaf{background:#fff;color:var(--navy);
+  box-shadow:0 0 0 1px rgba(19,39,74,.08),0 2px 0 rgba(19,39,74,.04),0 22px 40px -26px rgba(19,39,74,.45)}
+.days .leaf::before{display:none}
+.days .leaf img{border-radius:18px 18px 0 0}
+.days .leaf-top{border-bottom:1px dashed rgba(179,31,46,.28)}
+.days .leaf-n{background:none;color:var(--xred);-webkit-text-fill-color:currentColor}
+.days .leaf-d{color:#5d6b85}
+.days .leaf h3{color:var(--navy)}
+.days .leaf p:not(.leaf-top){color:#4a5878}
+.days .leaf.is-next{box-shadow:0 0 0 2px var(--xred),0 26px 44px -22px rgba(179,31,46,.45)}
+.days .leaf.is-next::after{background:var(--xred);color:#fff}
+.days .leaf.is-past{opacity:.6}
+
+/* ---------- 2. «Шары-игры»: зимнее голубое небо ---------- */
+.globes{color:var(--navy);
+  background:
+    radial-gradient(1.4px 1.4px at 14% 18%,#fff,transparent),radial-gradient(1.2px 1.2px at 36% 64%,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 72% 26%,#fff,transparent),radial-gradient(1.2px 1.2px at 88% 70%,#fff,transparent),
+    radial-gradient(55% 45% at 50% 108%,rgba(255,255,255,.75),transparent 70%),
+    linear-gradient(180deg,var(--ice1) 0%,var(--ice2) 55%,var(--ice3) 100%)}
+.globes::before{display:none}
+.globes .head-dark h2{background:none;color:var(--navy);filter:none;-webkit-text-fill-color:currentColor}
+.globes .head-dark h2::after{--orn:#2f4f80;opacity:.55}
+.globes .head-dark .sub{color:var(--navy-2)}
+.globes .head-dark .star-mark{fill:var(--xred)}
+.globes .shelf h3{color:var(--navy)}
+.globes .shelf p{color:#3f527a}
+.globes .glass{box-shadow:0 0 0 1px rgba(255,255,255,.7) inset,0 0 40px rgba(255,255,255,.55),0 22px 30px -8px rgba(19,39,74,.45)}
+.globes .shelf::after{box-shadow:0 18px 30px -6px rgba(19,39,74,.45),0 -1px 0 rgba(255,220,170,.35) inset}
+
+/* ---------- 3. «Отсчитывать дни вместе»: рождественский красный ---------- */
+.sub-sec{position:relative;color:var(--cream-t);
+  background:
+    radial-gradient(60% 70% at 50% 0%,rgba(255,210,150,.22),transparent 70%),
+    repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 14px,transparent 14px 28px),
+    linear-gradient(180deg,#a51a29 0%,#8c1423 60%,var(--xred-d) 100%)}
+/* золотая тесьма с фестонами сверху */
+.sub-sec::before{content:"";position:absolute;left:0;right:0;top:0;height:22px;pointer-events:none;
+  background:radial-gradient(circle at 50% 0,#0c142a 0 13px,#e5bd6c 13.5px 15px,transparent 15.5px) 0 0/34px 22px repeat-x}
+.sub-sec .script{color:#ffe2a6;text-shadow:0 2px 0 rgba(90,8,18,.35),0 0 24px rgba(255,214,140,.35)}
+.sub-sec .dream h2{color:#fff;text-shadow:0 2px 14px rgba(70,5,14,.35)}
+.sub-sec .dream .sub{color:#ffe6cf}
+.sub-sec .soc{background:#fff8ee;border-color:#fff8ee;color:var(--xred-d);font-weight:600;box-shadow:0 10px 22px -12px rgba(40,0,6,.7)}
+.sub-sec .soc svg{fill:var(--xred)}
+.sub-sec .soc:hover{background:#fff;border-color:#e5bd6c}
+.sub-sec .toast{color:#ffe2a6}
+.foot{border-top:3px solid #e5bd6c}
+
+@media (max-width:599px){
+  .days::before{top:-34px;height:36px}
+  .sub-sec::before{height:16px;background-size:26px 16px;background-image:radial-gradient(circle at 50% 0,#0c142a 0 9px,#e5bd6c 9.5px 11px,transparent 11.5px)}
+}
