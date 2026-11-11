@@ -1,0 +1,23 @@
+/* «Ёлкино чудо»: задник с глубиной для всех разделов и страниц (11.11.2026). Скрипт — js/depth.js. */
+.dp-host{position:relative;isolation:isolate}
+.dp-host > .wrap,.dp-host > .fair-in{position:relative;z-index:1}
+.dp{position:absolute;left:0;right:0;bottom:0;height:clamp(170px,20vw,280px);z-index:0;pointer-events:none;overflow:hidden}
+.dp-l{position:absolute;left:0;bottom:-28px;width:100%;height:calc(100% + 28px)}
+.dp-far{opacity:.9;filter:blur(.6px)}
+.dp-win rect{filter:drop-shadow(0 0 4px rgba(255,190,100,.9))}
+/* на светлых разделах окна мягче */
+.days .dp-win,.globes .dp-win{opacity:.8}
+/* внутренние страницы: задник закреплён внизу окна, за содержимым */
+.dp-fixed{position:fixed;height:clamp(140px,24vh,260px);z-index:-1}
+/* отступ снизу, чтобы задник читался и не лез под последние строки */
+.dp-host{padding-bottom:max(var(--pb,0px),clamp(130px,15vw,200px))}
+@media (max-width:599px){.dp{height:190px}.dp-host{padding-bottom:max(var(--pb,0px),170px)}}
+/* календарь: задник над вязаной полосой */
+.advent > .dp{bottom:60px}
+@media (max-width:599px){.advent > .dp{bottom:45px}}
+/* внутренние страницы: полоса-задник перед лентой подписки (ночной лес с домиками) */
+.dp-strip{height:clamp(170px,18vw,240px);padding:0!important;margin-top:-30px;
+  background:linear-gradient(180deg,rgba(7,20,48,0),rgba(7,20,48,.6) 40%,#0a1733)}
+.dp-strip > .dp{height:100%}
+/* мягкий нижний край задника */
+.dp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.06))}

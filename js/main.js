@@ -405,7 +405,7 @@
   var snowCv = document.getElementById('snow');
   (function () {
     var now = new Date(), m = now.getMonth(), d = now.getDate();
-    var season = (m === 10 && d >= 25) || m === 11 || (m === 0 && d <= 14);
+    var season = m === 10 || m === 11 || (m === 0 && d <= 14);   // снег с 1 ноября (11.11.2026: Настя просит снег по всему сайту)
     if (/[?&]snow=1/.test(location.search)) season = true;
     if (!snowCv || !season || reduce) return;
     snowCv.classList.add('on');
