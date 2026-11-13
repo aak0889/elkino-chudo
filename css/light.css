@@ -70,3 +70,33 @@
   .days::before{top:-34px;height:36px}
   .sub-sec::before{height:16px;background-size:26px 16px;background-image:radial-gradient(circle at 50% 0,#0c142a 0 9px,#e5bd6c 9.5px 11px,transparent 11.5px)}
 }
+
+/* ---------- «Каждый день»: прошедшие дни открываются постом (13.11.2026) ---------- */
+.days .leaf.is-past.is-open{opacity:1}
+.days .leaf.is-open{cursor:pointer;transition:transform .2s,box-shadow .2s}
+.days .leaf.is-open:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(179,31,46,.35),0 26px 44px -24px rgba(19,39,74,.55)}
+.leaf-open{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px;border:1px solid rgba(179,31,46,.45);border-radius:999px;background:#fff;color:var(--xred);font:600 14.5px/1 var(--sans);cursor:pointer}
+.leaf-open svg{width:16px;height:16px}
+.leaf-open:hover,.leaf-open:focus-visible{background:var(--xred);color:#fff}
+.days .leaf.is-open .leaf-body p:not(.leaf-top){margin-bottom:14px}
+.days .leaf.is-today{box-shadow:0 0 0 2px var(--xred),0 26px 44px -22px rgba(179,31,46,.45)}
+.days .leaf.is-today::after{content:"сегодня";position:absolute;top:12px;left:12px;background:var(--xred);color:#fff;font:600 12px/1 var(--sans);padding:7px 11px;border-radius:999px}
+.day-dlg{color-scheme:light;width:min(720px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:0;border:0;border-radius:24px;background:#fdfcf8;color:var(--navy);box-shadow:0 30px 70px -20px rgba(10,20,36,.7)}
+.day-dlg::backdrop{background:rgba(10,20,36,.6);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.day-dlg[open]{animation:dlgin .3s ease-out;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.day-dlg .dlg-x{z-index:2;background:rgba(255,255,255,.9);color:var(--navy)}
+.day-img{width:100%;height:100%;object-fit:cover;min-height:100%}
+.day-txt{padding:28px 28px 26px;font-size:16px;line-height:1.6}
+.day-top{font-size:13.5px;color:#5d6b85}
+.day-top b{font:700 22px/1 var(--serif);color:var(--xred)}
+.day-dlg h3{margin:8px 0 12px;font-size:clamp(26px,4vw,32px);line-height:1.1;color:var(--navy)}
+.day-txt p+p,.day-txt ol+p,.day-txt p+ol{margin-top:10px}
+.day-txt ol{margin:10px 0 0;padding-left:22px}
+.day-txt li+li{margin-top:4px}
+.day-more{margin-top:18px!important;padding-top:14px;border-top:1px dashed rgba(179,31,46,.3)}
+.day-tg{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:999px;background:var(--xred);color:#fff;font-weight:600;text-decoration:none}
+@media (max-width:719px){
+  .day-dlg[open]{display:block}
+  .day-img{height:auto;aspect-ratio:4/3;min-height:0}
+  .day-txt{padding:20px 18px 22px}
+}

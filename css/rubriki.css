@@ -1,0 +1,121 @@
+/* Рубрики-страницы «Ёлкино чудо» (13.11.2026): рецепты, «Как было у нас», игры для детей, бланк письма Деду Морозу.
+   Подключается после page.css / night-pages.css / depth.css. */
+.pg-main .wrap.wide{max-width:1080px}
+.rb-intro{max-width:680px;font-size:17px;color:var(--ink-2)}
+.rb-nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.rb-nav a{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border-radius:999px;border:1px solid rgba(47,79,128,.35);background:#fff;color:var(--ink);text-decoration:none;font-size:14.5px}
+.rb-nav a:hover{border-color:var(--berry);color:var(--berry)}
+.rb-h{margin-top:44px;font-size:clamp(30px,4.4vw,40px)}
+.rb-h small{display:block;margin-top:6px;font:400 15.5px/1.5 var(--sans);color:var(--ink-2)}
+.rb-cta{margin-top:40px;padding:22px 24px;border-radius:22px;background:#fbe3c6;border:1px solid rgba(233,132,58,.45);display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.rb-cta p{max-width:560px}
+.rb-cta .btn{min-height:48px;padding:10px 22px}
+
+/* ---------- рецепты ---------- */
+.rc-list{display:grid;gap:26px;margin-top:22px}
+.rc{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);border-radius:24px;overflow:hidden;background:var(--card);border:1px solid rgba(47,79,128,.22);box-shadow:0 18px 40px -30px rgba(20,35,65,.6)}
+.rc:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.rc:nth-child(even) .rc-img{order:2}
+.rc-img{width:100%;height:100%;object-fit:cover;min-height:320px}
+.rc-b{padding:24px 26px 26px}
+.rc-k{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:var(--ink-2)}
+.rc-k span{display:inline-flex;align-items:center;gap:6px}
+.rc-k span::before{content:"";width:7px;height:7px;transform:rotate(45deg);background:var(--mandarin)}
+.rc h3{margin-top:8px;font-size:clamp(28px,3.4vw,34px);color:var(--ink)}
+.rc .rc-lead{margin-top:8px;color:var(--ink-2)}
+.rc h4{margin:16px 0 6px;font:600 14px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--berry)}
+.rc ul,.rc ol{margin:0;padding-left:20px;font-size:15.5px;line-height:1.55}
+.rc li+li{margin-top:3px}
+.rc .rc-tip{margin-top:14px;padding:10px 14px;border-radius:14px;background:#fff6e6;border-left:3px solid var(--mandarin);font-size:15px}
+
+/* ---------- «Как было у нас»: ретро-открытки ---------- */
+.by-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px;margin-top:26px}
+.by{--acc:#b33a44;position:relative;padding:14px 14px 20px;background:#fffaf0;border-radius:6px;
+  box-shadow:0 1px 0 rgba(90,60,20,.12),0 22px 36px -24px rgba(60,35,10,.55);
+  background-image:radial-gradient(ellipse at 20% 0,rgba(233,190,120,.18),transparent 60%),radial-gradient(ellipse at 100% 100%,rgba(200,150,80,.16),transparent 55%)}
+.by:nth-child(3n+1){transform:rotate(-.6deg)}
+.by:nth-child(3n+2){transform:rotate(.5deg);--acc:#2f4f80}
+.by:nth-child(3n){transform:rotate(-.3deg);--acc:#b8651d}
+.by-ph{position:relative;border:6px solid #fff;box-shadow:0 0 0 1px rgba(90,60,20,.18),0 8px 16px -10px rgba(60,35,10,.6)}
+.by-ph img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:sepia(.12) saturate(1.05)}
+.by-stamp{position:absolute;top:-10px;right:-8px;padding:6px 10px 5px;background:#fff8ea;border:2px dashed var(--acc);color:var(--acc);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;transform:rotate(6deg)}
+.by-k{margin-top:14px;font:400 21px/1 var(--script);color:var(--acc)}
+.by h3{margin-top:4px;font-size:27px;color:#2b2015}
+.by p{margin-top:8px;font-size:15.5px;line-height:1.6;color:#4d4234}
+.by-src{margin-top:10px!important;font-size:13px!important;color:#8a7a62!important}
+.by-src a{color:inherit}
+
+/* ---------- игры для детей ---------- */
+.gm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:20px}
+.qz{display:flex;flex-direction:column;padding:20px 20px 18px;border-radius:22px;background:#fff;border:1px solid rgba(47,79,128,.22);box-shadow:0 14px 30px -24px rgba(20,35,65,.6)}
+.qz:nth-child(4n+1){background:#fff6f2}.qz:nth-child(4n+2){background:#f2f7ff}.qz:nth-child(4n+3){background:#fffaf0}.qz:nth-child(4n){background:#f6f3ff}
+.qz-n{font:700 15px/1 var(--sans);color:var(--berry)}
+.qz-q{margin-top:8px!important;font-size:17px;line-height:1.5}
+.qz-e{margin-top:6px!important;font-size:34px;line-height:1.25;letter-spacing:.06em}
+.qz-a{margin-top:auto;padding-top:14px}
+.qz-a button{min-height:44px;padding:8px 18px;border-radius:999px;border:1px solid rgba(47,79,128,.5);background:#fff;color:var(--sky);font:600 15px/1 var(--sans);cursor:pointer}
+.qz-a button:hover{background:var(--sky);color:#fff}
+.qz-a p{display:none;font:600 20px/1.25 var(--serif);color:var(--ink)}
+.qz-a p small{display:block;margin-top:4px;font:400 14px/1.45 var(--sans);color:var(--ink-2)}
+.qz.open .qz-a button{display:none}
+.qz.open .qz-a p{display:block;animation:qzin .35s ease-out}
+@keyframes qzin{from{opacity:0;transform:translateY(6px)}}
+.mv{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
+.mv .qz{padding:18px 20px}
+.mv-text{white-space:pre-line;font:500 17px/1.6 var(--sans)}
+.cl-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:20px}
+.cl{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(47,79,128,.22);text-decoration:none;color:var(--ink)}
+.cl img{aspect-ratio:3/4;object-fit:contain;background:#fff;padding:8px}
+.cl span{padding:10px 14px 14px;border-top:1px dashed rgba(47,79,128,.3);font-size:15px;font-weight:500}
+.cl span small{display:block;font-weight:400;font-size:13px;color:var(--ink-2)}
+.cl:hover{border-color:var(--berry)}
+.dl-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+
+/* ---------- бланк письма Деду Морозу (A4) ---------- */
+.bl-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.bl-wrap{margin-top:22px;display:grid;place-items:center;padding:24px 12px;border-radius:24px;background:#e9e3d6}
+.sheet{width:min(100%,794px);aspect-ratio:210/297;container-type:inline-size;position:relative;background:#fffdf7;box-shadow:0 20px 40px -24px rgba(40,30,10,.6);color:#2a2018;overflow:hidden}
+.sheet-in{position:absolute;inset:6.5cqw 7.5cqw 6cqw;display:flex;flex-direction:column}
+.sheet .frame{position:absolute;inset:3.2cqw;border:.35cqw solid #b33a44;border-radius:1.4cqw;pointer-events:none}
+.sheet .frame::after{content:"";position:absolute;inset:.9cqw;border:.15cqw solid rgba(179,58,68,.5);border-radius:1cqw}
+.sh-top{display:flex;justify-content:space-between;align-items:flex-start;gap:3cqw}
+.sh-kick{font:400 3.2cqw/1 var(--script);color:#b33a44}
+.sh-h{margin-top:1cqw;font:600 6.6cqw/1 var(--serif);color:#1f2f52}
+.sh-stamp{flex:none;width:15cqw;height:18cqw;border:.3cqw dashed #2f4f80;display:grid;place-items:center;text-align:center;font:500 1.6cqw/1.3 var(--sans);color:#2f4f80;padding:1cqw}
+.sh-stamp svg{width:8cqw;height:8cqw;margin:0 auto .6cqw;display:block}
+.sh-row{display:flex;align-items:flex-end;gap:1.4cqw;margin-top:3.4cqw;font:400 2.5cqw/1.2 var(--sans)}
+.sh-row b{font-weight:500;white-space:nowrap}
+.sh-row i{flex:1;border-bottom:.18cqw solid #8b7a66;height:3.2cqw}
+.sh-q{margin-top:3.6cqw;font:600 2.6cqw/1.2 var(--sans);color:#1f2f52}
+.sh-lines{margin-top:.6cqw;display:grid;gap:0}
+.sh-lines i{display:block;height:5cqw;border-bottom:.18cqw solid #b9ab97}
+.sh-draw{margin-top:3.6cqw;flex:1;min-height:18cqw;border:.25cqw dashed #b9ab97;border-radius:1.6cqw;display:flex;align-items:flex-start;justify-content:center;padding-top:1.6cqw;font:400 2.3cqw/1 var(--sans);color:#8b7a66}
+.sh-foot{margin-top:2.6cqw;display:flex;justify-content:space-between;align-items:flex-end;font:400 2cqw/1.35 var(--sans);color:#6b5d4b}
+.sh-foot b{font:400 3.6cqw/1 var(--script);color:#b33a44}
+.sheet-adult .sh-lines i{height:6cqw}
+.sheet-adult .sh-q{margin-top:5cqw}
+.bl-note{margin-top:14px;font-size:14.5px;color:var(--ink-2);text-align:center}
+
+@media (max-width:899px){
+  .by-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:719px){
+  .rc,.rc:nth-child(even){grid-template-columns:minmax(0,1fr)}
+  .rc:nth-child(even) .rc-img{order:0}
+  .rc-img{min-height:0;aspect-ratio:4/3;height:auto}
+  .rc-b{padding:18px 18px 20px}
+  .by-list{grid-template-columns:minmax(0,1fr);gap:26px}
+  .by{transform:none!important}
+  .rb-cta{padding:18px}
+}
+
+/* печать: только выбранный лист A4 (клон в #print-root), без сайта вокруг */
+#print-root{display:none}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  html,body{background:#fff!important;margin:0!important;padding:0!important}
+  body.printing > *:not(#print-root){display:none!important}
+  body.printing #print-root{display:block}
+  #print-root .sheet{width:210mm;height:296mm;aspect-ratio:auto;box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}

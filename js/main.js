@@ -41,10 +41,10 @@
     var p = leaves[i].getAttribute('data-date').split('-');
     var dt = new Date(+p[0], +p[1] - 1, +p[2]);
     if (dt < today) leaves[i].classList.add('is-past');
-    else if (!next) next = leaves[i];
+    else if (+dt === +today) { leaves[i].classList.add('is-today'); if (!next) next = leaves[i]; }
+    else { if (!leaves[i].parentNode.querySelector('.is-next')) leaves[i].classList.add('is-next'); if (!next) next = leaves[i]; }
   }
   if (next) {
-    next.classList.add('is-next');
     var strip = document.getElementById('strip');
     if (strip && strip.scrollWidth > strip.clientWidth && next.offsetLeft > 40) strip.scrollLeft = next.offsetLeft - 16;
   }
