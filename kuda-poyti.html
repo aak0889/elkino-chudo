@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Куда пойти на Новый год: Москва и Петербург — Ёлкино чудо</title>
+<meta name="description" content="Куда пойти на новогодние праздники в Москве и Санкт-Петербурге: ёлки, катки, ярмарки, музеи и готовые маршруты. Подбор за три шага: с кем идёте, сколько стоит, где и на сколько.">
+<meta name="theme-color" content="#0b1526">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
+<link rel="stylesheet" href="css/page.css?v=20261110">
+<link rel="stylesheet" href="css/night-pages.css?v=20261110">
+<link rel="stylesheet" href="css/depth.css?v=20261111">
+<link rel="stylesheet" href="css/rubriki.css?v=20261113">
+<link rel="stylesheet" href="css/kuda.css?v=20261113">
+</head>
+<body>
+
+<header class="pg-top">
+  <a class="pg-brand" href="./"><span class="mono" aria-hidden="true"><i></i><i></i>Е</span><span>Ёлкино чудо</span></a>
+  <a class="pg-back" href="./#sobytiya">← Праздничные события</a>
+</header>
+
+<section class="pg-hero">
+  <p class="kicker" aria-hidden="true">Праздничные события</p>
+  <h1>Куда пойти</h1>
+  <p class="lead">Москва и Петербург: ёлки, катки, ярмарки, музеи и готовые маршруты. Три шага, и перед вами места, которые подходят именно вам.</p>
+</section>
+
+<main class="pg-main">
+  <div class="wrap wide">
+    <p class="rb-intro">Список собран из подборки Ёлкина чуда и сверен с сайтами площадок. Где даты, цены или часы сезона 2026–27 ещё не опубликованы, мы так и пишем: «уточняйте на сайте». Перед выходом проверьте афишу.</p>
+    <p class="kd-wx" id="kd-wx" role="status" hidden></p>
+
+    <div class="kd-panel">
+      <div class="kd-city" id="kd-city" role="group" aria-label="Город"></div>
+
+      <h2 class="kd-h2"><span>1</span>С кем идёте?</h2>
+      <div class="kd-tiles" id="kd-who"></div>
+
+      <div id="kd-step2" hidden>
+        <h2 class="kd-h2"><span>2</span><em id="kd-s2t"></em></h2>
+        <div class="kd-chips" id="kd-s2c"></div>
+      </div>
+
+      <h2 class="kd-h2"><span>3</span>Ещё уточнить</h2>
+      <div class="kd-fl"><p>Бюджет</p><div class="kd-chips" id="kd-price"></div></div>
+      <div class="kd-fl"><p>Формат</p><div class="kd-chips" id="kd-mode"></div></div>
+      <div class="kd-fl"><p>Район</p><div class="kd-chips" id="kd-dist"></div></div>
+      <div class="kd-fl"><p>На сколько</p><div class="kd-chips" id="kd-time"></div></div>
+      <div class="kd-fl"><p>Где</p><div class="kd-chips" id="kd-in"></div></div>
+    </div>
+
+    <p class="kd-count" id="kd-count" aria-live="polite"></p>
+    <div id="kd-res" class="kd-grid"></div>
+
+    <section class="kd-dayw" aria-labelledby="kd-dh">
+      <h2 id="kd-dh">Мой день <span class="kd-badge" id="kd-day-n">0</span></h2>
+      <div id="kd-day"></div>
+      <div class="kd-sharebar" id="kd-share" hidden>
+        <a class="btn btn-red" id="kd-tg" href="#" target="_blank" rel="noopener">Отправить в Telegram</a>
+        <button type="button" class="btn kd-btn2" id="kd-copy">Скопировать</button>
+      </div>
+    </section>
+
+    <div class="rb-cta">
+      <p>Знаете хорошее место, которого здесь нет, или заметили устаревшие данные? Напишите в канале «Ёлкино чудо», мы поправим.</p>
+      <a class="btn btn-red" href="https://t.me/elkinochudo" target="_blank" rel="noopener">Канал «Ёлкино чудо»</a>
+    </div>
+  </div>
+</main>
+
+<footer class="pg-foot">
+  <p>© 2026 Ёлкино чудо · <a href="about.html">О проекте</a></p>
+  <p><a href="politika.html">Политика обработки персональных данных</a> · <a href="soglasie.html">Согласие на обработку</a></p>
+</footer>
+<script src="js/kuda-data.js?v=20261113"></script>
+<script src="js/kuda-routes.js?v=20261113"></script>
+<script src="js/kuda.js?v=20261113" defer></script>
+<script src="js/night-pages.js?v=20261110" defer></script>
+<script src="js/depth.js?v=20261111" defer></script>
+</body>
+</html>
