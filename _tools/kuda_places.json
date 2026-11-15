@@ -1,0 +1,4227 @@
+[
+ {
+  "city": "msk",
+  "name": "Парк Горького",
+  "cat": "park",
+  "desc": "Большой парк с катком, кафе и прогулками вдоль набережной; каток к сезону готовят.",
+  "url": "https://parkgorkogo.ru",
+  "url_status": 200,
+  "addr": "Крымский Вал, 9",
+  "metro": "Октябрьская / Парк культуры",
+  "metro_min": 7,
+  "price_kind": "free",
+  "price": "вход бесплатный",
+  "price_year": "постоянная",
+  "price_src": "https://parkgorkogo.ru",
+  "hours": "круглосуточно",
+  "hours_src": "https://parkgorkogo.ru",
+  "season": "Каток готовят к открытию, даты сезона 2026–27 пока не объявлены.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "dance"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "Часть партера закрыта на благоустройство (по сайту). Цены катка не найдены."
+ },
+ {
+  "city": "msk",
+  "name": "Парк «Зарядье»",
+  "cat": "park",
+  "desc": "Парящий мост с видом на Кремль и зимняя прогулка; зимой обычно работает «Ледяная пещера».",
+  "url": "https://zaryadyepark.ru",
+  "url_status": 301,
+  "addr": "Варварка, 6, стр. 1",
+  "metro": "Китай-город",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "вход в парк бесплатный",
+  "price_year": "постоянная",
+  "price_src": "",
+  "hours": "круглосуточно",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "Сайт не открылся с проверяющей машины. Часы и цена пещеры не подтверждены."
+ },
+ {
+  "city": "msk",
+  "name": "Аптекарский огород",
+  "cat": "park",
+  "desc": "Ботанический сад МГУ с зимними оранжереями, тихо в будни.",
+  "url": "https://hortus.msu.ru",
+  "url_status": 200,
+  "addr": "проспект Мира, 26, стр. 1",
+  "metro": "Проспект Мира / Сухаревская",
+  "metro_min": 7,
+  "price_kind": "range",
+  "price": "500 ₽ в будни, 600 ₽ в выходные; льготный 350 / 400 ₽",
+  "price_year": "2026",
+  "price_src": "https://hortus.msu.ru/ticketprice.html",
+  "hours": "ежедневно 10:00–20:00, касса до 19:30",
+  "hours_src": "https://otello.ru/nomer/aptekarskij-ogorod-moskva",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "pair",
+   "solo",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Цены с официальной страницы, проверено 13.11.2026."
+ },
+ {
+  "city": "msk",
+  "name": "ТРЦ «Авиапарк»",
+  "cat": "elka",
+  "desc": "Крытая новогодняя программа и ёлка; на сайте есть разделы про ёлку и зоны Yo-Kai Land и Hello Park.",
+  "url": "https://www.aviapark.com",
+  "url_status": 301,
+  "addr": "Ходынский бульвар, 4",
+  "metro": "ЦСКА",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "вход бесплатный",
+  "price_year": "постоянная",
+  "price_src": "https://www.aviapark.com",
+  "hours": "",
+  "hours_src": "https://www.aviapark.com",
+  "season": "",
+  "for": [
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": 0,
+  "notes": "Содержимое программы 2026–27 с сайта не извлечено."
+ },
+ {
+  "city": "msk",
+  "name": "Парк «Сокольники»",
+  "cat": "park",
+  "desc": "Широкие аллеи, зимой работает каток «Лёд», горки.",
+  "url": "https://www.sokolniki.com",
+  "url_status": 0,
+  "addr": "Сокольнический Вал, 1, стр. 1",
+  "metro": "Сокольники",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "каток от 200 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://www.kp.ru/afisha/msk/obzory/moj-gorod/katok-v-sokolnikah/",
+  "hours": "каток сезона 2025–26: 1 дек – 9 мар",
+  "hours_src": "https://www.kp.ru/afisha/msk/obzory/moj-gorod/katok-v-sokolnikah/",
+  "season": "Каток в 2025–26 работал с 1 декабря по 9 марта. Открытие 2026–27 ещё не объявлено.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "dance"
+  ],
+  "indoor": "out",
+  "district": "Восток",
+  "time": "half",
+  "budget": 1,
+  "notes": "Официальный сайт sokolniki.com не открылся с проверяющей машины 13.11.2026. Цены 2026–27 не опубликованы."
+ },
+ {
+  "city": "msk",
+  "name": "ВДНХ",
+  "cat": "park",
+  "desc": "Крупный комплекс: каток, новогодние программы, павильоны, ярмарка, музеи; на день.",
+  "url": "https://vdnh.ru",
+  "url_status": 200,
+  "addr": "проспект Мира, 119",
+  "metro": "ВДНХ",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "вход на территорию бесплатный; каток и музеи отдельно",
+  "price_year": "постоянная",
+  "price_src": "https://vdnh.ru",
+  "hours": "территория открыта; часы объектов на сайте",
+  "hours_src": "https://vdnh.ru",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult",
+   "dance"
+  ],
+  "indoor": "both",
+  "district": "Север",
+  "time": "day",
+  "budget": 0,
+  "notes": "Цены катка 2026–27 не найдены; ярмарка 2025–26 на ВДНХ ежедневно 11:00–21:00, вход свободный (Ведомости)."
+ },
+ {
+  "city": "msk",
+  "name": "Московский планетарий",
+  "cat": "razvl",
+  "desc": "Звёздный зал, музей Урании, шоу-программы; новогодние сеансы по афише.",
+  "url": "https://www.planetarium-moscow.ru",
+  "url_status": 200,
+  "addr": "Садовая-Кудринская, 5, стр. 1",
+  "metro": "Баррикадная / Краснопресненская",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "от 900 ₽ («Эпоха звёзд»)",
+  "price_year": "2026",
+  "price_src": "https://www.planetarium-moscow.ru",
+  "hours": "",
+  "hours_src": "https://www.planetarium-moscow.ru",
+  "season": "",
+  "for": [
+   "family",
+   "kids",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 1,
+  "notes": "11–12 ноября зал был закрыт. Цена на сайте отражает несколько программ: от 900 до 7 500 ₽."
+ },
+ {
+  "city": "msk",
+  "name": "Экспериментаниум",
+  "cat": "muzey",
+  "desc": "Музей науки с интерактивными опытами, на 3 часа.",
+  "url": "https://experimentanium.ru",
+  "url_status": 200,
+  "addr": "Ленинградский проспект, 80, корп. 11",
+  "metro": "Сокол",
+  "metro_min": 10,
+  "price_kind": "range",
+  "price": "взрослый 950–1750 ₽, детский 4–16 лет 850–1450 ₽ (три тарифа), до 4 лет бесплатно",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://experimentanium.ru/tickets/",
+  "hours": "ежедневно 9:30–20:00, касса закрывается за час до закрытия",
+  "hours_src": "https://experimentanium.ru/",
+  "season": "",
+  "for": [
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": 2,
+  "notes": "Цены и часы на странице не извлеклись. Прежние данные «детский от 850, взрослый от 950 ₽, 9:30–20:00» без источника; budget приблизительный."
+ },
+ {
+  "city": "msk",
+  "name": "Театр Образцова",
+  "cat": "show",
+  "desc": "Кукольный театр, в репертуаре есть сезонные новогодние спектакли для детей.",
+  "url": "https://www.puppet.ru",
+  "url_status": 200,
+  "addr": "Садовая-Самотёчная, 3",
+  "metro": "Цветной бульвар / Сухаревская",
+  "metro_min": 7,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "https://www.puppet.ru",
+  "hours": "касса ежедневно 10:00–19:00",
+  "hours_src": "https://www.puppet.ru",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Метро по адресу: рядом Цветной бульвар и Сухаревская; прежнее «Маяковская» не подтверждено. Цены не получены."
+ },
+ {
+  "city": "msk",
+  "name": "Океанариум в Крокус Сити",
+  "cat": "razvl",
+  "desc": "Океанариум с шоу «Русалочки» и познавательными занятиями.",
+  "url": "https://crocus-oceanarium.ru",
+  "url_status": 200,
+  "addr": "Красногорск, ул. Международная, 10 (Крокус Сити)",
+  "metro": "Мякинино",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "взрослый 1350–1950 ₽, детский 4–13 лет 1000–1400 ₽ (зависит от даты и тарифа; пт, выходные и праздники — 1750/1300 ₽ по фикс. дате)",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://crocus-oceanarium.ru/price/",
+  "hours": "ежедневно 10:00–22:00, касса до 21:00, кроме санитарных дней",
+  "hours_src": "https://crocus-oceanarium.ru/",
+  "season": "",
+  "for": [
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Область",
+  "time": "half",
+  "budget": 2,
+  "notes": "Цены на отдельной странице, не получены."
+ },
+ {
+  "city": "msk",
+  "name": "Московский зоопарк",
+  "cat": "razvl",
+  "desc": "Зимняя прогулка, часть павильонов тёплые.",
+  "url": "https://www.moscowzoo.ru",
+  "url_status": 301,
+  "addr": "Большая Грузинская, 1",
+  "metro": "Баррикадная / Краснопресненская",
+  "metro_min": 5,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "both",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 1,
+  "notes": "Сайт не открылся для WebFetch (сертификат). Цены и часы не подтверждены; старые «около 1000 ₽, 9–17» без источника."
+ },
+ {
+  "city": "msk",
+  "name": "Музей космонавтики",
+  "cat": "muzey",
+  "desc": "Симуляторы и интерактив, рядом ВДНХ; по четвергам Музейная неделя бесплатно в 3-ю неделю месяца.",
+  "url": "https://kosmo-museum.ru",
+  "url_status": 200,
+  "addr": "проспект Мира, 111",
+  "metro": "ВДНХ",
+  "metro_min": 10,
+  "price_kind": "from",
+  "price": "взрослый 500 ₽, детский 7–18 лет 350 ₽; семейный (2+2) 1500 ₽",
+  "price_year": "2026–27 (прейскурант от 13.11.2026)",
+  "price_src": "https://kosmo-museum.ru/static_pages/stoimost-biletov",
+  "hours": "пн, вт, ср, пт, вс 10:00–19:00; чт, сб 10:00–21:00; работает 7 дней",
+  "hours_src": "https://kosmo-museum.ru/",
+  "season": "",
+  "for": [
+   "family",
+   "kids",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": 1,
+  "notes": "Цены в PDF-прейскуранте, не прочитаны; прежние «350–500 ₽» без подтверждения."
+ },
+ {
+  "city": "msk",
+  "name": "Царицыно",
+  "cat": "usadba",
+  "desc": "Дворец, парк, оранжереи; зимой «Золотой ключик» и «Новогодний Атриум-Фест».",
+  "url": "https://www.tsaritsyno-museum.ru",
+  "url_status": 301,
+  "addr": "Дольская, 1",
+  "metro": "Царицыно",
+  "metro_min": 15,
+  "price_kind": "from",
+  "price": "комплексный билет на 3 здания (Большой дворец, входная зона, Хлебный дом) 900 ₽, льготный 540 ₽; оранжереи 250 ₽",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://tsaritsyno-museum.ru/the_museum/prices-and-benefits/",
+  "hours": "музей вт–чт, вс 10:00–18:00; пт–сб 10:00–20:00; пн выходной; оранжереи ср–вс; парк ежедневно 06:00–24:00",
+  "hours_src": "https://www.tsaritsyno-museum.ru/",
+  "season": "«Золотой ключик» (3+) 11 дек 2026 – 6 янв 2027; «Атриум-Фест» 20 дек 2026 – 9 янв 2027.",
+  "for": [
+   "family",
+   "kids",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult",
+   "dance"
+  ],
+  "indoor": "both",
+  "district": "Юг",
+  "time": "half",
+  "budget": 1,
+  "notes": ""
+ },
+ {
+  "city": "msk",
+  "name": "Москвариум на ВДНХ",
+  "cat": "razvl",
+  "desc": "Океанариум; новый сезон интерактивной сказки «Снежная Королева. История Кая и Герды» с 12 декабря.",
+  "url": "https://moskvarium.ru",
+  "url_status": 200,
+  "addr": "проспект Мира, 119, стр. 23 (ВДНХ)",
+  "metro": "ВДНХ",
+  "metro_min": 10,
+  "price_kind": "from",
+  "price": "взрослый от 1 450 ₽ (пн–чт), 1 700 ₽ (пт–вс); детский 3–12 лет от 950 / 1 100 ₽",
+  "price_year": "2026",
+  "price_src": "https://moskvarium.ru/prices/",
+  "hours": "ежедневно 10:00–22:00; закрыт 30.11.2026, 21.12.2026, 18.01.2027",
+  "hours_src": "https://moskvarium.ru",
+  "season": "«Снежная Королева» с 12 декабря 2026.",
+  "for": [
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": 2,
+  "notes": "Цена за сам океанариум; сказка может быть отдельным билетом."
+ },
+ {
+  "city": "msk",
+  "name": "Yo-Kai Land (Авиапарк)",
+  "cat": "razvl",
+  "desc": "Зона аттракционов и аркад в ТРЦ «Авиапарк».",
+  "url": "https://www.aviapark.com",
+  "url_status": 301,
+  "addr": "Ходынский бульвар, 4",
+  "metro": "ЦСКА",
+  "metro_min": 5,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "laugh"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "1h",
+  "budget": 2,
+  "notes": "Упомянут на сайте ТРЦ, отдельной страницы с ценой и часами не найдено. Цены не подтверждены."
+ },
+ {
+  "city": "msk",
+  "name": "Воробьёвы горы",
+  "cat": "vid",
+  "desc": "Смотровая площадка с видом на город и университет; канатная дорога по расписанию.",
+  "url": "https://vorobyovy-gory.ru",
+  "url_status": 301,
+  "addr": "Воробьёвская набережная",
+  "metro": "Воробьёвы горы",
+  "metro_min": 10,
+  "price_kind": "free",
+  "price": "смотровая бесплатна",
+  "price_year": "постоянная",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Юг",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Сайт принадлежит природному заказнику; режим и цены канатной дороги не подтверждены."
+ },
+ {
+  "city": "msk",
+  "name": "Фестиваль «Путешествие в Рождество» (Манежная площадь)",
+  "cat": "yarmarka",
+  "desc": "Городской фестиваль на 35 площадках, в числе них Манежная площадь с «городом ёлочных игрушек».",
+  "url": "https://www.mos.ru/news/item/163350073",
+  "url_status": 301,
+  "addr": "Манежная площадь",
+  "metro": "Охотный ряд",
+  "metro_min": 2,
+  "price_kind": "free",
+  "price": "вход бесплатный",
+  "price_year": "2025–26",
+  "price_src": "https://www.mos.ru/news/item/163350073",
+  "hours": "2025–26: 12 дек – 11 янв",
+  "hours_src": "https://www.mos.ru/news/item/163350073",
+  "season": "В 2025–26 фестиваль шёл 12 дек – 11 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "Данные за 2025–26, на 2026–27 нет. Бесплатность в статье mos.ru не указана, из других обзоров."
+ },
+ {
+  "city": "msk",
+  "name": "Ёлка в Кремлёвском дворце",
+  "cat": "elka",
+  "desc": "Главное детское новогоднее представление страны в Государственном Кремлёвском дворце.",
+  "url": "https://kremlinpalace.org",
+  "url_status": 200,
+  "addr": "Кремль, Государственный Кремлёвский дворец",
+  "metro": "Александровский сад / Боровицкая",
+  "metro_min": 10,
+  "price_kind": "range",
+  "price": "2 800–7 000 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://media.halvacard.ru/family/kremlevskaia-elka",
+  "hours": "2025–26: сеансы 10:30, 14:00, 18:00",
+  "hours_src": "https://media.halvacard.ru/family/kremlevskaia-elka",
+  "season": "В 2025–26: 25 дек – 8 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 3,
+  "notes": "Старый адрес сайта kdks.ru не открылся, заменён на kremlinpalace.org. Подарок оплачивается отдельно."
+ },
+ {
+  "city": "msk",
+  "name": "ГЭС-2",
+  "cat": "muzey",
+  "desc": "Современное искусство в бывшей электростанции; серия мастерских «Ламповый Новый год» до 7 декабря.",
+  "url": "https://www.ges-2.org",
+  "url_status": 301,
+  "addr": "Болотная набережная, 15, стр. 1",
+  "metro": "Кропоткинская / Полянка",
+  "metro_min": "10–15 мин пешком от «Кропоткинской» (2-й выход, 1 км), «Полянки», «Третьяковской»",
+  "price_kind": "free",
+  "price": "вход в здание бесплатный по предварительной регистрации; выставки платно: 1 этаж 600 ₽, 2 этаж 400 ₽, единый 1000 ₽ (есть бесплатные и льготные 50%)",
+  "price_year": "2026",
+  "price_src": "https://ges-2.org/tickets",
+  "hours": "ежедневно 11:00–22:00",
+  "hours_src": "https://ges-2.org/",
+  "season": "«Ламповый Новый год» до 7 декабря 2026.",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo",
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "цена: вход по регистрации на сайте, условия оплаты на странице не найдены"
+ },
+ {
+  "city": "msk",
+  "name": "Дарвиновский музей",
+  "cat": "muzey",
+  "desc": "Выставка «Новогодние открытки СССР: старая добрая сказка»; «Сказки с органом и песочной анимацией».",
+  "url": "https://www.darwinmuseum.ru",
+  "url_status": 200,
+  "addr": "Вавилова, 57",
+  "metro": "Академическая",
+  "metro_min": 7,
+  "price_kind": "from",
+  "price": "взрослый 600 ₽, льготный 250 ₽ (с 1 декабря 300 ₽); комплексный 790 ₽",
+  "price_year": "2026–27",
+  "price_src": "https://www.darwinmuseum.ru/price",
+  "hours": "10:00–18:00 ежедневно, кроме понедельника; выставочный комплекс по чт 13:00–21:00",
+  "hours_src": "https://www.darwinmuseum.ru/",
+  "season": "Выставка открыток 1 дек – 7 фев; «Сказки с органом» 31 дек и 5 янв; «Все работы хороши» 15 дек – 24 янв.",
+  "for": [
+   "family",
+   "kids",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": 1,
+  "notes": "Дошкольникам вход бесплатный; цены не получены (страница цен вернула 404)."
+ },
+ {
+  "city": "msk",
+  "name": "Музей-усадьба Кусково",
+  "cat": "usadba",
+  "desc": "Усадьба XVIII века и парк, зимой детские программы.",
+  "url": "https://kuskovo.ru",
+  "url_status": 200,
+  "addr": "улица Юности, 2, стр. 1",
+  "metro": "Рязанский проспект",
+  "metro_min": 20,
+  "price_kind": "range",
+  "price": "парк 100 ₽; дворец 500 ₽; эрмитаж, грот 300 ₽ (льготный 200–300 ₽)",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://kuskovo.ru/posetitelyam/stoimost_biletov/",
+  "hours": "музей вт–чт, вс 10–18, пт–сб 10–20, пн выходной; оранжереи пн–вт выходной; парк 06:00–24:00",
+  "hours_src": "https://kuskovo.ru",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Восток",
+  "time": "half",
+  "budget": 1,
+  "notes": "ВНИМАНИЕ: часы выше возвращены по запросу kuskovo.ru, но совпадают по формату с Царицыным, надо перепроверить. Цены не получены. Метро: пешком далеко (около 20 мин), по адресу указано приблизительно."
+ },
+ {
+  "city": "msk",
+  "name": "Цирк Никулина на Цветном бульваре",
+  "cat": "show",
+  "desc": "Новогоднее представление для семьи; в 2025–26 шло шоу «Морозко».",
+  "url": "https://nikulincircus.ru",
+  "url_status": 200,
+  "addr": "Цветной бульвар, 13",
+  "metro": "Цветной бульвар",
+  "metro_min": 2,
+  "price_kind": "range",
+  "price": "1 500–8 000 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://kudago.com/msk/place/cirk-nikulina/",
+  "hours": "по афише",
+  "hours_src": "https://nikulincircus.ru",
+  "season": "В 2025–26: 12 дек – 18 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "family",
+   "kids",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "laugh",
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 2,
+  "notes": "Старый адрес circusnikulin.ru не открылся; nikulincircus.ru ответил 200, содержимое не сверено. Цена и даты за 2025–26 из поиска."
+ },
+ {
+  "city": "msk",
+  "name": "ГУМ-Каток на Красной площади",
+  "cat": "katok",
+  "desc": "Каток с видом на Кремль и Красную площадь, сеансы по часу. По будням первые сеансы бесплатные, нужна регистрация.",
+  "url": "https://gum.ru/",
+  "url_status": 200,
+  "addr": "Красная площадь, 3",
+  "metro": "Охотный Ряд / Площадь Революции",
+  "metro_min": 7,
+  "price_kind": "range",
+  "price": "0–1000 ₽ взрослый, 0–450 ₽ детский со своими коньками; прокат от 300 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "hours": "ежедневно 09:00–23:30, сеансы по 60 минут",
+  "hours_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "season": "Анонс 2026–27: 1 декабря 2026 – 1 марта 2027.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 1,
+  "notes": "Цены 2026–27 не опубликованы, указаны 2025–26. Сайт места gum.ru открывается, страница катка не проверена."
+ },
+ {
+  "city": "msk",
+  "name": "Каток в Лужниках",
+  "cat": "katok",
+  "desc": "Открытый каток в Лужниках рядом со стадионом и Москвой-рекой, зимой работает сеансами.",
+  "url": "https://www.luzhniki.ru/",
+  "url_status": 200,
+  "addr": "Лужнецкая набережная, 24",
+  "metro": "Воробьёвы горы / Спортивная",
+  "metro_min": 10,
+  "price_kind": "from",
+  "price": "от 600 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://media.halvacard.ru/entertainment/vse-na-led-gde-pokatatsya-na-konkakh-v-moskve",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "Юг",
+  "time": "half",
+  "budget": 1,
+  "notes": "Часы и даты не проверены; цена из обзора Халва Медиа (2025–26), на сайте не подтверждена."
+ },
+ {
+  "city": "msk",
+  "name": "Каток на Царской набережной в Коломенском",
+  "cat": "katok",
+  "desc": "Каток в музее-заповеднике Коломенское на берегу Москвы-реки, сеансы с перерывом днём.",
+  "url": "https://www.kolomenskoe.ru/",
+  "url_status": 301,
+  "addr": "проспект Андропова, 39, музей-заповедник «Коломенское»",
+  "metro": "Коломенская",
+  "metro_min": 15,
+  "price_kind": "range",
+  "price": "будни: взрослые 600 ₽, дети 350 ₽; выходные: 900 / 550 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "hours": "ежедневно 10:30–20:00 сеансами, перерыв 15:00–17:00",
+  "hours_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Юг",
+  "time": "half",
+  "budget": 1,
+  "notes": "Цены 2025–26, в январе выше. Страница катка на сайте музея не проверена; удалённость от метро по адресу, не по сайту."
+ },
+ {
+  "city": "msk",
+  "name": "Каток в Таганском парке",
+  "cat": "katok",
+  "desc": "Каток площадью около 4600 м² в глубине Таганского парка, дети до 7 лет бесплатно.",
+  "url": "https://zima.mos.ru/",
+  "url_status": 200,
+  "addr": "Таганская улица, 40–42, Таганский парк",
+  "metro": "Таганская",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "до 600 ₽ взрослый, до 350 ₽ детский; до 7 лет бесплатно",
+  "price_year": "2025–26",
+  "price_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "hours": "ежедневно 10:00–22:00",
+  "hours_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 1,
+  "notes": "Официального сайта катка не нашли, url ведёт на городской портал «Зима в Москве». Адрес и время до метро по общему знанию, не с сайта."
+ },
+ {
+  "city": "msk",
+  "name": "Каток на Болотной площади",
+  "cat": "katok",
+  "desc": "Бесплатный каток при павильоне «Фабрика подарков» в центре города. Нужна предварительная регистрация, прокат платный.",
+  "url": "https://zima.mos.ru/",
+  "url_status": 200,
+  "addr": "Болотная площадь",
+  "metro": "Третьяковская / Новокузнецкая",
+  "metro_min": 10,
+  "price_kind": "free",
+  "price": "бесплатно; прокат 500 ₽, залог 2000 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "hours": "ежедневно 10:00–22:00, по выходным и праздникам с 09:00; понедельник технический перерыв",
+  "hours_src": "https://www.tbank.ru/gorod/blog/katki-v-moskve/",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "Данные 2025–26. Официальной страницы катка нет, url общий портал «Зима в Москве»; станции метро указаны по адресу."
+ },
+ {
+  "city": "msk",
+  "name": "Новогоднее шоу «Белоснежка и семь гномов» в Большом Московском цирке",
+  "cat": "show",
+  "desc": "Новогоднее цирковое представление для семей в цирке на проспекте Вернадского.",
+  "url": "https://greatcircus.ru/",
+  "url_status": 301,
+  "addr": "проспект Вернадского, 7",
+  "metro": "Университет",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "от 2000 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "hours": "даты 12 дек 2025 – 11 янв 2026, время сеансов не найдено",
+  "hours_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "season": "В 2025–26: 12 дек – 11 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "laugh",
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "half",
+  "budget": 2,
+  "notes": "Метро по адресу (не с сайта). Афишу 2026–27 надо проверить на greatcircus.ru ближе к декабрю."
+ },
+ {
+  "city": "msk",
+  "name": "Ледовый спектакль «Буратино» в Лужниках",
+  "cat": "show",
+  "desc": "Новогодний ледовый спектакль Ильи Авербуха во Дворце гимнастики Ирины Винер.",
+  "url": "https://www.luzhniki.ru/",
+  "url_status": 200,
+  "addr": "Лужнецкая набережная, 24, Дворец гимнастики Ирины Винер",
+  "metro": "Воробьёвы горы / Спортивная",
+  "metro_min": 10,
+  "price_kind": "from",
+  "price": "от 3000 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "hours": "канун Нового года и каникулы, точные даты не найдены",
+  "hours_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "season": "В 2025–26 шёл в новогодние каникулы. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "laugh"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": 3,
+  "notes": "Данные только из обзора news.ru, на сайте Лужников не подтверждены; станции метро и точный адрес зала проверить."
+ },
+ {
+  "city": "msk",
+  "name": "Ёлка «Новая звезда» в храме Христа Спасителя",
+  "cat": "elka",
+  "desc": "Детское новогоднее представление в Зале церковных соборов храма Христа Спасителя.",
+  "url": "https://xxc.ru/",
+  "url_status": 200,
+  "addr": "Волхонка, 15",
+  "metro": "Кропоткинская",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "от 1750 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "hours": "с 20 декабря, время сеансов не найдено",
+  "hours_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "season": "В 2025–26 с 20 декабря. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 2,
+  "notes": "Страница ёлки на xxc.ru не проверена; метро по адресу."
+ },
+ {
+  "city": "msk",
+  "name": "Киноёлка на «Мосфильме»",
+  "cat": "elka",
+  "desc": "Новогоднее представление для детей на киностудии «Мосфильм».",
+  "url": "https://www.mosfilm.ru/",
+  "url_status": 200,
+  "addr": "Мосфильмовская улица, 1",
+  "metro": "Киевская",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "от 1110 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://news.ru/lifestyle/top-10-novogodnih-elok-moskvy-v-2025-2026-godah-gde-kogda-skolko-stoyat",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "half",
+  "budget": 2,
+  "notes": "Даты, часы и точная площадка не найдены; метро по общему знанию, пешком далеко. Проверить на mosfilm.ru."
+ },
+ {
+  "city": "msk",
+  "name": "Театр зверей «Уголок дедушки Дурова»",
+  "cat": "show",
+  "desc": "Старейший театр зверей: сказочные спектакли с животными, музей Дурова. На сайте анонсированы новогодние спектакли, билеты через «Мосбилет».",
+  "url": "https://www.ugolokdurova.ru/",
+  "url_status": 200,
+  "addr": "улица Дурова, 2, стр. 1",
+  "metro": "Цветной бульвар / Проспект Мира",
+  "metro_min": 10,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Новогодние спектакли 2026–27 анонсированы на сайте.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "laugh",
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 2,
+  "notes": "Цены и даты не нашли (сайт отдаёт на «Мосбилет»). Метро по адресу."
+ },
+ {
+  "city": "msk",
+  "name": "Большой театр: балет «Щелкунчик»",
+  "cat": "show",
+  "desc": "Классический рождественский балет Чайковского на Исторической сцене Большого театра.",
+  "url": "https://www.bolshoi.ru/",
+  "url_status": 301,
+  "addr": "Театральная площадь, 1",
+  "metro": "Театральная / Охотный Ряд",
+  "metro_min": 3,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "eve",
+  "budget": 3,
+  "notes": "Сайт отдаёт 401 для автоматических запросов, афишу не прочитали. Даты и цены надо взять вручную на bolshoi.ru. Название спектакля в сезоне 2026–27 не подтверждено."
+ },
+ {
+  "city": "msk",
+  "name": "«Путешествие в Рождество» на Тверской площади",
+  "cat": "yarmarka",
+  "desc": "Площадка фестиваля с ёлкой из макетов московских зданий и павильоном «Фабрика подарков». Вход свободный.",
+  "url": "https://zima.mos.ru/",
+  "url_status": 200,
+  "addr": "Тверская площадь",
+  "metro": "Пушкинская / Тверская",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "2025–26",
+  "price_src": "https://www.mos.ru/news/item/163350073",
+  "hours": "",
+  "hours_src": "https://www.mos.ru/news/item/163350073",
+  "season": "В 2025–26: 12 дек – 11 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Бесплатность по обзорам, на mos.ru не указана явно. Данные 2025–26."
+ },
+ {
+  "city": "msk",
+  "name": "Новогоднее оформление Тверской улицы",
+  "cat": "svet",
+  "desc": "Ели и пихты в зеркальных ящиках с узорами в стиле модерн, световые конструкции у павильонов на Тверской площади.",
+  "url": "https://www.mos.ru/news/item/162930073/",
+  "url_status": 200,
+  "addr": "Тверская улица",
+  "metro": "Охотный Ряд / Тверская / Пушкинская",
+  "metro_min": 3,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "2025–26",
+  "price_src": "https://www.mos.ru/news/item/162930073/",
+  "hours": "круглосуточно, на улице",
+  "hours_src": "",
+  "season": "В 2025–26 фестиваль «Зима в Москве» шёл 1 дек – 28 фев. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Описание из поискового фрагмента mos.ru, страницу целиком не читали; оформление 2026–27 надо перепроверить."
+ },
+ {
+  "city": "msk",
+  "name": "Новый Арбат: праздничное оформление",
+  "cat": "svet",
+  "desc": "На Новом Арбате по материалам мэрии устраивают праздничную иллюминацию и «арктический остров» с фотозонами.",
+  "url": "https://www.mos.ru/news/item/147514073/",
+  "url_status": 200,
+  "addr": "улица Новый Арбат",
+  "metro": "Арбатская / Смоленская",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "",
+  "price_src": "https://www.mos.ru/news/item/147514073/",
+  "hours": "круглосуточно, на улице",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Сведение о «арктическом острове» из поиска, год не указан; страницу mos.ru не читали полностью. Нужна проверка до публикации."
+ },
+ {
+  "city": "msk",
+  "name": "Столешников переулок: праздничная иллюминация",
+  "cat": "svet",
+  "desc": "Один из первых центральных переулков, которые украшают к Новому году; пешеходная улица с огнями и витринами.",
+  "url": "https://www.mos.ru/news/item/162930073/",
+  "url_status": 200,
+  "addr": "Столешников переулок",
+  "metro": "Охотный Ряд / Чеховская",
+  "metro_min": 6,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "2025–26",
+  "price_src": "https://www.mos.ru/news/item/162930073/",
+  "hours": "круглосуточно, на улице",
+  "hours_src": "",
+  "season": "В 2025–26 фестиваль «Зима в Москве» шёл 1 дек – 28 фев. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Только упоминание в обзоре; детали оформления не нашли. Никольскую улицу и Москва-Сити как световые места подтвердить не удалось."
+ },
+ {
+  "city": "msk",
+  "name": "Смотровая площадка PANORAMA360",
+  "cat": "vid",
+  "desc": "Смотровая на 89 этаже башни «Федерация» в Москве-Сити, панорама города зимой и вечером.",
+  "url": "https://pnr360.ru/",
+  "url_status": 200,
+  "addr": "Пресненская набережная, 12, башня «Федерация Восток»",
+  "metro": "Деловой центр / Выставочная",
+  "metro_min": 7,
+  "price_kind": "from",
+  "price": "2900 ₽; «Счастливые часы» от 1000 ₽",
+  "price_year": "постоянная",
+  "price_src": "https://pnr360.ru/",
+  "hours": "пн–чт 11–21, пт 11–22, сб 10–22, вс 10–21",
+  "hours_src": "https://pnr360.ru/",
+  "season": "Круглый год.",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 2,
+  "notes": "На странице есть баннер «ежедневно 10–22», расходится с расписанием; метро и время пешком по адресу, не с сайта."
+ },
+ {
+  "city": "msk",
+  "name": "Музей Победы",
+  "cat": "muzey",
+  "desc": "Музей на Поклонной горе. В прошлые сезоны проводил новогоднюю интерактивную игру «Ёлка Победы» для детей.",
+  "url": "https://victorymuseum.ru",
+  "url_status": 200,
+  "addr": "ул. Братьев Фонченко, 11",
+  "metro": "Парк Победы",
+  "metro_min": 10,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "ежедневно 10:00–21:00",
+  "hours_src": "https://victorymuseum.ru/",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "half",
+  "budget": 0,
+  "notes": "цена: страница /for-visitors/prices/ без цифр, проверить у кассы или на bilet.mos.ru; выходные дни не указаны"
+ },
+ {
+  "city": "msk",
+  "name": "Музей Москвы",
+  "cat": "muzey",
+  "desc": "Музей истории города в Провиантских складах на Зубовском бульваре; зимой проводит экскурсии и детские программы.",
+  "url": "https://mosmuseum.ru",
+  "url_status": 200,
+  "addr": "Зубовский бульвар, 2",
+  "metro": "Парк культуры",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "взрослый 500 ₽, льготный (7–18 лет) 250 ₽, до 7 лет бесплатно",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://mosmuseum.ru/visitors/tikets/",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "часы работы на сайте не найдены; кассы закрываются за час до конца"
+ },
+ {
+  "city": "msk",
+  "name": "Государственный исторический музей",
+  "cat": "muzey",
+  "desc": "Музей на Красной площади; в прошлый сезон составил новогоднюю программу «Новолетие» с играми Средневековья.",
+  "url": "https://shm.ru",
+  "url_status": 200,
+  "addr": "Красная площадь, 1",
+  "metro": "Охотный Ряд / Площадь Революции",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "взрослый (граждане РФ и ЕАЭС) 700 ₽, дети 7–17 лет 350 ₽",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://shm.ru/visit/tickets/gim/",
+  "hours": "Главное здание: чт–сб 10:00–21:00; пн, ср, вс 10:00–19:00; вт выходной; касса закрывается за час до закрытия",
+  "hours_src": "https://shm.ru/visit/kontakty-i-rezhim-raboty/",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "цена и часы не проверены по официальной странице; программа 2026–27 пока не найдена"
+ },
+ {
+  "city": "msk",
+  "name": "Третьяковская галерея",
+  "cat": "muzey",
+  "desc": "Главный музей русского искусства; зимой — выставки и детские программы.",
+  "url": "https://tretyakovgallery.ru",
+  "url_status": 301,
+  "addr": "Лаврушинский пер., 10",
+  "metro": "Третьяковская",
+  "metro_min": 5,
+  "price_kind": "from",
+  "price": "полный билет 700 ₽ (льготные 0/350/400 ₽)",
+  "price_year": "2026",
+  "price_src": "https://www.tretyakovgallery.ru/for-visitors/museums/istoricheskoe-zdanie/",
+  "hours": "вт–вс 10:00–21:00 (кассы и вход до 20:00), пн выходной",
+  "hours_src": "https://www.tretyakovgallery.ru/for-visitors/museums/istoricheskoe-zdanie/",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 1,
+  "notes": "цена и часы не проверены по официальной странице; программа 2026–27 пока не найдена; бюджет ориентировочный"
+ },
+ {
+  "city": "msk",
+  "name": "Пушкинский музей",
+  "cat": "muzey",
+  "desc": "Ежегодная «Пушкинская ёлка» для детей; музей публикует памятку с ценами отдельным PDF.",
+  "url": "https://pushkinmuseum.art",
+  "url_status": 200,
+  "addr": "ул. Волхонка, 12",
+  "metro": "Кропоткинская",
+  "metro_min": 3,
+  "price_kind": "from",
+  "price": "Главное здание 700 ₽ (льготный 500 ₽), дети до 6 лет бесплатно",
+  "price_year": "постоянная (на 13.11.2026)",
+  "price_src": "https://pushkinmuseum.art/visitors/tickets/index.php?lang=ru",
+  "hours": "Главное здание: вт, ср 11:00–20:00; чт, пт 11:00–21:00; сб 10:00–21:00; вс 10:00–20:00; пн выходной",
+  "hours_src": "https://pushkinmuseum.art/visitors/opening_hours/index.php?lang=ru",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "family"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 2,
+  "notes": "цена и часы не проверены по официальной странице; программа 2026–27 пока не найдена; цены в PDF 2025–26 не прочитаны, бюджет ориентировочный"
+ },
+ {
+  "city": "msk",
+  "name": "Музей-заповедник «Коломенское»",
+  "cat": "usadba",
+  "desc": "Усадьба с парком над Москвой-рекой; по новости mos.ru зимой проходят ёлки с Дедом Морозом и спектакли («Морозко» 25 декабря), регистрация через Russpass.",
+  "url": "https://mgomz.ru",
+  "url_status": 302,
+  "addr": "пр-т Андропова, 39",
+  "metro": "Коломенская",
+  "metro_min": 15,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "https://www.mos.ru/news/item/133412073/",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "family"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Юг",
+  "time": "day",
+  "budget": 1,
+  "notes": "цены ёлок и часы не проверены; бюджет ориентировочный"
+ },
+ {
+  "city": "msk",
+  "name": "Усадьба Останкино",
+  "cat": "usadba",
+  "desc": "Музей-усадьба графов Шереметевых с крепостным театром; зимой — экскурсии и праздничные программы.",
+  "url": "https://ostankino-museum.ru",
+  "url_status": 200,
+  "addr": "1-я Останкинская ул., 5",
+  "metro": "ВДНХ",
+  "metro_min": 10,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "зимний режим: павильоны 10:00–16:00, кассы до 15:30; пн выходной; последний вт месяца санитарный день; вход в составе экскурсионной группы",
+  "hours_src": "https://ostankino-museum.ru/rezhim-rabotyi-muzeya/",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": 1,
+  "notes": "цена: страница билетов не открылась"
+ },
+ {
+  "city": "msk",
+  "name": "Усадьба Деда Мороза (Кузьминки)",
+  "cat": "usadba",
+  "desc": "Резиденция Деда Мороза на Волгоградском проспекте: терема, «Тропа сказок», ёлка, почтовый ящик. Территория, площадь и ёлка бесплатны.",
+  "url": "https://dedmorozmos.ru",
+  "url_status": 200,
+  "addr": "Волгоградский пр-т, вл. 168Д",
+  "metro": "Кузьминки / Выхино (автобус 796)",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "территория бесплатно; программы 650–6 300 ₽",
+  "price_year": "2026–27",
+  "price_src": "https://otello.ru/nomer/usadba-deda-moroza-v-moskve",
+  "hours": "",
+  "hours_src": "https://otello.ru/nomer/usadba-deda-moroza-v-moskve",
+  "season": "Сезон с 4 ноября 2026 до середины марта 2027, программы в теремах до конца января.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "family"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "both",
+  "district": "Восток",
+  "time": "half",
+  "budget": 2,
+  "notes": "цены и даты с сайта-посредника otello.ru, на dedmorozmos.ru не сверены; часы территории не указаны; от метро автобусом"
+ },
+ {
+  "city": "msk",
+  "name": "Архангельское",
+  "cat": "usadba",
+  "desc": "Музей-усадьба Юсуповых под Москвой: дворец и парк; зимой экскурсии и праздничные программы.",
+  "url": "https://arhangelskoe.su",
+  "url_status": 200,
+  "addr": "Красногорск, п. Архангельское",
+  "metro": "Волоколамская (автобус)",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "парк 300 ₽ (льготный 150 ₽); колоннада 250 ₽, Каприз 400 ₽, единый билет 1300 ₽",
+  "price_year": "2026",
+  "price_src": "https://arhangelskoe.su/for_visitor/",
+  "hours": "парк ежедневно 10:00–20:00 (вход до 19:00); музеи вт–вс 10:00–18:00, пн и последний вт месяца выходной",
+  "hours_src": "https://arhangelskoe.su/for_visitor/working_hours/",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Область",
+  "time": "half",
+  "budget": 1,
+  "notes": "Цена и часы на 2026–27 не проверены по официальной странице."
+ },
+ {
+  "city": "msk",
+  "name": "Музеон",
+  "cat": "park",
+  "desc": "Парк искусств у Крымской набережной со скульптурами. В 2025–26 здесь были «Фабрика подарков» (до конца февраля 2026) и «Вкусные морозы» (27 дек – 11 янв).",
+  "url": "https://muzeon.ru",
+  "url_status": 200,
+  "addr": "Крымский Вал, 2",
+  "metro": "Парк культуры / Октябрьская",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "вход в парк бесплатно",
+  "price_year": "постоянная",
+  "price_src": "https://www.mos.ru/news/item/164493073/",
+  "hours": "",
+  "hours_src": "",
+  "season": "В 2025–26: «Вкусные морозы» 27 дек – 11 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 0,
+  "notes": "бесплатность входа не сверена с muzeon.ru; часы не проверены"
+ },
+ {
+  "city": "msk",
+  "name": "Измайловский парк",
+  "cat": "park",
+  "desc": "Один из крупнейших лесопарков Москвы; зимой прогулки по аллеям.",
+  "url": "https://izmailovsky-park.ru",
+  "url_status": 301,
+  "addr": "Измайловское шоссе, 73",
+  "metro": "Партизанская",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "парк открыт круглосуточно",
+  "hours_src": "https://www.izmailovsky-park.ru/chasto-zadavaemye-voprosy",
+  "season": "",
+  "for": [
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Восток",
+  "time": "half",
+  "budget": 0,
+  "notes": "официальность сайта не подтверждена; цены и часы не проверены"
+ },
+ {
+  "city": "msk",
+  "name": "Красная площадь и ГУМ",
+  "cat": "progulka",
+  "desc": "Красная площадь и главный универмаг ГУМ: прогулка по праздничному центру.",
+  "url": "https://gum.ru",
+  "url_status": 200,
+  "addr": "Красная площадь, 3",
+  "metro": "Охотный Ряд / Театральная",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "постоянная",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "both",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "ярмарку и каток на площади берёт другой помощник; цену прогулки не сверяли со страницей"
+ },
+ {
+  "city": "msk",
+  "name": "Никольская улица",
+  "cat": "progulka",
+  "desc": "Пешеходная улица от Красной площади к Лубянке; зимой с праздничным оформлением.",
+  "url": "https://zima.mos.ru/",
+  "url_status": 200,
+  "addr": "ул. Никольская",
+  "metro": "Охотный Ряд / Китай-город",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "постоянная",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "официальной страницы нет; возможное пересечение со световыми инсталляциями"
+ },
+ {
+  "city": "msk",
+  "name": "Троице-Сергиева лавра (Сергиев Посад)",
+  "cat": "zagorod",
+  "desc": "Монастырь и город в 70 км от Москвы; поездка на день, зимой Рождество в лавре.",
+  "url": "https://stsl.ru",
+  "url_status": 200,
+  "addr": "Сергиев Посад, пр-т Красной Армии, 129",
+  "metro": "Электричка с Ярославского вокзала",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "территория для посетителей 5:00–21:00",
+  "hours_src": "https://www.stsl.ru/info/faq/all/22",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Область",
+  "time": "day",
+  "budget": 0,
+  "notes": "цена и часы не проверены по официальной странице; программа 2026–27 пока не найдена"
+ },
+ {
+  "city": "msk",
+  "name": "Коломна: музей пастилы и «Калачная»",
+  "cat": "zagorod",
+  "desc": "Коломна, день от Москвы: музейная фабрика пастилы (Полянская ул., 4) и «Калачная» (ул. Зайцева, 14). Бывают праздничные экскурсии.",
+  "url": "https://kolomnapastila.ru",
+  "url_status": 200,
+  "addr": "Коломна, Полянская ул., 4",
+  "metro": "Электричка с Казанского вокзала",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "от 1 550 ₽ (экскурсия)",
+  "price_year": "2023–24",
+  "price_src": "https://www.sputnik8.com/ru/moscow/activities/78521-na-odin-den-v-starinnuyu-kolomnu-s-posescheniem-muzeya-pastily",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Область",
+  "time": "day",
+  "budget": 2,
+  "notes": "сайт не открылся с проверяющей машины; цена старая с туристического сайта; часы не найдены; официальный адрес сайта не подтверждён"
+ },
+ {
+  "city": "msk",
+  "name": "Новый Иерусалим (Истра)",
+  "cat": "zagorod",
+  "desc": "Музейно-выставочный комплекс в Истре: Воскресенский монастырь и выставки.",
+  "url": "https://museum-newjerusalem.ru",
+  "url_status": 200,
+  "addr": "Истра, Ново-Иерусалимская наб., 1",
+  "metro": "Автобус от Волоколамской",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "мастер-классы от 1 100 ₽, лекции от 600 ₽",
+  "price_year": "2026–27",
+  "price_src": "https://afisha.yandex.ru/istra/art/places/novyi-ierusalim/schedule/october-2026",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "both",
+  "district": "Область",
+  "time": "day",
+  "budget": 2,
+  "notes": "сайт не открылся с проверяющей машины; цена входа в экспозицию не найдена; указаны цены отдельных программ"
+ },
+ {
+  "city": "msk",
+  "name": "Музей-заповедник «Абрамцево»",
+  "cat": "zagorod",
+  "desc": "Усадьба в Сергиево-Посадском районе, связанная с русскими художниками; зимой экскурсии и праздничные программы.",
+  "url": "https://abramtsevo.net",
+  "url_status": 200,
+  "addr": "Московская обл., Абрамцево",
+  "metro": "Электричка с Ярославского вокзала",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "парк 60 ₽ (льготный 40 ₽); единый билет без усадебного дома 430 ₽, с домом 720 ₽ (льготный 280/470 ₽); дети до 7 лет бесплатно",
+  "price_year": "2026",
+  "price_src": "https://www.abramtsevo.net/kontakti/bileti.html",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Область",
+  "time": "day",
+  "budget": 1,
+  "notes": "цена и часы не проверены по официальной странице; программа 2026–27 пока не найдена"
+ },
+ {
+  "city": "msk",
+  "name": "Музей Мосфильма и экскурсия по студии",
+  "cat": "muzey",
+  "desc": "Полуторачасовая экскурсия по киностудии: реквизит известных фильмов, автомобили из гаража, декорации под открытым небом.",
+  "url": "https://mosfilm.ru/excursions",
+  "addr": "Мосфильмовская ул., 1",
+  "metro": "Киевская / Университет",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "школьники 780 ₽, взрослые 960 ₽",
+  "price_year": "постоянная",
+  "price_src": "https://mosfilm.ru/excursions",
+  "hours": "сборные группы: пн–пт 13:00 и 16:00, сб–вс 11:00 и 16:00; только по записи, продажа за неделю до даты в 10:00",
+  "hours_src": "https://mosfilm.ru/excursions",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "both",
+  "district": "Запад",
+  "time": "half",
+  "budget": 1,
+  "notes": "Новогодние программы на сайте не указаны (уточнять: excursion@mosfilm.ru). Льгот нет. 18–19 нояб 2026 натурная площадка закрыта. До метро идти далеко, нужен автобус; metro_min не указан.",
+  "url_status": 301
+ },
+ {
+  "city": "msk",
+  "name": "Фондовая оранжерея Ботанического сада РАН",
+  "cat": "park",
+  "desc": "Тропические и субтропические растения под стеклом: удобный зимний выход, когда на улице холодно. Есть сборные экскурсии по выходным.",
+  "url": "https://gbsad.ru/fondovaya-oranzhereya-bilety-i-abonementy",
+  "addr": "Ботаническая ул., 4, стр. 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "400 ₽ будни, 500 ₽ выходные; льготный 250/300 ₽; дети до 7 лет бесплатно",
+  "price_year": "постоянная",
+  "price_src": "https://gbsad.ru/fondovaya-oranzhereya-bilety-i-abonementy",
+  "hours": "вт–вс 10:00–17:00 (касса до 16:30), пн выходной; экскурсии по выходным 12:30, 14:00, 15:30",
+  "hours_src": "https://gbsad.ru/fondovaya-oranzhereya-bilety-i-abonementy",
+  "season": "С 16 октября по 14 февраля по зимнему графику, 10:00–17:00.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": 1,
+  "notes": "На странице есть внутреннее противоречие по часам (общая таблица и сезонный график совпадают для зимы, 10:00–17:00). Станция метро на сайте не указана; новогодних дат нет, праздничный график перед визитом уточнить по тел. +7 499 977-91-45.",
+  "url_status": 200
+ },
+ {
+  "city": "msk",
+  "name": "Кремль в Измайлово: новогодний марафон",
+  "cat": "elka",
+  "desc": "Бесплатный детский квест по музеям, новогоднее представление в «волшебном тереме» на уличной сцене и «Город профессий» с мастер-классами.",
+  "url": "http://www.kremlin-izmailovo.com/meroprijatija/novogodniy-marafon-v-skazke-khochu-stat",
+  "addr": "Измайловское шоссе, 73ж",
+  "metro": "Партизанская",
+  "metro_min": 10,
+  "price_kind": "free",
+  "price": "вход свободный",
+  "price_year": "2026–27",
+  "price_src": "http://www.kremlin-izmailovo.com/meroprijatija/novogodniy-marafon-v-skazke-khochu-stat",
+  "hours": "4, 5 и 6 декабря 2026, 11:00–17:00; территория ежедневно 9:00–21:00",
+  "hours_src": "http://www.kremlin-izmailovo.com/kontakty",
+  "season": "Новогодний марафон 4–6 декабря 2026; святки 8 января 2027.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "both",
+  "district": "Восток",
+  "time": "half",
+  "budget": 0,
+  "notes": "Бесплатно только мероприятие и территория; цены отдельных музеев и мастерских (Дедушкин чердак, музей хлеба, игрушки, свечи) с сайта получить не удалось; часы «Дедушкиного чердака» 11:00–20:00 ежедневно.",
+  "url_status": 301
+ },
+ {
+  "city": "msk",
+  "name": "Театр Сац: новогодние и зимние спектакли",
+  "cat": "show",
+  "desc": "Детский музыкальный театр: «Дюймовочка», «Снежная королева», «Кошкин дом», «Стойкий оловянный солдатик» и другие спектакли в дни каникул.",
+  "url": "https://teatr-sats.ru/afisha",
+  "addr": "проспект Вернадского, 5",
+  "metro": "Университет",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2026–27",
+  "price_src": "",
+  "hours": "26 дек 2026 – 10 янв 2027, обычно 12:00 и 16:00; касса 12:00–19:00 (с перерывами 14:30–15:00 и 16:30–17:00)",
+  "hours_src": "https://teatr-sats.ru/afisha",
+  "season": "31 дек «Снежная королева»; 3–5 янв «Стойкий оловянный солдатик»; 6 янв «Кошкин дом»; 8 янв «Королевский бутерброд».",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "half",
+  "budget": 2,
+  "notes": "Цены на сайте театра не указаны (продажа через Ticketland), поэтому price пустая, budget оценочный. Расписание без годов на сайте, годы определены по дням недели. Некоторые спектакли идут на других площадках (например «Щелкунчик» в ЦКИ «Меридиан»). Добираться от метро: автобус 138 до остановки «Детский музыкальный театр».",
+  "url_status": 200
+ },
+ {
+  "city": "msk",
+  "name": "Еврейский музей и центр толерантности",
+  "cat": "muzey",
+  "desc": "Интерактивная постоянная экспозиция и выставки: «Жилет 2.0» (до 23 февраля 2027) и «Век Майи Плисецкой» (до 14 февраля 2027).",
+  "url": "https://jewish-museum.ru/visitors/prices/",
+  "addr": "ул. Образцова, 11, стр. 1А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "от 500 ₽; льготный от 300 ₽; дети до 6 лет бесплатно",
+  "price_year": "постоянная",
+  "price_src": "https://jewish-museum.ru/visitors/prices/",
+  "hours": "пн–чт, вс 12:00–22:00 (касса до 21:00); сб 18:00–23:00; пт и еврейские праздники выходной",
+  "hours_src": "https://jewish-museum.ru/",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": 1,
+  "notes": "Станция метро на сайте не указана. Новогодние детские программы не нашлись; дети 7–17 лет идут по льготному билету.",
+  "url_status": 301
+ },
+ {
+  "city": "msk",
+  "name": "Усадьба Мураново",
+  "cat": "usadba",
+  "desc": "Музей-усадьба Тютчевых с парком в Пушкинском округе: зимняя прогулка по парку и экскурсия по барскому дому только с гидом.",
+  "url": "https://muranovo-museum.ru/visitors/preparation",
+  "addr": "деревня Мураново, Пушкинский городской округ, Московская область",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "парк 120 ₽, выставочный зал 150 ₽, экскурсия по дому 650–700 ₽",
+  "price_year": "постоянная",
+  "price_src": "https://muranovo-museum.ru/visitors/preparation",
+  "hours": "экспозиции ср–вс 10:00–17:30 (экскурсии и касса до 16:30), пн–вт музей закрыт; парк ежедневно 10:00–18:00",
+  "hours_src": "https://muranovo-museum.ru/visitors/preparation",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Область",
+  "time": "day",
+  "budget": 1,
+  "notes": "Цены льготных и бесплатных билетов даны на сайте без расшифровки категорий. Кафе «В Амбаре» закрыто 18 ноября – 8 декабря. Новогодние события пока не анонсированы. Добираться нужно на транспорте от Пушкино.",
+  "url_status": 301
+ },
+ {
+  "city": "msk",
+  "name": "Музей-панорама «Бородинская битва»",
+  "cat": "muzey",
+  "desc": "Огромная панорама Рубо и рядом музей «Кутузовская изба». Спокойный музейный выход зимой; 14 декабря вход бесплатный для всех.",
+  "url": "https://www.1812panorama.ru",
+  "addr": "Кутузовский проспект, 38, стр. 1",
+  "metro": "Кутузовская",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "500 ₽; льготный 250 ₽; Кутузовская изба 200 ₽; дети до 6 лет бесплатно",
+  "price_year": "постоянная",
+  "price_src": "http://1812panorama.ru/content/bilety",
+  "hours": "сб–ср 10:00–18:00, чт 10:00–21:00, пт выходной; Кутузовская изба сб–чт 10:00–18:00",
+  "hours_src": "https://www.1812panorama.ru",
+  "season": "14 декабря 2026 бесплатный вход для всех по электронному билету на mos.ru.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Новогодняя детская программа не найдена. Метро на сайте не указано: станция Кутузовская по адресу очевидна, расстояние пешком не проверено.",
+  "url_status": 200
+ },
+ {
+  "city": "spb",
+  "name": "Дворцовая площадь, главная ёлка",
+  "cat": "progulka",
+  "desc": "Главная городская ёлка у Александровской колонны на фоне Зимнего дворца, в декабре идёт новогодняя почта.",
+  "url": "https://www.dp.ru/a/2025/12/20/na-glavnoj-jolke-peterburga",
+  "url_status": 200,
+  "addr": "Дворцовая площадь",
+  "metro": "Адмиралтейская / Невский проспект",
+  "metro_min": 10,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "постоянная",
+  "price_src": "https://kudago.com/spb/event/aktsiya-novogodnyaya-pochta/",
+  "hours": "площадь открыта круглосуточно; новогодняя почта 2025: 20–30 дек, 17:00–21:00",
+  "hours_src": "https://kudago.com/spb/event/aktsiya-novogodnyaya-pochta/",
+  "season": "В 2025–26 огни на главной ёлке зажгли 20 декабря, ель стояла до середины января. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Официальной страницы нет; ссылка на новость dp.ru о ёлке 2025."
+ },
+ {
+  "city": "spb",
+  "name": "Рождественская ярмарка на Манежной площади",
+  "cat": "yarmarka",
+  "desc": "Ярмарка с едой, сувенирами и праздничной музыкой в центре города.",
+  "url": "https://peterburg2.ru/events/rozhdestvenskaya-yarmarka-na-manezhnoy-ploshhadi-2025-2026-267667.html",
+  "url_status": 200,
+  "addr": "Манежная площадь",
+  "metro": "Гостиный двор / Невский проспект",
+  "metro_min": 8,
+  "price_kind": "free",
+  "price": "вход свободный",
+  "price_year": "2025–26",
+  "price_src": "https://kudago.com/spb/event/prazdnik-rozhdestvenskaya-yarmarka-na-manezhnoj-ploschadi/",
+  "hours": "",
+  "hours_src": "",
+  "season": "Анонс 2026–27 (ФедералПресс, 30.10.2026): 12 дек 2026 – 10 янв 2027.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Официального анонса организатора нет, даты 2026–27 из СМИ (https://fedpress.ru/news/78/society/3458010). Ярмарка на Московской площади — другая, 20 дек 2026 – 10 янв 2027 (kp.ru). Вход свободный по данным сезона 2025–26."
+ },
+ {
+  "city": "spb",
+  "name": "Каток на Новой Голландии",
+  "cat": "katok",
+  "desc": "Каток на острове в центре города, прокат коньков, при катке есть кафе.",
+  "url": "https://newhollandsp.ru/rink/",
+  "url_status": 301,
+  "addr": "наб. Адмиралтейского канала, 2",
+  "metro": "Адмиралтейская",
+  "metro_min": 15,
+  "price_kind": "unknown",
+  "price": "вход в парк бесплатный; на каток дети 3–6 лет с взрослым 50 ₽",
+  "price_year": "2026",
+  "price_src": "https://www.newhollandsp.ru/visitors/faq/",
+  "hours": "парк ежедневно: пн–чт 9:00–22:00, пт–вс 9:00–23:00",
+  "hours_src": "https://www.newhollandsp.ru/visitors/faq/",
+  "season": "Каток: 21 ноября 2026 – 14 марта 2027.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "dance"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "half",
+  "budget": 1,
+  "notes": "На странице написано, что продажа билетов откроется позже. Метро на сайте не указано (Адмиралтейская — по адресу). Детям до 3 лет на лёд нельзя. Прокат отдельно, цена не указана."
+ },
+ {
+  "city": "spb",
+  "name": "Севкабель Порт, каток у моря",
+  "cat": "katok",
+  "desc": "Каток на берегу Финского залива, зимой ярмарки и концерты.",
+  "url": "https://zima.sevcableport.ru",
+  "url_status": 200,
+  "addr": "Кожевенная линия, 40",
+  "metro": "Приморская / Василеостровская",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2026–27",
+  "price_src": "https://zima.sevcableport.ru",
+  "hours": "2025–26: выходные примерно 11:00–22:30, будни до 21:00; 2026–27 не опубликованы",
+  "hours_src": "https://www.kp.ru/afisha/spb/prazdniki/novyj-god-v-sevkabel-portu",
+  "season": "Каток с 21 ноября 2026; праздничная программа 20 дек 2026 – 6 янв 2027.",
+  "for": [
+   "adults",
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "dance",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "Васильевский",
+  "time": "half",
+  "budget": 2,
+  "notes": "sevcableport.ru не открылся с проверяющей машины (000), поддомен zima.sevcableport.ru открылся (200). Цены не найдены. Вход на территорию свободный (по прошлым сезонам). Расстояние от метро не указано."
+ },
+ {
+  "city": "spb",
+  "name": "Елагин остров",
+  "cat": "park",
+  "desc": "Парк с дворцом, Большой каток ЦПКиО рядом; зимой выставки и экскурсии по интерьерам.",
+  "url": "https://elaginpark.org",
+  "url_status": 200,
+  "addr": "Елагин остров, 4",
+  "metro": "Крестовский остров",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2026–27",
+  "price_src": "https://elaginpark.org",
+  "hours": "парк 06:00–23:00; в сб–вс 10:00–19:59 платный вход (сумма не найдена), в будни свободный",
+  "hours_src": "https://elaginpark.org/visitors/rezhim-raboty/",
+  "season": "Большой каток ЦПКиО в 2025–26 открылся 1 декабря. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "out",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": 1,
+  "notes": "Ярмарки и новогодней программы 2025–26 и 2026–27 не нашёл. Ближайшие события на сайте: выставка «Стекольная сессия» до 13.12.2026, экскурсии «Елагиноостровские интерьеры» 15.11–05.12.2026. Пешком от метро далеко, время не указано."
+ },
+ {
+  "city": "spb",
+  "name": "Никольские ряды",
+  "cat": "progulka",
+  "desc": "Укрытый двор с ёлкой и венецианской каруселью, вместо катка в этом сезоне горка.",
+  "url": "https://sadovaya62.ru",
+  "url_status": 200,
+  "addr": "ул. Садовая, 62, лит. А",
+  "metro": "Садовая / Сенная площадь / Спасская",
+  "metro_min": 5,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2025–26",
+  "price_src": "https://sadovaya62.ru",
+  "hours": "",
+  "hours_src": "https://sadovaya62.ru",
+  "season": "В 2025–26: 27 дек – 11 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Данные сайта относятся к сезону 2025–26; про 2026–27 нет. Каток не подтверждён: на сайте «на месте катка появится горка»."
+ },
+ {
+  "city": "spb",
+  "name": "Петропавловская крепость, Рождественская ярмарка",
+  "cat": "yarmarka",
+  "desc": "Ярмарка на Соборной площади с ёлкой и мастер-классами; рядом фестиваль ледовых скульптур.",
+  "url": "https://spbmuseum.ru",
+  "url_status": 200,
+  "addr": "Заячий остров, Соборная площадь",
+  "metro": "Горьковская / Спортивная",
+  "metro_min": 10,
+  "price_kind": "free",
+  "price": "вход на ярмарку свободный",
+  "price_year": "2025–26",
+  "price_src": "https://www.kp.ru/afisha/spb/yarmarki/rozhdestvenskaya-yarmarka-v-petropavlovskoi-kreposti-v-sankt-peterburge/",
+  "hours": "",
+  "hours_src": "",
+  "season": "В 2025–26: 25 дек – 11 янв. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": 0,
+  "notes": "Официальный сайт музея-заповедника не проверен, дана афиша kp.ru. Музеи крепости по билетам, цены не искал. Мастер-классы 2025–26: 25–27 дек и 4–6 янв. | url заменён на сайт музея (spbmuseum.ru); ярмарка на нём не анонсирована. Единый билет музея: взрослые 1500 ₽, учащиеся РФ 800 ₽, пенсионеры РФ 700 ₽ (https://spbmuseum.ru/themuseum/visitors/cost.php)."
+ },
+ {
+  "city": "spb",
+  "name": "Vokzal 1853",
+  "cat": "razvl",
+  "desc": "Тёплый гастромаркет в старом вокзальном здании, зимний маркет в декабре и январе.",
+  "url": "https://vokzal1853.ru",
+  "url_status": 200,
+  "addr": "наб. Обводного канала, 118",
+  "metro": "Балтийская",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "вход свободный",
+  "price_year": "постоянная",
+  "price_src": "https://vokzal1853.ru",
+  "hours": "вс–чт 10:00–22:00, пт–сб 10:00–23:00",
+  "hours_src": "https://vokzal1853.ru",
+  "season": "«Зимний маркет» 26 декабря 2026 и 2 января 2027.",
+  "for": [
+   "adults",
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k0",
+   "k4"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "meet",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Метро на сайте не указано. Цены еды на сайте не проверены (старая заметка «от 300 ₽» без источника убрана)."
+ },
+ {
+  "city": "spb",
+  "name": "Гранд Макет Россия",
+  "cat": "muzey",
+  "desc": "Огромный макет страны, зимой новогодний квест «Спасти Новый год» для команд.",
+  "url": "https://grandmaket.com",
+  "url_status": 200,
+  "addr": "ул. Цветочная, 16Л",
+  "metro": "Московские ворота",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2026–27",
+  "price_src": "https://grandmaket.com",
+  "hours": "ежедневно 10:00–20:00 (кассы до 19:15)",
+  "hours_src": "https://grandmaket.com/",
+  "season": "",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 2,
+  "notes": "grandmaket.ru не открылся (000); рабочий домен grandmaket.com. Старая цена 690 ₽ не подтверждена, убрана. Агрегатор указывал «от 980 ₽» (Яндекс Карты), не источник."
+ },
+ {
+  "city": "spb",
+  "name": "Планетарий №1",
+  "cat": "razvl",
+  "desc": "Шоу и сеансы под куполом, зимой сказка «Щелкунчик» и рождественский орган.",
+  "url": "https://planetarium.one",
+  "url_status": 200,
+  "addr": "наб. Обводного канала, 74, лит. Ц",
+  "metro": "Обводный канал",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "взрослый 850 ₽, льготный 600 ₽, дети до 3 лет бесплатно",
+  "price_year": "2026–27",
+  "price_src": "https://planetarium.one",
+  "hours": "ежедневно 10:00–22:00",
+  "hours_src": "https://planetarium.one",
+  "season": "28–30 дек «Щелкунчик»; 31 дек «Орган в Планетарии. Рождество».",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 1,
+  "notes": "Цена на странице общая, на конкретные сеансы может отличаться. Год новогодних сеансов не указан."
+ },
+ {
+  "city": "spb",
+  "name": "Ботанический сад Петра Великого",
+  "cat": "muzey",
+  "desc": "Оранжереи с субтропиками, в январе фестиваль «Ботанический Новый год».",
+  "url": "https://botsad-spb.com",
+  "url_status": 200,
+  "addr": "ул. Профессора Попова, 2",
+  "metro": "Петроградская / Аптекарский остров",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "фестиваль 600–900 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://www.kp.ru/afisha/spb/festivali/festival-botanicheskij-novyj-god-v-sankt-peterburge/",
+  "hours": "",
+  "hours_src": "",
+  "season": "В 2025–26: 2–11 января. Даты 2026–27 ещё не объявлены.",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": 1,
+  "notes": "Цена 600–900 ₽ по афише kp.ru, не с официального сайта. Билеты на сайте продаются в разделе «Купить билет». Детей до 4 лет на экскурсии не допускают."
+ },
+ {
+  "city": "spb",
+  "name": "Санкт-Петербургский океанариум",
+  "cat": "razvl",
+  "desc": "Крупный океанариум на первом этаже ТРК, показательные тренировки тюленей и кормление акул.",
+  "url": "https://kuda-spb.ru/place/okeanarium/",
+  "url_status": 504,
+  "addr": "ул. Марата, 86, ТРК «Планета Нептун»",
+  "metro": "Звенигородская / Пушкинская",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "от 600 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://kuda-spb.ru/place/okeanarium/",
+  "hours": "10:00–20:00",
+  "hours_src": "https://kuda-spb.ru/place/okeanarium/",
+  "season": "",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 1,
+  "notes": "Официальный сайт не найден (aquariumspb.ru продаётся, не океанариум). Цена и часы только по справочнику, год не указан. Показы: тюлени 11:30 и 17:30, выдры 15:00, акулы 19:00, кроме понедельника (тот же источник)."
+ },
+ {
+  "city": "spb",
+  "name": "ЛабиринтУм",
+  "cat": "muzey",
+  "desc": "Интерактивный музей науки: опыты, лабиринты, зеркала.",
+  "url": "https://peterburg2.ru/restplaces/muzey-labirintum-4343.html",
+  "url_status": 200,
+  "addr": "ул. Льва Толстого, 9, ТРЦ «Толстой Сквер»",
+  "metro": "Петроградская",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2025–26",
+  "price_src": "https://peterburg2.ru/restplaces/muzey-labirintum-4343.html",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": 1,
+  "notes": "Официальный сайт найти не удалось. Часы не найдены. Цена 990 ₽ и 500 ₽ в разных справочниках, актуальная неясна."
+ },
+ {
+  "city": "spb",
+  "name": "Цирк Чинизелли, «Ледяное сердце»",
+  "cat": "show",
+  "desc": "Новогодняя программа цирка на воде для всей семьи.",
+  "url": "https://circus.spb.ru",
+  "url_status": 200,
+  "addr": "наб. реки Фонтанки, 3А",
+  "metro": "Гостиный двор / Невский проспект",
+  "metro_min": 10,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2026–27",
+  "price_src": "https://circus.spb.ru",
+  "hours": "по афише",
+  "hours_src": "https://circus.spb.ru",
+  "season": "",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "laugh",
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 2,
+  "notes": "Год программы на странице не назван: сверьте при покупке. Дети до 3 лет бесплатно без отдельного места."
+ },
+ {
+  "city": "spb",
+  "name": "Музей железных дорог России",
+  "cat": "muzey",
+  "desc": "Паровозы и вагоны в больших залах, поездка на паровозике «Ефимка».",
+  "url": "https://rzd-museum.ru",
+  "url_status": 200,
+  "addr": "Библиотечный переулок, 4, корп. 2",
+  "metro": "Балтийская",
+  "metro_min": 4,
+  "price_kind": "range",
+  "price": "650 ₽ будни / 750 ₽ выходные; семейный 1 200 / 1 450 ₽",
+  "price_year": "2026–27",
+  "price_src": "https://rzd-museum.ru",
+  "hours": "чт–пн 10:00–18:00, ср 12:30–20:30, вторник выходной",
+  "hours_src": "https://rzd-museum.ru",
+  "season": "",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 1,
+  "notes": "Вход заканчивается за час до закрытия. Паровозик «Ефимка» 250 ₽. Метро по сайту: 300 м от Балтийской."
+ },
+ {
+  "city": "spb",
+  "name": "КидБург, Питер Радуга",
+  "cat": "razvl",
+  "desc": "Город профессий для детей, зимой новогодние спектакли для малышей.",
+  "url": "https://kidburg.ru",
+  "url_status": 200,
+  "addr": "пр. Космонавтов, 14, ТРК «Питер Радуга»",
+  "metro": "Парк Победы",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "билеты от 950 ₽",
+  "price_year": "2026–27",
+  "price_src": "https://kidburg.ru",
+  "hours": "",
+  "hours_src": "",
+  "season": "«Как Домовёнок готовил Новый год» (1–5 лет): 12 дек 2026 – 10 янв 2027.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Пригороды",
+  "time": "half",
+  "budget": 2,
+  "notes": "Цена общая по сети, адрес площадки с сайта не подтверждён; программа может относиться не к Питеру. Метро Парк Победы — по адресу, не по сайту; от метро заметно далеко."
+ },
+ {
+  "city": "spb",
+  "name": "Ленинградский зоопарк",
+  "cat": "razvl",
+  "desc": "Зимняя прогулка по зоопарку в Александровском парке у Петропавловки.",
+  "url": "https://spbzoo.ru",
+  "url_status": 302,
+  "addr": "Александровский парк, 1",
+  "metro": "Горьковская / Спортивная",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "взрослый 800 ₽, студент 400 ₽",
+  "price_year": "2026",
+  "price_src": "https://spbzoo.ru/posetitelyam/stoimost-biletov/",
+  "hours": "ежедневно 10:00–20:00, вход до 19:00",
+  "hours_src": "https://spbzoo.ru/posetitelyam/chasy-raboty-zooparka/",
+  "season": "",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k0",
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "both",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": 1,
+  "notes": "Официальный сайт spbzoo.ru. Детский билет на странице не разобран, год на странице не указан (данные на 13.11.2026). Контактная площадка с козами 10:00–16:00, павильон «Жираф» до 19:00."
+ },
+ {
+  "city": "spb",
+  "name": "Театр марионеток Деммени",
+  "cat": "show",
+  "desc": "Классические кукольные спектакли для малышей и новогодняя программа.",
+  "url": "https://demmeni.ru",
+  "url_status": 200,
+  "addr": "Невский проспект, 52",
+  "metro": "Гостиный двор",
+  "metro_min": 8,
+  "price_kind": "range",
+  "price": "600–1 200 ₽ по категориям мест",
+  "price_year": "2026–27",
+  "price_src": "https://demmeni.ru/ticket-price.html",
+  "hours": "сеансы в 11:00 и 14:00 по афише; касса не указана",
+  "hours_src": "https://demmeni.ru",
+  "season": "24 дек 2026 – 9 янв 2027.",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k0",
+   "k4"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Спектакли, как указано на сайте, для детей от 4 лет. Разбор категорий цен потерян в тексте страницы, диапазон приблизительный."
+ },
+ {
+  "city": "spb",
+  "name": "Музей советских игровых автоматов",
+  "cat": "muzey",
+  "desc": "Ретро-автоматы, которые можно потрогать, ежечасные экскурсии.",
+  "url": "https://15kop.ru",
+  "url_status": 200,
+  "addr": "Конюшенная площадь, 2В",
+  "metro": "Невский проспект",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "Петербург: билет 1250 ₽, льготный 1100 ₽, семейный 4400 ₽ (дети до 6 лет бесплатно); в цену входят 15 игр и экскурсия",
+  "price_year": "2026",
+  "price_src": "https://15kop.ru/spb",
+  "hours": "ежедневно 11:00–21:00",
+  "hours_src": "https://15kop.ru/",
+  "season": "",
+  "for": [
+   "adults",
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult",
+   "laugh"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Официальный сайт 15kop.ru; цена на странице не указана, билеты на отдельной странице продажи. Экскурсия включена в билет, каждый час с 12:00."
+ },
+ {
+  "city": "spb",
+  "name": "Кронштадт, парк «Остров фортов»",
+  "cat": "zagorod",
+  "desc": "Парк с фортами на воде, зимой тюбинг и арт-объекты; лучше ехать на весь день.",
+  "url": "https://peterburg2.ru/restplaces/muzeynoistoricheskiy-park-ostrov-fortov-30585.html",
+  "url_status": 200,
+  "addr": "Кронштадт, Цитадельское шоссе, 14",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "https://www.sputnik8.com/ru/kronshtadt/sights/island-of-forts/info",
+  "hours": "",
+  "hours_src": "https://www.sputnik8.com/ru/kronshtadt/sights/island-of-forts/info",
+  "season": "",
+  "for": [
+   "kids",
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Пригороды",
+  "time": "day",
+  "budget": 2,
+  "notes": "Официальный сайт не найден, данные из сторонних справочников и они противоречат друг другу. Подъезд наземным транспортом или «Метеор»."
+ },
+ {
+  "city": "spb",
+  "name": "Каток Брусницын (Кожевенная, 30)",
+  "cat": "katok",
+  "desc": "Каток в Севкабель-соседстве с сеансами по расписанию, на сайте упомянуты лазерные эффекты.",
+  "url": "https://brusnitsyn.spb.ru/icerink",
+  "url_status": 200,
+  "addr": "Кожевенная линия, 30",
+  "metro": "Василеостровская / Приморская",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "будни 100–350 ₽, выходные 350–600 ₽ по сеансам",
+  "price_year": "2025–26",
+  "price_src": "https://brusnitsyn.spb.ru/icerink",
+  "hours": "будни 11:30–21:30, выходные и праздники 10:00–23:00",
+  "hours_src": "https://brusnitsyn.spb.ru/icerink",
+  "season": "В 2025–26 каток работал 26 янв – 10 мар. Сезон 2026–27 ещё не объявлен.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "dance",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 1,
+  "notes": "На странице указан сезон 2026 года (янв–мар), 2026–27 нет. Звёздочка у вторых цен не расшифрована, вероятно льготные. В старых данных «лазерный каток» — в тексте сайта лишь упоминание лазерных эффектов."
+ },
+ {
+  "city": "spb",
+  "name": "Каток в Таврическом саду",
+  "cat": "katok",
+  "desc": "Каток в центре города, сеансы массового катания.",
+  "url": "https://peterburg2.ru/restplaces/katok-v-tavricheskom-sadu-28975.html",
+  "url_status": 200,
+  "addr": "Потёмкинская ул., 4А",
+  "metro": "Чернышевская",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "350–600 ₽",
+  "price_year": "2025–26",
+  "price_src": "https://peterburg2.ru/restplaces/katok-v-tavricheskom-sadu-28975.html",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "dance",
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Официального сайта не нашёл. В справочниках цены 350 и 450–600 ₽. Часов и дат нет."
+ },
+ {
+  "city": "spb",
+  "name": "Анненкирхе, органные концерты",
+  "cat": "muzey",
+  "desc": "Выставка «История всего» и органные концерты в здании лютеранской церкви.",
+  "url": "https://www.annenkirche.com",
+  "url_status": 200,
+  "addr": "Кирочная ул., 8В",
+  "metro": "Чернышевская",
+  "metro_min": 6,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "2026–27",
+  "price_src": "https://www.annenkirche.com",
+  "hours": "ноябрь 2026: вт–сб 10:00–18:00, пн и вс 14:00–22:00; касса закрывается за 30 мин",
+  "hours_src": "https://www.annenkirche.com",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 2,
+  "notes": "annenkirche.com без www отдаёт 403 с проверяющей машины, www.annenkirche.com 200. Часы меняются изо дня в день."
+ },
+ {
+  "city": "spb",
+  "name": "Петрикирхе, орган",
+  "cat": "show",
+  "desc": "Органные концерты в лютеранской церкви на Невском проспекте, около часа.",
+  "url": "https://petrikirche.ru",
+  "url_status": 200,
+  "addr": "Невский проспект, 22–24",
+  "metro": "Невский проспект",
+  "metro_min": 3,
+  "price_kind": "from",
+  "price": "от 1 300 ₽ («Рождественский орган»)",
+  "price_year": "2026–27",
+  "price_src": "https://www.kp.ru/afisha/spb/konczerty/konczert-rozhdestvenskij-organ-v-sankt-peterburge-25-dekabrya-2026/",
+  "hours": "по афише концертов",
+  "hours_src": "https://petrikirche.ru",
+  "season": "«Рождественский орган» 25 декабря 2026.",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 2,
+  "notes": "Цена из афиши kp.ru, концерты организуют разные агентства, цены различаются. На сайте церкви концерты в разделе «Концерты на большом органе»."
+ },
+ {
+  "city": "spb",
+  "name": "Елисеевский магазин",
+  "cat": "progulka",
+  "desc": "Исторический магазин с витринами и декором, можно зайти согреться.",
+  "url": "https://peterburg2.ru/restplaces/eliseevskiy-magazin-5564.html",
+  "url_status": 200,
+  "addr": "Невский проспект, 56",
+  "metro": "Гостиный двор",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "вход свободный",
+  "price_year": "постоянная",
+  "price_src": "https://peterburg2.ru/restplaces/eliseevskiy-magazin-5564.html",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [],
+  "who": [
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Официальный сайт не найден, часы не подтверждены. Свободный вход в магазин — по характеру места, источник это не уточняет."
+ },
+ {
+  "city": "spb",
+  "name": "Дом книги (дом Зингера)",
+  "cat": "progulka",
+  "desc": "Книжный магазин в доме Зингера с кафе и видом на Казанский собор.",
+  "url": "https://dk-spb.ru",
+  "url_status": 200,
+  "addr": "Невский проспект, 28",
+  "metro": "Невский проспект",
+  "metro_min": 3,
+  "price_kind": "free",
+  "price": "вход свободный",
+  "price_year": "постоянная",
+  "price_src": "https://peterburg2.ru/restplaces/magazin-dom-knigi-3549.html",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес исправлен: в старых данных был Невский, 20, по справочникам Дом книги — Невский, 28. Часы не нашёл. Телефон +7 812 667-84-27."
+ },
+ {
+  "city": "spb",
+  "name": "Мариинский театр, «Щелкунчик»",
+  "cat": "show",
+  "desc": "Балет «Щелкунчик» на главной сцене в декабре.",
+  "url": "https://www.mariinsky.ru",
+  "url_status": 200,
+  "addr": "Театральная площадь, 1",
+  "metro": "Садовая",
+  "metro_min": 15,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "https://www.mariinsky.ru",
+  "hours": "по афише",
+  "hours_src": "https://www.mariinsky.ru",
+  "season": "",
+  "for": [
+   "adults",
+   "family",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "eve",
+  "budget": 3,
+  "notes": "Афишу сайта с этой машины не прочитал (страница с проверкой безопасности). Даты и цены вписать вручную по сайту. Метро: Садовая / Сенная площадь / Спасская, пешком 15–20 минут."
+ },
+ {
+  "city": "spb",
+  "name": "Эрарта",
+  "cat": "muzey",
+  "desc": "Музей современного искусства, работает до 23:00.",
+  "url": "https://erarta.com",
+  "url_status": 301,
+  "addr": "29-я линия В. О., 2",
+  "metro": "Горный институт",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "основной билет 1500 ₽; от 60 лет 900 ₽; 4–15 лет 600 ₽",
+  "price_year": "2026",
+  "price_src": "https://erarta.com/ru/visit",
+  "hours": "ежедневно кроме вторника, 11:00–23:00",
+  "hours_src": "https://erarta.com",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo",
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Васильевский",
+  "time": "half",
+  "budget": 2,
+  "notes": "Старый диапазон 500–1 250 ₽ с сайта не подтвердился, убран. Метро Горный институт, но до музея пешком далеко. | Цены на 13.11.2026 по странице /ru/visit; в кассе возрастные цены."
+ },
+ {
+  "city": "spb",
+  "name": "Музей Арктики и Антарктики",
+  "cat": "muzey",
+  "desc": "Недорогой тёплый музей; экспозиция «Антарктика» закрыта до 20 декабря.",
+  "url": "https://polarmuseum.ru",
+  "url_status": 200,
+  "addr": "ул. Марата, 24А",
+  "metro": "Владимирская",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "взрослый 350 ₽, школьники 150 ₽, студенты 200–250 ₽, пенсионеры 150 ₽",
+  "price_year": "2026",
+  "price_src": "https://polarmuseum.ru/tickets",
+  "hours": "ср, пт–вс 10:00–18:00; чт 12:00–20:00; пн и вт выходной; вход до 30 мин до закрытия",
+  "hours_src": "https://polarmuseum.ru/tickets",
+  "season": "Экспозиция «Антарктика» закрыта до 20 дек 2026, откроется 23 декабря.",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 1,
+  "notes": "Старая цена 350 ₽ не подтвердилась на главной. Адрес по сайту: ул. Марата, 24А. | Старая цена 350 ₽ подтверждена на странице билетов."
+ },
+ {
+  "city": "spb",
+  "name": "Аквапарк «Питерлэнд»",
+  "cat": "razvl",
+  "desc": "Аквапарк с тёплой водой в любой мороз.",
+  "url": "http://piterland.ru/aquapark/",
+  "url_status": 301,
+  "addr": "Приморский проспект, 72",
+  "metro": "Беговая",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "тариф «Безграничные возможности» 700 ₽; полный прайс только в кассе",
+  "price_year": "2026–27",
+  "price_src": "https://aqua.piterland.ru/aquapark/prices/",
+  "hours": "ежедневно 10:00–22:00",
+  "hours_src": "http://piterland.ru/aquapark/",
+  "season": "",
+  "for": [
+   "kids",
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "dance"
+  ],
+  "indoor": "in",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": 2,
+  "notes": "Тариф 700 ₽ — особый (по документу), не базовый билет. Метро Беговая, до парка далеко. Телефон +7 812 777-72-73."
+ },
+ {
+  "city": "spb",
+  "name": "Охта Парк, «Лесной каток»",
+  "cat": "katok",
+  "desc": "Каток среди елей на территории парка, рядом блинная и прокат.",
+  "url": "https://www.okhtapark.ru",
+  "url_status": 301,
+  "addr": "Ленинградская обл., Всеволожский р-н, дер. Сярьги, Центральная ул., 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "https://www.okhtapark.ru",
+  "hours": "",
+  "hours_src": "https://www.okhtapark.ru",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "dance"
+  ],
+  "indoor": "out",
+  "district": "Пригороды",
+  "time": "day",
+  "budget": 2,
+  "notes": "Адрес исправлен по сайту. Метро нет, добираться на авто. Часы противоречат друг другу. Телефон +7 812 389-29-99."
+ },
+ {
+  "city": "spb",
+  "name": "Эрмитаж",
+  "cat": "muzey",
+  "desc": "Главный музей города: залы Зимнего дворца и Главного штаба зимой, программы для семей.",
+  "url": "https://www.hermitagemuseum.org",
+  "url_status": 200,
+  "addr": "Дворцовая наб., 34",
+  "metro": "Адмиралтейская",
+  "metro_min": 10,
+  "price_kind": "from",
+  "price": "Главный музейный комплекс 1200 ₽ (основной билет), Главный штаб 700 ₽",
+  "price_year": "2026",
+  "price_src": "https://hermitagemuseum.org/visitus/",
+  "hours": "Главный музейный комплекс: ср, чт, вс 11:00–18:00; вт, пт, сб 11:00–20:00; кассы закрываются за час до закрытия",
+  "hours_src": "https://hermitagemuseum.org/",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult",
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 2,
+  "notes": "Домен hermitagemuseum.org работает (200, с -k; в обычном режиме возможна ошибка сертификата). На сайте цена Главного комплекса записана как «1200-500 рублей»: нижняя цифра не расшифрована, льготные категории смотреть в «О посещении». Новогодняя программа не найдена."
+ },
+ {
+  "city": "spb",
+  "name": "Русский музей, Михайловский дворец",
+  "cat": "muzey",
+  "desc": "Основная экспозиция в Михайловском дворце; у музея есть детский раздел с творческими занятиями.",
+  "url": "https://rusmuseum.ru",
+  "url_status": 200,
+  "addr": "Инженерная ул., 4",
+  "metro": "Гостиный двор / Невский проспект",
+  "metro_min": "станции «Невский проспект», «Гостиный двор» (минуты не указаны)",
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "10:00–20:00, вт выходной",
+  "hours_src": "https://rusmuseum.ru/museums/mikhailovsky-palace/",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 2,
+  "notes": "цены не найдены; новогодняя программа не анонсирована; детский раздел rusmuseum.ru/sites/rusmuseumkids/"
+ },
+ {
+  "city": "spb",
+  "name": "Музей Фаберже",
+  "cat": "muzey",
+  "desc": "Коллекция ювелирных изделий в Шуваловском дворце, пасхальные яйца Фаберже.",
+  "url": "https://fabergemuseum.ru",
+  "url_status": 302,
+  "addr": "наб. реки Фонтанки, 21",
+  "metro": "Гостиный двор / Невский проспект",
+  "metro_min": 10,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 2,
+  "notes": "сайт ведёт на билетную страницу tickets.fsv.ru; цены, часы, программы не найдены; адрес и метро по общеизвестным данным, проверить"
+ },
+ {
+  "city": "spb",
+  "name": "Кунсткамера",
+  "cat": "muzey",
+  "desc": "Первый музей России, анатомические и этнографические коллекции Петра I.",
+  "url": "https://www.kunstkamera.ru",
+  "url_status": 200,
+  "addr": "Университетская наб., 3",
+  "metro": "Адмиралтейская / Василеостровская",
+  "metro_min": 15,
+  "price_kind": "range",
+  "price": "взрослые 500 ₽; школьники, студенты, пенсионеры 300 ₽",
+  "price_year": "2026",
+  "price_src": "https://www.kunstkamera.ru/museum/visitors_info3/",
+  "hours": "вт–вс 10:00–18:00, вход до 17:00; пн выходной; последний вт месяца санитарный день; закрыт 1 и 31 декабря",
+  "hours_src": "https://www.kunstkamera.ru/museum/visitors_info/",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Сайт www.kunstkamera.ru открылся (200). Бесплатный день для индивидуальных посетителей — третий четверг месяца (сент–апр). Билеты по сеансам на tickets.kunstkamera.ru."
+ },
+ {
+  "city": "spb",
+  "name": "Петергоф зимой",
+  "cat": "zagorod",
+  "desc": "Нижний парк и дворцы Петергофа; музеи и парк зимой работают с ограничениями, фонтаны не включены.",
+  "url": "https://peterhofmuseum.ru",
+  "url_status": 200,
+  "addr": "Санкт-Петербург, Петергоф, Разночинная ул., 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Нижний парк зимой бесплатный; Большой дворец 1000 ₽ (граждане РФ/ЕАЭС), дети 7–14 лет 250 ₽, 14–18 лет 700 ₽, дети до 7 бесплатно",
+  "price_year": "2026",
+  "price_src": "https://peterhofmuseum.ru/news/2025/1598",
+  "hours": "Нижний парк 09:00–18:00 (вход до 17:45)",
+  "hours_src": "https://peterhofmuseum.ru/objects/peterhof/nizhniy_park/info",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Пригороды",
+  "time": "day",
+  "budget": 2,
+  "notes": "цены, часы парка и список закрытых на зиму объектов не найдены (в разделе закрытых на зиму: Грот, Эрмитаж, Птичьи вольеры, музей яхт); онлайн-продажа была недоступна"
+ },
+ {
+  "city": "spb",
+  "name": "Царское Село, Екатерининский дворец и парк",
+  "cat": "usadba",
+  "desc": "Дворец и парк в Пушкине; с 14 ноября действует комплексный билет «Дворец трёх императриц».",
+  "url": "https://www.tzar.ru",
+  "url_status": 200,
+  "addr": "Санкт-Петербург, Пушкин, Садовая ул., 7",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "дворец (парадные залы) взрослый 2200 ₽, дети 7–13 лет 700 ₽, до 7 бесплатно; Екатерининский парк бесплатный с 19 октября до конца апреля",
+  "price_year": "2026",
+  "price_src": "https://www.tzar.ru/en/visitors/workinhours/ekaterininsky_palace",
+  "hours": "дворец ср–пн 10:00–18:00, вт закрыт",
+  "hours_src": "https://www.tzar.ru/en/visitors/workinhours/ekaterininsky_palace",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Пригороды",
+  "time": "day",
+  "budget": 2,
+  "notes": "цены дворца не найдены; на сайте сказано: вход в Екатерининский парк бесплатен с 19 октября (год не указан), дети до 14 лет бесплатно; билеты tkt.tzar.ru"
+ },
+ {
+  "city": "spb",
+  "name": "Павловск, дворец и парк",
+  "cat": "usadba",
+  "desc": "Дворец и один из крупнейших пейзажных парков Европы; зимой парк открыт для прогулок.",
+  "url": "https://pavlovskmuseum.ru",
+  "url_status": 200,
+  "addr": "Санкт-Петербург, Павловск, Садовая ул., 20",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Пригороды",
+  "time": "day",
+  "budget": 1,
+  "notes": "pavlovskmuseum.ru отвечает 200, но страница «Домен не прилинкован ни к одной из дирекций», то есть домен не рабочий. Верный адрес найти не удалось (pavlovsk-palace.ru, pavlovsk.spb.ru не открываются). Цены и часы не проверены."
+ },
+ {
+  "city": "spb",
+  "name": "Гатчинский дворец",
+  "cat": "usadba",
+  "desc": "Дворец и Приоратский дворец; в программе «Дворцовые ёлки» и детский спектакль.",
+  "url": "https://gatchinapalace.ru",
+  "url_status": 200,
+  "addr": "Гатчина, Красноармейская ул., 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "from",
+  "price": "дворец 700 ₽, Приорат 300 ₽, парк 250 ₽, оба дворца 950 ₽",
+  "price_year": "2026",
+  "price_src": "https://gatchinapalace.ru/visitors/admission_fee/",
+  "hours": "дворец 10:00–18:00, пн выходной; Приорат 10:00–18:00, пн и вт выходной; парк ежедневно 06:00–22:00",
+  "hours_src": "https://gatchinapalace.ru",
+  "season": "Дворцовые ёлки 26 и 27 дек 2026; «Новый год в Простоквашино» 5 дек 2026.",
+  "for": [
+   "family",
+   "kids",
+   "adults"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "crew",
+   "pair"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "both",
+  "district": "Пригороды",
+  "time": "day",
+  "budget": 1,
+  "notes": "цена ёлки отдельно не найдена; 1 декабря санитарный день"
+ },
+ {
+  "city": "spb",
+  "name": "Колоннада Исаакиевского собора",
+  "cat": "vid",
+  "desc": "Смотровая площадка на колоннаде собора с видом на центр города.",
+  "url": "https://cathedral.ru",
+  "url_status": 302,
+  "addr": "Исаакиевская пл., 4",
+  "metro": "Адмиралтейская",
+  "metro_min": 15,
+  "price_kind": "from",
+  "price": "700 ₽ (колоннада, дневной билет; льготы не предусмотрены)",
+  "price_year": "2026",
+  "price_src": "https://www.cathedral.ru/ru/visitors/prices",
+  "hours": "10:00–18:00, кассы до 17:30; с 1 окт по 30 апр выходной — третья среда месяца",
+  "hours_src": "https://www.cathedral.ru/ru/visitors/time",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo",
+   "crew"
+  ],
+  "moods": [
+   "walk",
+   "cult"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 1,
+  "notes": "Данные с официального сайта cathedral.ru (прежние страницы давали 404, новые — /ru/visitors/prices и /ru/visitors/time). Строка про выходной обрезана при чтении, проверьте перед публикацией. Музей-собор отдельно: 10:00–18:00, выходной среда."
+ },
+ {
+  "city": "spb",
+  "name": "Смотровая площадка Лахта-центра",
+  "cat": "vid",
+  "desc": "Смотровая площадка на 83 этаже, подъём на лифте, аудиогид.",
+  "url": "https://lakhta.center",
+  "url_status": 200,
+  "addr": "Лахтинский пр., 2, корп. 3",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "range",
+  "price": "аудиогид 1400–1800 ₽, льготный 1000–1300 ₽; до 3 лет бесплатно",
+  "price_year": "2026",
+  "price_src": "https://lakhta.center/visitors/",
+  "hours": "сеансы по времени; будни, ориентировочно 10:00–21:00",
+  "hours_src": "https://lakhta.center/visitors/",
+  "season": "",
+  "for": [
+   "adults",
+   "family"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "solo",
+   "crew"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "in",
+  "district": "Пригороды",
+  "time": "1h",
+  "budget": 3,
+  "notes": "часы точно не указаны; метро и адрес по общеизвестным данным; билеты только на сайте; цена выше будней в выходные и каникулы"
+ },
+ {
+  "city": "spb",
+  "name": "БКЗ «Октябрьский»",
+  "cat": "elka",
+  "desc": "Большой концертный зал; новогодние ёлки и представления для детей в декабре и январе.",
+  "url": "https://bkz.ru",
+  "url_status": 200,
+  "addr": "Лиговский пр., 6",
+  "metro": "Площадь Восстания",
+  "metro_min": 3,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "kids",
+   "family"
+  ],
+  "ages": [
+   "k4",
+   "k8"
+  ],
+  "who": [
+   "crew"
+  ],
+  "moods": [
+   "laugh"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": 2,
+  "notes": "bkz-oktyabrsky.ru не открылся; официальный домен bkz.ru (200), афиша на нём до декабря. Новогодние ёлки и цены на них не найдены."
+ },
+ {
+  "city": "spb",
+  "name": "Невский проспект",
+  "cat": "progulka",
+  "desc": "Главная улица города: праздничная иллюминация, витрины, прогулка от Адмиралтейства до площади Восстания.",
+  "url": "https://visit-petersburg.ru/en/leisure/places/tp-199459-nevskiy-prospekt/",
+  "url_status": 200,
+  "addr": "Невский пр.",
+  "metro": "Адмиралтейская / Невский проспект / Гостиный двор",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "постоянная",
+  "price_src": "",
+  "hours": "круглосуточно",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "официальной страницы нет; даты иллюминации не проверены"
+ },
+ {
+  "city": "spb",
+  "name": "Малая Конюшенная",
+  "cat": "progulka",
+  "desc": "Пешеходная улица рядом с Невским: кафе и уличные музыканты.",
+  "url": "https://visit-petersburg.ru/en/leisure/places/tp-199847-malaya-konyushennaya-ulitsa/",
+  "url_status": 200,
+  "addr": "Малая Конюшенная ул.",
+  "metro": "Невский проспект / Гостиный двор",
+  "metro_min": 5,
+  "price_kind": "free",
+  "price": "бесплатно",
+  "price_year": "постоянная",
+  "price_src": "",
+  "hours": "круглосуточно",
+  "hours_src": "",
+  "season": "",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk",
+   "meet"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "официальной страницы нет; зимнее оформление не проверено"
+ }
+]

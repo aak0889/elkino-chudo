@@ -1,47 +1,45 @@
-# Раздел «Куда пойти»: собирает js/kuda-data.js из таблицы мест (places.txt) и её файлов (адрес/метро).
-# Запуск: python -I -X utf8 _tools/build_kuda.py <places.txt> <161455.txt.json> <161503.txt.json>
-import sys, json, re, os
+# Раздел «Куда пойти»: собирает js/kuda-data.js из _tools/kuda_places.json.
+# kuda_places.json — исходник: каждое место с официальной ссылкой, ценой и часами (с источниками и годом).
+# Запуск: python -X utf8 _tools/build_kuda.py   (ссылки проверяет _tools/check_kuda_links.py)
+import json, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-places_fn, msk_fn, spb_fn = sys.argv[1:4]
-src = {'msk': json.load(open(msk_fn, encoding='utf8')), 'spb': json.load(open(spb_fn, encoding='utf8'))}
-ADDR = {  # исправлено по официальным сайтам
-    'Театр Образцова': ('ул. Садовая-Самотёчная, 3', ''),
-    'Океанариум в Крокус Сити': ('Красногорск, ул. Международная, 10 (Крокус Сити)', ''),
-    'Москвариум на ВДНХ': ('ВДНХ, пр-т Мира, 119, стр. 23', 'ВДНХ'),
-    'Брусницын, лазерный каток': ('Кожевенная линия, 30', ''),
-    'Vokzal 1853': ('наб. Обводного канала, 118', ''),
-    'Ярмарка на Манежной': ('Манежная площадь', 'Охотный ряд'),
-    'Дворцовая площадь': ('Дворцовая площадь', 'Адмиралтейская / Невский проспект'),
-    'Рождественская ярмарка, Манежная': ('Манежная площадь (Санкт-Петербург)', 'Гостиный двор / Невский проспект'),
-    'Петропавловская крепость': ('Заячий остров', 'Горьковская / Спортивная'),
-    'Ботанический сад Петра Великого': ('ул. Профессора Попова, 2', 'Петроградская / Аптекарский остров'),
-    'Кронштадт, «Остров фортов»': ('Кронштадт, парк «Остров фортов»', ''),
-    'Охта Парк, «Лесной каток»': ('Охта Парк, Ленинградская область (уточняйте на сайте)', ''),
-    'Квиз, плиз!': ('несколько баров центра', ''),
-    'ИнноПарк ВДНХ': ('ВДНХ (павильон уточняйте на сайте)', 'ВДНХ'),
-    'Standup Store': ('адрес уточняйте на афише клуба', ''),
-    'Анненкирхе, «Рождество»': ('Кирочная ул., 8, лит. В', ''),
-}
-BAD = ('Standup', 'Клуб')
+places = json.load(open(os.path.join(ROOT, '_tools', 'kuda_places.json'), encoding='utf8'))
+
+OLD_YEAR = re.compile(r'20(1\d|2[0-5])')  # цены не нового сезона
+
+
+def price_line(p):
+    kind, txt, yr = p['price_kind'], (p.get('price') or '').strip(), (p.get('price_year') or '').strip()
+    txt = txt[:1].upper() + txt[1:] if txt else ''
+    if kind == 'free':
+        return txt if txt and txt.lower() not in ('бесплатно',) else 'Бесплатно', ''
+    if kind == 'unknown' or not txt:
+        return (txt + '. ' if txt else '') + 'Цены сезона 2026–27 пока не опубликованы, смотрите на сайте площадки.', 'warn'
+    if yr and OLD_YEAR.search(yr) and '2026' not in yr:
+        return f'Цены сезона {yr}: {txt}. На 2026–27 уточняйте на сайте.', 'old'
+    return txt, ''
+
+
+def transport(m):
+    return bool(re.search(r'электрич|автобус|метеор', m, re.I))
+
+
 out = []
-for line in open(places_fn, encoding='utf8'):
-    line = line.strip()
-    if not line or line.startswith('#'): continue
-    c, key, name, tag, who, mood, band, time, ind, dist, site, note, price = line.split('|')
-    a = m = ''
-    for r in src[c]:
-        if key in r['name']:
-            a = re.sub(r'\s*\[.*$', '', r['f'].get('Адрес', '')).strip()
-            m = re.sub(r'\s*\[.*$', '', r['f'].get('Метро', '')).strip()
-            break
-    if name in ADDR:
-        a, m2 = ADDR[name]; m = m2 or m
-    if ' | Метро:' in a: a, m0 = a.split(' | Метро:', 1); m = m or m0.strip()
-    m = re.sub(r'^Метро:\s*', '', m); m = re.split(r'[;(,]', m)[0].strip(); a = re.sub(r'\s*\(.*?$', '', a) if len(a) > 60 else a
-    if not a: a = 'Адрес: уточняйте на сайте'
-    out.append(dict(id=f'{c}{len(out)+1}', c=c, n=name, t=tag, w=who.split(','), mo=mood.split(','), b=int(band), tm=time,
-                    i=ind, d=dist, s=site, a=a, m=m, h=note, p=price, v=1 if site else 0))
+for i, p in enumerate(places):
+    pr, pcls = price_line(p)
+    m = (p.get('metro') or '').strip()
+    w = list(p.get('ages') or []) + [x for x in (p.get('who') or []) if x in ('pair', 'crew', 'solo')]
+    out.append(dict(
+        id=f"{p['city']}{i + 1}", c=p['city'], n=p['name'], k=p['cat'], t=p.get('desc', ''),
+        s=p.get('url') or '', ss=p.get('url_status') or 0,
+        a=p.get('addr') or '', m='' if transport(m) else m, tr=m if transport(m) else '',
+        mm=p.get('metro_min'), p=pr, pc=pcls, ps=p.get('price_src') or '',
+        h=p.get('hours') or '', hs=p.get('hours_src') or '', se=p.get('season') or '',
+        f=p.get('for') or [], w=w, mo=p.get('moods') or [], i=p['indoor'], d=p['district'],
+        tm=p['time'], b=int(p.get('budget') or 0), fr=1 if p['price_kind'] == 'free' else 0,
+    ))
 open(os.path.join(ROOT, 'js', 'kuda-data.js'), 'w', encoding='utf8').write(
-    '// Сгенерировано _tools/build_kuda.py. Данные из файла Насти; проверенное отмечено ссылкой на сайт, остальное «уточняйте».\n'
+    '// Сгенерировано _tools/build_kuda.py из _tools/kuda_places.json (проверка 13.11.2026).\n'
+    '// Данные с официальных сайтов и mos.ru / spb-агрегаторов; у цены — год и источник.\n'
     'window.KUDA_PLACES=' + json.dumps(out, ensure_ascii=False, separators=(',', ':')) + ';\n')
-print(len(out), 'places')
+print(len(out), 'places:', sum(p['c'] == 'msk' for p in out), 'msk /', sum(p['c'] == 'spb' for p in out), 'spb')
