@@ -41,7 +41,7 @@
           <li>Распечатайте дома на обычном принтере и положите под ёлку или в почтовый ящик.</li>
         </ul>
         <div class="price"><b>99 ₽</b><span>за одно письмо</span></div>
-        <p style="margin-top:18px"><a class="btn btn-red" href="#zakaz">Заказать письмо</a></p>
+        <p style="margin-top:18px"><a class="btn btn-red" id="hero-pay" href="#zakaz">Заказать письмо</a></p>
       </div>
 
       <figure style="margin:0">
@@ -108,6 +108,10 @@
         <!-- ФОРМА-ЗАГОТОВКА. Сейчас данные НИКУДА не отправляются: при нажатии показывается заглушка.
              Перед запуском: подключить отправку (бот/сервер в РФ), оплату, уведомление РКН об обработке ПДн,
              вписать реквизиты в politika.html и soglasie.html. -->
+        <div class="pay-box" id="pay-box" hidden>
+          <p class="pay-note">Оплата картой или по СБП. После оплаты письмо приходит на почту в течение дня.</p>
+          <p><a class="btn btn-red" id="pay-link" href="#" rel="noopener">Заказать за 99 ₽</a></p>
+        </div>
         <form class="form" id="order" novalidate>
           <div class="fld"><label for="f-name">Имя ребёнка</label><input id="f-name" name="child_name" autocomplete="off" required maxlength="40" placeholder="Например, Миша"></div>
           <div class="fld"><label for="f-age">Возраст</label><input id="f-age" name="child_age" inputmode="numeric" maxlength="2" placeholder="6"></div>
@@ -136,10 +140,22 @@
 
 <script>
 (function () {
+  // Ссылка на платёжную страницу Prodamus. Пример:
+  // var PAY = 'https://pay.prodamus.ru/abc123';
+  var PAY = 'https://uchetbezbuh.payform.ru/p/p6zw1u7a1a5357/';
   var f = document.getElementById('order'), cb = document.getElementById('f-agree'), btn = document.getElementById('f-send'), stub = document.getElementById('stub');
+  var box = document.getElementById('pay-box'), link = document.getElementById('pay-link');
+  if (PAY) {
+    f.style.display = 'none';
+    box.hidden = false;
+    link.href = PAY;
+    var hp = document.getElementById('hero-pay');
+    if (hp) hp.href = PAY;
+    return;
+  }
   cb.addEventListener('change', function () { btn.disabled = !cb.checked; });
   f.addEventListener('submit', function (e) {
-    e.preventDefault();               // заглушка: ничего не отправляем
+    e.preventDefault();
     if (!cb.checked) return;
     stub.hidden = false;
     stub.scrollIntoView({ behavior: 'smooth', block: 'center' });
