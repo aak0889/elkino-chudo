@@ -1,0 +1,69 @@
+.journey-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+}
+.journey-nav a, .journey-step a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .35rem .85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  background: #122544;
+  color: #ffe2a9;
+  border: 1px solid #ac8c58;
+}
+.journey-nav a:focus-visible, .journey-step a:focus-visible, .journey-track:focus-visible {
+  outline: 2px solid #ffe2a9;
+  outline-offset: 2px;
+}
+.journey-hint {
+  text-align: center;
+  margin: .75rem 0;
+}
+.realm-grid.journey-track {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  align-items: stretch;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 16px;
+}
+.journey-track .room {
+  grid-column: auto;
+  grid-row: 1;
+  min-width: 0;
+  scroll-snap-align: start;
+  border-top: 3px solid var(--chapter-color, #d8ae70);
+}
+.journey-track #lavka { --chapter-color: #a7ccaf; }
+.journey-track #pochta { --chapter-color: #f0a2a7; }
+.journey-track #domashnee { --chapter-color: #eac183; }
+.journey-track #sobytiya { --chapter-color: #9bc4e9; }
+.journey-track #vremya { --chapter-color: #c8afe8; }
+.journey-track .room:target {
+  outline: 2px solid var(--chapter-color);
+  outline-offset: -2px;
+}
+.journey-step {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .6rem;
+}
+.journey-next { margin-inline-start: auto; }
+@media (min-width: 900px) {
+  .realm-grid.journey-track { grid-auto-columns: 86%; }
+}
+@media (max-width: 520px) {
+  .realm-grid.journey-track { grid-auto-columns: 94%; gap: 10px; }
+  .journey-step a { font-size: .875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-track { scroll-behavior: auto; }
+}

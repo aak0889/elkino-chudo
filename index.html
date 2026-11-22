@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="css/night.css?v=20261110">
 <link rel="stylesheet" href="css/light.css?v=20261113">
 <link rel="stylesheet" href="css/depth.css?v=20261111">
+<link rel="stylesheet" href="css/journey.css?v=1">
 <!-- three.js для 3D-шаров (ES-модули, грузятся только при открытии шара) -->
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <!-- Yandex.Metrika counter -->
@@ -238,11 +239,19 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   <div class="wrap">
     <header class="head head-center">
       <svg class="star-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0Z"/></svg>
-      <h2 id="razdely-h">Волшебные разделы</h2>
+      <h2 id="razdely-h">Путешествие по Ёлкино</h2>
       <p class="sub">Часть рубрик уже открыта здесь, на сайте, часть выходит в наших каналах, остальные откроются ближе к празднику. Даты рядом с рубриками, которые ещё не открылись.</p>
     </header>
 
-    <div class="realm-grid">
+    <nav class="journey-nav" aria-label="Маршрут по Ёлкино">
+      <a href="#lavka">Подарки</a>
+      <a href="#pochta">Почта чудес</a>
+      <a href="#domashnee">Домашнее волшебство</a>
+      <a href="#sobytiya">События</a>
+      <a href="#vremya">Время чудес</a>
+    </nav>
+    <p class="journey-hint" id="journey-hint">Листайте карточки вбок или выберите раздел выше.</p>
+    <div class="realm-grid journey-track" tabindex="0" role="region" aria-labelledby="razdely-h" aria-describedby="journey-hint">
       <article class="room" id="lavka">
         <img class="room-img" src="img/s-gifts.webp" width="720" height="900" loading="lazy" alt="Подарки в зелёной бумаге с золотыми лентами">
         <div class="room-body">
@@ -287,6 +296,9 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             </div>
             <!-- <p class="shop-ad">Реклама. ООО «…», ИНН … · erid: … </p> -->
           </div>
+        <div class="journey-step">
+          <a class="journey-next" href="#pochta">Почта чудес →</a>
+        </div>
       </article>
 
       <article class="room" id="pochta">
@@ -302,6 +314,10 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             <li><span>Бланк письма Деду Морозу, A4 для печати</span><a class="st st-on" href="pismo-dedu-morozu.html">распечатать</a></li>
             <li><span>Именное письмо от Деда Мороза, 99 ₽</span><a class="st st-on" href="pismo-deda-moroza.html">подробнее</a></li>
           </ul>
+        <div class="journey-step">
+          <a href="#lavka">← Подарки</a>
+          <a class="journey-next" href="#domashnee">Домашнее волшебство →</a>
+        </div>
       </article>
 
       <article class="room" id="domashnee">
@@ -318,6 +334,10 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             <li><span>Калькулятор стола: оливье, шуба, сколько готовить</span><em class="st">откроется 1 декабря</em></li>
             <li><span>Сказочная полка: сказки на ночь с именем ребёнка</span><em class="st">откроется 1 декабря</em></li>
           </ul>
+        <div class="journey-step">
+          <a href="#pochta">← Почта чудес</a>
+          <a class="journey-next" href="#sobytiya">События →</a>
+        </div>
       </article>
 
       <article class="room" id="sobytiya">
@@ -344,9 +364,13 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             </div>
             <!-- <p class="shop-ad">Реклама. ООО «…», ИНН … · erid: … </p> -->
           </div>
+        <div class="journey-step">
+          <a href="#domashnee">← Домашнее волшебство</a>
+          <a class="journey-next" href="#vremya">Время чудес →</a>
+        </div>
       </article>
 
-      <article class="room room-wide">
+      <article class="room room-wide" id="vremya">
         <img class="room-img" src="img/s-time.webp" width="720" height="900" loading="lazy" alt="Старинные часы без пяти двенадцать среди золотых огней">
         <div class="room-body">
           <h3>Время чудес</h3>
@@ -355,6 +379,10 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
             <a class="btn btn-ink" href="#kalendar">Календарь декабря</a>
             <a class="btn btn-ink-line" href="#televizor">Включить телевизор</a>
           </div>
+        </div>
+        <div class="journey-step">
+          <a href="#sobytiya">← События</a>
+          <a class="journey-next" href="#anonsy">К новогоднему отсчёту ↓</a>
         </div>
       </article>
     </div>
