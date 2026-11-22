@@ -250,8 +250,28 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
           <p class="room-sub">Подборки для самых близких и для тех, у кого всё есть.</p>
         </div>
           <ul class="rubs">
-            <li><span>Идеи подарков по людям и бюджету</span><em class="st">в канале с 16 ноября</em></li>
-            <li><span>Подарки коллегам до 1000 ₽</span><em class="st">16 ноября</em></li>
+            <li>
+              <details>
+                <summary>Идеи подарков по людям и бюджету</summary>
+                <ul>
+                  <li>До 500 ₽ · для соседа или знакомых: мандарины в бумажном пакете и открытка от руки.</li>
+                  <li>До 1 000 ₽ · для подруги: какао и мини-упаковка маршмеллоу для зимнего киновечера.</li>
+                  <li>До 2 000 ₽ · для семьи с детьми: компактная настольная игра, которую можно открыть и сыграть сразу после ужина.</li>
+                </ul>
+                <p>Бюджеты — ориентиры. Сравните цены и доставку перед покупкой.</p>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Подарки коллегам до 1 000 ₽</summary>
+                <ul>
+                  <li>Для кофейной паузы · два дрип-пакета и плитка шоколада.</li>
+                  <li>Для любителя списков · карманный блокнот и хорошая ручка.</li>
+                  <li>Для зимних прогулок · многоразовая грелка для рук и пакетик чая.</li>
+                  <li>Для «Тайного Санты» · небольшая головоломка и открытка с подсказкой.</li>
+                </ul>
+              </details>
+            </li>
             <li><span>Подарки до 500 ₽</span><em class="st">3 декабря</em></li>
             <li><span>Подарки детям</span><em class="st">14 декабря</em></li>
           </ul>
@@ -293,7 +313,8 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
           <ul class="rubs">
             <li><span>Рецепты к столу: семь семейных</span><a class="st st-on" href="recepty.html">читать</a></li>
             <li><span>Как было у нас: вспоминаем вместе</span><a class="st st-on" href="kak-bylo.html">читать</a></li>
-            <li><span>Камин и ёлка: длинные видео с музыкой</span><em class="st">откроется 20 ноября</em></li>
+            <li id="kamin"><span>Камин и ёлка: тихая музыка и отсчёт до 2027 года</span><a class="st st-on" href="https://live.vkvideo.ru/channel39137287/stream/sl_458755" target="_blank" rel="noopener">Смотреть эфир в VK Видео</a></li>
+            <li id="guide"><span>Новогодний гайд</span><a class="st st-on" href="https://www.litres.ru/74863189/" target="_blank" rel="noopener">Открыть на ЛитРес</a></li>
             <li><span>Калькулятор стола: оливье, шуба, сколько готовить</span><em class="st">откроется 1 декабря</em></li>
             <li><span>Сказочная полка: сказки на ночь с именем ребёнка</span><em class="st">откроется 1 декабря</em></li>
           </ul>
@@ -345,7 +366,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   <div class="wrap">
     <header class="head">
       <h2 id="days-h">Каждый день — маленькая радость</h2>
-      <p class="sub">Посты отсчёта из нашего канала. Прошедшие дни открываются целиком, следующие пока анонсы. Сказки, игры, чек-листы и вопросы, на которые хочется ответить в комментариях.</p>
+      <p class="sub">Посты новогоднего отсчёта. Материалы за сегодня и прошедшие дни можно открыть целиком, следующие пока анонсы. Сказки, игры, чек-листы и вопросы, на которые хочется ответить в комментариях.</p>
     </header>
 
     <div class="strip-hint" aria-hidden="true">листайте &rarr;</div>
@@ -451,7 +472,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
         <div class="leaf-body">
           <p class="leaf-top"><span class="leaf-n">40</span><span class="leaf-d">дней до НГ<br><time datetime="2026-11-22">22 ноября</time></span></p>
           <h3>Пора писать письмо</h3>
-          <p>Веха «40 дней»: садимся за письмо Деду Морозу.</p>
+          <p>40 календарных дней до Нового года: садимся за письмо Деду Морозу.</p>
         </div>
       </li>
       <li class="leaf" data-date="2026-11-24">
@@ -665,6 +686,7 @@ ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
 </div>
 
 <script src="js/days-data.js?v=20261113" defer></script>
+<script src="js/days-editorial.js?v=20261122" defer></script>
 <script src="js/main.js?v=20261113" defer></script>
 <script src="js/days.js?v=20261113" defer></script>
 <script src="js/games.js?v=20261110" defer></script>
