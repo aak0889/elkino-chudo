@@ -76,6 +76,7 @@
 .kd-c-progulka{--a1:#2a466f;--a2:#7090c0}.kd-c-master{--a1:#8a5e18;--a2:#d9a94a}.kd-c-vid{--a1:#1f415f;--a2:#5f9cc9}
 .kd-c-zagorod{--a1:#47532a;--a2:#93a35c}.kd-c-razvl{--a1:#1b6179;--a2:#58b4cf}
 .kd-body{display:flex;flex-direction:column;flex:1;padding:16px 20px 18px}
+.kd-photo{margin:0;position:relative;overflow:hidden;background:#193b4a}.kd-photo img{display:block;width:100%;height:188px;object-fit:cover}.kd-photo figcaption{padding:5px 12px;background:#f6f2e9;color:#445159;font-size:11px;line-height:1.4}.kd-photo a{color:inherit;text-decoration:underline}
 .kd-bds{display:flex;flex-wrap:wrap;gap:6px}
 .kd-bd{padding:3px 10px;border-radius:999px;background:rgba(47,79,128,.1);font-size:12.5px;color:var(--sky)}
 .kd-bd.free{background:#e3f3e6;color:#22663a;font-weight:600}

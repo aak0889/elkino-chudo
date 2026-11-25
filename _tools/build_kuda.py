@@ -37,9 +37,11 @@ for i, p in enumerate(places):
         h=p.get('hours') or '', hs=p.get('hours_src') or '', se=p.get('season') or '',
         f=p.get('for') or [], w=w, mo=p.get('moods') or [], i=p['indoor'], d=p['district'],
         tm=p['time'], b=int(p.get('budget') or 0), fr=1 if p['price_kind'] == 'free' else 0,
+        ph=p.get('photo') or '', cr=p.get('photo_credit') or '', cl=p.get('photo_credit_link') or '',
+        nt=p.get('notes') or '', source_only=bool(p.get('source_only')),
     ))
 open(os.path.join(ROOT, 'js', 'kuda-data.js'), 'w', encoding='utf8').write(
-    '// Сгенерировано _tools/build_kuda.py из _tools/kuda_places.json (проверка 13.11.2026).\n'
-    '// Данные с официальных сайтов и mos.ru / spb-агрегаторов; у цены — год и источник.\n'
+    '// Сгенерировано _tools/build_kuda.py из _tools/kuda_places.json (обновлено 25.11.2026).\n'
+    '// Новые адреса — официальный каталог Москвы и туристический портал Петербурга; цены и часы без подтверждения не указаны.\n'
     'window.KUDA_PLACES=' + json.dumps(out, ensure_ascii=False, separators=(',', ':')) + ';\n')
 print(len(out), 'places:', sum(p['c'] == 'msk' for p in out), 'msk /', sum(p['c'] == 'spb' for p in out), 'spb')

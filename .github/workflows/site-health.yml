@@ -14,7 +14,7 @@ jobs:
           from urllib.request import Request, urlopen
           from urllib.parse import quote
           base = 'https://' + 'ёлкино-чудо.рф'.encode('idna').decode('ascii') + '/'
-          checks = [('', 'Ёлкино чудо'), ('imennaya-otkrytka.html', 'id="design"')]
+          checks = [('', 'Ёлкино чудо'), ('imennaya-otkrytka.html', 'id="design"'), ('kuda-poyti.html', '120 мест в Москве и 95 в Петербурге'), ('js/kuda-data.js', 'window.KUDA_PLACES=')]
           for path, marker in checks:
               url = base + path
               req = Request(url, headers={'User-Agent':'ElkinoSiteHealth/1.0'})

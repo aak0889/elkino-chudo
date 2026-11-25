@@ -40,7 +40,10 @@
   "district": "ЦАО",
   "time": "half",
   "budget": 0,
-  "notes": "Часть партера закрыта на благоустройство (по сайту). Цены катка не найдены."
+  "notes": "Часть партера закрыта на благоустройство (по сайту). Цены катка не найдены.",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2026-01-25%20%D0%9F%D0%B0%D1%80%D0%BA%20%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE%2C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB%2001.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:2026-01-25%20%D0%9F%D0%B0%D1%80%D0%BA%20%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE%2C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB%2001.jpg",
+  "photo_credit": "Retired electrician · CC0 · фото января 2026"
  },
  {
   "city": "msk",
@@ -246,7 +249,10 @@
   "district": "Север",
   "time": "day",
   "budget": 0,
-  "notes": "Цены катка 2026–27 не найдены; ярмарка 2025–26 на ВДНХ ежедневно 11:00–21:00, вход свободный (Ведомости)."
+  "notes": "Цены катка 2026–27 не найдены; ярмарка 2025–26 на ВДНХ ежедневно 11:00–21:00, вход свободный (Ведомости).",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow%2C%20VDNKh%2C%20Main%20Alley%20in%20winter%20%2816342761127%29.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Moscow%2C%20VDNKh%2C%20Main%20Alley%20in%20winter%20%2816342761127%29.jpg",
+  "photo_credit": "Gennady Grachev · CC BY 2.0 · архивное фото"
  },
  {
   "city": "msk",
@@ -526,7 +532,10 @@
   "district": "Юг",
   "time": "half",
   "budget": 1,
-  "notes": ""
+  "notes": "",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tsaritsyno%20Palace.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Tsaritsyno%20Palace.jpg",
+  "photo_credit": "Leo Medvedev · CC BY-SA 4.0 · архивное фото"
  },
  {
   "city": "msk",
@@ -2512,7 +2521,10 @@
   "district": "Центр",
   "time": "1h",
   "budget": 0,
-  "notes": "Официальной страницы нет; ссылка на новость dp.ru о ёлке 2025."
+  "notes": "Официальной страницы нет; ссылка на новость dp.ru о ёлке 2025.",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Winter%20palace%20square.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Winter%20palace%20square.jpg",
+  "photo_credit": "ezioman · CC BY 2.0 · архивное фото площади"
  },
  {
   "city": "spb",
@@ -4223,5 +4235,4549 @@
   "time": "1h",
   "budget": 0,
   "notes": "официальной страницы нет; зимнее оформление не проверено"
+ },
+ {
+  "city": "msk",
+  "name": "Музей археологии Москвы",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Манежная площадь, 1А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/ArhMoskowMuseum.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:ArhMoskowMuseum.jpg",
+  "photo_credit": "Qweasdqwe · CC BY-SA 4.0 · архивное фото"
+ },
+ {
+  "city": "msk",
+  "name": "Музей истории «Лефортово»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Крюковская улица, 23",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Восток",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Центр Гиляровского",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Столешников переулок, 9, стр. 5",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей «Садовое кольцо»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "проспект Мира, 16, стр. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей Зеленограда",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Зеленоград, корп. 360",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Зеленоград",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Выставочный зал «Зеленоград»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Зеленоград, корп. 1410",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Зеленоград",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей «Кутузовская изба»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Кутузовский проспект, 38, стр. 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Дом-музей Сергея Королёва",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "1-я Останкинская улица, 28",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Центральный выставочный зал «Манеж»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Манежная площадь, 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея Ильи Глазунова",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Волхонка, 13",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей сословий России",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Волхонка, 13, стр. 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей русского лубка и наивного искусства",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Головин переулок, 10",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Московский музей современного искусства на Петровке",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Петровка, 25",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Московский музей современного искусства на Гоголевском",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Гоголевский бульвар, 10",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей-мастерская Д. А. Налбандяна",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Тверская улица, 8, корп. 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей Вадима Сидура",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Новогиреевская улица, 37А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Восток",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей-мастерская Зураба Церетели",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Большая Грузинская улица, 15",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Государственный музей А. С. Пушкина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Пречистенка, 12/2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Мемориальная квартира А. С. Пушкина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Арбат, 53",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Мемориальная квартира Андрея Белого",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Арбат, 55",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей И. С. Тургенева",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Остоженка, 37/7",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Дом В. Л. Пушкина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Старая Басманная, 36",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей Владимира Высоцкого",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "улица Высоцкого, 3",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея Александра Шилова",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Знаменка, 3",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Биологический музей имени Тимирязева",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Малая Грузинская, 15",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей В. А. Тропинина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Щетининский переулок, 10, стр. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Дом-музей Марины Цветаевой",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Борисоглебский переулок, 6, стр. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей К. Г. Паустовского",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Кузьминская улица, 8",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Дом-музей С. А. Есенина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Большой Строченовский переулок, 24, стр. 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Мемориальный музей А. Н. Скрябина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Большой Николопесковский переулок, 11",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей русской гармоники А. Мирека",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "2-я Тверская-Ямская улица, 18",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей М. А. Булгакова",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Большая Садовая, 10, кв. 50",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Усадьба «Люблино»",
+  "cat": "usadba",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Летняя улица, 1, корп. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Дом Н. В. Гоголя",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Никитский бульвар, 7А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей обороны Москвы",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Мичуринский проспект, Олимпийская деревня, 3",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Запад",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей истории Парка Горького",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Крымский Вал, 9, стр. 11",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Дом Русского зарубежья имени Солженицына",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Нижняя Радищевская, 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей-квартира А. И. Солженицына",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Тверская, 12, стр. 8",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея «ЗДЕСЬ на Таганке»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Таганская улица, 31/22",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея «Измайлово»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Измайловский проезд, 4",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Восток",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея «На Шаболовке»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Серпуховской Вал, 24, корп. 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея «На Каширке»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "улица Академика Миллионщикова, 35, корп. 5",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Галерея «Беляево»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Профсоюзная улица, 100",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Подземный музей «Зарядье»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Варварка, 6, стр. 6",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей «Старый Английский двор»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Варварка, 4А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Центр «Космонавтика и авиация»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "проспект Мира, 119, стр. 34",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Центр славянской письменности «Слово»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "проспект Мира, 119, стр. 58",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей криптографии",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Ботаническая улица, 25, стр. 4",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Север",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Музей «Огни Москвы»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/shared/projects/museums/perechen-muzeev-2025-1.pdf",
+  "url_status": 0,
+  "addr": "Армянский переулок, 3–5, стр. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "ЦАО",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Серебряный бор",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Таманская улица",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Запад",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Парк «Фили»",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Большая Филёвская, 22, стр. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Запад",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Александровский сад",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Манежная площадь, 11",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexandrovsky%20garden.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Alexandrovsky%20garden.jpg",
+  "photo_credit": "Дмитрий Скляренко · CC BY 3.0 · архивное фото"
+ },
+ {
+  "city": "msk",
+  "name": "Сад имени Баумана",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Старая Басманная, 15А, стр. 4",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD%20%D0%B2%20%D1%81%D0%B0%D0%B4%D1%83%20%D0%B8%D0%BC.%20%D0%9D.%20%D0%AD.%20%D0%91%D0%B0%D1%83%D0%BC%D0%B0%D0%BD%D0%B0.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD%20%D0%B2%20%D1%81%D0%B0%D0%B4%D1%83%20%D0%B8%D0%BC.%20%D0%9D.%20%D0%AD.%20%D0%91%D0%B0%D1%83%D0%BC%D0%B0%D0%BD%D0%B0.jpg",
+  "photo_credit": "Bogunilia · CC BY 4.0 · архивное фото"
+ },
+ {
+  "city": "msk",
+  "name": "Парк Северного речного вокзала",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Ленинградское шоссе, 51",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Север",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Тюфелева роща",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "улица Архитектора Леонидова",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Юг",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Парк «Красная Пресня»",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Мантулинская улица, 5",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "msk",
+  "name": "Сад «Эрмитаж»",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Каретный Ряд, 3",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "ЦАО",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hermitage%20Garden%20Moscow.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Hermitage%20Garden%20Moscow.jpg",
+  "photo_credit": "Vladimir OKC · общественное достояние · архивное фото"
+ },
+ {
+  "city": "msk",
+  "name": "Лосиный остров",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://www.mos.ru/upload/documents/files/f5edece04f99e0dc9b4bf30e2d16ced0/LifletParkiiysadbiryszima2025.pdf",
+  "url_status": 0,
+  "addr": "Поперечный просек, 1Г",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Восток",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Исаакиевский собор",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Исаакиевская площадь, 4",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Медный всадник",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Сенатская площадь",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Александринский театр",
+  "cat": "show",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "площадь Островского, 6",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Смольный собор",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "площадь Растрелли, 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Smolny.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Smolny.jpg",
+  "photo_credit": "Daniel O. Ischenko · CC BY-SA 3.0 · архивное фото"
+ },
+ {
+  "city": "spb",
+  "name": "Здание Двенадцати коллегий",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Университетская набережная, 7–9",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Шереметевский дворец — Музей музыки",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "набережная Фонтанки, 34",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Центральный музей связи имени Попова",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Почтамтская улица, 7",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Зимняя канавка",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Зимняя канавка",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Казанский собор",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Казанская площадь, 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/0915Fa.%20St.%20Petersburg.%20Kazan%20Cathedral.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:0915Fa.%20St.%20Petersburg.%20Kazan%20Cathedral.jpg",
+  "photo_credit": "Александровы АГ · CC BY-SA 4.0 · архивное фото"
+ },
+ {
+  "city": "spb",
+  "name": "Площадь Искусств",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "площадь Искусств",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Стрелка Васильевского острова",
+  "cat": "vid",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Биржевая площадь",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Марсово поле",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Марсово поле",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Спас на Крови",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "набережная канала Грибоедова, 2Б",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Минералогический музей СПбГУ",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Менделеевская линия, 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Васильевский",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Кинотеатр «Аврора»",
+  "cat": "razvl",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Невский проспект, 60",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Концертный зал Музыкального театра имени Шаляпина",
+  "cat": "show",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Английская набережная, 56",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей флорентийской мозаики",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Ждановская улица, 45",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей мостов",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Мучной переулок, 2",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Стеклодувная мастерская Елагина острова",
+  "cat": "master",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Елагин остров, 4И",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Историко-литературный музей города Пушкина",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Пушкин, Леонтьевская улица, 28А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Пригороды",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Кронштадтский морской музей",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Кронштадт, Андреевская улица, 5",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Пригороды",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей русской сказки «За лесами, за горами»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Каменноостровский проспект, 61",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей-макет «Эпохи»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Университетская набережная, 1–3",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Васильевский",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей-макет «Петровская Акватория»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Невский проспект, 35",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Площадь Восстания",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "площадь Восстания",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Аничков мост",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Аничков мост",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Anichkov%20bridge.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Anichkov%20bridge.jpg",
+  "photo_credit": "Yair Haklai · CC BY-SA 4.0 · архивное фото"
+ },
+ {
+  "city": "spb",
+  "name": "Ростральные колонны",
+  "cat": "vid",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Биржевая площадь",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Александровская колонна",
+  "cat": "vid",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Дворцовая площадь",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Монумент героическим защитникам Ленинграда",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "площадь Победы",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей «ХХ век» — «Ловцы слов»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "проспект Пятилеток, 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Arts Square Gallery",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Итальянская улица, 5",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Культурный квартал «Брусницын»",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Кожевенная линия, 30",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Инсталляция «Пропавшие в кинохронике»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Каменноостровский проспект, 10В",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Петроградка",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Береговой форт «Риф»",
+  "cat": "zagorod",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Кронштадтское шоссе, 74А",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Пригороды",
+  "time": "1h",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Книжный магазин «Подписные издания»",
+  "cat": "razvl",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Литейный проспект, 57",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Стадион «Газпром Арена»",
+  "cat": "vid",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Футбольная аллея, 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Петроградка",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Мраморный дворец",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Миллионная улица, 5",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true,
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/4692.%20St.%20Petersburg.%20Marble%20Palace.jpg?width=900",
+  "photo_credit_link": "https://commons.wikimedia.org/wiki/File:4692.%20St.%20Petersburg.%20Marble%20Palace.jpg",
+  "photo_credit": "GAlexandrova · CC BY-SA 4.0 · архивное фото"
+ },
+ {
+  "city": "spb",
+  "name": "Культурное пространство «Третье место»",
+  "cat": "razvl",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Литейный проспект, 62",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Библиотека Гоголя",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Среднеохтинский проспект, 8",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Парк «Россия — моя история»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Бассейная улица, 32/1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Юг",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Центральный выставочный зал «Манеж» (Петербург)",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Исаакиевская площадь, 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Джазовый сквер",
+  "cat": "park",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Загородный проспект, 38",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Канатный цех «Красный гвоздильщик»",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "25-я линия В. О., 6, корп. 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Васильевский",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Захарьевская улица",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Захарьевская улица",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Центр",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Памятник «Стерегущему»",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Александровский парк",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Петроградка",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Памятник адмиралу Макарову",
+  "cat": "vid",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Кронштадт, Якорная площадь",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Пригороды",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Деревянный маяк Кронштадта",
+  "cat": "vid",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Кронштадт, Петровский канал",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Пригороды",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Музей «Дом Маяков»",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Кронштадт, Коммунистическая улица, 1",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Пригороды",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Особняк Мясникова",
+  "cat": "muzey",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "улица Восстания, 45",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Центр",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Театр «Синяя птица»",
+  "cat": "show",
+  "desc": "Круглогодичная площадка; афишу новогодних событий и режим работы уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "18-я линия В. О., 53Б",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "unknown",
+  "price": "",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults",
+   "kids"
+  ],
+  "ages": [
+   "k4",
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "cult"
+  ],
+  "indoor": "in",
+  "district": "Васильевский",
+  "time": "half",
+  "budget": -1,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
+ },
+ {
+  "city": "spb",
+  "name": "Особняк Ю. К. Добберта",
+  "cat": "progulka",
+  "desc": "Маршрут для зимней прогулки; праздничное оформление и доступность уточните перед поездкой.",
+  "url": "https://visit-petersburg.ru/leisure/places/",
+  "url_status": 0,
+  "addr": "Большая Пушкарская улица, 14",
+  "metro": "",
+  "metro_min": null,
+  "price_kind": "free",
+  "price": "Вход на прогулочную территорию без билета; отдельные мероприятия платные",
+  "price_year": "",
+  "price_src": "",
+  "hours": "",
+  "hours_src": "",
+  "season": "Программа зимы 2026–2027 не подтверждена; уточните перед визитом.",
+  "for": [
+   "family",
+   "adults"
+  ],
+  "ages": [
+   "k8",
+   "k13"
+  ],
+  "who": [
+   "pair",
+   "crew",
+   "solo"
+  ],
+  "moods": [
+   "walk"
+  ],
+  "indoor": "out",
+  "district": "Петроградка",
+  "time": "1h",
+  "budget": 0,
+  "notes": "Адрес из официального каталога (2025 для Москвы, актуальный городской портал для Петербурга); цена и часы отдельно не проверены.",
+  "source_only": true
  }
 ]
