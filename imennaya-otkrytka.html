@@ -4,28 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101f1c">
-<meta name="description" content="Создайте именную новогоднюю открытку и короткое поздравление для мамы, коллеги или ребёнка. Скачайте открытку и скопируйте стих бесплатно.">
+<meta name="description" content="Создайте именную новогоднюю открытку: четыре дизайна и поздравления для мамы, папы, мужа, жены, друзей и детей. Скачайте PNG бесплатно.">
 <title>Именная новогодняя открытка и стих — Ёлкино чудо</title>
 <link rel="icon" href="favicon.ico">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f0e3;color:#1b302c;font-family:Arial,sans-serif;line-height:1.55}a{color:inherit}.top{background:#102a24;color:#fff5dd;padding:18px max(22px,calc((100% - 1100px)/2));display:flex;justify-content:space-between;gap:18px;align-items:center}.top a{text-decoration:none}.brand{font-family:Georgia,serif;font-size:25px;font-weight:bold}.wrap{max-width:1100px;margin:auto;padding:48px 22px 72px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;color:#ad503c;font-size:12px;font-weight:700}h1{font-family:Georgia,serif;font-size:clamp(38px,5vw,65px);line-height:1.07;margin:12px 0 18px}h2{font-family:Georgia,serif;font-size:30px}.intro{max-width:670px;font-size:18px}.grid{display:grid;grid-template-columns:minmax(300px,440px) minmax(300px,1fr);gap:42px;margin-top:36px;align-items:start}.panel{background:#fffdf8;border:1px solid #e6d9c4;box-shadow:0 15px 40px #4a2d1b12;border-radius:18px;padding:28px}.panel h2{margin:0 0 16px}label{display:block;font-weight:700;margin:18px 0 8px}input,select{width:100%;padding:13px 14px;border:1px solid #a6b1a9;border-radius:8px;font:inherit;background:white;color:#1b302c}input:focus,select:focus{outline:3px solid #d7b573}button{cursor:pointer;border:0;border-radius:8px;padding:14px 20px;background:#a44538;color:white;font:700 16px Arial,sans-serif}button:hover{background:#842d27}.secondary{background:#1d4a3d}.secondary:hover{background:#113d31}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}#poem{white-space:pre-line;font-family:Georgia,serif;font-size:21px;color:#28443a;background:#f7f0e4;border-left:4px solid #b5794f;border-radius:8px;padding:22px;margin-top:26px}.preview{display:block;width:min(100%,420px);height:auto;margin:auto;border-radius:12px;box-shadow:0 16px 40px #152c2a3b}.note{font-size:13px;color:#556b61;margin-top:16px}.status{min-height:1.5em;color:#166246;font-weight:bold}footer{background:#102a24;color:#fff5dd;padding:22px;text-align:center}@media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{padding-top:32px}.panel{padding:22px}}
 </style>
+<!-- Yandex.Metrika counter -->
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114100831,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114100831" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <header class="top"><a class="brand" href="./">✦ Ёлкино чудо</a><a href="./#pochta">← Почта чудес</a></header>
 <main class="wrap">
 <p class="eyebrow">Почта чудес · бесплатно</p>
 <h1>Открытка с именем</h1>
-<p class="intro">Напишите имя, выберите, кому отправите поздравление, и скачайте открытку. Рядом появится короткий стих, который можно скопировать в сообщение.</p>
+<p class="intro">Напишите имя, выберите адресата и один из четырёх дизайнов. Открытка сразу появится в предпросмотре; поздравление можно скопировать в сообщение.</p>
 <div class="grid">
 <section class="panel">
 <h2>Кому адресовать?</h2>
 <label for="name">Имя</label><input id="name" maxlength="24" placeholder="Например, Соня" autocomplete="given-name">
-<label for="to">Поздравление</label><select id="to"><option value="family">Для близкого человека</option><option value="mother">Для мамы</option><option value="child">Для ребёнка</option><option value="colleague">Для коллеги</option></select>
+<label for="to">Для кого</label><select id="to"><option value="family">Для близкого человека</option><option value="mother">Для мамы</option><option value="father">Для папы</option><option value="husband">Для мужа</option><option value="wife">Для жены</option><option value="friend">Для друга</option><option value="girlfriend">Для подруги</option><option value="child">Для ребёнка</option><option value="colleague">Для коллеги</option></select>
+<label for="design">Дизайн открытки</label><select id="design"><option value="forest">Еловый вечер · зелёный и золотой</option><option value="retro">Тот самый Новый год · красный и кремовый</option><option value="frost">Зимнее утро · синий и серебряный</option><option value="letter">Тёплое письмо · бумага и свечи</option></select>
 <div class="actions"><button id="download" type="button">Скачать открытку PNG</button><button id="copy" class="secondary" type="button">Скопировать стих</button></div>
 <p class="status" id="status" aria-live="polite"></p>
 <div id="poem"></div>
-<p class="note">Можно отправить как личное поздравление. Имя остаётся в вашем браузере и не отправляется на сайт.</p>
+<p class="note">Имя и выбранный дизайн остаются в вашем браузере и не отправляются на сайт.</p>
 </section>
 <section aria-label="Предпросмотр открытки"><canvas id="card" class="preview" width="1080" height="1350">Новогодняя открытка</canvas></section>
 </div>
@@ -35,31 +40,39 @@
 (()=>{
 const $=s=>document.querySelector(s), canvas=$('#card'),ctx=canvas.getContext('2d');
 const messages={
- family:{greeting:'С Новым годом!',poem:['Пусть за окном кружится мягкий снег,','А дома светятся родные лица.','Пусть рядом будет близкий человек,','И всё хорошее ещё раз повторится.']},
- mother:{greeting:'С Новым годом, мама!',poem:['Пусть тихо зажжётся родное окно,','Где нам с тобою уютно давно.','Пусть Новый год, заметая порог,','Бережно дарит тепло без тревог.']},
- child:{greeting:'С Новым годом!',poem:['Послушай: снежинки у дома кружат,','И сказки за тёплым окошком не спят.','Пусть звёздочка светит тебе на пути,','Чтобы своё маленькое чудо найти.']},
- colleague:{greeting:'С Новым годом!',poem:['Пусть будет удачным наступающий год,','Пусть вдохновение в будни придёт.','Пусть за задачами, встречами, вслед','Останется время для добрых бесед.']}
+ family:['Пусть в окнах горит золотистый уют,','Пусть близкие вечером дома вас ждут.','И если мечта задержалась в пути —','Пусть в новом году ей удастся прийти.'],
+ mother:['Пусть мама улыбкою встретит рассвет,','И тёплым останется памяти свет.','Пусть рядом за столиком близкие ждут,','А дни берегут твой покой и уют.'],
+ father:['Пусть, папа, хватает и сил, и тепла,','Чтоб жизнь на хорошие встречи вела.','Пусть будет для отдыха время в году,','А мы будем рядом — всегда на виду.'],
+ husband:['Пусть в новом году будет больше тепла,','Чтоб жизнь нас почаще к столу собрала.','Пускай за окном заметают снега,','А наша любовь остаётся близка.'],
+ wife:['Пусть нам хватает времени вдвоём,','Смеяться, строить планы у порога.','Пусть в новом году уютным будет дом,','А светлых дней у нас — как можно много.'],
+ friend:['Пусть будет повод встретиться опять,','За чаем обо всём поговорить.','Пусть будет время просто отдыхать','И дружбой нашей искренне дорожить.'],
+ girlfriend:['Пускай бокалы празднично звенят,','А планы не теряются в заботах.','Пусть нас с тобою встречи веселят','И радость ждёт за каждым поворотом.'],
+ child:['Пусть за окном танцует снегопад,','И звёзды возле ёлочки горят.','Пусть добрые истории тебя найдут','И за руку к открытиям ведут.'],
+ colleague:['Пусть будет в году и удача, и свет,','И время на отдых, и добрый обед.','Пусть радуют встречи, дела и друзья,','А вечер напомнит: спешить нам нельзя.']
 };
-function fit(s,max,start){let size=start;do{ctx.font=`bold ${size}px Georgia` ;if(ctx.measureText(s).width<=max)break;size-=2}while(size>34);return size}
-function draw(){let name=$('#name').value.trim().replace(/\s+/g,' ').slice(0,24),kind=$('#to').value,m=messages[kind],display=name||'для тебя';
- const grad=ctx.createLinearGradient(0,0,1080,1350);grad.addColorStop(0,'#123429');grad.addColorStop(.65,'#0b2825');grad.addColorStop(1,'#06201f');ctx.fillStyle=grad;ctx.fillRect(0,0,1080,1350);
- let seed=2077;const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
- for(let i=0;i<115;i++){let x=rand()*1080,y=rand()*1350,r=1+rand()*3;ctx.fillStyle=`rgba(251,236,190,${.2+rand()*.55})`;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill()}
- ctx.strokeStyle='#b79a5c';ctx.lineWidth=5;ctx.strokeRect(45,45,990,1260);ctx.lineWidth=1;ctx.strokeRect(64,64,952,1222);
- // Fir boughs and baubles are drawn as stable vector details.
- for(let side of [-1,1]){ctx.save();if(side===1){ctx.translate(1080,0);ctx.scale(-1,1)};ctx.strokeStyle='#446e55';ctx.lineWidth=7;ctx.beginPath();ctx.moveTo(0,150);ctx.quadraticCurveTo(200,190,410,55);ctx.stroke();for(let i=0;i<20;i++){let x=i*21,y=145-83*(i/20);ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-25,y-52);ctx.moveTo(x,y);ctx.lineTo(x+12,y+56);ctx.stroke()}ctx.restore()}
- for(let [x,y,r] of [[210,225,37],[855,280,28],[155,1080,25],[910,1060,34]]){ctx.fillStyle='#bd6548';ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();ctx.fillStyle='#f0c684';ctx.beginPath();ctx.arc(x-r/3,y-r/3,r/5,0,7);ctx.fill()}
- ctx.textAlign='center';ctx.fillStyle='#e8cd91';ctx.font='bold 28px Arial';ctx.fillText('ЁЛКИНО ЧУДО',540,435);
- ctx.fillStyle='#fff3d5';ctx.font=`bold ${fit(display,870,104)}px Georgia`;ctx.fillText(display,540,615);
- ctx.fillStyle='#e7ca89';ctx.font=`bold ${fit(m.greeting,900,68)}px Georgia`;ctx.fillText(m.greeting,540,730);
- ctx.strokeStyle='#bd8a5a';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(300,790);ctx.lineTo(780,790);ctx.stroke();
- ctx.fillStyle='#f6e9cf';ctx.font='42px Georgia';ctx.fillText('Пусть в доме будет светло,',540,875);ctx.fillText('а рядом — самые любимые.',540,940);
- ctx.font='26px Arial';ctx.fillStyle='#d9c697';ctx.fillText('2027',540,1190);
- $('#poem').textContent=(name?name+',\n':'')+m.poem.join('\n')+'\nС Новым годом!';}
- $('#name').addEventListener('input',draw);$('#to').addEventListener('change',draw);
- $('#download').addEventListener('click',()=>{draw();const a=document.createElement('a');a.download='elkino-otkrytka-2027.png';a.href=canvas.toDataURL('image/png');a.click();$('#status').textContent='Открытка готова к отправке.'});
- $('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#poem').textContent);$('#status').textContent='Стих скопирован.'}catch(e){$('#status').textContent='Выделите стих ниже и скопируйте вручную.'}});
- draw();
+// Neutral card wording keeps a typed name unchanged in every grammatical case.
+const palettes={forest:{top:'#153b32',bottom:'#091f25',ink:'#fff3d7',accent:'#d7b77d',sub:'#f6e6c7',label:'ЁЛКИНО ЧУДО'},retro:{top:'#b8372e',bottom:'#6b2328',ink:'#fff5da',accent:'#ffd08c',sub:'#ffeed6',label:'НОВОГОДНЯЯ ПОЧТА'},frost:{top:'#294967',bottom:'#101f39',ink:'#f6f8ff',accent:'#c7e5ec',sub:'#e4f1f7',label:'ЗИМНИЙ ПРИВЕТ'},letter:{top:'#f7eaca',bottom:'#e2cba6',ink:'#453b33',accent:'#a05f50',sub:'#594b42',label:'ПИСЬМО С ТЕПЛОМ'}};
+function fit(s,max,start,min=36){let size=start;do{ctx.font=`bold ${size}px Georgia`;if(ctx.measureText(s).width<=max)break;size-=2}while(size>min);return size}
+function circle(x,y,r,fill){ctx.fillStyle=fill;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()}
+function star(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();for(let i=0;i<10;i++){let a=Math.PI*i/5-Math.PI/2,R=i%2?r*.42:r;ctx[i?'lineTo':'moveTo'](x+Math.cos(a)*R,y+Math.sin(a)*R)}ctx.closePath();ctx.fill()}
+function forest(p){for(const flip of [false,true]){ctx.save();if(flip){ctx.translate(1080,0);ctx.scale(-1,1)}ctx.strokeStyle='#487d61';ctx.lineWidth=9;ctx.beginPath();ctx.moveTo(0,175);ctx.quadraticCurveTo(230,220,465,70);ctx.stroke();for(let i=0;i<28;i++){let x=i*17,y=168-80*(i/28);ctx.strokeStyle=i%3?'#548968':'#7aa17b';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-30,y-49);ctx.moveTo(x,y);ctx.lineTo(x+15,y+55);ctx.stroke()}ctx.restore()}[[140,345,42],[960,340,35],[120,1090,31],[955,1080,43]].forEach(([x,y,r])=>{circle(x,y,r,'#b74c40');circle(x-r/3,y-r/3,r/5,p.accent)});}
+function retro(p){ctx.fillStyle='#f6d49b';ctx.fillRect(102,95,876,15);ctx.fillRect(102,1240,876,15);for(let x=170;x<1080;x+=150){star(x,230,22,'#fbd49a');circle(x,190,9,'#e4ad72')}for(let x=180;x<1000;x+=130){ctx.fillStyle=x%2?'#fff0ce':'#dfa77c';ctx.fillRect(x,1120,12,34);circle(x+6,1160,29,x%2?'#e3ae81':'#f1d9aa')}star(540,280,55,p.accent)}
+function frost(p){for(let i=0;i<34;i++){let x=(i*317+91)%1080,y=(i*439+97)%1300;star(x,y,7+i%4*3,'#b9dbe9')}for(let x of [130,950])for(let y of [195,1110]){ctx.strokeStyle='#b9dbe9';ctx.lineWidth=3;for(let a=0;a<6;a++){let t=a*Math.PI/3;ctx.beginPath();ctx.moveTo(x-43*Math.cos(t),y-43*Math.sin(t));ctx.lineTo(x+43*Math.cos(t),y+43*Math.sin(t));ctx.stroke()}}}
+function letter(p){ctx.fillStyle='#dfc7a3';ctx.fillRect(92,93,896,1165);ctx.fillStyle='#fff8e7';ctx.fillRect(112,113,856,1125);ctx.strokeStyle='#b98970';ctx.lineWidth=3;ctx.strokeRect(125,126,830,1099);ctx.fillStyle='#ddb08b';ctx.beginPath();ctx.ellipse(165,215,44,90,-.5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#a75b49';ctx.beginPath();ctx.ellipse(910,1095,49,78,.3,0,Math.PI*2);ctx.fill();star(900,230,42,p.accent)}
+function draw(){const name=$('#name').value.trim().replace(/\s+/g,' ').slice(0,24),kind=$('#to').value,design=$('#design').value,p=palettes[design],display=name||'Для тебя';
+const g=ctx.createLinearGradient(0,0,1080,1350);g.addColorStop(0,p.top);g.addColorStop(1,p.bottom);ctx.fillStyle=g;ctx.fillRect(0,0,1080,1350);
+if(design==='forest')forest(p);if(design==='retro')retro(p);if(design==='frost')frost(p);if(design==='letter')letter(p);
+ctx.strokeStyle=p.accent;ctx.lineWidth=3;ctx.strokeRect(54,53,972,1244);ctx.lineWidth=1;ctx.strokeRect(75,74,930,1202);
+ctx.textAlign='center';ctx.fillStyle=p.accent;ctx.font='bold 27px Arial';ctx.fillText(p.label,540,405);
+ctx.fillStyle=p.ink;ctx.font=`bold ${fit(display,820,109)}px Georgia`;ctx.fillText(display,540,605);
+ctx.fillStyle=p.accent;ctx.font=`bold ${fit('С Новым годом!',880,74)}px Georgia`;ctx.fillText('С Новым годом!',540,740);
+ctx.strokeStyle=p.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(290,805);ctx.lineTo(790,805);ctx.stroke();
+ctx.fillStyle=p.sub;ctx.font='39px Georgia';ctx.fillText('Пусть будет больше времени',540,900);ctx.fillText('для самого важного —',540,966);ctx.fillText('друг для друга.',540,1032);
+ctx.font='27px Arial';ctx.fillStyle=p.accent;ctx.fillText('2027',540,1185);
+$('#poem').textContent=(name?name+',\n':'')+messages[kind].join('\n')+'\nС Новым годом!';}
+['name','to','design'].forEach(id=>$('#'+id).addEventListener(id==='name'?'input':'change',draw));
+$('#download').addEventListener('click',()=>{draw();const a=document.createElement('a');a.download='elkino-otkrytka-2027.png';a.href=canvas.toDataURL('image/png');a.click();$('#status').textContent='Открытка скачивается.'});
+$('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#poem').textContent);$('#status').textContent='Поздравление скопировано.'}catch(e){$('#status').textContent='Выделите поздравление ниже и скопируйте вручную.'}});draw();
 })();
 </script>
 </body>

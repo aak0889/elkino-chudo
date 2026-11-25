@@ -1,0 +1,26 @@
+name: Site health
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check main page and postcard
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request, urlopen
+          from urllib.parse import quote
+          base = 'https://ёлкино-чудо.рф/'
+          checks = [('', 'Ёлкино чудо'), ('imennaya-otkrytka.html', 'id="design"')]
+          for path, marker in checks:
+              url = base + path
+              req = Request(url, headers={'User-Agent':'ElkinoSiteHealth/1.0'})
+              with urlopen(req, timeout=20) as response:
+                  content = response.read().decode('utf-8')
+                  assert response.status == 200, (url, response.status)
+                  assert marker in content, (url, 'Expected page content is missing')
+              print('OK:', url)
+          PY
