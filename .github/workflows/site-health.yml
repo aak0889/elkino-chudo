@@ -13,7 +13,7 @@ jobs:
           python3 - <<'PY'
           from urllib.request import Request, urlopen
           from urllib.parse import quote
-          base = 'https://ёлкино-чудо.рф/'
+          base = 'https://' + 'ёлкино-чудо.рф'.encode('idna').decode('ascii') + '/'
           checks = [('', 'Ёлкино чудо'), ('imennaya-otkrytka.html', 'id="design"')]
           for path, marker in checks:
               url = base + path
