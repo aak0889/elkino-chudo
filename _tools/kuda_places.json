@@ -3,7 +3,7 @@
   "city": "msk",
   "name": "Парк Горького",
   "cat": "park",
-  "desc": "Большой парк с катком, кафе и прогулками вдоль набережной; каток к сезону готовят.",
+  "desc": "Большой парк с кафе и прогулками вдоль набережной; открытие «Театрального катка» запланировано на 4 декабря 2026 года.",
   "url": "https://parkgorkogo.ru",
   "url_status": 200,
   "addr": "Крымский Вал, 9",
@@ -15,7 +15,7 @@
   "price_src": "https://parkgorkogo.ru",
   "hours": "круглосуточно",
   "hours_src": "https://parkgorkogo.ru",
-  "season": "Каток готовят к открытию, даты сезона 2026–27 пока не объявлены.",
+  "season": "По сообщению парка от 18 ноября, «Театральный каток» откроется 4 декабря 2026 года. Перед визитом проверьте сеанс и билеты.",
   "for": [
    "family",
    "adults",
@@ -40,7 +40,7 @@
   "district": "ЦАО",
   "time": "half",
   "budget": 0,
-  "notes": "Часть партера закрыта на благоустройство (по сайту). Цены катка не найдены.",
+  "notes": "Часть партера закрыта на благоустройство (по сайту). Билеты и тарифы катка — на странице парка: https://parkgorkogo.ru/rinks/",
   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2026-01-25%20%D0%9F%D0%B0%D1%80%D0%BA%20%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE%2C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB%2001.jpg?width=900",
   "photo_credit_link": "https://commons.wikimedia.org/wiki/File:2026-01-25%20%D0%9F%D0%B0%D1%80%D0%BA%20%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE%2C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB%2001.jpg",
   "photo_credit": "Retired electrician · CC0 · фото января 2026"
@@ -249,7 +249,7 @@
   "district": "Север",
   "time": "day",
   "budget": 0,
-  "notes": "Цены катка 2026–27 не найдены; ярмарка 2025–26 на ВДНХ ежедневно 11:00–21:00, вход свободный (Ведомости).",
+  "notes": "Каток сезона 2026–27 открыт с 24 ноября; тарифы и сеансы смотрите на официальной странице: https://vdnh.ru/katok/",
   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow%2C%20VDNKh%2C%20Main%20Alley%20in%20winter%20%2816342761127%29.jpg?width=900",
   "photo_credit_link": "https://commons.wikimedia.org/wiki/File:Moscow%2C%20VDNKh%2C%20Main%20Alley%20in%20winter%20%2816342761127%29.jpg",
   "photo_credit": "Gennady Grachev · CC BY 2.0 · архивное фото"
